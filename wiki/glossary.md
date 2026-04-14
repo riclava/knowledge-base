@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-14
-sources: [2025年技术线总结.md]
-tags: [terminology, style, glossary, ai, engineering-management]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm]
 ---
 
 # Glossary
@@ -71,6 +71,86 @@ Each entry follows this format:
 - Preferred: `信创 Linux`
 - See also: [[2025-technical-line-summary]]
 
+**speech-native LLM** *(canonical form)*
+: 指直接对语音 token 进行建模、推理与生成的大模型，内部可保留文本流，但不再依赖 `ASR -> LLM -> TTS` 串行级联作为主路径。
+- Preferred: `speech-native LLM` or `语音原生大模型` / Avoid: `只是接了语音接口的文本 LLM`
+- See also: [[speech-native-llm]], [[moshi]]
+
+**全双工对话** *(canonical form)*
+: 指系统可以边听边说、支持打断与语音重叠的实时对话模式，区别于严格轮次式交互。
+- Preferred: `全双工对话` / Avoid: `实时语音` when the key point is simultaneous listening and speaking
+- See also: [[full-duplex-speech-interaction]], [[moshi]]
+
+**Neural Audio Codec** *(canonical form)*
+: 指把音频压缩并离散化为 token 的神经编解码技术。在语音 LLM 语境中，它承担类似文本 tokenizer 的基础设施角色。
+- Preferred: `Neural Audio Codec` or `神经音频编码`
+- See also: [[neural-audio-codec]], [[mimi]]
+
+**语音 LLM tokenizer** *(canonical form)*
+: 指可输出低频离散 token，并同时保留语义与声学信息、适合接入语音大模型的音频 tokenizer。
+- Preferred: `语音 LLM tokenizer`
+- See also: [[neural-audio-codec]], [[mimi]]
+
+**Moshi** *(canonical form)*
+: 代表语音原生、全双工、低延迟对话路线的 speech-native LLM 产品/模型名称。
+- Preferred: `Moshi`
+- See also: [[moshi]], [[speech-native-llm]]
+
+**Mimi** *(canonical form)*
+: Moshi 路线中的 Neural Audio Codec + Tokenizer，用于把 24kHz 音频编码为低频离散 token。
+- Preferred: `Mimi`
+- See also: [[mimi]], [[neural-audio-codec]]
+
+**inner monologue** *(canonical form)*
+: 指语音原生模型内部保留的文本推理流，用于逻辑组织和语义规划，不直接等同于最终输出语音。
+- Preferred: `inner monologue`
+- See also: [[moshi]], [[speech-native-llm]]
+
+**Temporal Transformer** *(canonical form)*
+: 在 Moshi 架构中负责时间维建模、语义理解和对话逻辑的主模型层。
+- Preferred: `Temporal Transformer`
+- See also: [[moshi]]
+
+**Depth Transformer** *(canonical form)*
+: 在 Moshi 架构中负责音频 token 细粒度声学关系建模的模型层。
+- Preferred: `Depth Transformer`
+- See also: [[moshi]]
+
+**残差向量量化（RVQ）** *(canonical form)*
+: 一种常见的音频离散化与压缩方法，EnCodec 使用该路线；在当前来源中，RVQ 是理解 codec 演化谱系的基础术语。
+- Preferred: `RVQ` or `残差向量量化`
+- See also: [[neural-audio-codec]]
+
+**轮次式交互（turn-based）** *(canonical form)*
+: 指系统遵循“用户说完一轮，模型再回复一轮”的串行交互方式，通常不支持边听边说和自然打断。
+- Preferred: `轮次式交互` or `turn-based`
+- See also: [[full-duplex-speech-interaction]]
+
+**EnCodec** *(canonical form)*
+: Meta 提出的通用 Neural Audio Codec baseline，在当前来源中被视为 Mimi 的重要前身之一。
+- Preferred: `EnCodec`
+- See also: [[neural-audio-codec]], [[mimi]]
+
+**SNAC** *(canonical form)*
+: 一种强调多尺度量化的新一代 Neural Audio Codec 路线，在当前来源中被视为值得跟踪的前沿探索方向。
+- Preferred: `SNAC`
+- See also: [[neural-audio-codec]], [[mimi]]
+
+**SpeechTokenizer / SemanticCodec** *(canonical form)*
+: 指更强调语义表达的 codec/tokenizer 路线，在当前来源中因 token 率较高而被认为不利于直接接入长序列语音 LLM。
+- Preferred: `SpeechTokenizer` or `SemanticCodec`
+- See also: [[neural-audio-codec]]
+
+**SimWhisper-Codec** *(canonical form)*
+: 基于 Whisper encoder 的语义优先 codec 路线，在当前来源中更适合语音理解类任务。
+- Preferred: `SimWhisper-Codec`
+- See also: [[neural-audio-codec]]
+
+**Lyra / Satin** *(canonical form)*
+: 主要面向通信压缩的 codec 路线，在当前来源中因不输出离散 token 而不被归入语音 LLM tokenizer。
+- Preferred: `Lyra` / `Satin`
+- See also: [[neural-audio-codec]]
+
 ---
 
 ## Style Conventions
@@ -118,3 +198,9 @@ Terms that differ between audiences, teams, or locales:
 - [[ai-enabled-software-delivery]] — AI-enabled engineering concept
 - [[platform-foundation]] — shared platform and governance concept
 - [[observability-and-reliability]] — observability and reliability concept
+- [[moshi-neural-audio-codec-architecture-analysis]] — source summary for Moshi and codec architecture
+- [[moshi]] — speech-native LLM product page
+- [[mimi]] — audio tokenizer product page
+- [[speech-native-llm]] — core speech-first architecture concept
+- [[neural-audio-codec]] — codec infrastructure concept
+- [[full-duplex-speech-interaction]] — real-time duplex interaction concept

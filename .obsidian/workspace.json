@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "13127781f6b5fb53",
+        "id": "4a43010e0fafbf04",
         "type": "tabs",
         "children": [
           {
-            "id": "5690742ef11ae6fb",
+            "id": "8eef3d68277bbfba",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw/Career/2025/2025年技术线总结.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2025年技术线总结"
+              "title": "新标签页"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw/Career/2025/2025年技术线总结.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "2025年技术线总结 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw/Career/2025/2025年技术线总结.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "2025年技术线总结 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -156,13 +150,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw/Career/2025/2025年技术线总结.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025年技术线总结 的大纲"
+              "title": "大纲"
             }
           }
         ]
@@ -183,12 +176,23 @@
       "bases:新建数据库": false
     }
   },
-  "active": "5690742ef11ae6fb",
+  "active": "8eef3d68277bbfba",
   "lastOpenFiles": [
-    "wiki/concepts/observability-and-reliability.md",
+    "wiki/concepts/neural-audio-codec.md",
+    "raw/AI/speech-llm/Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md",
+    "wiki/concepts/full-duplex-speech-interaction.md",
+    "wiki/concepts/speech-native-llm.md",
+    "wiki/products/mimi.md",
+    "wiki/products/moshi.md",
+    "wiki/sources/moshi-neural-audio-codec-architecture-analysis.md",
+    "wiki/products",
+    "raw/AI/speech-llm",
+    "raw/AI",
     "wiki/concepts/platform-foundation.md",
-    "wiki/concepts/ai-enabled-software-delivery.md",
+    "wiki/concepts/observability-and-reliability.md",
     "wiki/concepts/full-lifecycle-delivery-capability.md",
+    "wiki/concepts/ai-enabled-software-delivery.md",
+    "raw/Career/2025/2025年技术线总结.md",
     "wiki/personas/technical-line-leader.md",
     "wiki/sources/2025-technical-line-summary.md",
     "wiki/personas",
@@ -199,7 +203,6 @@
     "wiki/concepts",
     "wiki/sources/2025-tech-summary.md",
     "wiki/sources",
-    "raw/Career/2025/2025年技术线总结.md",
     "raw/Career/2025",
     "raw/Career"
   ]
