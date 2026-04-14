@@ -23,3 +23,24 @@ Core pages created:
 - `wiki/glossary.md`
 
 Next step: Drop your first source into `raw/` and say **"ingest [filename]"**.
+
+## [2026-04-14] ingest | 2025年技术线总结
+
+Pages created:
+- `wiki/sources/2025-technical-line-summary.md`
+- `wiki/personas/technical-line-leader.md`
+- `wiki/concepts/full-lifecycle-delivery-capability.md`
+- `wiki/concepts/ai-enabled-software-delivery.md`
+- `wiki/concepts/platform-foundation.md`
+- `wiki/concepts/observability-and-reliability.md`
+
+Pages updated:
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Filed the first source summary for a technical-line annual retrospective and planning report.
+- Established core concepts for AI-enabled delivery, platform foundation, observability/reliability, and full-lifecycle delivery capability.
+- Added a technical-line leader persona and canonical terminology for AI辅助开发、AI融合、底座、可观测性、LLMOps 等表述。

@@ -11,10 +11,14 @@
             "id": "5690742ef11ae6fb",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "markdown",
+              "state": {
+                "file": "raw/Career/2025/2025年技术线总结.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025年技术线总结"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "raw/Career/2025/2025年技术线总结.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "2025年技术线总结 的反向链接列表"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "raw/Career/2025/2025年技术线总结.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "2025年技术线总结 的出链列表"
             }
           },
           {
@@ -150,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "raw/Career/2025/2025年技术线总结.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "2025年技术线总结 的大纲"
             }
           }
         ]
@@ -176,8 +183,24 @@
       "bases:新建数据库": false
     }
   },
-  "active": "abf014ed3c238408",
+  "active": "5690742ef11ae6fb",
   "lastOpenFiles": [
-    "raw/未命名"
+    "wiki/concepts/observability-and-reliability.md",
+    "wiki/concepts/platform-foundation.md",
+    "wiki/concepts/ai-enabled-software-delivery.md",
+    "wiki/concepts/full-lifecycle-delivery-capability.md",
+    "wiki/personas/technical-line-leader.md",
+    "wiki/sources/2025-technical-line-summary.md",
+    "wiki/personas",
+    "wiki/analyses/2026-tech-roadmap.md",
+    "wiki/analyses",
+    "wiki/concepts/llmops.md",
+    "wiki/concepts/ai-era-software-development.md",
+    "wiki/concepts",
+    "wiki/sources/2025-tech-summary.md",
+    "wiki/sources",
+    "raw/Career/2025/2025年技术线总结.md",
+    "raw/Career/2025",
+    "raw/Career"
   ]
 }

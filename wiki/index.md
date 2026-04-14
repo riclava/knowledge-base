@@ -8,7 +8,7 @@ Master catalog of all pages. The LLM reads this first when answering queries to 
 
 Each entry follows this format:
 ```
-- [[filename]] — one-line summary | type | last updated
+- \[\[filename\]\] — one-line summary | type | last updated
 ```
 
 ---
@@ -17,8 +17,8 @@ Each entry follows this format:
 
 | Page | Summary | Updated |
 |---|---|---|
-| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-07 |
-| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-07 |
+| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-14 |
+| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-14 |
 
 ---
 
@@ -26,7 +26,7 @@ Each entry follows this format:
 
 *One entry per raw document ingested. Add entries here after each ingest.*
 
-*(No sources ingested yet — drop a file into `raw/` and say "ingest [filename]" to get started.)*
+- [[2025-technical-line-summary]] — Annual review of 2025 technical-line execution and 2026 AI/platform strategy | source | 2026-04-14
 
 ---
 
@@ -50,7 +50,7 @@ Each entry follows this format:
 
 *One entry per user persona or audience segment.*
 
-*(Empty — will populate as sources are ingested.)*
+- [[technical-line-leader]] — Technical management persona responsible for delivery, platform reuse, stability, and AI integration | persona | 2026-04-14
 
 ---
 
@@ -58,7 +58,10 @@ Each entry follows this format:
 
 *One entry per core domain concept.*
 
-*(Empty — will populate as sources are ingested.)*
+- [[full-lifecycle-delivery-capability]] — End-to-end software product delivery capability required for lean AI-era teams | concept | 2026-04-14
+- [[ai-enabled-software-delivery]] — AI as an integrated delivery capability spanning engineering workflow, platform, and product features | concept | 2026-04-14
+- [[platform-foundation]] — Shared platform and governance base used to increase reuse and reduce siloed systems | concept | 2026-04-14
+- [[observability-and-reliability]] — Observability, incident handling, and reliability as non-negotiable engineering fundamentals | concept | 2026-04-14
 
 ---
 
