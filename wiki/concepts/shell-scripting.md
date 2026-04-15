@@ -3,7 +3,7 @@ title: shell scripting
 type: concept
 created: 2026-04-15
 updated: 2026-04-15
-sources: [bash.md]
+sources: [bash.md, commands.md]
 tags: [concept, shell, scripting, automation, linux, workflow]
 ---
 
@@ -20,6 +20,7 @@ shell scripting 是把 shell 内建能力、外部命令、管道和重定向组
 | 变量与特殊参数 | 接收输入、保存状态、暴露执行上下文 | `$0`、`$#`、`$@`、`$?`、`${VAR:-default}` |
 | 控制流 | 根据条件或批量输入决定执行路径 | `if`、`for`、`while`、`until`、`case` |
 | 函数与选项解析 | 把脚本组织成可复用、可调用的命令接口 | `greet() {}`, `getopts`, 长选项 `case` |
+| 外部命令族 | 对文件、文本、进程、网络和日志执行真实操作 | `find`, `grep`, `sed`, `awk`, `tar`, `ps`, `ss`, `journalctl`, `crontab` |
 | 流式输入输出 | 把命令连接成多步处理链 | `>`, `2>&1`, `|`, Here Document, `read` |
 | 错误处理与清理 | 在失败时停止、提示或回收资源 | `set -euo pipefail`, `trap ERR`, `trap EXIT` |
 | 运行时辅助 | 发现依赖、创建临时资源、并行任务 | `command -v`, `mktemp`, `xargs -P`, `wait` |
@@ -33,6 +34,11 @@ shell scripting 是把 shell 内建能力、外部命令、管道和重定向组
 3. 设置严格模式和清理逻辑。
 4. 用循环、条件、函数、管道和重定向完成主任务。
 5. 根据退出状态返回结果，并在结束时清理临时资源。
+
+## The Shell Mostly Orchestrates Other Tools
+
+- 新来源强化了一个事实：shell scripting 的主体工作常常不是在 shell 里“计算”，而是在调度 Linux 命令族完成文件同步、文本筛选、资源巡检、日志查询和定时任务配置。
+- 这也是为什么脚本文档除了讲 Bash 语法，还必须讲清依赖命令、系统前提和环境差异。
 
 ## Why It Matters
 
@@ -52,6 +58,7 @@ shell scripting 是把 shell 内建能力、外部命令、管道和重定向组
 
 - 文档应明确脚本是 `Bash` 专用还是可移植到更宽泛的 shell。
 - 每个脚本示例都应标明输入、输出、依赖和副作用，否则读者很难安全复用。
+- 如果脚本调用 `journalctl`、`firewall-cmd`、`crontab` 等命令，应明确这些能力依赖的 Linux 子系统。
 - 当示例涉及并行执行、重定向或批量 Git 操作时，文档需要同步解释失败场景和清理策略。
 
 ## Known Gaps from This Source
@@ -63,6 +70,9 @@ shell scripting 是把 shell 内建能力、外部命令、管道和重定向组
 ## Related Pages
 
 - [[bash]]
+- [[linux]]
+- [[linux-command-line-operations]]
+- [[linux-common-commands-reference]]
 - [[bash-syntax-and-scripting-reference]]
 - [[glossary]]
 - [[overview]]

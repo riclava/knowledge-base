@@ -101,3 +101,23 @@ Key additions:
 - Added a Bash source summary covering variables, parameter expansion, arrays, control flow, option parsing, I/O, error handling, and common scripting tricks.
 - Established `Bash` as a product/tool page and `shell scripting` as a reusable automation concept page.
 - Added canonical terminology for Bash、shell scripting、参数展开、Here Document、getopts 和 `set -euo pipefail`, and expanded the overview from editor-centric Linux tooling toward broader terminal automation knowledge.
+
+## [2026-04-15] ingest | Linux 常用命令
+
+Pages created:
+- `wiki/sources/linux-common-commands-reference.md`
+- `wiki/products/linux.md`
+- `wiki/concepts/linux-command-line-operations.md`
+
+Pages updated:
+- `wiki/products/bash.md`
+- `wiki/concepts/shell-scripting.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a Linux command-line source summary spanning file operations, text processing, storage, processes, networking, permissions, archives, cron, and logs.
+- Established `Linux` as a platform/tool page and `Linux command-line operations` as a reusable operations concept page.
+- Added canonical terminology for Linux、`rsync`、`inode`、`grep/sed/awk`、`systemd`、`journalctl`、`crontab`、`firewalld` 和 `direct I/O`, and clarified how Bash scripts orchestrate common Linux commands.

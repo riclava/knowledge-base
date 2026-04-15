@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, vim, bash, shell]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell]
 ---
 
 # Glossary
@@ -65,6 +65,11 @@ Each entry follows this format:
 : 指面向鸿蒙生态进行移动端适配的工作方向。在当前来源中，它被标记为尚未形成理想落地结果。
 - Preferred: `鸿蒙移动端适配`
 - See also: [[2025-technical-line-summary]]
+
+**Linux** *(canonical form)*
+: 以命令行、小工具组合和文本接口著称的 Unix-like 操作系统家族；在当前知识库中，它既是 [[bash]] 和 [[vim]] 的运行环境，也是系统巡检与运维操作的对象。
+- Preferred: `Linux`
+- See also: [[linux]], [[linux-command-line-operations]], [[bash]]
 
 **信创 Linux** *(canonical form)*
 : 指面向信创环境的 Linux 适配与落地工作。在当前来源中，四川和重庆区域尚未形成较好落地。
@@ -211,6 +216,46 @@ Each entry follows this format:
 - Preferred: `set -euo pipefail`
 - See also: [[bash]], [[shell-scripting]]
 
+**rsync** *(canonical form)*
+: 一种支持本地或远程目录同步的复制工具，强调保留元数据、增量传输和可视化进度，常用于替代简单递归复制。
+- Preferred: `rsync`
+- See also: [[linux]], [[linux-command-line-operations]], [[linux-common-commands-reference]]
+
+**inode** *(canonical form)*
+: 文件系统为文件或目录分配的元数据索引号；当文件名损坏、包含特殊字符或难以直接引用时，可以借助 inode 定位和删除目标。
+- Preferred: `inode`
+- See also: [[linux-command-line-operations]], [[linux-common-commands-reference]]
+
+**grep / sed / awk** *(canonical form)*
+: Linux/Unix 经典文本处理工具组，分别偏向过滤搜索、流式替换和按字段/条件处理，经常通过管道协同工作。
+- Preferred: `grep` / `sed` / `awk`
+- See also: [[linux-command-line-operations]], [[bash]], [[shell-scripting]]
+
+**systemd** *(canonical form)*
+: Linux 上常见的初始化与服务管理体系；在当前来源中，`journalctl` 作为其日志查询入口出现。
+- Preferred: `systemd`
+- See also: [[linux]], [[linux-common-commands-reference]]
+
+**journalctl** *(canonical form)*
+: `systemd` 日志查询工具，可按服务、时间范围或实时流查看系统日志。
+- Preferred: `journalctl`
+- See also: [[linux]], [[linux-command-line-operations]], [[linux-common-commands-reference]]
+
+**crontab** *(canonical form)*
+: 基于 cron 的定时任务配置入口，用于按分钟、小时、日期或星期调度命令与脚本。
+- Preferred: `crontab`
+- See also: [[linux-command-line-operations]], [[shell-scripting]], [[linux-common-commands-reference]]
+
+**firewalld / firewall-cmd** *(canonical form)*
+: Linux 上一种动态防火墙管理服务及其命令行入口；在当前来源中，它用于开放和关闭端口。
+- Preferred: `firewalld` / `firewall-cmd`
+- See also: [[linux]], [[linux-common-commands-reference]]
+
+**直接 I/O（direct I/O）** *(canonical form)*
+: 通过 `iflag=direct` 或 `oflag=direct` 绕过文件系统缓存的 I/O 模式，常用于磁盘读写基准测试或区分缓存命中影响。
+- Preferred: `直接 I/O` or `direct I/O`
+- See also: [[linux-command-line-operations]], [[linux-common-commands-reference]]
+
 ---
 
 ## Style Conventions
@@ -224,6 +269,7 @@ Each entry follows this format:
 | Delivery scope | Use `完整交付能力` when describing end-to-end ownership across the full lifecycle. | “小团队模式依赖完整交付能力。” |
 | Editor terminology | Use `Vim` for the editor, `vimrc` for its config file, and `模态编辑` for the editing model. | “先解释模态编辑，再介绍 `~/.vimrc` 常用配置。” |
 | Shell terminology | Use `Bash` when the content depends on Bash-specific syntax; use `shell scripting` for the broader automation practice. | “这段脚本使用了 Bash 关联数组，属于 Bash 专用写法。” |
+| Linux operations terminology | When behavior depends on a specific subsystem, use the exact command or service name such as `journalctl`, `crontab`, or `firewalld`, not a vague “Linux 命令”. | “查看 `systemd` 日志时使用 `journalctl`。” |
 
 ---
 
@@ -237,6 +283,7 @@ Terms that have been replaced, renamed, or should not be used:
 | 把 AI能力 统称为“工具” | `AI辅助开发` or `AI融合` | 需要区分工程过程提效与业务功能落地。 |
 | 把底座写成“公共部分” | `底座` or `平台底座` | “底座”更准确表达复用、治理和战略支撑含义。 |
 | 把 Bash 专有写法统称为“shell 通用语法” | `Bash` | `[[ ]]`、关联数组、丰富参数展开等能力并非所有 shell 都支持。 |
+| 把 `journalctl`、`firewall-cmd` 等接口写成所有 Linux 环境通用命令 | 写明 `systemd`、`firewalld` 或具体发行版前提 | 避免把子系统特定行为误写成普适事实。 |
 
 ---
 
@@ -250,6 +297,7 @@ Terms that differ between audiences, teams, or locales:
 | 鸿蒙移动端适配 | 终端生态语境 | 指对鸿蒙端的产品或应用适配工作。 |
 | Vim / vim | 开发者工具语境 | 文中提及产品名称时优先写 `Vim`；命令名或文件路径中可写小写 `vim`。 |
 | Bash / shell | 开发者工具语境 | 讲具体语法、关联数组、`getopts`、`[[ ]]` 时优先写 `Bash`；讲更宽泛的自动化实践时再写 `shell scripting`。 |
+| `ip` / `ss` vs `ifconfig` / `netstat` | Linux 网络运维语境 | 文档优先使用更现代的 `ip`、`ss`，但可注明在旧系统中仍会遇到后者。 |
 
 ---
 
@@ -258,6 +306,9 @@ Terms that differ between audiences, teams, or locales:
 - [[overview]] — big-picture synthesis
 - [[index]] — master catalog
 - [[2025-technical-line-summary]] — first ingested source summary
+- [[linux]] — Linux platform/tool page
+- [[linux-command-line-operations]] — reusable Linux operations concept
+- [[linux-common-commands-reference]] — Linux commands source summary
 - [[technical-line-leader]] — primary management persona inferred from the source
 - [[full-lifecycle-delivery-capability]] — end-to-end delivery concept
 - [[ai-enabled-software-delivery]] — AI-enabled engineering concept

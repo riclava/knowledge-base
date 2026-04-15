@@ -184,6 +184,9 @@
   },
   "active": "989735cc936723c3",
   "lastOpenFiles": [
+    "wiki/concepts/linux-command-line-operations.md",
+    "wiki/products/linux.md",
+    "wiki/sources/linux-common-commands-reference.md",
     "wiki/concepts/shell-scripting.md",
     "wiki/products/bash.md",
     "wiki/sources/bash-syntax-and-scripting-reference.md",
@@ -216,9 +219,6 @@
     "wiki/concepts/platform-foundation.md",
     "wiki/concepts/observability-and-reliability.md",
     "wiki/concepts/ai-enabled-software-delivery.md",
-    "raw/Career/2025/2025年技术线总结.md",
-    "wiki/personas/technical-line-leader.md",
-    "wiki/sources/2025-technical-line-summary.md",
-    "wiki/analyses/2026-tech-roadmap.md"
+    "raw/Career/2025/2025年技术线总结.md"
   ]
 }

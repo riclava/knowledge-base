@@ -3,8 +3,8 @@ title: Overview
 type: overview
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, vim, bash, shell]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell]
 ---
 
 # Knowledge Base Overview
@@ -15,11 +15,11 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-to
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for both editing and shell automation.
+This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, and command-line system operations.
 
-**Source count:** 4
-**Wiki pages:** 22
-**Last ingest:** 2026-04-15 — [[bash-syntax-and-scripting-reference]]
+**Source count:** 5
+**Wiki pages:** 25
+**Last ingest:** 2026-04-15 — [[linux-common-commands-reference]]
 **Last lint:** —
 
 ---
@@ -32,6 +32,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 技术管理者关注的组织、流程和指标体系
 - 语音原生 LLM、Neural Audio Codec 与实时语音交互架构
 - Linux / 终端环境中的开发者工具、文本编辑与 shell 自动化工作流
+- Linux 命令行中的文件、文本、进程、网络、权限、日志与定时任务操作
 
 ---
 
@@ -46,6 +47,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 自然语音对话的竞争点不只是模型推理能力，还包括全双工交互、延迟预算和 codec 设计。
 - 在终端工作流中，Vim 的价值不只是“能编辑文件”，而是通过模态编辑、组合命令和轻量配置把高频文本修改提炼成可复用操作语言。
 - 在终端自动化方向，Bash 的价值不只是“命令拼接”，而是通过参数展开、选项处理、管道/重定向和错误控制，把重复操作沉淀为脚本化流程。
+- 在 Linux 命令行运维方向，真正的能力表面来自围绕文件、文本、进程、网络和日志的一组小工具，它们通过“观察 -> 过滤 -> 修改 -> 验证”形成操作闭环。
 
 ---
 
@@ -70,8 +72,8 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 缺少对 1-2 人小团队模式的流程细化和案例材料。
 - 缺少 speech-native LLM 的系统架构图、组件职责说明和延迟预算模板。
 - 缺少 Neural Audio Codec 的选型矩阵、评估指标和任务分类方法。
-- 虽然已补上 Bash 和 shell scripting 基础，但仍缺少 POSIX shell / Bash 兼容性边界与脚本测试规范。
-- 缺少围绕 tmux、git、远程开发和 CI 自动化的配套开发者工具文档，尚未形成完整 Linux 工作流知识链。
+- 虽然已补上 Bash、常用命令和基础 shell scripting，但仍缺少 POSIX shell / Bash 兼容性边界与脚本测试规范。
+- 仍缺少 `systemctl`、包管理器、SSH、tmux、git、远程开发和 CI 自动化等配套文档，尚未形成完整 Linux 工作流知识链。
 
 ---
 
@@ -94,6 +96,9 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - [[bash-syntax-and-scripting-reference]] — Bash source summary and scripting reference
 - [[bash]] — shell and scripting tool page
 - [[shell-scripting]] — automation concept behind command-line scripts
+- [[linux-common-commands-reference]] — Linux commands source summary and operations reference
+- [[linux]] — Linux platform/tool page
+- [[linux-command-line-operations]] — operations concept behind Linux command usage
 - [[vim-usage-and-configuration-reference]] — Vim source summary and command reference
 - [[vim]] — modal editor tool page
 - [[modal-editing]] — editing model behind Vim command composition

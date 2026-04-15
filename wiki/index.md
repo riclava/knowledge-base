@@ -28,6 +28,7 @@ Each entry follows this format:
 
 - [[2025-technical-line-summary]] — Annual review of 2025 technical-line execution and 2026 AI/platform strategy | source | 2026-04-14
 - [[bash-syntax-and-scripting-reference]] — Practical Bash reference covering syntax, scripting structure, I/O, and defensive shell patterns | source | 2026-04-15
+- [[linux-common-commands-reference]] — Linux command cheat sheet covering file, text, process, network, permissions, cron, and logs | source | 2026-04-15
 - [[moshi-neural-audio-codec-architecture-analysis]] — Architecture analysis of Moshi, Mimi, and Neural Audio Codec as speech LLM infrastructure | source | 2026-04-14
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
 
@@ -45,6 +46,7 @@ Each entry follows this format:
 
 *One entry per product or tool.*
 
+- [[linux]] — Linux operating system and command-line operating surface for files, processes, networking, logging, and automation | product | 2026-04-15
 - [[bash]] — Common Linux shell and scripting runtime for command execution, automation, and task orchestration | product | 2026-04-15
 - [[moshi]] — Speech-native LLM focused on full-duplex, low-latency voice interaction | product | 2026-04-14
 - [[mimi]] — Neural Audio Codec and tokenizer used to turn speech into low-rate discrete tokens | product | 2026-04-14
@@ -73,6 +75,7 @@ Each entry follows this format:
 - [[full-duplex-speech-interaction]] — Real-time interaction model that supports simultaneous listening, speaking, and interruption | concept | 2026-04-14
 - [[modal-editing]] — Editing model where key behavior changes by mode and commands compose across motions and text objects | concept | 2026-04-15
 - [[shell-scripting]] — Automation practice that composes shell builtins, commands, and Unix I/O primitives into reusable workflows | concept | 2026-04-15
+- [[linux-command-line-operations]] — Practice of inspecting and administering Linux systems through composable command-line tools | concept | 2026-04-15
 
 ---
 

@@ -1,0 +1,68 @@
+---
+title: Linux command-line operations
+type: concept
+created: 2026-04-15
+updated: 2026-04-15
+sources: [commands.md]
+tags: [concept, linux, command-line, operations, system-administration, workflow]
+---
+
+Linux command-line operations 是通过一组可组合的小命令来检查、修改和验证系统状态的实践，核心对象包括文件、文本、进程、网络、权限和日志。
+
+## Definition
+
+在当前来源中，Linux command-line operations 不是单个工具的能力，而是一套“观察 -> 过滤 -> 变更 -> 验证”的操作方法。命令的价值来自组合关系，而不只是单条语法。
+
+## Operational Surfaces in This Source
+
+| 操作面 | 常见命令 | 典型要回答的问题 |
+|---|---|---|
+| 文件系统与元数据 | `cp`、`rsync`、`find`、`ls -i`、`chmod`、`chown` | 文件在哪里、如何复制、为何删不掉、权限是否正确 |
+| 文本流与结构化输出 | `grep`、`sed`、`awk`、`sort`、`uniq`、`wc`、`cut`、`paste`、`diff` | 输出里有什么、如何筛选、替换、统计或对比 |
+| 存储与性能 | `df`、`du`、`dd` | 空间是否足够、哪个目录最大、读写速度是否异常 |
+| 进程与运行态 | `ps`、`top`、`htop`、`pstree`、`jobs`、`fg/bg`、`nohup` | 谁在运行、谁占资源、任务如何在前后台切换 |
+| 网络与连通性 | `ss`、`ip`、`ping`、`dig`、`nc`、`mtr` | 端口是否监听、路由是否正确、DNS 和连通性是否正常 |
+| 系统策略与运行历史 | `useradd`、`usermod`、`firewall-cmd`、`crontab`、`journalctl` | 谁能执行什么、端口是否开放、任务何时运行、日志里发生了什么 |
+
+## Implied Operating Loop
+
+1. 先检查状态，例如看磁盘、进程、端口、日志或权限。
+2. 再用文本工具过滤出真正需要处理的对象。
+3. 对目标执行复制、删除、开放端口、创建用户、写入 cron 等变更。
+4. 最后回到验证步骤，确认修改结果是否符合预期。
+
+## Why It Matters
+
+- 它把 Linux 管理从“凭感觉敲命令”变成一套可解释、可复查的操作流程。
+- 它是 [[bash]] 和 [[shell-scripting]] 的现实落点，因为脚本真正调用的通常就是这些系统命令。
+- 对技术文档来说，这个概念页有助于把零散命令组织成更稳定的心智模型，而不是只留下速查表。
+
+## Common Misconceptions
+
+| 误解 | 更准确的理解 |
+|---|---|
+| Linux 命令行主要靠背命令 | 更核心的是理解资源对象、命令家族和操作顺序 |
+| 一条命令就能解决大多数问题 | 更常见的是“观察 + 过滤 + 修改 + 验证”的多步链路 |
+| 所有 Linux 命令在任何环境都一样 | `systemd`、`firewalld`、GNU 工具与发行版差异都会影响行为 |
+| 文本工具只是附属技能 | `grep`、`sed`、`awk` 等文本处理恰恰是命令行诊断和自动化的中间层 |
+
+## Documentation Implications
+
+- 文档最好按操作问题组织，例如“如何定位大文件”“如何看某个服务日志”“如何开放端口”，而不是只列命令清单。
+- 对高风险命令应同步提供前置检查和验证步骤，否则读者容易复制语法但无法控制后果。
+- 当来源同时出现旧命令和新命令时，文档应说明各自语境，而不是简单二选一。
+
+## Known Gaps from This Source
+
+- 没有覆盖服务生命周期管理、软件安装升级、远程登录、安全审计或容器编排。
+- 没有把这些操作沉淀为脚本、函数库或巡检模板。
+- 没有说明如何根据输出判断异常阈值或故障优先级。
+
+## Related Pages
+
+- [[linux]]
+- [[linux-common-commands-reference]]
+- [[bash]]
+- [[shell-scripting]]
+- [[glossary]]
+- [[overview]]

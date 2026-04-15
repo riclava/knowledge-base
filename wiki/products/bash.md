@@ -3,7 +3,7 @@ title: Bash
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [bash.md]
+sources: [bash.md, commands.md]
 tags: [product, bash, shell, linux, scripting, automation, developer-tooling]
 ---
 
@@ -42,6 +42,11 @@ Bash 是 Linux/Unix 环境中常见的命令解释器与脚本语言，适合交
 - 重定向、管道、Here Document 和 `read` 展示了 Bash 如何把多个命令与输入输出流拼接成完整任务。
 - `PIPESTATUS` 也表明来源关注的不只是“能跑通”，还包括组合命令后的状态判断。
 
+### Shell as a Control Plane for Linux Commands
+
+- 新来源补充了 Bash 最常编排的外部命令族：文件类 `cp` / `rsync` / `find`，文本类 `grep` / `sed` / `awk`，诊断类 `ps` / `ss` / `ip` / `journalctl`，以及归档与调度类 `tar` / `crontab`。
+- 这说明 Bash 的价值不只在语法本身，还在于把 Linux 命令表面组织成可重复执行的流程。
+
 ### Defensive Scripting
 
 - `set -euo pipefail`、`trap ERR`、`trap EXIT`、`mktemp` 清理和 `bash -n` / `bash -x` 是来源中的可靠性基线。
@@ -56,6 +61,7 @@ Bash 是 Linux/Unix 环境中常见的命令解释器与脚本语言，适合交
 ## Documentation Notes
 
 - 当示例使用 `[[ ]]`、关联数组、`getopts`、`${VAR//a/b}` 等能力时，应明确写成 `Bash`，不要泛化为所有 `shell` 都支持。
+- 当示例把 Bash 与 `rsync`、`journalctl`、`firewall-cmd` 一类系统命令组合时，也应同时写明这些外部命令的系统前提和副作用。
 - 对脚本示例，最好同时写明输入参数、依赖命令、输出位置、退出条件和副作用。
 - 便利脚本与生产脚本应分开说明；前者重效率，后者要补齐校验、日志和失败恢复策略。
 
@@ -68,6 +74,9 @@ Bash 是 Linux/Unix 环境中常见的命令解释器与脚本语言，适合交
 ## Related Pages
 
 - [[bash-syntax-and-scripting-reference]]
+- [[linux-common-commands-reference]]
+- [[linux]]
+- [[linux-command-line-operations]]
 - [[shell-scripting]]
 - [[glossary]]
 - [[overview]]
