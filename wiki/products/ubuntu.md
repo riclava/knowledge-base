@@ -1,0 +1,125 @@
+---
+title: Ubuntu
+type: product
+created: 2026-04-15
+updated: 2026-04-15
+sources: [netplan配置指南.md, 基于docker构建ubuntu20.04开发环境.md]
+tags: [linux, ubuntu, debian, apt, netplan, systemd-networkd, networkmanager]
+---
+
+# Ubuntu
+
+Debian-based Linux distribution widely used for servers, desktops, and containerized development environments, featuring APT package management and Netplan-based network configuration.
+
+---
+
+## Overview
+
+Ubuntu is a popular Linux distribution derived from Debian, known for:
+- Regular release cadence (LTS every 2 years, interim releases every 6 months)
+- APT/dpkg package management
+- Netplan as the default network configuration layer (since 17.10)
+- Strong container and cloud support
+
+---
+
+## Key Characteristics
+
+| Aspect | Details |
+|--------|---------|
+| Package manager | APT (`apt`, `apt-get`, `dpkg`) |
+| Network configuration | Netplan (YAML-based, backends: `systemd-networkd` or `NetworkManager`) |
+| Init system | systemd |
+| Default shell | Bash |
+| LTS support | 5 years standard, 10 years with Ubuntu Pro |
+
+---
+
+## Network Configuration
+
+Since Ubuntu 17.10, network configuration uses **Netplan**:
+
+- Configuration files: `/etc/netplan/*.yaml`
+- Backends: `systemd-networkd` (server) or `NetworkManager` (desktop)
+- Key commands:
+  - `netplan try` — test with auto-rollback
+  - `netplan apply` — apply configuration
+  - `netplan generate` — generate backend configs
+
+See [[netplan-configuration-guide]] for comprehensive configuration examples.
+
+---
+
+## Package Management
+
+### APT Mirror Configuration
+
+Default sources list: `/etc/apt/sources.list`
+
+For faster downloads in China, replace with regional mirrors:
+```bash
+sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+apt update
+```
+
+### Common Operations
+
+```bash
+apt update                    # Refresh package index
+apt upgrade                   # Upgrade installed packages
+apt install <package>         # Install package
+apt remove <package>          # Remove package
+apt search <keyword>          # Search packages
+apt show <package>            # Show package details
+```
+
+---
+
+## Containerized Development
+
+Ubuntu images are commonly used as base for development containers:
+
+```bash
+# Run Ubuntu 20.04 container with keep-alive
+docker run -d --name dev-env ubuntu:20.04 sleep infinity
+
+# Enter container
+docker exec -it dev-env bash
+```
+
+See [[ubuntu2004-docker-dev-environment-setup]] for detailed setup.
+
+---
+
+## Version History (LTS)
+
+| Version | Codename | Release | End of Standard Support |
+|---------|----------|---------|------------------------|
+| 24.04 | Noble Numbat | Apr 2024 | Apr 2029 |
+| 22.04 | Jammy Jellyfish | Apr 2022 | Apr 2027 |
+| 20.04 | Focal Fossa | Apr 2020 | Apr 2025 |
+| 18.04 | Bionic Beaver | Apr 2018 | Apr 2023 |
+
+---
+
+## Differences from CentOS/RHEL
+
+| Aspect | Ubuntu | CentOS/RHEL |
+|--------|--------|-------------|
+| Package format | `.deb` | `.rpm` |
+| Package manager | APT | YUM/DNF |
+| Network config | Netplan | `nmcli`, `ifcfg-*` files |
+| Firewall | `ufw` (wrapper for iptables/nftables) | `firewalld` |
+| SELinux | AppArmor by default | SELinux by default |
+
+---
+
+## Related Pages
+
+- [[linux]] — Linux platform page
+- [[netplan-configuration-guide]] — Netplan configuration source summary
+- [[network-configuration]] — declarative network configuration concept
+- [[ubuntu2004-docker-dev-environment-setup]] — Docker-based Ubuntu dev environment
+- [[containerized-development-environment]] — containerized development concept
+- [[docker]] — container runtime page
+

@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, ubuntu, development-environment, apt-mirror]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror]
 ---
 
 # Glossary
@@ -129,7 +129,52 @@ Each entry follows this format:
 **APT 镜像源** *(canonical form)*
 : Debian/Ubuntu 系发行版的软件包仓库地址配置；在当前来源中，它被替换为 USTC 镜像以加速中国大陆网络环境下的包下载。
 - Preferred: `APT 镜像源` or `APT mirror`
-- See also: [[ubuntu2004-docker-dev-environment-setup]], [[linux]]
+- See also: [[ubuntu2004-docker-dev-environment-setup]], [[ubuntu]], [[linux]]
+
+**Ubuntu** *(canonical form)*
+: 基于 Debian 的 Linux 发行版，以 APT 包管理和 Netplan 网络配置为特征；在当前知识库中，它既出现在容器化开发环境场景，也出现在 Netplan 网络配置场景。
+- Preferred: `Ubuntu`
+- See also: [[ubuntu]], [[linux]], [[netplan-configuration-guide]]
+
+**Netplan** *(canonical form)*
+: Ubuntu 17.10+ 默认的网络配置工具，使用 YAML 格式配置文件，后端可以是 `systemd-networkd` 或 `NetworkManager`。
+- Preferred: `Netplan`
+- See also: [[netplan-configuration-guide]], [[ubuntu]], [[network-configuration]]
+
+**systemd-networkd** *(canonical form)*
+: systemd 提供的网络管理守护进程，是 Ubuntu Server 上 Netplan 的默认后端；负责根据 Netplan 生成的配置实际管理网络接口。
+- Preferred: `systemd-networkd`
+- See also: [[netplan-configuration-guide]], [[ubuntu]], [[network-configuration]]
+
+**NetworkManager** *(canonical form)*
+: Linux 上常见的网络管理服务，是 Ubuntu Desktop 上 Netplan 的默认后端；也可通过 `nmcli` 命令行工具直接操作。
+- Preferred: `NetworkManager`
+- See also: [[netplan-configuration-guide]], [[ubuntu]], [[network-configuration]]
+
+**VLAN** *(canonical form)*
+: Virtual LAN，在物理网络基础设施上划分逻辑网络的技术；在 Netplan 中通过 `vlans` 段配置，需要指定 VLAN ID 和父接口。
+- Preferred: `VLAN`
+- See also: [[netplan-configuration-guide]], [[network-configuration]]
+
+**Bond（链路聚合）** *(canonical form)*
+: 将多个物理网卡组合成一个逻辑接口的技术，用于提高带宽或实现冗余；在 Netplan 中通过 `bonds` 段配置，支持 `active-backup`、`802.3ad` 等多种模式。
+- Preferred: `Bond` or `链路聚合` / Avoid: 把 Bond 和 Bridge 混淆
+- See also: [[netplan-configuration-guide]], [[network-configuration]]
+
+**Bridge（网桥）** *(canonical form)*
+: 在二层连接多个网络接口的虚拟设备，常用于虚拟机和容器场景；在 Netplan 中通过 `bridges` 段配置，可启用 STP 防止环路。
+- Preferred: `Bridge` or `网桥`
+- See also: [[netplan-configuration-guide]], [[network-configuration]], [[container-network-namespace-support]]
+
+**netplan try** *(canonical form)*
+: Netplan 的安全测试命令，应用配置后等待 120 秒，如果用户不确认则自动回滚；是远程配置网络时避免锁死的关键手段。
+- Preferred: `netplan try`
+- See also: [[netplan-configuration-guide]], [[network-configuration]]
+
+**ifupdown** *(canonical form)*
+: Debian/Ubuntu 传统的网络配置系统，使用 `/etc/network/interfaces` 文件；在 Ubuntu 17.10+ 中被 Netplan 取代，但仍可能在旧系统或迁移场景中遇到。
+- Preferred: `ifupdown` / Avoid: 在 Ubuntu 18.04+ 文档中把它当作默认配置方式
+- See also: [[netplan-configuration-guide]], [[ubuntu]]
 
 **OpenSSL** *(canonical form)*
 : 常见的 TLS/加密库与命令行工具；在当前来源中，它被源码安装到 `/usr/local/openssl`，并作为 OpenSSH 重编译时的依赖提供者。
@@ -524,3 +569,6 @@ Terms that differ between audiences, teams, or locales:
 - [[os-initialization-workflow]] — OS initialization concept
 - [[centos7-os-initialization-workflow]] — CentOS 7 initialization source summary
 - [[modal-editing]] — modal editing concept
+- [[ubuntu]] — Ubuntu distribution page
+- [[netplan-configuration-guide]] — Netplan configuration source summary
+- [[network-configuration]] — declarative network configuration concept

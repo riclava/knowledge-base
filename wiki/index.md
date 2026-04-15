@@ -38,6 +38,7 @@ Each entry follows this format:
 - [[linux-common-commands-reference]] — Linux command cheat sheet covering file, text, process, network, permissions, cron, and logs | source | 2026-04-15
 - [[moshi-neural-audio-codec-architecture-analysis]] — Architecture analysis of Moshi, Mimi, and Neural Audio Codec as speech LLM infrastructure | source | 2026-04-14
 - [[ubuntu2004-docker-dev-environment-setup]] — Minimal recipe for creating an Ubuntu 20.04 development environment using Docker with container keep-alive and APT mirror configuration | source | 2026-04-15
+- [[netplan-configuration-guide]] — Comprehensive Ubuntu Netplan reference covering YAML syntax, DHCP/static IP, VLAN, bonding, bridging, and safe testing workflow | source | 2026-04-15
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
 
 ---
@@ -61,6 +62,7 @@ Each entry follows this format:
 - [[openssh]] — SSH client/server suite page focused on source-built service replacement, authentication policy, and remote-access continuity risks on legacy Linux hosts | product | 2026-04-15
 - [[openssl]] — TLS/crypto library page focused on source installation, linker-path integration, and its role as a dependency for higher-level services | product | 2026-04-15
 - [[samba]] — SMB/CIFS file-sharing server used to expose Linux directories to Windows clients with share-level auth and path masks | product | 2026-04-15
+- [[ubuntu]] — Debian-based Linux distribution with APT package management and Netplan network configuration | product | 2026-04-15
 - [[moshi]] — Speech-native LLM focused on full-duplex, low-latency voice interaction | product | 2026-04-14
 - [[mimi]] — Neural Audio Codec and tokenizer used to turn speech into low-rate discrete tokens | product | 2026-04-14
 - [[vim]] — Modal terminal editor focused on composable text editing and lightweight workflow customization | product | 2026-04-15
@@ -97,6 +99,7 @@ Each entry follows this format:
 - [[linux-command-line-operations]] — Practice of inspecting and administering Linux systems through composable command-line tools, including package-source repair, kernel activation, and service validation | concept | 2026-04-15
 - [[smb-file-sharing]] — Practice of exposing directories over SMB so Windows clients can map Linux-hosted network drives with explicit auth and permission boundaries | concept | 2026-04-15
 - [[os-initialization-workflow]] — Structured workflow for configuring a fresh Linux install from bare metal to usable baseline, covering install options, accounts, network, remote access, package sources, time sync, security policy, and base tools | concept | 2026-04-15
+- [[network-configuration]] — Practice of defining network interface settings, IP addressing, routing, and DNS through declarative configuration files, enabling reproducible network setup | concept | 2026-04-15
 
 ---
 

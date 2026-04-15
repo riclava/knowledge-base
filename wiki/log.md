@@ -289,3 +289,24 @@ Key additions:
 - Established `containerized development environment` as a reusable concept for isolated, reproducible development workspaces using containers.
 - Expanded the Docker product page to cover both troubleshooting/compatibility scenarios and development environment use cases.
 - Added canonical terminology for `容器化开发环境`、`sleep infinity` 和 `APT 镜像源`, and noted USTC mirror as a China-specific site value rather than universal default.
+
+## [2026-04-15] ingest | Netplan 配置指南
+
+Pages created:
+- `wiki/sources/netplan-configuration-guide.md`
+- `wiki/products/ubuntu.md`
+- `wiki/concepts/network-configuration.md`
+
+Pages updated:
+- `wiki/products/linux.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a comprehensive Netplan source summary covering YAML syntax, configuration hierarchy, DHCP/static IP, multi-NIC, VLAN, bonding, bridging, WiFi, IPv6, MTU, static routes, advanced matching patterns, operational commands, migration from ifupdown, and troubleshooting.
+- Established `Ubuntu` as a product page covering APT package management, Netplan network configuration, and containerized development use cases.
+- Established `network configuration` as a unified concept page for declarative network interface management, covering configuration layers, distribution-specific approaches, and safe change workflows.
+- Added canonical terminology for `Ubuntu`、`Netplan`、`systemd-networkd`、`NetworkManager`、`VLAN`、`Bond`、`Bridge`、`netplan try` 和 `ifupdown`, and expanded the overview to include Ubuntu-specific network configuration knowledge.
+
