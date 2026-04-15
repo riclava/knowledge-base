@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, docker, containers, kernel, networking]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux]
 ---
 
 # Glossary
@@ -80,6 +80,26 @@ Each entry follows this format:
 : 基于 RPM/YUM 生态的企业级 Linux 发行版家族；在当前知识库中，主要出现在遗留版本维护和仓库恢复场景。
 - Preferred: `CentOS`
 - See also: [[centos]], [[linux]]
+
+**Samba** *(canonical form)*
+: Linux/Unix 平台上实现 SMB/CIFS 文件共享的服务套件；在当前来源中，它用于把 CentOS 7 上的 `/data` 暴露给 Windows 客户端。
+- Preferred: `Samba`
+- See also: [[samba]], [[smb-file-sharing]], [[centos]]
+
+**SMB/CIFS** *(canonical form)*
+: 一类常见于 Windows 网络共享与映射网络驱动器场景的文件共享协议；`Samba` 是 Linux 侧的常见实现，而不是协议本身。
+- Preferred: `SMB` or `SMB/CIFS` / Avoid: 在需要区分协议与实现时把 `Samba` 当成协议名
+- See also: [[smb-file-sharing]], [[samba]]
+
+**smb.conf** *(canonical form)*
+: Samba 服务的主配置文件，通常指 `/etc/samba/smb.conf`，用于声明全局设置和具体共享段。
+- Preferred: `smb.conf` or `/etc/samba/smb.conf`
+- See also: [[samba]], [[smb-file-sharing]], [[centos7-samba-share-setup]]
+
+**smbpasswd** *(canonical form)*
+: 用于为用户创建或更新 Samba 认证密码的命令；在当前来源中，它说明 Linux 本地用户和 Samba 登录凭据并不是一回事。
+- Preferred: `smbpasswd`
+- See also: [[samba]], [[smb-file-sharing]], [[centos7-samba-share-setup]]
 
 **Docker** *(canonical form)*
 : 一种常见的容器运行时与镜像工具链；在当前来源中，它出现在 CentOS 7 离线安装后仍发生 bridge 网络异常的排障场景。
@@ -310,6 +330,11 @@ Each entry follows this format:
 : Linux 上一种动态防火墙管理服务及其命令行入口；在当前来源中，它用于开放和关闭端口。
 - Preferred: `firewalld` / `firewall-cmd`
 - See also: [[linux]], [[linux-common-commands-reference]]
+
+**SELinux** *(canonical form)*
+: Linux 上常见的强制访问控制机制；在当前来源中，它被当作 Samba 联通性排查时先关闭的策略层，但正式文档应优先解释如何配置而不是直接停用。
+- Preferred: `SELinux`
+- See also: [[linux]], [[centos]], [[smb-file-sharing]]
 
 **直接 I/O（direct I/O）** *(canonical form)*
 : 通过 `iflag=direct` 或 `oflag=direct` 绕过文件系统缓存的 I/O 模式，常用于磁盘读写基准测试或区分缓存命中影响。

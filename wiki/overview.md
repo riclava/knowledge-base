@@ -3,8 +3,8 @@ title: Overview
 type: overview
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, yum, repository, docker, containers, kernel, networking]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, yum, repository, docker, containers, kernel, networking, samba, smb, file-sharing, windows]
 ---
 
 # Knowledge Base Overview
@@ -15,11 +15,11 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-to
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, and Docker-on-CentOS troubleshooting tied to host-kernel compatibility.
+This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, and Samba-based cross-platform file sharing from CentOS to Windows.
 
-**Source count:** 7
-**Wiki pages:** 31
-**Last ingest:** 2026-04-15 — [[centos7-offline-docker-install-troubleshooting]]
+**Source count:** 8
+**Wiki pages:** 34
+**Last ingest:** 2026-04-15 — [[centos7-samba-share-setup]]
 **Last lint:** —
 
 ---
@@ -35,6 +35,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - Linux 命令行中的文件、文本、进程、网络、权限、日志与定时任务操作
 - 遗留 Linux 发行版在镜像退役后的仓库恢复与 archive/vault 运维补救
 - CentOS 7 上 Docker 离线安装后的容器网络排障与宿主机内核兼容性判断
+- CentOS 7 上通过 Samba 向 Windows 暴露共享目录的最小配置与权限链路
 
 ---
 
@@ -52,6 +53,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 在 Linux 命令行运维方向，真正的能力表面来自围绕文件、文本、进程、网络和日志的一组小工具，它们通过“观察 -> 过滤 -> 修改 -> 验证”形成操作闭环。
 - Linux 发行版运维不只包括执行命令，还包括处理版本生命周期、软件源可达性和仓库配置这类容易被忽视的基础前提。
 - 在容器场景里，“Docker 安装成功”与“容器网络真正可用”是两回事；宿主机内核对 network namespace 的支持程度会直接改变排障方向。
+- 在跨系统共享场景里，“Windows 能看到网络路径”与“Linux 目录、Samba 认证和主机安全策略都配置正确”同样不是一回事。
 
 ---
 
@@ -67,6 +69,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 是否还会补充 tmux、git、远程开发或 CI 脚本资料，形成更完整的终端工作流体系？
 - 是否还会补充 `yum`/`dnf`/`apt` 的通用包管理、缓存刷新、第三方仓库与版本迁移文档？
 - 当前 Docker 相关经验是否只限于 CentOS 7 离线安装/旧内核场景，还是还会补充更现代发行版与镜像分发实践？
+- 当前 Samba 相关经验是否只限于单目录映射场景，还是还会补充防火墙、SELinux、ACL 或域集成实践？
 
 ---
 
@@ -79,7 +82,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 缺少 speech-native LLM 的系统架构图、组件职责说明和延迟预算模板。
 - 缺少 Neural Audio Codec 的选型矩阵、评估指标和任务分类方法。
 - 虽然已补上 Bash、常用命令和基础 shell scripting，但仍缺少 POSIX shell / Bash 兼容性边界与脚本测试规范。
-- Linux 运维侧目前虽已补上 CentOS 6 仓库恢复和一个 CentOS 7 Docker 网络兼容性案例，但仍缺少 `yum`/`dnf`/`apt` 的通用包管理、SSH、tmux、git、远程开发、系统化 Docker 运维和 CI 自动化等配套文档。
+- Linux 运维侧目前虽已补上 CentOS 6 仓库恢复、一个 CentOS 7 Docker 网络兼容性案例和一个 Samba 最小共享案例，但仍缺少 `yum`/`dnf`/`apt` 的通用包管理、SSH、tmux、git、远程开发、系统化 Docker 运维、SMB/Samba 最小权限加固和 CI 自动化等配套文档。
 
 ---
 
@@ -104,6 +107,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - [[shell-scripting]] — automation concept behind command-line scripts
 - [[linux-common-commands-reference]] — Linux commands source summary and operations reference
 - [[centos7-offline-docker-install-troubleshooting]] — CentOS 7 Docker troubleshooting source summary
+- [[centos7-samba-share-setup]] — CentOS 7 Samba share setup source summary
 - [[centos6-archive-repository-workaround]] — CentOS 6 archive mirror recovery source summary
 - [[centos]] — CentOS distribution page
 - [[docker]] — Docker runtime/tooling page
@@ -111,6 +115,8 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - [[linux-command-line-operations]] — operations concept behind Linux command usage
 - [[container-network-namespace-support]] — host-kernel support concept behind Docker bridge networking
 - [[legacy-repository-repointing]] — archive/vault repo recovery concept for legacy systems
+- [[samba]] — Samba product/tool page
+- [[smb-file-sharing]] — concept page for SMB-based cross-platform directory sharing
 - [[vim-usage-and-configuration-reference]] — Vim source summary and command reference
 - [[vim]] — modal editor tool page
 - [[modal-editing]] — editing model behind Vim command composition

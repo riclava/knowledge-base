@@ -162,3 +162,24 @@ Key additions:
 - Added a CentOS 7 Docker troubleshooting source summary centered on failed port publishing after offline installation and the discovery that host-kernel age, not reinstall steps, was the decisive variable.
 - Established `Docker` as a product page and `container network namespace support` as a reusable concept for diagnosing bridge/veth and namespace-ID-related container networking failures.
 - Added canonical terminology for Docker、离线安装、`network namespace`、`docker0 / veth`、`link-netnsid` 和 `iptables`, and expanded the Linux/CentOS synthesis from package-source maintenance into container host compatibility troubleshooting.
+
+## [2026-04-15] ingest | CentOS7配置Samba共享
+
+Pages created:
+- `wiki/sources/centos7-samba-share-setup.md`
+- `wiki/products/samba.md`
+- `wiki/concepts/smb-file-sharing.md`
+
+Pages updated:
+- `wiki/products/centos.md`
+- `wiki/products/linux.md`
+- `wiki/concepts/linux-command-line-operations.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a CentOS 7 Samba source summary covering the minimal path from package install to Windows network-drive mapping.
+- Established `Samba` as a product page and `SMB file sharing` as a reusable concept for cross-platform directory sharing.
+- Added canonical terminology for Samba、`SMB/CIFS`、`smb.conf`、`smbpasswd` 和 `SELinux`, and explicitly flagged blanket firewall/SELinux shutdown as a documentation risk rather than a default best practice.
