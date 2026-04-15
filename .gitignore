@@ -1,1 +1,7 @@
 .DS_Store
+
+# Obsidian - 忽略临时和个人化文件
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/*.hot-update.*
