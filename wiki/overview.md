@@ -1,26 +1,30 @@
+
 ---
 title: Overview
 type: overview
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, yum, repository, elrepo, grub, docker, containers, kernel, networking, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, yum, repository, elrepo, grub, docker, containers, kernel, networking, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel]
+
 ---
 
 # Knowledge Base Overview
 
 *This page is the LLM's working synthesis of everything in the wiki. It updates after every ingest that shifts the big picture.*
 
+
 ---
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, and high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts.
+This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, and CentOS 7 OS initialization workflows from bare metal to usable baseline.
 
-**Source count:** 11
-**Wiki pages:** 42
-**Last ingest:** 2026-04-15 — [[centos7-system-parameter-tuning]]
+**Source count:** 12
+**Wiki pages:** 44
+**Last ingest:** 2026-04-15 — [[centos7-os-initialization-workflow]]
 **Last lint:** —
+
 
 ---
 
@@ -39,6 +43,8 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - CentOS 7 上通过 `limits.conf`、`sysctl` 和 `systemd` unit 提升文件句柄与 TCP backlog 上限的最小调优方法
 - CentOS 7 上通过源码编译升级 OpenSSL 和 OpenSSH，并在线切换 `sshd` 服务的高风险维护流程
 - CentOS 7 上通过 Samba 向 Windows 暴露共享目录的最小配置与权限链路
+- CentOS 7 从裸机到可用基线的标准化初始化流程，覆盖 minimal 安装、账户、网络、SSH 端口、镜像源、时间同步、安全策略和基础工具
+
 
 ---
 
@@ -61,6 +67,9 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 在遗留 Linux 主机上，源码编译 OpenSSL/OpenSSH 不只是“装新版本”，还会牵动动态库路径、RPM 边界、认证策略和远程登录回滚能力。
 - 在跨系统共享场景里，“Windows 能看到网络路径”与“Linux 目录、Samba 认证和主机安全策略都配置正确”同样不是一回事。
 
+- 在新装机场景里，"装完系统"和"系统可用"之间还有账户、网络、软件源、时间同步、安全策略和基础工具等一系列标准化配置步骤。
+- 关闭 SELinux/firewalld 是快速验证或隔离测试环境的简化手段，不应成为生产默认；正式文档应优先解释如何配置而非关闭。
+
 ---
 
 ## Open Questions
@@ -78,6 +87,8 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 当前 `nofile`/`sysctl` 调优经验会不会继续沉淀为面向 Nginx、数据库、消息队列或 JVM 服务的容量基线与验证模板？
 - 当前 OpenSSL/OpenSSH 源码升级经验会不会继续沉淀为“何时必须源码替换、何时应坚持发行版包更新”的判断准则？
 - 当前 Samba 相关经验是否只限于单目录映射场景，还是还会补充防火墙、SELinux、ACL 或域集成实践？
+- 当前 CentOS 7 初始化流程是否会继续沉淀为可复用的检查清单模板或自动化脚本？
+
 
 ---
 
@@ -90,7 +101,8 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 缺少 speech-native LLM 的系统架构图、组件职责说明和延迟预算模板。
 - 缺少 Neural Audio Codec 的选型矩阵、评估指标和任务分类方法。
 - 虽然已补上 Bash、常用命令和基础 shell scripting，但仍缺少 POSIX shell / Bash 兼容性边界与脚本测试规范。
-- Linux 运维侧目前虽已补上 CentOS 6 仓库恢复、一个 CentOS 7 Docker 网络兼容性案例、一个 ELRepo 内核升级 runbook、一个 `nofile`/TCP backlog 调优备忘、一个 Samba 最小共享案例和一个 OpenSSL/OpenSSH 源码升级案例，但仍缺少 `yum`/`dnf`/`apt` 的通用包管理、SSH 加固基线、tmux、git、远程开发、系统化 Docker 运维、内核升级回滚规范、SMB/Samba 最小权限加固、基于 workload 的容量调优模板和 CI 自动化等配套文档。
+- Linux 运维侧目前虽已补上 CentOS 6 仓库恢复、一个 CentOS 7 Docker 网络兼容性案例、一个 ELRepo 内核升级 runbook、一个 `nofile`/TCP backlog 调优备忘、一个 Samba 最小共享案例、一个 OpenSSL/OpenSSH 源码升级案例和一个 CentOS 7 初始化流程，但仍缺少 `yum`/`dnf`/`apt` 的通用包管理、SSH 加固基线、tmux、git、远程开发、系统化 Docker 运维、内核升级回滚规范、SMB/Samba 最小权限加固、基于 workload 的容量调优模板和 CI 自动化等配套文档。
+
 
 ---
 
@@ -117,6 +129,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - [[centos7-offline-docker-install-troubleshooting]] — CentOS 7 Docker troubleshooting source summary
 - [[centos7-kernel-upgrade-via-elrepo]] — CentOS 7 kernel upgrade source summary
 - [[centos7-system-parameter-tuning]] — CentOS 7 system tuning source summary
+- [[centos7-os-initialization-workflow]] — CentOS 7 OS initialization source summary
 - [[centos7-openssl-and-openssh-upgrade-from-source]] — CentOS 7 OpenSSL/OpenSSH source upgrade summary
 - [[centos7-samba-share-setup]] — CentOS 7 Samba share setup source summary
 - [[centos6-archive-repository-workaround]] — CentOS 6 archive mirror recovery source summary
@@ -131,6 +144,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - [[container-network-namespace-support]] — host-kernel support concept behind Docker bridge networking
 - [[kernel-upgrade-and-boot-management]] — concept page for installing kernels and managing default boot entries
 - [[legacy-repository-repointing]] — archive/vault repo recovery concept for legacy systems
+- [[os-initialization-workflow]] — concept page for structured OS initialization from bare metal to usable baseline
 - [[samba]] — Samba product/tool page
 - [[smb-file-sharing]] — concept page for SMB-based cross-platform directory sharing
 - [[vim-usage-and-configuration-reference]] — Vim source summary and command reference

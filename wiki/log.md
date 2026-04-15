@@ -249,3 +249,24 @@ Key additions:
 - Added a CentOS 7 source summary for tuning `nofile`, `fs.file-max`, `systemd` service limits, and TCP backlog-related kernel parameters.
 - Established `file descriptor and TCP backlog tuning` as a reusable Linux operations concept that separates session-level, kernel-level, and service-level resource ceilings.
 - Added canonical terminology for `limits.conf`、`nofile`、`sysctl`、`fs.file-max`、`LimitNOFILE` 和 `somaxconn / tcp_max_syn_backlog`, and clarified in the Samba notes that `limits.conf` is a generic capacity-tuning surface rather than Samba-specific configuration.
+
+## [2026-04-15] ingest | CentOS 操作系统初始化流程
+
+Pages created:
+- `wiki/sources/centos7-os-initialization-workflow.md`
+- `wiki/concepts/os-initialization-workflow.md`
+
+Pages updated:
+- `wiki/products/centos.md`
+- `wiki/products/linux.md`
+- `wiki/concepts/linux-command-line-operations.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a CentOS 7 source summary for OS initialization workflow covering minimal install, account configuration, network/DNS setup, SSH port adjustment, internal mirror configuration, NTP/chrony time sync, SELinux/firewalld simplification, and base tool installation.
+- Established `OS initialization workflow` as a reusable concept for structuring the path from bare metal to usable baseline.
+- Added canonical terminology for `OS 初始化`、`minimal 安装`、`NTP / chrony` 和 `EPEL`, and explicitly flagged the source's SELinux/firewalld shutdown as a documentation risk (quick-start simplification, not production default).
+- Extracted the generic initialization pattern (install → account → network → remote access → package sources → time sync → security policy → base tools) while noting site-specific values (internal mirrors, DNS, VPN ports) as examples rather than universal defaults.

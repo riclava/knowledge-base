@@ -34,6 +34,7 @@ Each entry follows this format:
 - [[centos7-offline-docker-install-troubleshooting]] — CentOS 7 troubleshooting case showing that an old kernel broke Docker bridge networking despite successful offline installation | source | 2026-04-15
 - [[centos7-samba-share-setup]] — Quick CentOS 7 note for exporting a Linux directory through Samba and mapping it as a Windows network drive, with security-hardening caveats | source | 2026-04-15
 - [[centos7-system-parameter-tuning]] — CentOS 7 tuning note covering `nofile`, `fs.file-max`, `systemd` `LimitNOFILE`, and TCP listen backlog parameters | source | 2026-04-15
+- [[centos7-os-initialization-workflow]] — CentOS 7 initialization runbook covering minimal install, account/network config, SSH port, mirrors, NTP, security policy simplification, and base tools | source | 2026-04-15
 - [[linux-common-commands-reference]] — Linux command cheat sheet covering file, text, process, network, permissions, cron, and logs | source | 2026-04-15
 - [[moshi-neural-audio-codec-architecture-analysis]] — Architecture analysis of Moshi, Mimi, and Neural Audio Codec as speech LLM infrastructure | source | 2026-04-14
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
@@ -93,6 +94,7 @@ Each entry follows this format:
 - [[source-built-package-replacement]] — Practice of compiling upstream software outside the package manager, then manually wiring it into system paths, services, and rollback strategy | concept | 2026-04-15
 - [[linux-command-line-operations]] — Practice of inspecting and administering Linux systems through composable command-line tools, including package-source repair, kernel activation, and service validation | concept | 2026-04-15
 - [[smb-file-sharing]] — Practice of exposing directories over SMB so Windows clients can map Linux-hosted network drives with explicit auth and permission boundaries | concept | 2026-04-15
+- [[os-initialization-workflow]] — Structured workflow for configuring a fresh Linux install from bare metal to usable baseline, covering install options, accounts, network, remote access, package sources, time sync, security policy, and base tools | concept | 2026-04-15
 
 ---
 

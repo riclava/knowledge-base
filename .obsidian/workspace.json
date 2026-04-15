@@ -180,6 +180,8 @@
   },
   "active": "abf014ed3c238408",
   "lastOpenFiles": [
+    "wiki/concepts/os-initialization-workflow.md",
+    "wiki/sources/centos7-os-initialization-workflow.md",
     "wiki/concepts/file-descriptor-and-tcp-backlog-tuning.md",
     "wiki/sources/centos7-system-parameter-tuning.md",
     "wiki/concepts/source-built-package-replacement.md",
@@ -204,8 +206,6 @@
     "raw/OS/Linux/Ubuntu/基于docker构建ubuntu20.04开发环境.md",
     "raw/OS/Linux/CentOS/CentOS操作系统初始化流程.md",
     "raw/OS/Linux/CentOS/CentOS7系统参数调优.md",
-    "raw/OS/Linux/CentOS/CentOS7升级OpenSSL和OpenSSH.md",
-    "raw/OS/Linux/CentOS/CentOS7升级内核.md",
     "raw/OS/Linux/CentOS",
     "未命名.base",
     "raw/OS/Linux/Ubuntu",

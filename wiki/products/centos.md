@@ -3,8 +3,8 @@ title: CentOS
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md]
-tags: [product, centos, linux, rpm, yum, repository, elrepo, grub, legacy-system, docker, kernel, networking, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp]
+sources: [CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md]
+tags: [product, centos, linux, rpm, yum, repository, elrepo, grub, legacy-system, docker, kernel, networking, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ssh-port, ntp, chrony, selinux, firewalld, epel]
 ---
 
 CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知识库里，它既以“版本生命周期影响仓库可用性”的运维对象出现，也以“需要通过内核基线和 GRUB 启动项管理来满足 Docker 等运行时兼容性”的宿主机环境出现，还以“通过 `/etc/security/limits.conf`、`/etc/sysctl.conf` 和 `systemd` unit 调整资源上限”的系统参数调优环境、“通过 Samba 向 Windows 暴露共享目录”的服务环境，以及“在遗留版本上手工替换 OpenSSL/OpenSSH 安全栈”的维护环境出现。
@@ -18,7 +18,7 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 | 关键配置位置 | `/etc/yum.repos.d/*.repo`、`/etc/yum/pluginconf.d/`、`/etc/default/grub`、`/boot/grub2/grub.cfg`、`/etc/security/limits.conf`、`/etc/sysctl.conf`、`/etc/samba/smb.conf` |
 | 典型仓库字段 | `mirrorlist`、`baseurl`、`gpgcheck`、`gpgkey`、`enabled` |
 | 生命周期特征 | 老版本在镜像退役后可能需要 archive/vault；CentOS 7 也可能在运行时兼容性压力下引入 ELRepo 等替代内核仓库 |
-| 典型使用场景 | 服务器运维、遗留系统维护、容器宿主机兼容性修复、企业内部基础环境、资源限制调优、跨系统文件共享 |
+| 典型使用场景 | 服务器运维、遗留系统维护、容器宿主机兼容性修复、企业内部基础环境、资源限制调优、跨系统文件共享、新装机初始化 |
 
 ## Core Capability Surface in This Source
 
@@ -80,6 +80,17 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 - 当文档引入 ELRepo 时，还需要额外说明 GPG key、镜像来源、仓库范围以及 GRUB `menuentry` 与实际安装内核版本的对应关系。
 - 当文档改为使用上游源码替换 OpenSSL/OpenSSH 时，还需要补上 tarball 来源、版本固定、校验方式以及与发行版原生 RPM 的边界。
 
+### OS Initialization Is a Structured Workflow
+
+- 新来源补上了 CentOS 7 从裸机到可用状态的初始化视角：minimal 安装、账户配置、网络配置、SSH 端口调整、镜像源切换、时间同步、安全策略简化和基础工具安装。
+- 这说明 CentOS 文档不只包括"系统已经跑起来之后怎么维护"，还包括"系统刚装完时怎么配置到可用基线"。
+- 初始化流程中的镜像源切换、EPEL 配置和时间同步都是后续所有运维操作的前提条件。
+
+### Security Simplification Is a Double-Edged Sword
+
+- 来源把关闭 SELinux 和 firewalld 作为初始化步骤，说明很多现场笔记会先排除安全策略变量。
+- 但对正式文档来说，这应被记录为"快速验证或隔离测试环境的简化手段"，而不是生产默认；防火墙配置和 SELinux 策略同样属于 CentOS 初始化的一部分。
+
 ## Why It Matters
 
 - CentOS 文档往往面向真实服务器环境，读者需要知道“哪个版本、哪套 repo、哪个 key、改完如何验证、重启后会进哪个内核”。
@@ -97,6 +108,8 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 - 应区分“恢复旧版本继续运行”和“建议升级到受支持版本”这两类完全不同的文档目的。
 - 应给出修改前备份、修改后验证和失败时回滚的方法。
 - 如果示例引用 vault/archive 或第三方镜像，应标明该镜像来源、适用版本和时效性风险。
+- 当文档涉及初始化流程时，应按阶段组织（安装、账户、网络、远程访问、软件源、时间同步、安全策略、基础工具），并区分通用模式和站点特定值。
+- 当文档把关闭 SELinux/firewalld 作为步骤时，应明确标注适用范围（测试环境 vs 生产环境）和风险。
 
 ## Known Gaps from This Source
 
@@ -107,13 +120,16 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 - Samba 相关内容目前只覆盖了一个最小共享案例，还没有形成防火墙端口、SELinux 上下文、域集成或多用户权限设计的体系化文档。
 - OpenSSL/OpenSSH 相关内容现在补上了一条源码升级 runbook，但仍没有更稳妥的 RPM 路线、回滚规范或 SSH 加固基线。
 - 没有涉及 CentOS 7/8、Stream、RHEL 或 Rocky/AlmaLinux 等相邻发行版差异。
+- 初始化流程目前只覆盖了一个站点特定的 CentOS 7 案例，还没有形成通用的初始化检查清单模板或自动化脚本。
 
 ## Related Pages
 
+- [[centos7-os-initialization-workflow]]
 - [[centos7-offline-docker-install-troubleshooting]]
 - [[centos7-kernel-upgrade-via-elrepo]]
 - [[centos7-system-parameter-tuning]]
 - [[centos6-archive-repository-workaround]]
+- [[os-initialization-workflow]]
 - [[file-descriptor-and-tcp-backlog-tuning]]
 - [[kernel-upgrade-and-boot-management]]
 - [[docker]]

@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel]
 ---
 
 # Glossary
@@ -416,6 +416,26 @@ Each entry follows this format:
 - Preferred: `直接 I/O` or `direct I/O`
 - See also: [[linux-command-line-operations]], [[linux-common-commands-reference]]
 
+**OS 初始化（OS initialization）** *(canonical form)*
+: 指把新装 Linux 系统从裸机状态配置到可用基线的标准化流程，通常覆盖安装选项、账户、网络、远程访问、软件源、时间同步、安全策略和基础工具。
+- Preferred: `OS 初始化` or `OS initialization` / Avoid: 把它和日常运维混为一谈
+- See also: [[os-initialization-workflow]], [[centos7-os-initialization-workflow]], [[centos]]
+
+**minimal 安装** *(canonical form)*
+: 指 Linux 发行版安装时选择最小化套件集，只包含核心系统组件，后续按需补充；在当前来源中，它是 CentOS 7 初始化的推荐起点。
+- Preferred: `minimal 安装` or `最小化安装`
+- See also: [[os-initialization-workflow]], [[centos7-os-initialization-workflow]]
+
+**NTP / chrony** *(canonical form)*
+: Linux 上常见的时间同步服务；`ntpd` 是传统实现，`chrony` 是更现代的替代；在当前来源中，它们用于把系统时间同步到可靠时间源。
+- Preferred: `NTP` / `chrony`
+- See also: [[os-initialization-workflow]], [[centos7-os-initialization-workflow]], [[linux]]
+
+**EPEL** *(canonical form)*
+: Extra Packages for Enterprise Linux 的缩写，是面向 RHEL/CentOS 的第三方扩展仓库，提供官方仓库未包含的常用软件包。
+- Preferred: `EPEL`
+- See also: [[centos]], [[centos7-os-initialization-workflow]], [[legacy-repository-repointing]]
+
 ---
 
 ## Style Conventions
@@ -486,4 +506,6 @@ Terms that differ between audiences, teams, or locales:
 - [[shell-scripting]] — shell automation concept
 - [[vim-usage-and-configuration-reference]] — Vim source summary and command reference
 - [[vim]] — Vim product/tool page
+- [[os-initialization-workflow]] — OS initialization concept
+- [[centos7-os-initialization-workflow]] — CentOS 7 initialization source summary
 - [[modal-editing]] — modal editing concept
