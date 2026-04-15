@@ -4,8 +4,8 @@ title: Overview
 type: overview
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam]
 
 ---
 
@@ -18,11 +18,11 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-to
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, and Ubuntu Netplan-based declarative network configuration.
+This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, and Ubuntu 22.04 OpenSSH source upgrade workflows.
 
-**Source count:** 14
-**Wiki pages:** 49
-**Last ingest:** 2026-04-15 — [[netplan-configuration-guide]]
+**Source count:** 15
+**Wiki pages:** 50
+**Last ingest:** 2026-04-15 — [[ubuntu2204-openssh-upgrade-from-source]]
 **Last lint:** —
 
 
@@ -42,6 +42,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - CentOS 7 上通过 ELRepo 升级内核、切换 GRUB 默认启动项并验证重启结果的操作流程
 - CentOS 7 上通过 `limits.conf`、`sysctl` 和 `systemd` unit 提升文件句柄与 TCP backlog 上限的最小调优方法
 - CentOS 7 上通过源码编译升级 OpenSSL 和 OpenSSH，并在线切换 `sshd` 服务的高风险维护流程
+- Ubuntu 22.04 上通过源码编译升级 OpenSSH，使用系统 OpenSSL 并直接覆盖系统二进制的简化升级流程
 - CentOS 7 上通过 Samba 向 Windows 暴露共享目录的最小配置与权限链路
 - CentOS 7 从裸机到可用基线的标准化初始化流程，覆盖 minimal 安装、账户、网络、SSH 端口、镜像源、时间同步、安全策略和基础工具
 - 基于 Docker 快速构建隔离开发环境的容器化模式，包括容器保活、镜像源配置和基础工具安装
@@ -137,6 +138,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - [[centos7-system-parameter-tuning]] — CentOS 7 system tuning source summary
 - [[centos7-os-initialization-workflow]] — CentOS 7 OS initialization source summary
 - [[centos7-openssl-and-openssh-upgrade-from-source]] — CentOS 7 OpenSSL/OpenSSH source upgrade summary
+- [[ubuntu2204-openssh-upgrade-from-source]] — Ubuntu 22.04 OpenSSH source upgrade summary
 - [[centos7-samba-share-setup]] — CentOS 7 Samba share setup source summary
 - [[centos6-archive-repository-workaround]] — CentOS 6 archive mirror recovery source summary
 - [[ubuntu2004-docker-dev-environment-setup]] — Ubuntu 20.04 Docker development environment setup source summary

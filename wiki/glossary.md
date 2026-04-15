@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam]
 ---
 
 # Glossary
@@ -182,9 +182,24 @@ Each entry follows this format:
 - See also: [[openssl]], [[openssh]], [[source-built-package-replacement]]
 
 **OpenSSH** *(canonical form)*
-: 常见的 SSH 客户端与服务端套件；在当前来源中，它通过 portable 源码重编译，并与自定义 OpenSSL 路径一起完成 `sshd` 服务切换。
+: 常见的 SSH 客户端与服务端套件；在当前来源中，它通过 portable 源码重编译，并与目标 OpenSSL 路径一起完成 `sshd` 服务切换，覆盖 CentOS 7（依赖自建 OpenSSL）和 Ubuntu 22.04（使用系统 OpenSSL）两种路径。
 - Preferred: `OpenSSH`
 - See also: [[openssh]], [[openssl]], [[source-built-package-replacement]]
+
+**--without-hardening** *(canonical form)*
+: OpenSSH 编译选项，用于禁用某些编译器安全加固特性；在 Ubuntu 22.04 来源中使用，可能是为了避免与系统编译器或库的兼容性问题。
+- Preferred: `--without-hardening`
+- See also: [[openssh]], [[ubuntu2204-openssh-upgrade-from-source]]
+
+**TCP Wrappers** *(canonical form)*
+: 一种传统的主机访问控制机制，通过 `/etc/hosts.allow` 和 `/etc/hosts.deny` 过滤网络连接；在新版 OpenSSH 和 Ubuntu 22.04 中已不再支持。
+- Preferred: `TCP Wrappers` / Avoid: 在新系统文档中把它当作可用选项
+- See also: [[openssh]], [[ubuntu2204-openssh-upgrade-from-source]]
+
+**libpam0g-dev** *(canonical form)*
+: Ubuntu/Debian 上的 PAM 开发包，提供编译需要 PAM 支持的软件（如 OpenSSH）所需的头文件和库。
+- Preferred: `libpam0g-dev`
+- See also: [[ubuntu]], [[openssh]], [[ubuntu2204-openssh-upgrade-from-source]]
 
 **GRUB2** *(canonical form)*
 : CentOS 7 等 Linux 系统中常见的启动加载器；在当前来源中，它决定已安装的多个内核中哪个会作为默认启动项，并通过 `grub2-set-default`、`/etc/default/grub` 与 `grub2-mkconfig` 管理。
@@ -571,4 +586,5 @@ Terms that differ between audiences, teams, or locales:
 - [[modal-editing]] — modal editing concept
 - [[ubuntu]] — Ubuntu distribution page
 - [[netplan-configuration-guide]] — Netplan configuration source summary
+- [[ubuntu2204-openssh-upgrade-from-source]] — Ubuntu 22.04 OpenSSH source upgrade runbook
 - [[network-configuration]] — declarative network configuration concept

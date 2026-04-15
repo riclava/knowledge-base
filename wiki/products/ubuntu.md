@@ -3,13 +3,13 @@ title: Ubuntu
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [netplan配置指南.md, 基于docker构建ubuntu20.04开发环境.md]
-tags: [linux, ubuntu, debian, apt, netplan, systemd-networkd, networkmanager]
+sources: [netplan配置指南.md, 基于docker构建ubuntu20.04开发环境.md, Ubuntu22.04升级OpenSSH版本到最新.md]
+tags: [linux, ubuntu, debian, apt, netplan, systemd-networkd, networkmanager, openssh, source-build]
 ---
 
 # Ubuntu
 
-Debian-based Linux distribution widely used for servers, desktops, and containerized development environments, featuring APT package management and Netplan-based network configuration.
+Debian-based Linux distribution widely used for servers, desktops, and containerized development environments, featuring APT package management, Netplan-based network configuration, and source-build upgrade paths for security components.
 
 ---
 
@@ -91,6 +91,24 @@ See [[ubuntu2004-docker-dev-environment-setup]] for detailed setup.
 
 ---
 
+## OpenSSH Source Upgrade
+
+When system-provided OpenSSH versions are insufficient, Ubuntu supports source-built upgrades:
+
+- Build dependencies via APT: `build-essential`, `libssl-dev`, `libpam0g-dev`, `libselinux1-dev`
+- Uses system OpenSSL (typically recent enough, unlike CentOS 7)
+- In-place binary replacement with `--prefix=/usr`
+- Existing systemd service unit preserved
+
+Key safety considerations:
+- Keep current terminal session open during upgrade
+- Use `screen` or `tmux` for session persistence
+- Backup `/etc/ssh/sshd_config` before changes
+
+See [[ubuntu2204-openssh-upgrade-from-source]] for detailed runbook.
+
+---
+
 ## Version History (LTS)
 
 | Version | Codename | Release | End of Standard Support |
@@ -120,6 +138,9 @@ See [[ubuntu2004-docker-dev-environment-setup]] for detailed setup.
 - [[netplan-configuration-guide]] — Netplan configuration source summary
 - [[network-configuration]] — declarative network configuration concept
 - [[ubuntu2004-docker-dev-environment-setup]] — Docker-based Ubuntu dev environment
+- [[ubuntu2204-openssh-upgrade-from-source]] — OpenSSH source upgrade runbook
 - [[containerized-development-environment]] — containerized development concept
 - [[docker]] — container runtime page
+- [[openssh]] — OpenSSH product page
+- [[source-built-package-replacement]] — source-compiled software replacement concept
 

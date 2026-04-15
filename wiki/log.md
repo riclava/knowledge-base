@@ -310,3 +310,25 @@ Key additions:
 - Established `network configuration` as a unified concept page for declarative network interface management, covering configuration layers, distribution-specific approaches, and safe change workflows.
 - Added canonical terminology for `Ubuntu`、`Netplan`、`systemd-networkd`、`NetworkManager`、`VLAN`、`Bond`、`Bridge`、`netplan try` 和 `ifupdown`, and expanded the overview to include Ubuntu-specific network configuration knowledge.
 
+
+## [2026-04-15] ingest | Ubuntu22.04升级OpenSSH版本到最新
+
+Pages created:
+- `wiki/sources/ubuntu2204-openssh-upgrade-from-source.md`
+
+Pages updated:
+- `wiki/products/openssh.md` — added Ubuntu 22.04 upgrade path, distribution comparison table
+- `wiki/products/ubuntu.md` — added OpenSSH source upgrade section
+- `wiki/concepts/source-built-package-replacement.md` — added Ubuntu 22.04 patterns, distribution comparison
+- `wiki/glossary.md` — added `--without-hardening`, `TCP Wrappers`, `libpam0g-dev` terms
+- `wiki/index.md` — added new source, updated product/concept summaries
+- `wiki/overview.md` — updated source count, added Ubuntu OpenSSH theme
+- `wiki/log.md`
+
+Key additions:
+- Added an Ubuntu 22.04 source summary for upgrading OpenSSH from upstream portable source, using openssh-9.5p1 as reference version.
+- Documented the simpler Ubuntu upgrade path: uses system OpenSSL (no need to build from source), in-place binary replacement with `--prefix=/usr`, preserves existing systemd unit.
+- Expanded OpenSSH product page to cover both CentOS 7 and Ubuntu 22.04 upgrade patterns as independent runbooks with distribution-specific comparison table.
+- Expanded source-built package replacement concept to contrast CentOS 7 (separate prefix, RPM removal) vs Ubuntu 22.04 (direct overwrite, no package removal) approaches.
+- Flagged `PermitRootLogin yes` and `PasswordAuthentication yes` as temporary convenience settings for recovery access, not production baseline.
+- Added canonical terminology for `--without-hardening`, `TCP Wrappers` (deprecated), and `libpam0g-dev`.
