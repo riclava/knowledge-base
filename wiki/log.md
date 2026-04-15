@@ -270,3 +270,22 @@ Key additions:
 - Established `OS initialization workflow` as a reusable concept for structuring the path from bare metal to usable baseline.
 - Added canonical terminology for `OS 初始化`、`minimal 安装`、`NTP / chrony` 和 `EPEL`, and explicitly flagged the source's SELinux/firewalld shutdown as a documentation risk (quick-start simplification, not production default).
 - Extracted the generic initialization pattern (install → account → network → remote access → package sources → time sync → security policy → base tools) while noting site-specific values (internal mirrors, DNS, VPN ports) as examples rather than universal defaults.
+
+## [2026-04-15] ingest | 基于docker构建ubuntu20.04开发环境
+
+Pages created:
+- `wiki/sources/ubuntu2004-docker-dev-environment-setup.md`
+- `wiki/concepts/containerized-development-environment.md`
+
+Pages updated:
+- `wiki/products/docker.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for creating Ubuntu 20.04 development environments using Docker, covering container keep-alive with `sleep infinity`, APT mirror configuration, and basic tool installation.
+- Established `containerized development environment` as a reusable concept for isolated, reproducible development workspaces using containers.
+- Expanded the Docker product page to cover both troubleshooting/compatibility scenarios and development environment use cases.
+- Added canonical terminology for `容器化开发环境`、`sleep infinity` 和 `APT 镜像源`, and noted USTC mirror as a China-specific site value rather than universal default.

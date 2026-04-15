@@ -37,6 +37,7 @@ Each entry follows this format:
 - [[centos7-os-initialization-workflow]] — CentOS 7 initialization runbook covering minimal install, account/network config, SSH port, mirrors, NTP, security policy simplification, and base tools | source | 2026-04-15
 - [[linux-common-commands-reference]] — Linux command cheat sheet covering file, text, process, network, permissions, cron, and logs | source | 2026-04-15
 - [[moshi-neural-audio-codec-architecture-analysis]] — Architecture analysis of Moshi, Mimi, and Neural Audio Codec as speech LLM infrastructure | source | 2026-04-14
+- [[ubuntu2004-docker-dev-environment-setup]] — Minimal recipe for creating an Ubuntu 20.04 development environment using Docker with container keep-alive and APT mirror configuration | source | 2026-04-15
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
 
 ---
@@ -55,7 +56,7 @@ Each entry follows this format:
 
 - [[bash]] — Common Linux shell and scripting runtime for command execution, automation, and task orchestration | product | 2026-04-15
 - [[centos]] — RPM/YUM-based enterprise Linux distribution family with repository lifecycle, alternate kernel upgrade paths, and version-specific host-compatibility behavior | product | 2026-04-15
-- [[docker]] — Container runtime/tooling page focused on host-kernel-dependent networking behavior, validation, and kernel-remediation paths | product | 2026-04-15
+- [[docker]] — Container runtime/tooling page covering host-kernel-dependent networking behavior, validation, kernel-remediation paths, and containerized development environment patterns | product | 2026-04-15
 - [[linux]] — Linux operating system and command-line operating surface for files, processes, networking, logging, package-source maintenance, and kernel/boot management | product | 2026-04-15
 - [[openssh]] — SSH client/server suite page focused on source-built service replacement, authentication policy, and remote-access continuity risks on legacy Linux hosts | product | 2026-04-15
 - [[openssl]] — TLS/crypto library page focused on source installation, linker-path integration, and its role as a dependency for higher-level services | product | 2026-04-15
@@ -81,6 +82,7 @@ Each entry follows this format:
 - [[full-lifecycle-delivery-capability]] — End-to-end software product delivery capability required for lean AI-era teams | concept | 2026-04-14
 - [[ai-enabled-software-delivery]] — AI as an integrated delivery capability spanning engineering workflow, platform, and product features | concept | 2026-04-14
 - [[container-network-namespace-support]] — Host-kernel support and remediation signals required for Docker bridge networking, veth linkage, and namespace inspection | concept | 2026-04-15
+- [[containerized-development-environment]] — Pattern for creating isolated, reproducible development environments using containers with keep-alive processes and scripted initialization | concept | 2026-04-15
 - [[file-descriptor-and-tcp-backlog-tuning]] — Layered Linux capacity-tuning concept separating `nofile`, kernel file-table limits, `systemd` unit limits, and TCP backlog parameters | concept | 2026-04-15
 - [[platform-foundation]] — Shared platform and governance base used to increase reuse and reduce siloed systems | concept | 2026-04-14
 - [[observability-and-reliability]] — Observability, incident handling, and reliability as non-negotiable engineering fundamentals | concept | 2026-04-14

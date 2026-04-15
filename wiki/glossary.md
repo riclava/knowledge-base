@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, ubuntu, development-environment, apt-mirror]
 ---
 
 # Glossary
@@ -112,9 +112,24 @@ Each entry follows this format:
 - See also: [[samba]], [[smb-file-sharing]], [[centos7-samba-share-setup]]
 
 **Docker** *(canonical form)*
-: 一种常见的容器运行时与镜像工具链；在当前来源中，它出现在 CentOS 7 离线安装后仍发生 bridge 网络异常的排障场景。
+: 一种常见的容器运行时与镜像工具链；在当前知识库中，它既出现在 CentOS 7 离线安装后仍发生 bridge 网络异常的排障场景，也出现在基于容器快速构建隔离开发环境的场景。
 - Preferred: `Docker`
-- See also: [[docker]], [[centos]], [[container-network-namespace-support]]
+- See also: [[docker]], [[centos]], [[container-network-namespace-support]], [[containerized-development-environment]]
+
+**容器化开发环境（containerized development environment）** *(canonical form)*
+: 指使用容器技术创建隔离、可复现的开发工作环境，使开发者可以在不污染宿主机的前提下获得一致的工具链和系统配置。
+- Preferred: `容器化开发环境` or `containerized development environment`
+- See also: [[containerized-development-environment]], [[docker]]
+
+**sleep infinity** *(canonical form)*
+: 一种常见的容器保活技巧，将 `sleep infinity` 作为容器主进程，使容器可以后台持续运行而不会因为没有前台任务而退出。
+- Preferred: `sleep infinity`
+- See also: [[containerized-development-environment]], [[docker]]
+
+**APT 镜像源** *(canonical form)*
+: Debian/Ubuntu 系发行版的软件包仓库地址配置；在当前来源中，它被替换为 USTC 镜像以加速中国大陆网络环境下的包下载。
+- Preferred: `APT 镜像源` or `APT mirror`
+- See also: [[ubuntu2004-docker-dev-environment-setup]], [[linux]]
 
 **OpenSSL** *(canonical form)*
 : 常见的 TLS/加密库与命令行工具；在当前来源中，它被源码安装到 `/usr/local/openssl`，并作为 OpenSSH 重编译时的依赖提供者。
