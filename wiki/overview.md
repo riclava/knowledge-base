@@ -3,8 +3,8 @@ title: Overview
 type: overview
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, yum, repository]
 ---
 
 # Knowledge Base Overview
@@ -15,11 +15,11 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-to
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, and command-line system operations.
+This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, and legacy package-source recovery on Linux distributions.
 
-**Source count:** 5
-**Wiki pages:** 25
-**Last ingest:** 2026-04-15 — [[linux-common-commands-reference]]
+**Source count:** 6
+**Wiki pages:** 28
+**Last ingest:** 2026-04-15 — [[centos6-archive-repository-workaround]]
 **Last lint:** —
 
 ---
@@ -33,6 +33,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 语音原生 LLM、Neural Audio Codec 与实时语音交互架构
 - Linux / 终端环境中的开发者工具、文本编辑与 shell 自动化工作流
 - Linux 命令行中的文件、文本、进程、网络、权限、日志与定时任务操作
+- 遗留 Linux 发行版在镜像退役后的仓库恢复与 archive/vault 运维补救
 
 ---
 
@@ -48,6 +49,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 在终端工作流中，Vim 的价值不只是“能编辑文件”，而是通过模态编辑、组合命令和轻量配置把高频文本修改提炼成可复用操作语言。
 - 在终端自动化方向，Bash 的价值不只是“命令拼接”，而是通过参数展开、选项处理、管道/重定向和错误控制，把重复操作沉淀为脚本化流程。
 - 在 Linux 命令行运维方向，真正的能力表面来自围绕文件、文本、进程、网络和日志的一组小工具，它们通过“观察 -> 过滤 -> 修改 -> 验证”形成操作闭环。
+- Linux 发行版运维不只包括执行命令，还包括处理版本生命周期、软件源可达性和仓库配置这类容易被忽视的基础前提。
 
 ---
 
@@ -61,6 +63,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - Mimi 与 SNAC 在真实语音对话任务中的取舍边界是什么？
 - 当前团队的编辑器基线是 Vim、Neovim，还是多编辑器并存？
 - 是否还会补充 tmux、git、远程开发或 CI 脚本资料，形成更完整的终端工作流体系？
+- 是否还会补充 `yum`/`dnf`/`apt` 的通用包管理、缓存刷新、第三方仓库与版本迁移文档？
 
 ---
 
@@ -73,7 +76,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 缺少 speech-native LLM 的系统架构图、组件职责说明和延迟预算模板。
 - 缺少 Neural Audio Codec 的选型矩阵、评估指标和任务分类方法。
 - 虽然已补上 Bash、常用命令和基础 shell scripting，但仍缺少 POSIX shell / Bash 兼容性边界与脚本测试规范。
-- 仍缺少 `systemctl`、包管理器、SSH、tmux、git、远程开发和 CI 自动化等配套文档，尚未形成完整 Linux 工作流知识链。
+- 目前只补上了 CentOS 6 archive/vault 仓库恢复这一类包源修复案例，仍缺少 `yum`/`dnf`/`apt` 的通用包管理、SSH、tmux、git、远程开发和 CI 自动化等配套文档。
 
 ---
 
@@ -97,8 +100,11 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - [[bash]] — shell and scripting tool page
 - [[shell-scripting]] — automation concept behind command-line scripts
 - [[linux-common-commands-reference]] — Linux commands source summary and operations reference
+- [[centos6-archive-repository-workaround]] — CentOS 6 archive mirror recovery source summary
+- [[centos]] — CentOS distribution page
 - [[linux]] — Linux platform/tool page
 - [[linux-command-line-operations]] — operations concept behind Linux command usage
+- [[legacy-repository-repointing]] — archive/vault repo recovery concept for legacy systems
 - [[vim-usage-and-configuration-reference]] — Vim source summary and command reference
 - [[vim]] — modal editor tool page
 - [[modal-editing]] — editing model behind Vim command composition

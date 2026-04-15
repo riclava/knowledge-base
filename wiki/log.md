@@ -121,3 +121,23 @@ Key additions:
 - Added a Linux command-line source summary spanning file operations, text processing, storage, processes, networking, permissions, archives, cron, and logs.
 - Established `Linux` as a platform/tool page and `Linux command-line operations` as a reusable operations concept page.
 - Added canonical terminology for Linux、`rsync`、`inode`、`grep/sed/awk`、`systemd`、`journalctl`、`crontab`、`firewalld` 和 `direct I/O`, and clarified how Bash scripts orchestrate common Linux commands.
+
+## [2026-04-15] ingest | CentOS6由于镜像废弃无法使用的解决办法
+
+Pages created:
+- `wiki/sources/centos6-archive-repository-workaround.md`
+- `wiki/products/centos.md`
+- `wiki/concepts/legacy-repository-repointing.md`
+
+Pages updated:
+- `wiki/products/linux.md`
+- `wiki/concepts/linux-command-line-operations.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a focused source summary for recovering CentOS 6 `yum` access after standard mirrors were retired and archive/vault repos became necessary.
+- Established `CentOS` as a product page and `legacy repository repointing` as a reusable concept for restoring package access on legacy distributions.
+- Added canonical terminology for CentOS、`YUM`、repo 文件、`mirrorlist/baseurl`、vault 仓库 和 `fastestmirror`, and explicitly flagged the source's CentOS 6 / CentOS 7 GPG key mismatch as a verification risk.

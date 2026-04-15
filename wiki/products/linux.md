@@ -3,11 +3,11 @@ title: Linux
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [commands.md]
-tags: [product, linux, operating-system, command-line, operations, developer-tooling]
+sources: [commands.md, CentOS6由于镜像废弃无法使用的解决办法.md]
+tags: [product, linux, operating-system, command-line, operations, developer-tooling, centos, yum, repository]
 ---
 
-Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平台，适合文件管理、系统巡检、服务排障和脚本自动化。
+Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平台，适合文件管理、系统巡检、服务排障、包源维护和脚本自动化。
 
 ## Product Snapshot
 
@@ -42,6 +42,12 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 - `ss`、`ip route`、`ip addr`、`dig`、`ping`、`nc`、`mtr` 用于观察网络层状态。
 - `firewall-cmd` 则把 Linux 运维从“观察”延伸到“改变访问边界”。
 
+### Distribution Lifecycle and Package Sources
+
+- 新来源补充了 Linux 运维中容易被忽略的一面：系统能否安装或查询软件包，不只取决于包管理器命令，还取决于发行版镜像和仓库是否仍然可达。
+- 在遗留 CentOS 场景下，修复步骤包括关闭 `fastestmirror`、备份 repo 文件、把 `mirrorlist` 改为指向 archive/vault 的固定 `baseurl`。
+- 这说明 Linux 文档不能只讲通用命令，还要标出发行版、版本生命周期和仓库配置差异。
+
 ### Scheduling and Logs
 
 - `crontab` 负责把命令转成周期性任务，`tail -f`、`journalctl`、`logrotate` 则负责追踪和维护运行历史。
@@ -62,16 +68,20 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 
 - 应明确区分通用 Linux 能力与子系统特定接口，例如 `journalctl` 对应 `systemd`，`firewall-cmd` 对应 `firewalld`。
 - 应优先说明现代命令与旧命令的关系，例如 `ss` 相对 `netstat`、`ip` 相对 `ifconfig/route`。
+- 当文档涉及 `yum`、repo 文件或 archive/vault 镜像时，应明确发行版与版本边界，不要把特定发行版配置泛写成通用 Linux 事实。
 - 对任何修改系统状态的示例，都应标出权限要求、影响范围和验证方法。
 
 ## Known Gaps from This Source
 
-- 没有覆盖包管理器、`systemctl`、SSH、挂载管理、ACL、SELinux/AppArmor 或容器运维。
-- 没有讨论发行版差异、服务管理差异和云环境常见限制。
+- 仍没有形成通用的包管理器文档体系，只补上了一个 CentOS 遗留仓库恢复案例；`systemctl`、SSH、挂载管理、ACL、SELinux/AppArmor 和容器运维仍未覆盖。
+- 没有系统讨论不同发行版之间的包管理、服务管理差异和云环境常见限制。
 - 没有涉及更高层的基础设施编排，如 Ansible、Terraform 或 CI/CD。
 
 ## Related Pages
 
+- [[centos]]
+- [[centos6-archive-repository-workaround]]
+- [[legacy-repository-repointing]]
 - [[linux-common-commands-reference]]
 - [[linux-command-line-operations]]
 - [[bash]]

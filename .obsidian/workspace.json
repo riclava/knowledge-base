@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/OS/Linux/Common/bash.md",
+                "file": "raw/OS/Linux/Common/vim.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "bash"
+              "title": "vim"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw/OS/Linux/Common/bash.md",
+                "file": "raw/OS/Linux/Common/vim.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "bash 的反向链接列表"
+              "title": "vim 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw/OS/Linux/Common/bash.md",
+                "file": "raw/OS/Linux/Common/vim.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "bash 的出链列表"
+              "title": "vim 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw/OS/Linux/Common/bash.md",
+                "file": "raw/OS/Linux/Common/vim.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "bash 的大纲"
+              "title": "vim 的大纲"
             }
           }
         ]
@@ -184,41 +184,41 @@
   },
   "active": "989735cc936723c3",
   "lastOpenFiles": [
+    "wiki/concepts/legacy-repository-repointing.md",
+    "wiki/products/centos.md",
+    "wiki/sources/centos6-archive-repository-workaround.md",
+    "raw/OS/Linux/Ubuntu/Ubuntu切换指定版本内核.md",
+    "raw/OS/Linux/Ubuntu/Ubuntu常见问题与优化.md",
+    "raw/OS/Linux/Ubuntu/Ubuntu22.04升级OpenSSH版本到最新.md",
+    "raw/OS/Linux/Ubuntu/netplan配置指南.md",
+    "raw/OS/Linux/Ubuntu/基于docker构建ubuntu20.04开发环境.md",
+    "raw/OS/Linux/CentOS/CentOS操作系统初始化流程.md",
+    "raw/OS/Linux/CentOS/CentOS7系统参数调优.md",
+    "raw/OS/Linux/CentOS/CentOS7升级OpenSSL和OpenSSH.md",
+    "raw/OS/Linux/CentOS/CentOS7升级内核.md",
+    "raw/OS/Linux/CentOS/CentOS7配置Samba共享.md",
+    "raw/OS/Linux/CentOS/CentOS7离线安装docker问题排查.md",
+    "raw/OS/Linux/CentOS/CentOS6由于镜像废弃无法使用的解决办法.md",
+    "raw/OS/Linux/CentOS",
+    "raw/OS/Linux/Common/commands.md",
+    "raw/OS/Linux/Common/bash.md",
     "wiki/concepts/linux-command-line-operations.md",
     "wiki/products/linux.md",
     "wiki/sources/linux-common-commands-reference.md",
     "wiki/concepts/shell-scripting.md",
     "wiki/products/bash.md",
     "wiki/sources/bash-syntax-and-scripting-reference.md",
-    "raw/OS/Linux/Common/commands.md",
     "未命名.base",
-    "raw/OS/Linux/Common/bash.md",
     "raw/OS/Linux/Ubuntu/未命名.md",
     "wiki/concepts/modal-editing.md",
     "wiki/products/vim.md",
-    "wiki/sources/vim-usage-and-configuration-reference.md",
-    "raw/OS/Linux/Common/vim.md",
     "raw/OS/Linux/Ubuntu",
     "raw/OS/Linux/Common",
     "raw/OS/Linux",
     "raw/OS",
-    "raw/Templates/kiro/iOS-app-debugging-steering.md",
     "raw/Templates/kiro",
     "raw/Templates",
-    "raw/AI/speech-llm/Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md",
-    "wiki/concepts/neural-audio-codec.md",
-    "wiki/concepts/full-lifecycle-delivery-capability.md",
-    "wiki/concepts/full-duplex-speech-interaction.md",
-    "wiki/concepts/speech-native-llm.md",
-    "wiki/products/mimi.md",
-    "wiki/products/moshi.md",
-    "wiki/sources/moshi-neural-audio-codec-architecture-analysis.md",
     "wiki/products",
-    "raw/AI/speech-llm",
-    "raw/AI",
-    "wiki/concepts/platform-foundation.md",
-    "wiki/concepts/observability-and-reliability.md",
-    "wiki/concepts/ai-enabled-software-delivery.md",
-    "raw/Career/2025/2025年技术线总结.md"
+    "raw/AI/speech-llm"
   ]
 }

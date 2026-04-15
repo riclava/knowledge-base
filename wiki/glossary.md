@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository]
 ---
 
 # Glossary
@@ -75,6 +75,36 @@ Each entry follows this format:
 : 指面向信创环境的 Linux 适配与落地工作。在当前来源中，四川和重庆区域尚未形成较好落地。
 - Preferred: `信创 Linux`
 - See also: [[2025-technical-line-summary]]
+
+**CentOS** *(canonical form)*
+: 基于 RPM/YUM 生态的企业级 Linux 发行版家族；在当前知识库中，主要出现在遗留版本维护和仓库恢复场景。
+- Preferred: `CentOS`
+- See also: [[centos]], [[linux]]
+
+**YUM** *(canonical form)*
+: CentOS/RHEL 家族常见的软件包管理与仓库访问工具，负责读取 repo 配置、获取元数据并安装 RPM 包。
+- Preferred: `YUM` or `yum`
+- See also: [[centos]], [[legacy-repository-repointing]]
+
+**repo 文件** *(canonical form)*
+: 指 `/etc/yum.repos.d/*.repo` 这类仓库配置文件，用来声明 `mirrorlist`、`baseurl`、`gpgcheck`、`gpgkey` 等字段。
+- Preferred: `repo 文件` or `仓库配置文件`
+- See also: [[centos]], [[legacy-repository-repointing]]
+
+**mirrorlist / baseurl** *(canonical form)*
+: `YUM` 仓库中两类常见的软件源定位方式；`mirrorlist` 倾向动态获取镜像列表，`baseurl` 倾向直接指定固定仓库地址。
+- Preferred: `mirrorlist` / `baseurl`
+- See also: [[centos]], [[legacy-repository-repointing]]
+
+**vault 仓库** *(canonical form)*
+: 指为历史版本保留包文件的 archive/vault 型静态仓库，常用于老版本发行版在默认镜像退役后的临时维护。
+- Preferred: `vault 仓库` or `archive/vault 仓库`
+- See also: [[legacy-repository-repointing]], [[centos]]
+
+**fastestmirror** *(canonical form)*
+: `YUM` 的镜像选择插件，用于从可用镜像中挑选更快的源；当发行版镜像已退役时，可能需要临时关闭。
+- Preferred: `fastestmirror`
+- See also: [[centos6-archive-repository-workaround]], [[legacy-repository-repointing]]
 
 **speech-native LLM** *(canonical form)*
 : 指直接对语音 token 进行建模、推理与生成的大模型，内部可保留文本流，但不再依赖 `ASR -> LLM -> TTS` 串行级联作为主路径。
