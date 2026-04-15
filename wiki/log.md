@@ -352,3 +352,23 @@ Key additions:
 - Expanded Ubuntu product page to cover system optimization, swap management, NFS auto-mount, DNS port conflicts, and VMware compatibility.
 - Added canonical terminology for `systemd-resolved`、`DNSStubListener`、`multipath`、`swap` 和 `_netdev`, and noted that legacy Ubuntu 16.04 WiFi configuration via wpa_supplicant is deprecated in favor of Netplan.
 - Flagged that disabling swap should be done with awareness of OOM risks, and that multipath blacklisting is specific to VMware VMs rather than physical servers.
+
+## [2026-04-15] ingest | Ubuntu切换指定版本内核
+
+Pages created:
+- `wiki/sources/ubuntu-kernel-version-switching.md`
+
+Pages updated:
+- `wiki/products/ubuntu.md` — added kernel management section with APT install and GRUB configuration
+- `wiki/concepts/kernel-upgrade-and-boot-management.md` — expanded to cover Ubuntu patterns alongside CentOS, added distribution comparison table
+- `wiki/glossary.md` — added `update-grub`, `linux-image / linux-headers / linux-modules` terms, updated GRUB2 entry
+- `wiki/index.md` — added new source, updated Ubuntu and kernel concept summaries
+- `wiki/overview.md` — updated source count, added Ubuntu kernel switching theme
+- `wiki/log.md`
+
+Key additions:
+- Added an Ubuntu source summary for switching to a specific kernel version via APT, covering kernel package installation, GRUB default entry configuration with submenu path syntax, and reboot verification.
+- Expanded the kernel upgrade and boot management concept to cover both CentOS 7 (ELRepo, numeric GRUB indices) and Ubuntu (APT, full menu path strings) patterns with a distribution comparison table.
+- Expanded the Ubuntu product page to include kernel management as a first-class capability alongside network configuration and system optimization.
+- Added canonical terminology for `update-grub` and Ubuntu kernel package naming conventions (`linux-image-*`, `linux-headers-*`, `linux-modules-*`).
+- Noted the key difference in GRUB default entry syntax: CentOS uses numeric indices or `grub2-set-default`, while Ubuntu requires the full submenu path string like `"Advanced options for Ubuntu>Ubuntu, with Linux X.Y.Z"`.

@@ -229,7 +229,17 @@ Each entry follows this format:
 **GRUB2** *(canonical form)*
 : CentOS 7 等 Linux 系统中常见的启动加载器；在当前来源中，它决定已安装的多个内核中哪个会作为默认启动项，并通过 `grub2-set-default`、`/etc/default/grub` 与 `grub2-mkconfig` 管理。
 - Preferred: `GRUB2` or `GRUB` when version distinction is not important
-- See also: [[kernel-upgrade-and-boot-management]], [[centos7-kernel-upgrade-via-elrepo]], [[centos]]
+- See also: [[kernel-upgrade-and-boot-management]], [[centos7-kernel-upgrade-via-elrepo]], [[ubuntu-kernel-version-switching]], [[centos]], [[ubuntu]]
+
+**update-grub** *(canonical form)*
+: Ubuntu 上用于重新生成 GRUB 配置的命令，等效于 CentOS 上的 `grub2-mkconfig -o /boot/grub2/grub.cfg`；在切换默认内核后必须执行以使配置生效。
+- Preferred: `update-grub`
+- See also: [[kernel-upgrade-and-boot-management]], [[ubuntu-kernel-version-switching]], [[ubuntu]]
+
+**linux-image / linux-headers / linux-modules** *(canonical form)*
+: Ubuntu/Debian 系发行版的内核包命名约定；`linux-image-*` 是内核本体，`linux-headers-*` 是编译模块所需的头文件，`linux-modules-*` 和 `linux-modules-extra-*` 是内核模块。
+- Preferred: `linux-image-*`, `linux-headers-*`, `linux-modules-*`
+- See also: [[ubuntu-kernel-version-switching]], [[ubuntu]], [[kernel-upgrade-and-boot-management]]
 
 **离线安装（offline installation）** *(canonical form)*
 : 指目标机器无法直接联网安装时，先在其他可联网环境下载 RPM 包或依赖，再转移到目标机器完成安装的做法。

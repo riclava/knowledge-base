@@ -41,6 +41,7 @@ Each entry follows this format:
 - [[ubuntu2204-openssh-upgrade-from-source]] — Ubuntu 22.04 runbook for upgrading OpenSSH from upstream portable source with in-place binary replacement | source | 2026-04-15
 - [[netplan-configuration-guide]] — Comprehensive Ubuntu Netplan reference covering YAML syntax, DHCP/static IP, VLAN, bonding, bridging, and safe testing workflow | source | 2026-04-15
 - [[ubuntu-common-issues-and-optimization]] — Ubuntu troubleshooting and optimization reference covering system tuning, APT management, DNS port conflicts, and VMware multipath errors | source | 2026-04-15
+- [[ubuntu-kernel-version-switching]] — Ubuntu runbook for installing a specific kernel version via APT, switching the GRUB default boot entry, and validating the rebooted host | source | 2026-04-15
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
 
 ---
@@ -64,7 +65,7 @@ Each entry follows this format:
 - [[openssh]] — SSH client/server suite page focused on source-built service replacement across CentOS 7 and Ubuntu 22.04, covering authentication policy and remote-access continuity risks | product | 2026-04-15
 - [[openssl]] — TLS/crypto library page focused on source installation, linker-path integration, and its role as a dependency for higher-level services | product | 2026-04-15
 - [[samba]] — SMB/CIFS file-sharing server used to expose Linux directories to Windows clients with share-level auth and path masks | product | 2026-04-15
-- [[ubuntu]] — Debian-based Linux distribution with APT package management, Netplan network configuration, system optimization, and source-build upgrade paths | product | 2026-04-15
+- [[ubuntu]] — Debian-based Linux distribution with APT package management, Netplan network configuration, kernel version management, system optimization, and source-build upgrade paths | product | 2026-04-15
 - [[moshi]] — Speech-native LLM focused on full-duplex, low-latency voice interaction | product | 2026-04-14
 - [[mimi]] — Neural Audio Codec and tokenizer used to turn speech into low-rate discrete tokens | product | 2026-04-14
 - [[vim]] — Modal terminal editor focused on composable text editing and lightweight workflow customization | product | 2026-04-15
@@ -93,7 +94,7 @@ Each entry follows this format:
 - [[speech-native-llm]] — Architecture pattern that models and generates speech directly instead of centering text | concept | 2026-04-14
 - [[neural-audio-codec]] — Audio tokenizer infrastructure layer that discretizes speech for LLM use | concept | 2026-04-14
 - [[full-duplex-speech-interaction]] — Real-time interaction model that supports simultaneous listening, speaking, and interruption | concept | 2026-04-14
-- [[kernel-upgrade-and-boot-management]] — Practice of upgrading Linux kernel packages, choosing a boot target, and validating compatibility outcomes before cleanup | concept | 2026-04-15
+- [[kernel-upgrade-and-boot-management]] — Practice of upgrading or switching Linux kernel versions, choosing a boot target, and validating compatibility outcomes before cleanup, covering both CentOS 7 and Ubuntu patterns | concept | 2026-04-15
 - [[legacy-repository-repointing]] — Practice of redirecting package managers from retired mirrors to static archive/vault repositories for legacy systems | concept | 2026-04-15
 - [[modal-editing]] — Editing model where key behavior changes by mode and commands compose across motions and text objects | concept | 2026-04-15
 - [[shell-scripting]] — Automation practice that composes shell builtins, commands, and Unix I/O primitives into reusable workflows | concept | 2026-04-15

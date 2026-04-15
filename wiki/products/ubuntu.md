@@ -3,8 +3,8 @@ title: Ubuntu
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [netplan配置指南.md, 基于docker构建ubuntu20.04开发环境.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md]
-tags: [linux, ubuntu, debian, apt, netplan, systemd-networkd, networkmanager, openssh, source-build, systemd-resolved, dns, swap, nfs, optimization]
+sources: [netplan配置指南.md, 基于docker构建ubuntu20.04开发环境.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, Ubuntu切换指定版本内核.md]
+tags: [linux, ubuntu, debian, apt, netplan, systemd-networkd, networkmanager, openssh, source-build, systemd-resolved, dns, swap, nfs, optimization, kernel, grub, boot-management]
 ---
 
 # Ubuntu
@@ -47,6 +47,58 @@ Since Ubuntu 17.10, network configuration uses **Netplan**:
   - `netplan generate` — generate backend configs
 
 See [[netplan-configuration-guide]] for comprehensive configuration examples.
+
+---
+
+## Kernel Management
+
+Ubuntu supports installing and switching between multiple kernel versions via APT.
+
+### Check Current Kernel
+
+```bash
+uname -r
+```
+
+### Search Available Kernels
+
+```bash
+apt search linux-image-5.15
+```
+
+### Install Specific Kernel Version
+
+```bash
+apt install -y linux-image-5.15.0-117-generic
+apt install -y linux-headers-5.15.0-117-generic
+apt install -y linux-modules-5.15.0-117-generic
+apt install -y linux-modules-extra-5.15.0-117-generic
+```
+
+### Switch Default Boot Kernel
+
+1. Find the exact menu entry name:
+   ```bash
+   grep menuentry /boot/grub/grub.cfg
+   ```
+
+2. Edit `/etc/default/grub`:
+   ```bash
+   GRUB_DEFAULT="Advanced options for Ubuntu>Ubuntu, with Linux 5.15.0-117-generic"
+   ```
+
+3. Apply changes:
+   ```bash
+   update-grub
+   reboot
+   ```
+
+4. Verify after reboot:
+   ```bash
+   uname -r
+   ```
+
+See [[ubuntu-kernel-version-switching]] for detailed runbook.
 
 ---
 
@@ -232,6 +284,7 @@ sudo /etc/init.d/multipath-tools restart
 - [[linux]] — Linux platform page
 - [[netplan-configuration-guide]] — Netplan configuration source summary
 - [[ubuntu-common-issues-and-optimization]] — Ubuntu troubleshooting and optimization source summary
+- [[ubuntu-kernel-version-switching]] — Ubuntu kernel version switching runbook
 - [[network-configuration]] — declarative network configuration concept
 - [[systemd-resolved-dns-management]] — DNS resolver management concept
 - [[ubuntu2004-docker-dev-environment-setup]] — Docker-based Ubuntu dev environment
@@ -240,4 +293,5 @@ sudo /etc/init.d/multipath-tools restart
 - [[docker]] — container runtime page
 - [[openssh]] — OpenSSH product page
 - [[source-built-package-replacement]] — source-compiled software replacement concept
+- [[kernel-upgrade-and-boot-management]] — kernel upgrade and boot management concept
 
