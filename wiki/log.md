@@ -397,3 +397,29 @@ Key additions:
 - Added a `成长型工程师` persona to capture the audience moving from feature implementation toward system-level reasoning and explicit engineering judgment.
 - Expanded the delivery and AI synthesis pages to clarify that AI collaboration does not replace human abstraction, model selection, trade-off analysis, or validation responsibility.
 - Added canonical terminology for `研发思维`、`抽象`、`建模`、`分治思维`、`状态机思维`、`数据流思维`、`权衡` 和 `验证思维`.
+
+## [2026-04-15] ingest | 快速基于 AI 入门全栈研发
+
+Pages created:
+- `wiki/sources/ai-full-stack-development-onboarding.md`
+- `wiki/concepts/model-context-protocol.md`
+- `wiki/concepts/project-steering-context.md`
+- `wiki/concepts/devops-delivery-pipeline.md`
+- `wiki/personas/ai-era-full-stack-beginner.md`
+
+Pages updated:
+- `wiki/concepts/ai-enabled-software-delivery.md`
+- `wiki/concepts/full-lifecycle-delivery-capability.md`
+- `wiki/concepts/observability-and-reliability.md`
+- `wiki/personas/growing-engineer.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for an AI-era full-stack onboarding presentation that connects local tooling, AI collaboration, DevOps flow, deployment, and testing into one beginner-friendly delivery map.
+- Established `Model Context Protocol（MCP）`、`项目 Steering 上下文` and `DevOps 交付流水线` as first-class concepts rather than leaving them embedded in a single slide deck.
+- Added an `AI时代全栈研发入门者` persona to represent learners who need a golden path across environment setup, Git/PR, CI/CD, deployment, monitoring, and AI-assisted coding.
+- Expanded the AI, delivery, and observability synthesis pages to show that AI-era onboarding still depends on human review, explicit workflow guardrails, and runtime feedback loops.
+- Added canonical terminology for `AI IDE`、`CLI Agent`、`MCP`、`Steering 文件`、`DevOps`、`CI/CD 流水线`、`全栈研发`、`Docker Compose` and `Playwright`, and normalized the source typo `playwrite`.

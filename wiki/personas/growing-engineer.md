@@ -44,10 +44,10 @@ tags: [persona, engineering, learning, growth, system-design, ai-era]
 
 ## Related Pages
 
+- [[ai-era-full-stack-beginner]]
 - [[engineering-thinking-framework]]
 - [[engineering-mindset]]
 - [[state-and-data-flow-modeling]]
 - [[validation-driven-design]]
 - [[full-lifecycle-delivery-capability]]
 - [[technical-line-leader]]
-

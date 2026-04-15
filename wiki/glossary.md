@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, command-line, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, command-line, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack]
 ---
 
 # Glossary
@@ -36,6 +36,16 @@ Each entry follows this format:
 - Preferred: `AI融合` / Avoid: `AI 试点` when the work is already part of正式项目交付
 - See also: [[ai-enabled-software-delivery]]
 
+**AI IDE** *(canonical form)*
+: 指把 AI 助手深度集成进编辑器工作流的开发环境形态，强调边写边问、边改边测。
+- Preferred: `AI IDE`
+- See also: [[ai-enabled-software-delivery]], [[ai-full-stack-development-onboarding]]
+
+**CLI Agent** *(canonical form)*
+: 指运行在终端中的 AI 代理形态，能够直接面向代码库、命令行和脚本任务进行协作。
+- Preferred: `CLI Agent`
+- See also: [[ai-enabled-software-delivery]], [[ai-full-stack-development-onboarding]]
+
 **完整交付能力** *(canonical form)*
 : 指覆盖需求、设计、开发、测试、发布和运维的端到端软件产品交付能力。
 - Preferred: `完整交付能力` / Avoid: `只强调开发能力`
@@ -55,6 +65,31 @@ Each entry follows this format:
 : 面向大语言模型应用的工程化运营能力，通常涉及模型接入、评估、运行、监控和治理。
 - Preferred: `LLMOps`
 - See also: [[ai-enabled-software-delivery]], [[platform-foundation]]
+
+**MCP（Model Context Protocol）** *(canonical form)*
+: 让 AI 模型连接外部工具和数据源的协议层，用于把模型能力扩展到文件、数据库、浏览器、Git 等操作表面。
+- Preferred: `MCP` or `Model Context Protocol` / Avoid: 只说“AI 插件” when the protocol boundary matters
+- See also: [[model-context-protocol]], [[ai-enabled-software-delivery]]
+
+**Steering 文件** *(canonical form)*
+: 用于保存项目技术栈、团队规范和业务背景的持久化上下文文件，帮助 AI 在长期协作中理解仓库约束。
+- Preferred: `Steering 文件` or `Steering` / Avoid: 把长期项目上下文和一次性 Prompt 混为一谈
+- See also: [[project-steering-context]], [[ai-enabled-software-delivery]]
+
+**DevOps** *(canonical form)*
+: 指把开发、测试、构建、部署、运行反馈和协作流程串成持续交付闭环的方法与实践视角。
+- Preferred: `DevOps`
+- See also: [[devops-delivery-pipeline]], [[full-lifecycle-delivery-capability]]
+
+**CI/CD 流水线** *(canonical form)*
+: 指从代码提交后的自动检查、构建、发布到部署的连续流程，用于把质量门禁和交付动作标准化。
+- Preferred: `CI/CD 流水线` or `CI/CD pipeline`
+- See also: [[devops-delivery-pipeline]], [[full-lifecycle-delivery-capability]]
+
+**全栈研发** *(canonical form)*
+: 在当前知识库中，优先指能够把需求、前后端实现、部署、测试和运行反馈串成一条最小交付闭环，而不只是“同时会写前端和后端代码”。
+- Preferred: `全栈研发` / Avoid: 把它缩减为“会两门语言”
+- See also: [[full-lifecycle-delivery-capability]], [[ai-era-full-stack-beginner]]
 
 **烟囱式系统** *(canonical form)*
 : 指重复建设、彼此割裂、复用性差的系统形态，是平台化建设试图减少的反模式。
@@ -115,6 +150,16 @@ Each entry follows this format:
 : 一种常见的容器运行时与镜像工具链；在当前知识库中，它既出现在 CentOS 7 离线安装后仍发生 bridge 网络异常的排障场景，也出现在基于容器快速构建隔离开发环境的场景。
 - Preferred: `Docker`
 - See also: [[docker]], [[centos]], [[container-network-namespace-support]], [[containerized-development-environment]]
+
+**Docker Compose** *(canonical form)*
+: 用于定义和启动多容器应用组合的 Docker 编排工具；在当前来源中被用作全栈教学栈里的中间件组装方式。
+- Preferred: `Docker Compose` or `docker compose` / Avoid: 把它和单容器 `Docker` 运行时混为一谈
+- See also: [[docker]], [[ai-full-stack-development-onboarding]]
+
+**Playwright** *(canonical form)*
+: 用于浏览器自动化和端到端流程测试的工具；在当前来源里被列为自动化流程测试方案，原文写作 `playwrite` 属于拼写不规范。
+- Preferred: `Playwright` / Avoid: `playwrite`
+- See also: [[ai-full-stack-development-onboarding]], [[devops-delivery-pipeline]]
 
 **容器化开发环境（containerized development environment）** *(canonical form)*
 : 指使用容器技术创建隔离、可复现的开发工作环境，使开发者可以在不污染宿主机的前提下获得一致的工具链和系统配置。
@@ -595,8 +640,10 @@ Each entry follows this format:
 | Convention | Rule | Example |
 |---|---|---|
 | Canonical AI terms | Use `AI辅助开发` for engineering-process collaboration and `AI融合` for product/function embedding. | “通过 AI辅助开发提效，并在项目中推进 AI融合。” |
+| AI tool integration terminology | Use `MCP` for the tool/data connection protocol and `Steering 文件` for persistent project context. | “通过 MCP 接数据库，通过 Steering 文件固化项目规范。” |
 | Platform terminology | Use `底座` or `平台底座` for shared strategic infrastructure, not generic “公共能力”. | “新系统优先复用平台底座能力。” |
 | Delivery scope | Use `完整交付能力` when describing end-to-end ownership across the full lifecycle. | “小团队模式依赖完整交付能力。” |
+| Full-stack terminology | Use `全栈研发` when the topic includes delivery-chain awareness, not just front-end/back-end coding breadth. | “这份入门材料强调全栈研发的最小交付闭环。” |
 | Engineering thinking terminology | Use `抽象` for stripping details to stable structure, `建模` for expressing states/data flow, and `验证` for uncertainty reduction. | “先抽象对象，再建模状态与数据流，最后列验证方案。” |
 | Editor terminology | Use `Vim` for the editor, `vimrc` for its config file, and `模态编辑` for the editing model. | “先解释模态编辑，再介绍 `~/.vimrc` 常用配置。” |
 | Shell terminology | Use `Bash` when the content depends on Bash-specific syntax; use `shell scripting` for the broader automation practice. | “这段脚本使用了 Bash 关联数组，属于 Bash 专用写法。” |
@@ -613,6 +660,9 @@ Terms that have been replaced, renamed, or should not be used:
 |---|---|---|
 | 只说“监控” | `可观测性` | 当前语境明确包含日志、指标和 Trace，范围大于传统监控。 |
 | 把 AI能力 统称为“工具” | `AI辅助开发` or `AI融合` | 需要区分工程过程提效与业务功能落地。 |
+| 把 `MCP` 写成泛泛的“插件机制” | `MCP` or `Model Context Protocol` | 需要保留协议层与工具接入边界的含义。 |
+| 把长期项目约束写成一次性 Prompt | `Steering 文件` or project context docs | 需要区分持久上下文与单次任务指令。 |
+| `playwrite` | `Playwright` | 原始来源中存在拼写不规范，知识库统一采用产品正确名称。 |
 | 把底座写成“公共部分” | `底座` or `平台底座` | “底座”更准确表达复用、治理和战略支撑含义。 |
 | 把 Bash 专有写法统称为“shell 通用语法” | `Bash` | `[[ ]]`、关联数组、丰富参数展开等能力并非所有 shell 都支持。 |
 | 把 `journalctl`、`firewall-cmd` 等接口写成所有 Linux 环境通用命令 | 写明 `systemd`、`firewalld` 或具体发行版前提 | 避免把子系统特定行为误写成普适事实。 |
@@ -643,6 +693,11 @@ Terms that differ between audiences, teams, or locales:
 - [[linux-command-line-operations]] — reusable Linux operations concept
 - [[linux-common-commands-reference]] — Linux commands source summary
 - [[technical-line-leader]] — primary management persona inferred from the source
+- [[ai-full-stack-development-onboarding]] — source summary for AI-era full-stack onboarding
+- [[model-context-protocol]] — tool/data connection protocol for AI systems
+- [[project-steering-context]] — persistent project context for AI collaboration
+- [[devops-delivery-pipeline]] — delivery flow from development through runtime feedback
+- [[ai-era-full-stack-beginner]] — persona learning AI-assisted full-stack delivery basics
 - [[growing-engineer]] — learner persona focused on abstraction, modeling, and validation growth
 - [[full-lifecycle-delivery-capability]] — end-to-end delivery concept
 - [[ai-enabled-software-delivery]] — AI-enabled engineering concept

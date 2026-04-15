@@ -3,8 +3,8 @@ title: 完整交付能力
 type: concept
 created: 2026-04-14
 updated: 2026-04-15
-sources: [2025年技术线总结.md, 构建技术研发思维.md]
-tags: [concept, delivery, engineering-management, ai-era]
+sources: [2025年技术线总结.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md]
+tags: [concept, delivery, engineering-management, ai-era, devops, full-stack]
 ---
 
 完整交付能力指团队或个人能够覆盖需求、设计、开发、测试、发布和运维的端到端软件产品交付过程。
@@ -19,6 +19,7 @@ tags: [concept, delivery, engineering-management, ai-era]
 - 1-2 人小团队模式只有在完整交付能力存在时才可持续。
 - 2026 年的交付周期、线上缺陷、测试覆盖率等指标，都要求团队把交付链路拉通。
 - AI辅助开发会提高局部效率，但不能替代交付流程理解。
+- 新的全栈入门来源进一步把本地环境、Git/PR、CI 检查、部署和运行反馈串成显式流程，说明“完整交付”必须被教学化、流程化。
 
 ## Foundational Thinking Skills
 
@@ -33,12 +34,19 @@ tags: [concept, delivery, engineering-management, ai-era]
 - 线上缺陷减少 30%
 - 团队成员具备独立交付项目的能力
 
+## Practical Delivery Chain in AI-Era Onboarding
+
+- 从环境准备、本地测试、`git push` / `PR`、CI 门禁、镜像构建、分环境部署，到日志/指标/告警和压测/自动化流程测试，都属于同一条交付链。
+- 这意味着“全栈”在当前知识库里更接近“能够让需求变成线上可验证结果”，而不只是“同时会写前端和后端代码”。
+- AI 可以加速其中若干环节，但不会消除跨环节理解、依赖梳理和质量门禁设计的责任。
+
 ## Documentation Implications
 
 - 需要统一需求评审、接口规范、发布流程和运维交接模板。
 - 需要用同一套语言描述从项目立项到上线复盘的全流程。
 - 适合沉淀交付 checklist、项目模板和角色职责说明，帮助小团队独立完成闭环。
 - 设计模板适合显式加入问题定义、抽象建模、系统边界和验证计划，以减少“有流程、没模型”的交付断层。
+- 入门材料应提供从本地环境到监控验证的 golden path，让新人先跑通最小闭环，再逐步理解各子系统细节。
 
 ## Common Misconceptions
 
@@ -50,11 +58,14 @@ tags: [concept, delivery, engineering-management, ai-era]
 ## Related Pages
 
 - [[2025-technical-line-summary]]
+- [[ai-full-stack-development-onboarding]]
 - [[engineering-thinking-framework]]
 - [[engineering-mindset]]
 - [[state-and-data-flow-modeling]]
 - [[validation-driven-design]]
 - [[technical-line-leader]]
 - [[ai-enabled-software-delivery]]
+- [[ai-era-full-stack-beginner]]
+- [[devops-delivery-pipeline]]
 - [[platform-foundation]]
 - [[observability-and-reliability]]

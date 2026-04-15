@@ -27,6 +27,7 @@ Each entry follows this format:
 *One entry per raw document ingested. Add entries here after each ingest.*
 
 - [[2025-technical-line-summary]] — Annual review of 2025 technical-line execution and 2026 AI/platform strategy | source | 2026-04-14
+- [[ai-full-stack-development-onboarding]] — AI-era onboarding deck covering environment setup, AI collaboration, MCP/Steering, DevOps flow, and a starter full-stack stack | source | 2026-04-15
 - [[bash-syntax-and-scripting-reference]] — Practical Bash reference covering syntax, scripting structure, I/O, and defensive shell patterns | source | 2026-04-15
 - [[centos6-archive-repository-workaround]] — Emergency recovery note for restoring CentOS 6 `yum` access by switching from dead mirrors to archive/vault repositories | source | 2026-04-15
 - [[centos7-kernel-upgrade-via-elrepo]] — Step-by-step CentOS 7 runbook for installing an ELRepo long-term kernel, selecting the GRUB boot entry, and validating the rebooted host | source | 2026-04-15
@@ -77,6 +78,7 @@ Each entry follows this format:
 
 *One entry per user persona or audience segment.*
 
+- [[ai-era-full-stack-beginner]] — Beginner persona learning AI-assisted environment setup, Git/CI/CD flow, and minimum end-to-end full-stack delivery | persona | 2026-04-15
 - [[technical-line-leader]] — Technical management persona responsible for delivery, platform reuse, stability, AI integration, and team engineering-growth enablement | persona | 2026-04-15
 - [[growing-engineer]] — Engineer persona moving from feature implementation toward abstraction, system modeling, and validation-led design | persona | 2026-04-15
 
@@ -87,7 +89,10 @@ Each entry follows this format:
 *One entry per core domain concept.*
 
 - [[full-lifecycle-delivery-capability]] — End-to-end software delivery capability grounded in problem framing, design, implementation, release, and operations | concept | 2026-04-15
-- [[ai-enabled-software-delivery]] — AI as an integrated delivery capability that still depends on human abstraction, modeling, and validation | concept | 2026-04-15
+- [[ai-enabled-software-delivery]] — AI as an integrated delivery capability that still depends on human abstraction, modeling, validation, and workflow guardrails | concept | 2026-04-15
+- [[model-context-protocol]] — Protocol layer that lets AI systems call external tools and data sources as part of execution workflows | concept | 2026-04-15
+- [[project-steering-context]] — Persistent project context that teaches AI the stack, rules, and domain constraints of a repository | concept | 2026-04-15
+- [[devops-delivery-pipeline]] — Delivery-loop concept connecting local development, CI/CD, deployment, and runtime feedback | concept | 2026-04-15
 - [[engineering-mindset]] — Foundational engineering-thinking concept for turning real-world problems into computable systems | concept | 2026-04-15
 - [[state-and-data-flow-modeling]] — System-modeling approach that describes behavior through state transitions, data movement, and boundaries | concept | 2026-04-15
 - [[validation-driven-design]] — Engineering method for reducing uncertainty before coding through simulation, diagrams, and edge-case analysis | concept | 2026-04-15
@@ -95,7 +100,7 @@ Each entry follows this format:
 - [[containerized-development-environment]] — Pattern for creating isolated, reproducible development environments using containers with keep-alive processes and scripted initialization | concept | 2026-04-15
 - [[file-descriptor-and-tcp-backlog-tuning]] — Layered Linux capacity-tuning concept separating `nofile`, kernel file-table limits, `systemd` unit limits, and TCP backlog parameters | concept | 2026-04-15
 - [[platform-foundation]] — Shared platform and governance base used to increase reuse and reduce siloed systems | concept | 2026-04-14
-- [[observability-and-reliability]] — Observability, incident handling, and reliability as non-negotiable engineering fundamentals | concept | 2026-04-14
+- [[observability-and-reliability]] — Observability, incident handling, and reliability as non-negotiable engineering fundamentals across both planning and delivery pipelines | concept | 2026-04-15
 - [[speech-native-llm]] — Architecture pattern that models and generates speech directly instead of centering text | concept | 2026-04-14
 - [[neural-audio-codec]] — Audio tokenizer infrastructure layer that discretizes speech for LLM use | concept | 2026-04-14
 - [[full-duplex-speech-interaction]] — Real-time interaction model that supports simultaneous listening, speaking, and interruption | concept | 2026-04-14
