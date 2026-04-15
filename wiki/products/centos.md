@@ -3,11 +3,11 @@ title: CentOS
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [CentOS6由于镜像废弃无法使用的解决办法.md]
-tags: [product, centos, linux, rpm, yum, repository, legacy-system]
+sources: [CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md]
+tags: [product, centos, linux, rpm, yum, repository, legacy-system, docker, kernel, networking]
 ---
 
-CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知识库里，它首先以“版本生命周期影响仓库可用性”的运维对象出现。
+CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知识库里，它既以“版本生命周期影响仓库可用性”的运维对象出现，也以“老旧内核会影响 Docker 运行时网络行为”的宿主机环境出现。
 
 ## Product Snapshot
 
@@ -32,6 +32,12 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 - 这份来源最重要的信号不是某条命令，而是版本生命周期会直接影响系统可维护性。
 - 当老版本退到归档仓库后，运维动作从“使用默认源”变成“手动恢复可访问的软件包入口”。
 
+### Kernel Baseline Affects Modern Runtime Behavior
+
+- 新来源补上了 CentOS 另一类很常见、但和 repo 修复不同的现实问题：包能装上，不代表宿主机内核足以支撑现代运行时功能。
+- 在 CentOS 7 场景中，Docker 20.10.8 即使能离线安装并正常显示版本，也可能因为老旧内核缺失 network namespace 相关支持而表现出异常的容器网络行为。
+- 这让 `uname -a`、`ip a`、`ip netns list-id` 这类检查，和 repo 文件一样成为版本相关文档的一部分。
+
 ### Configuration Is Plain Text and Script-Friendly
 
 - 关闭 `fastestmirror`、重写 `CentOS-Base.repo` 都通过 shell 完成，说明 CentOS 的很多维护工作天然适合命令行和脚本化处理。
@@ -51,6 +57,7 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 ## Documentation Notes
 
 - 应写明 CentOS 主版本，因为 repo 路径、签名 key 和第三方仓库兼容性都可能随版本变化。
+- 当文档涉及 Docker、内核升级或容器网络时，应补上宿主机内核版本和最小验证步骤，不要只写软件包安装过程。
 - 应区分“恢复旧版本继续运行”和“建议升级到受支持版本”这两类完全不同的文档目的。
 - 应给出修改前备份、修改后验证和失败时回滚的方法。
 - 如果示例引用 vault/archive 镜像，应标明该镜像来源、适用版本和时效性风险。
@@ -58,12 +65,16 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 ## Known Gaps from This Source
 
 - 没有覆盖 `yum clean all`、缓存重建、包查询验证或日志排查。
-- 没有讨论 EPEL、第三方仓库、SSL/TLS 兼容性或网络受限环境。
+- 没有讨论 EPEL、第三方仓库、SSL/TLS 兼容性、SELinux 或更系统的网络限制环境。
+- Docker 相关内容目前只补上了一个“旧内核导致容器网络异常”的案例，还没有完整的容器运行时安装、升级和维护体系。
 - 没有涉及 CentOS 7/8、Stream、RHEL 或 Rocky/AlmaLinux 等相邻发行版差异。
 
 ## Related Pages
 
+- [[centos7-offline-docker-install-troubleshooting]]
 - [[centos6-archive-repository-workaround]]
+- [[docker]]
+- [[container-network-namespace-support]]
 - [[legacy-repository-repointing]]
 - [[linux]]
 - [[linux-command-line-operations]]

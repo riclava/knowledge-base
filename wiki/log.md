@@ -141,3 +141,24 @@ Key additions:
 - Added a focused source summary for recovering CentOS 6 `yum` access after standard mirrors were retired and archive/vault repos became necessary.
 - Established `CentOS` as a product page and `legacy repository repointing` as a reusable concept for restoring package access on legacy distributions.
 - Added canonical terminology for CentOS、`YUM`、repo 文件、`mirrorlist/baseurl`、vault 仓库 和 `fastestmirror`, and explicitly flagged the source's CentOS 6 / CentOS 7 GPG key mismatch as a verification risk.
+
+## [2026-04-15] ingest | CentOS7离线安装docker问题排查
+
+Pages created:
+- `wiki/sources/centos7-offline-docker-install-troubleshooting.md`
+- `wiki/products/docker.md`
+- `wiki/concepts/container-network-namespace-support.md`
+
+Pages updated:
+- `wiki/products/centos.md`
+- `wiki/products/linux.md`
+- `wiki/concepts/linux-command-line-operations.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a CentOS 7 Docker troubleshooting source summary centered on failed port publishing after offline installation and the discovery that host-kernel age, not reinstall steps, was the decisive variable.
+- Established `Docker` as a product page and `container network namespace support` as a reusable concept for diagnosing bridge/veth and namespace-ID-related container networking failures.
+- Added canonical terminology for Docker、离线安装、`network namespace`、`docker0 / veth`、`link-netnsid` 和 `iptables`, and expanded the Linux/CentOS synthesis from package-source maintenance into container host compatibility troubleshooting.

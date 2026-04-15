@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, docker, containers, kernel, networking]
 ---
 
 # Glossary
@@ -81,6 +81,16 @@ Each entry follows this format:
 - Preferred: `CentOS`
 - See also: [[centos]], [[linux]]
 
+**Docker** *(canonical form)*
+: 一种常见的容器运行时与镜像工具链；在当前来源中，它出现在 CentOS 7 离线安装后仍发生 bridge 网络异常的排障场景。
+- Preferred: `Docker`
+- See also: [[docker]], [[centos]], [[container-network-namespace-support]]
+
+**离线安装（offline installation）** *(canonical form)*
+: 指目标机器无法直接联网安装时，先在其他可联网环境下载 RPM 包或依赖，再转移到目标机器完成安装的做法。
+- Preferred: `离线安装` or `offline installation` / Avoid: `手工安装` when the key constraint is lack of network access
+- See also: [[docker]], [[centos7-offline-docker-install-troubleshooting]]
+
 **YUM** *(canonical form)*
 : CentOS/RHEL 家族常见的软件包管理与仓库访问工具，负责读取 repo 配置、获取元数据并安装 RPM 包。
 - Preferred: `YUM` or `yum`
@@ -105,6 +115,26 @@ Each entry follows this format:
 : `YUM` 的镜像选择插件，用于从可用镜像中挑选更快的源；当发行版镜像已退役时，可能需要临时关闭。
 - Preferred: `fastestmirror`
 - See also: [[centos6-archive-repository-workaround]], [[legacy-repository-repointing]]
+
+**network namespace** *(canonical form)*
+: Linux 内核用来隔离网络接口、路由、地址和相关网络视图的机制；在当前来源中，它是理解 Docker bridge 网络和 `veth` 关联关系的关键术语。
+- Preferred: `network namespace` or `网络命名空间`
+- See also: [[container-network-namespace-support]], [[docker]], [[linux]]
+
+**docker0 / veth** *(canonical form)*
+: `docker0` 是 Docker 默认 bridge 接口，`veth` 是连接宿主机 bridge 与容器网络命名空间的虚拟网卡对；它们的 `ip a` 输出是排查容器网络问题的重要观察面。
+- Preferred: `docker0` / `veth`
+- See also: [[docker]], [[container-network-namespace-support]]
+
+**link-netnsid** *(canonical form)*
+: `ip a` 输出中的一个标记，用于显示某个网络接口与 network namespace ID 的关联；在当前来源中，它的缺失与 `RTM_GETNSID is not supported by the kernel` 一同指向宿主机兼容性问题。
+- Preferred: `link-netnsid`
+- See also: [[container-network-namespace-support]], [[centos7-offline-docker-install-troubleshooting]]
+
+**iptables** *(canonical form)*
+: Linux 上常见的包过滤与 NAT 规则管理工具；在当前来源中，它被作为排除法步骤清空，但并不是最终根因。
+- Preferred: `iptables`
+- See also: [[linux-command-line-operations]], [[docker]]
 
 **speech-native LLM** *(canonical form)*
 : 指直接对语音 token 进行建模、推理与生成的大模型，内部可保留文本流，但不再依赖 `ASR -> LLM -> TTS` 串行级联作为主路径。

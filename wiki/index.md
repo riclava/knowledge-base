@@ -29,6 +29,7 @@ Each entry follows this format:
 - [[2025-technical-line-summary]] — Annual review of 2025 technical-line execution and 2026 AI/platform strategy | source | 2026-04-14
 - [[bash-syntax-and-scripting-reference]] — Practical Bash reference covering syntax, scripting structure, I/O, and defensive shell patterns | source | 2026-04-15
 - [[centos6-archive-repository-workaround]] — Emergency recovery note for restoring CentOS 6 `yum` access by switching from dead mirrors to archive/vault repositories | source | 2026-04-15
+- [[centos7-offline-docker-install-troubleshooting]] — CentOS 7 troubleshooting case showing that an old kernel broke Docker bridge networking despite successful offline installation | source | 2026-04-15
 - [[linux-common-commands-reference]] — Linux command cheat sheet covering file, text, process, network, permissions, cron, and logs | source | 2026-04-15
 - [[moshi-neural-audio-codec-architecture-analysis]] — Architecture analysis of Moshi, Mimi, and Neural Audio Codec as speech LLM infrastructure | source | 2026-04-14
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
@@ -49,6 +50,7 @@ Each entry follows this format:
 
 - [[bash]] — Common Linux shell and scripting runtime for command execution, automation, and task orchestration | product | 2026-04-15
 - [[centos]] — RPM/YUM-based enterprise Linux distribution family with strong version-specific repository and lifecycle behavior | product | 2026-04-15
+- [[docker]] — Container runtime/tooling page focused on host-kernel-dependent networking behavior and validation | product | 2026-04-15
 - [[linux]] — Linux operating system and command-line operating surface for files, processes, networking, logging, automation, and package-source maintenance | product | 2026-04-15
 - [[moshi]] — Speech-native LLM focused on full-duplex, low-latency voice interaction | product | 2026-04-14
 - [[mimi]] — Neural Audio Codec and tokenizer used to turn speech into low-rate discrete tokens | product | 2026-04-14
@@ -70,6 +72,7 @@ Each entry follows this format:
 
 - [[full-lifecycle-delivery-capability]] — End-to-end software product delivery capability required for lean AI-era teams | concept | 2026-04-14
 - [[ai-enabled-software-delivery]] — AI as an integrated delivery capability spanning engineering workflow, platform, and product features | concept | 2026-04-14
+- [[container-network-namespace-support]] — Host-kernel support required for Docker bridge networking, veth linkage, and namespace inspection | concept | 2026-04-15
 - [[platform-foundation]] — Shared platform and governance base used to increase reuse and reduce siloed systems | concept | 2026-04-14
 - [[observability-and-reliability]] — Observability, incident handling, and reliability as non-negotiable engineering fundamentals | concept | 2026-04-14
 - [[speech-native-llm]] — Architecture pattern that models and generates speech directly instead of centering text | concept | 2026-04-14

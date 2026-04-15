@@ -3,11 +3,11 @@ title: Linux
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [commands.md, CentOS6由于镜像废弃无法使用的解决办法.md]
-tags: [product, linux, operating-system, command-line, operations, developer-tooling, centos, yum, repository]
+sources: [commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md]
+tags: [product, linux, operating-system, command-line, operations, developer-tooling, centos, yum, repository, docker, containers, kernel, networking]
 ---
 
-Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平台，适合文件管理、系统巡检、服务排障、包源维护和脚本自动化。
+Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平台，适合文件管理、系统巡检、服务排障、包源维护、容器宿主机诊断和脚本自动化。
 
 ## Product Snapshot
 
@@ -42,6 +42,12 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 - `ss`、`ip route`、`ip addr`、`dig`、`ping`、`nc`、`mtr` 用于观察网络层状态。
 - `firewall-cmd` 则把 Linux 运维从“观察”延伸到“改变访问边界”。
 
+### Kernel and Namespace Support Shape Container Behavior
+
+- 新来源补充了 Linux 运维里另一种典型现实：服务能启动、命令能执行，不代表宿主机已经具备容器网络所需的全部内核能力。
+- 通过 `uname -a`、`ip a`、`ip netns list-id`、`iptables`、`systemctl restart docker` 和 `curl localhost` 的组合，可以把问题从“Docker 好像不通”收敛到“Linux 宿主机网络命名空间支持异常”。
+- 这说明 Linux 文档不仅要写常规网络命令，还要说明用户态工具与宿主机内核版本之间的耦合。
+
 ### Distribution Lifecycle and Package Sources
 
 - 新来源补充了 Linux 运维中容易被忽略的一面：系统能否安装或查询软件包，不只取决于包管理器命令，还取决于发行版镜像和仓库是否仍然可达。
@@ -62,6 +68,7 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 
 - Linux 命令行把系统状态暴露为可检查、可组合、可脚本化的接口，适合排障和自动化。
 - 对技术写作来说，Linux 文档往往直接决定读者会对哪台机器、哪个目录、哪个端口做什么操作，因此精确性比抽象描述更重要。
+- 在容器场景里，Linux 还是 Docker 等运行时的真实宿主环境，因此“宿主机内核是否满足前提”经常和“命令怎么写”同样重要。
 - 它也是 [[vim]]、[[bash]] 和更广泛终端工作流的共同运行底座。
 
 ## Documentation Notes
@@ -69,18 +76,22 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 - 应明确区分通用 Linux 能力与子系统特定接口，例如 `journalctl` 对应 `systemd`，`firewall-cmd` 对应 `firewalld`。
 - 应优先说明现代命令与旧命令的关系，例如 `ss` 相对 `netstat`、`ip` 相对 `ifconfig/route`。
 - 当文档涉及 `yum`、repo 文件或 archive/vault 镜像时，应明确发行版与版本边界，不要把特定发行版配置泛写成通用 Linux 事实。
+- 当文档涉及 Docker 或容器桥接网络时，应同时写出最小验证命令与宿主机内核检查项。
 - 对任何修改系统状态的示例，都应标出权限要求、影响范围和验证方法。
 
 ## Known Gaps from This Source
 
-- 仍没有形成通用的包管理器文档体系，只补上了一个 CentOS 遗留仓库恢复案例；`systemctl`、SSH、挂载管理、ACL、SELinux/AppArmor 和容器运维仍未覆盖。
+- 仍没有形成通用的包管理器文档体系；虽然已补上 CentOS 遗留仓库恢复和一个 Docker 网络兼容性案例，但 `systemctl`、SSH、挂载管理、ACL、SELinux/AppArmor 和系统化容器运维仍未覆盖。
 - 没有系统讨论不同发行版之间的包管理、服务管理差异和云环境常见限制。
 - 没有涉及更高层的基础设施编排，如 Ansible、Terraform 或 CI/CD。
 
 ## Related Pages
 
+- [[centos7-offline-docker-install-troubleshooting]]
 - [[centos]]
 - [[centos6-archive-repository-workaround]]
+- [[docker]]
+- [[container-network-namespace-support]]
 - [[legacy-repository-repointing]]
 - [[linux-common-commands-reference]]
 - [[linux-command-line-operations]]
