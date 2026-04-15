@@ -42,6 +42,7 @@ Each entry follows this format:
 - [[netplan-configuration-guide]] — Comprehensive Ubuntu Netplan reference covering YAML syntax, DHCP/static IP, VLAN, bonding, bridging, and safe testing workflow | source | 2026-04-15
 - [[ubuntu-common-issues-and-optimization]] — Ubuntu troubleshooting and optimization reference covering system tuning, APT management, DNS port conflicts, and VMware multipath errors | source | 2026-04-15
 - [[ubuntu-kernel-version-switching]] — Ubuntu runbook for installing a specific kernel version via APT, switching the GRUB default boot entry, and validating the rebooted host | source | 2026-04-15
+- [[engineering-thinking-framework]] — Engineering-thinking presentation framing software R&D as abstraction, modeling, system decomposition, and validation rather than mere coding | source | 2026-04-15
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
 
 ---
@@ -76,7 +77,8 @@ Each entry follows this format:
 
 *One entry per user persona or audience segment.*
 
-- [[technical-line-leader]] — Technical management persona responsible for delivery, platform reuse, stability, and AI integration | persona | 2026-04-14
+- [[technical-line-leader]] — Technical management persona responsible for delivery, platform reuse, stability, AI integration, and team engineering-growth enablement | persona | 2026-04-15
+- [[growing-engineer]] — Engineer persona moving from feature implementation toward abstraction, system modeling, and validation-led design | persona | 2026-04-15
 
 ---
 
@@ -84,8 +86,11 @@ Each entry follows this format:
 
 *One entry per core domain concept.*
 
-- [[full-lifecycle-delivery-capability]] — End-to-end software product delivery capability required for lean AI-era teams | concept | 2026-04-14
-- [[ai-enabled-software-delivery]] — AI as an integrated delivery capability spanning engineering workflow, platform, and product features | concept | 2026-04-14
+- [[full-lifecycle-delivery-capability]] — End-to-end software delivery capability grounded in problem framing, design, implementation, release, and operations | concept | 2026-04-15
+- [[ai-enabled-software-delivery]] — AI as an integrated delivery capability that still depends on human abstraction, modeling, and validation | concept | 2026-04-15
+- [[engineering-mindset]] — Foundational engineering-thinking concept for turning real-world problems into computable systems | concept | 2026-04-15
+- [[state-and-data-flow-modeling]] — System-modeling approach that describes behavior through state transitions, data movement, and boundaries | concept | 2026-04-15
+- [[validation-driven-design]] — Engineering method for reducing uncertainty before coding through simulation, diagrams, and edge-case analysis | concept | 2026-04-15
 - [[container-network-namespace-support]] — Host-kernel support and remediation signals required for Docker bridge networking, veth linkage, and namespace inspection | concept | 2026-04-15
 - [[containerized-development-environment]] — Pattern for creating isolated, reproducible development environments using containers with keep-alive processes and scripted initialization | concept | 2026-04-15
 - [[file-descriptor-and-tcp-backlog-tuning]] — Layered Linux capacity-tuning concept separating `nofile`, kernel file-table limits, `systemd` unit limits, and TCP backlog parameters | concept | 2026-04-15

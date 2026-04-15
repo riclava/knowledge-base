@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, command-line, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath]
 ---
 
 # Glossary
@@ -546,6 +546,46 @@ Each entry follows this format:
 - Preferred: `EPEL`
 - See also: [[centos]], [[centos7-os-initialization-workflow]], [[legacy-repository-repointing]]
 
+**研发思维（engineering mindset）** *(canonical form)*
+: 指把现实问题转化为可计算系统的能力，强调抽象、建模、拆解、分层、权衡和验证，而不把“写代码”当成起点。
+- Preferred: `研发思维` or `engineering mindset` / Avoid: 把它简化成“编码经验”
+- See also: [[engineering-mindset]], [[engineering-thinking-framework]]
+
+**抽象（abstraction）** *(canonical form)*
+: 指去掉偶然细节、保留稳定结构的思维动作，是从现实问题进入系统设计的第一步。
+- Preferred: `抽象` or `abstraction` / Avoid: 把“概括描述”直接等同于抽象
+- See also: [[engineering-mindset]], [[engineering-thinking-framework]]
+
+**建模（modeling）** *(canonical form)*
+: 指把对象、关系、状态、事件和数据流显式表达出来，使问题能够被分析、设计和验证。
+- Preferred: `建模` or `modeling`
+- See also: [[engineering-mindset]], [[state-and-data-flow-modeling]]
+
+**分治思维（decomposition）** *(canonical form)*
+: 指把复杂问题拆成若干可独立理解和处理的子问题，再组合成整体方案。
+- Preferred: `分治思维` or `decomposition`
+- See also: [[engineering-mindset]], [[engineering-thinking-framework]]
+
+**状态机思维（state-machine thinking）** *(canonical form)*
+: 指从状态、事件和转移来理解系统行为的建模方式，适合描述会话、连接、消息状态等变化过程。
+- Preferred: `状态机思维`
+- See also: [[state-and-data-flow-modeling]], [[engineering-thinking-framework]]
+
+**数据流思维（data-flow thinking）** *(canonical form)*
+: 指把系统理解为数据在不同组件、边界和存储节点之间流动的过程，用于梳理处理链路和职责划分。
+- Preferred: `数据流思维`
+- See also: [[state-and-data-flow-modeling]], [[engineering-thinking-framework]]
+
+**权衡（trade-off）** *(canonical form)*
+: 指工程决策中在速度、复杂度、可靠性、成本和扩展性等约束之间做选择，而不是追求抽象意义上的“最优解”。
+- Preferred: `权衡` or `trade-off` / Avoid: `最优方案` when constraints are material
+- See also: [[engineering-mindset]]
+
+**验证思维（validation thinking）** *(canonical form)*
+: 指通过手推、画图、测试和极端情况分析来降低设计不确定性的工程方法。
+- Preferred: `验证思维`
+- See also: [[validation-driven-design]], [[engineering-thinking-framework]]
+
 ---
 
 ## Style Conventions
@@ -557,6 +597,7 @@ Each entry follows this format:
 | Canonical AI terms | Use `AI辅助开发` for engineering-process collaboration and `AI融合` for product/function embedding. | “通过 AI辅助开发提效，并在项目中推进 AI融合。” |
 | Platform terminology | Use `底座` or `平台底座` for shared strategic infrastructure, not generic “公共能力”. | “新系统优先复用平台底座能力。” |
 | Delivery scope | Use `完整交付能力` when describing end-to-end ownership across the full lifecycle. | “小团队模式依赖完整交付能力。” |
+| Engineering thinking terminology | Use `抽象` for stripping details to stable structure, `建模` for expressing states/data flow, and `验证` for uncertainty reduction. | “先抽象对象，再建模状态与数据流，最后列验证方案。” |
 | Editor terminology | Use `Vim` for the editor, `vimrc` for its config file, and `模态编辑` for the editing model. | “先解释模态编辑，再介绍 `~/.vimrc` 常用配置。” |
 | Shell terminology | Use `Bash` when the content depends on Bash-specific syntax; use `shell scripting` for the broader automation practice. | “这段脚本使用了 Bash 关联数组，属于 Bash 专用写法。” |
 | Capacity tuning terminology | Name the exact layer such as `nofile`, `fs.file-max`, or `LimitNOFILE` instead of saying only “把句柄数调大了”. | “先调 `fs.file-max`，再确认服务 unit 的 `LimitNOFILE` 是否同步。” |
@@ -597,12 +638,17 @@ Terms that differ between audiences, teams, or locales:
 - [[overview]] — big-picture synthesis
 - [[index]] — master catalog
 - [[2025-technical-line-summary]] — first ingested source summary
+- [[engineering-thinking-framework]] — engineering-thinking source summary
 - [[linux]] — Linux platform/tool page
 - [[linux-command-line-operations]] — reusable Linux operations concept
 - [[linux-common-commands-reference]] — Linux commands source summary
 - [[technical-line-leader]] — primary management persona inferred from the source
+- [[growing-engineer]] — learner persona focused on abstraction, modeling, and validation growth
 - [[full-lifecycle-delivery-capability]] — end-to-end delivery concept
 - [[ai-enabled-software-delivery]] — AI-enabled engineering concept
+- [[engineering-mindset]] — foundational engineering-thinking concept
+- [[state-and-data-flow-modeling]] — system modeling concept centered on state and flow
+- [[validation-driven-design]] — design-time validation and uncertainty reduction concept
 - [[platform-foundation]] — shared platform and governance concept
 - [[observability-and-reliability]] — observability and reliability concept
 - [[moshi-neural-audio-codec-architecture-analysis]] — source summary for Moshi and codec architecture

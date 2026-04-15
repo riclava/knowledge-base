@@ -4,8 +4,8 @@ title: Overview
 type: overview
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, Ubuntu切换指定版本内核.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, Ubuntu切换指定版本内核.md, 构建技术研发思维.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, command-line, operations, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management]
 
 ---
 
@@ -18,11 +18,11 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-to
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, Ubuntu 22.04 OpenSSH source upgrade workflows, Ubuntu system optimization and troubleshooting including DNS port conflicts and VMware compatibility, and Ubuntu kernel version switching via APT and GRUB configuration.
+This wiki currently covers AI-era engineering management, engineering-thinking frameworks for abstraction/modeling/validation, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, Ubuntu 22.04 OpenSSH source upgrade workflows, Ubuntu system optimization and troubleshooting including DNS port conflicts and VMware compatibility, and Ubuntu kernel version switching via APT and GRUB configuration.
 
-**Source count:** 17
-**Wiki pages:** 53
-**Last ingest:** 2026-04-15 — [[ubuntu-kernel-version-switching]]
+**Source count:** 18
+**Wiki pages:** 58
+**Last ingest:** 2026-04-15 — [[engineering-thinking-framework]]
 **Last lint:** —
 
 
@@ -31,6 +31,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 ## What This Wiki Covers
 
 - 技术线年度复盘与规划材料
+- 面向工程师成长的研发思维训练框架，覆盖抽象、建模、分层、验证和系统设计题拆解
 - AI 时代的软件交付方式变化
 - 平台底座、稳定性和治理能力建设
 - 技术管理者关注的组织、流程和指标体系
@@ -78,6 +79,9 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 在网络配置场景里，声明式工具（如 Netplan）把"描述期望状态"和"让系统收敛到该状态"分开，使配置可版本化、可测试、可回滚。
 - 在 Ubuntu 系统服务场景里，`systemd-resolved` 的 DNS stub listener 是常见的端口冲突来源；理解其架构有助于在部署本地 DNS 服务时快速定位问题。
 - 在虚拟化场景里，VMware 虚拟磁盘不需要 multipath 支持，将其加入黑名单可以消除无意义的错误日志。
+- 研发的核心不是直接写代码，而是先完成问题抽象、模型建立、系统边界划分，再进入实现。
+- “降低不确定性”是工程师的重要职责，因此验证、极端 case 和权衡属于设计阶段，而不是实现后的附属动作。
+- AI 协同不会削弱这些基本功，反而要求团队更明确地表达问题、状态、数据流和验收边界。
 
 ---
 
@@ -97,6 +101,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 当前 OpenSSL/OpenSSH 源码升级经验会不会继续沉淀为“何时必须源码替换、何时应坚持发行版包更新”的判断准则？
 - 当前 Samba 相关经验是否只限于单目录映射场景，还是还会补充防火墙、SELinux、ACL 或域集成实践？
 - 当前 CentOS 7 初始化流程是否会继续沉淀为可复用的检查清单模板或自动化脚本？
+- 是否会补充更多以数据库、缓存、队列或微服务为例的系统设计训练材料，形成更系统的研发思维案例库？
 
 
 ---
@@ -114,6 +119,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 容器化开发环境场景还没有覆盖数据卷挂载、端口映射、Dockerfile 构建、Docker Compose 编排或 IDE 远程开发集成（如 VS Code Remote Containers）。
 - Ubuntu 网络配置目前只覆盖 Netplan，还没有涉及 `ufw` 防火墙、AppArmor、云环境网络（如 AWS VPC）或 IPv6-only 部署场景。
 - Ubuntu 系统优化目前只覆盖基础调优和常见问题，还没有涉及性能基准测试、内核参数深度调优或生产环境加固最佳实践。
+- 缺少把研发思维落到更多真实业务案例上的练习库、评审模板和分层设计示例。
 
 
 ---
@@ -123,10 +129,15 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - [[index]] — full catalog of all wiki pages
 - [[glossary]] — terminology and style conventions
 - [[2025-technical-line-summary]] — current primary source summary
+- [[engineering-thinking-framework]] — engineering-thinking source summary
 - [[moshi-neural-audio-codec-architecture-analysis]] — speech-native LLM source summary
+- [[growing-engineer]] — learner persona focused on system-thinking growth
 - [[technical-line-leader]] — current primary persona
 - [[full-lifecycle-delivery-capability]] — key delivery concept
 - [[ai-enabled-software-delivery]] — AI transition concept
+- [[engineering-mindset]] — foundational engineering-thinking concept
+- [[state-and-data-flow-modeling]] — state/data-flow system-modeling concept
+- [[validation-driven-design]] — design-time validation concept
 - [[platform-foundation]] — platform reuse and governance concept
 - [[observability-and-reliability]] — stability and operations concept
 - [[moshi]] — speech-native LLM product page

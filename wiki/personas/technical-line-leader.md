@@ -2,8 +2,8 @@
 title: 技术线负责人
 type: persona
 created: 2026-04-14
-updated: 2026-04-14
-sources: [2025年技术线总结.md]
+updated: 2026-04-15
+sources: [2025年技术线总结.md, 构建技术研发思维.md]
 tags: [persona, engineering-management, leadership, delivery]
 ---
 
@@ -22,6 +22,7 @@ tags: [persona, engineering-management, leadership, delivery]
 - 让小团队具备完整交付能力，而不是依赖大量专门分工。
 - 在存量业务中系统化推进 AI融合，而不是停留在零散试点。
 - 将稳定性建设从被动救火转为可预测、可治理的工程能力。
+- 让团队逐步形成抽象、建模、验证和权衡能力，而不是只追求实现速度。
 
 ## Pain Points
 
@@ -42,10 +43,13 @@ tags: [persona, engineering-management, leadership, delivery]
 - 平台能力地图，说明哪些能力属于底座、哪些能力属于项目定制。
 - 稳定性治理文档，如事故复盘、容灾方案、可观测性标准。
 - AI融合实施指南，覆盖选题、评估、上线和活跃度衡量。
+- 工程思维训练材料，帮助团队把问题抽象、系统建模和验证方法沉淀成共同语言。
 
 ## Related Pages
 
 - [[2025-technical-line-summary]]
+- [[engineering-mindset]]
+- [[growing-engineer]]
 - [[full-lifecycle-delivery-capability]]
 - [[ai-enabled-software-delivery]]
 - [[platform-foundation]]

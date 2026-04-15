@@ -372,3 +372,28 @@ Key additions:
 - Expanded the Ubuntu product page to include kernel management as a first-class capability alongside network configuration and system optimization.
 - Added canonical terminology for `update-grub` and Ubuntu kernel package naming conventions (`linux-image-*`, `linux-headers-*`, `linux-modules-*`).
 - Noted the key difference in GRUB default entry syntax: CentOS uses numeric indices or `grub2-set-default`, while Ubuntu requires the full submenu path string like `"Advanced options for Ubuntu>Ubuntu, with Linux X.Y.Z"`.
+
+## [2026-04-15] ingest | 构建技术研发思维
+
+Pages created:
+- `wiki/sources/engineering-thinking-framework.md`
+- `wiki/concepts/engineering-mindset.md`
+- `wiki/concepts/state-and-data-flow-modeling.md`
+- `wiki/concepts/validation-driven-design.md`
+- `wiki/personas/growing-engineer.md`
+
+Pages updated:
+- `wiki/concepts/full-lifecycle-delivery-capability.md`
+- `wiki/concepts/ai-enabled-software-delivery.md`
+- `wiki/personas/technical-line-leader.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for an engineering-thinking presentation that frames software R&D as turning real-world problems into computable systems through abstraction, modeling, decomposition, and validation.
+- Established `研发思维` as a foundational concept, plus reusable pages for `状态与数据流建模` and `验证驱动设计`.
+- Added a `成长型工程师` persona to capture the audience moving from feature implementation toward system-level reasoning and explicit engineering judgment.
+- Expanded the delivery and AI synthesis pages to clarify that AI collaboration does not replace human abstraction, model selection, trade-off analysis, or validation responsibility.
+- Added canonical terminology for `研发思维`、`抽象`、`建模`、`分治思维`、`状态机思维`、`数据流思维`、`权衡` 和 `验证思维`.

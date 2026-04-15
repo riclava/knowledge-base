@@ -2,8 +2,8 @@
 title: 完整交付能力
 type: concept
 created: 2026-04-14
-updated: 2026-04-14
-sources: [2025年技术线总结.md]
+updated: 2026-04-15
+sources: [2025年技术线总结.md, 构建技术研发思维.md]
 tags: [concept, delivery, engineering-management, ai-era]
 ---
 
@@ -20,6 +20,12 @@ tags: [concept, delivery, engineering-management, ai-era]
 - 2026 年的交付周期、线上缺陷、测试覆盖率等指标，都要求团队把交付链路拉通。
 - AI辅助开发会提高局部效率，但不能替代交付流程理解。
 
+## Foundational Thinking Skills
+
+- 完整交付能力并不只等于“覆盖更多流程环节”，还要求工程师能够把真实问题抽象成模型和系统。
+- 从需求进入设计时，需要先明确对象、状态、数据流和边界，否则后续开发、测试和运维都会建立在模糊前提上。
+- 验证思维也是完整交付能力的一部分，因为交付责任天然包含对风险、极端 case 和恢复路径的判断。
+
 ## Signals and Metrics
 
 - 自动化测试覆盖率目标 >= 60%
@@ -32,6 +38,7 @@ tags: [concept, delivery, engineering-management, ai-era]
 - 需要统一需求评审、接口规范、发布流程和运维交接模板。
 - 需要用同一套语言描述从项目立项到上线复盘的全流程。
 - 适合沉淀交付 checklist、项目模板和角色职责说明，帮助小团队独立完成闭环。
+- 设计模板适合显式加入问题定义、抽象建模、系统边界和验证计划，以减少“有流程、没模型”的交付断层。
 
 ## Common Misconceptions
 
@@ -43,6 +50,10 @@ tags: [concept, delivery, engineering-management, ai-era]
 ## Related Pages
 
 - [[2025-technical-line-summary]]
+- [[engineering-thinking-framework]]
+- [[engineering-mindset]]
+- [[state-and-data-flow-modeling]]
+- [[validation-driven-design]]
 - [[technical-line-leader]]
 - [[ai-enabled-software-delivery]]
 - [[platform-foundation]]
