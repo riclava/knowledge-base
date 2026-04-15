@@ -29,6 +29,7 @@ Each entry follows this format:
 - [[2025-technical-line-summary]] — Annual review of 2025 technical-line execution and 2026 AI/platform strategy | source | 2026-04-14
 - [[bash-syntax-and-scripting-reference]] — Practical Bash reference covering syntax, scripting structure, I/O, and defensive shell patterns | source | 2026-04-15
 - [[centos6-archive-repository-workaround]] — Emergency recovery note for restoring CentOS 6 `yum` access by switching from dead mirrors to archive/vault repositories | source | 2026-04-15
+- [[centos7-kernel-upgrade-via-elrepo]] — Step-by-step CentOS 7 runbook for installing an ELRepo long-term kernel, selecting the GRUB boot entry, and validating the rebooted host | source | 2026-04-15
 - [[centos7-offline-docker-install-troubleshooting]] — CentOS 7 troubleshooting case showing that an old kernel broke Docker bridge networking despite successful offline installation | source | 2026-04-15
 - [[centos7-samba-share-setup]] — Quick CentOS 7 note for exporting a Linux directory through Samba and mapping it as a Windows network drive, with security-hardening caveats | source | 2026-04-15
 - [[linux-common-commands-reference]] — Linux command cheat sheet covering file, text, process, network, permissions, cron, and logs | source | 2026-04-15
@@ -50,9 +51,9 @@ Each entry follows this format:
 *One entry per product or tool.*
 
 - [[bash]] — Common Linux shell and scripting runtime for command execution, automation, and task orchestration | product | 2026-04-15
-- [[centos]] — RPM/YUM-based enterprise Linux distribution family with strong version-specific repository and lifecycle behavior | product | 2026-04-15
-- [[docker]] — Container runtime/tooling page focused on host-kernel-dependent networking behavior and validation | product | 2026-04-15
-- [[linux]] — Linux operating system and command-line operating surface for files, processes, networking, logging, automation, and package-source maintenance | product | 2026-04-15
+- [[centos]] — RPM/YUM-based enterprise Linux distribution family with repository lifecycle, alternate kernel upgrade paths, and version-specific host-compatibility behavior | product | 2026-04-15
+- [[docker]] — Container runtime/tooling page focused on host-kernel-dependent networking behavior, validation, and kernel-remediation paths | product | 2026-04-15
+- [[linux]] — Linux operating system and command-line operating surface for files, processes, networking, logging, package-source maintenance, and kernel/boot management | product | 2026-04-15
 - [[samba]] — SMB/CIFS file-sharing server used to expose Linux directories to Windows clients with share-level auth and path masks | product | 2026-04-15
 - [[moshi]] — Speech-native LLM focused on full-duplex, low-latency voice interaction | product | 2026-04-14
 - [[mimi]] — Neural Audio Codec and tokenizer used to turn speech into low-rate discrete tokens | product | 2026-04-14
@@ -74,16 +75,17 @@ Each entry follows this format:
 
 - [[full-lifecycle-delivery-capability]] — End-to-end software product delivery capability required for lean AI-era teams | concept | 2026-04-14
 - [[ai-enabled-software-delivery]] — AI as an integrated delivery capability spanning engineering workflow, platform, and product features | concept | 2026-04-14
-- [[container-network-namespace-support]] — Host-kernel support required for Docker bridge networking, veth linkage, and namespace inspection | concept | 2026-04-15
+- [[container-network-namespace-support]] — Host-kernel support and remediation signals required for Docker bridge networking, veth linkage, and namespace inspection | concept | 2026-04-15
 - [[platform-foundation]] — Shared platform and governance base used to increase reuse and reduce siloed systems | concept | 2026-04-14
 - [[observability-and-reliability]] — Observability, incident handling, and reliability as non-negotiable engineering fundamentals | concept | 2026-04-14
 - [[speech-native-llm]] — Architecture pattern that models and generates speech directly instead of centering text | concept | 2026-04-14
 - [[neural-audio-codec]] — Audio tokenizer infrastructure layer that discretizes speech for LLM use | concept | 2026-04-14
 - [[full-duplex-speech-interaction]] — Real-time interaction model that supports simultaneous listening, speaking, and interruption | concept | 2026-04-14
+- [[kernel-upgrade-and-boot-management]] — Practice of upgrading Linux kernel packages, choosing a boot target, and validating compatibility outcomes before cleanup | concept | 2026-04-15
 - [[legacy-repository-repointing]] — Practice of redirecting package managers from retired mirrors to static archive/vault repositories for legacy systems | concept | 2026-04-15
 - [[modal-editing]] — Editing model where key behavior changes by mode and commands compose across motions and text objects | concept | 2026-04-15
 - [[shell-scripting]] — Automation practice that composes shell builtins, commands, and Unix I/O primitives into reusable workflows | concept | 2026-04-15
-- [[linux-command-line-operations]] — Practice of inspecting and administering Linux systems through composable command-line tools, including package-source repair | concept | 2026-04-15
+- [[linux-command-line-operations]] — Practice of inspecting and administering Linux systems through composable command-line tools, including package-source repair, kernel activation, and service validation | concept | 2026-04-15
 - [[smb-file-sharing]] — Practice of exposing directories over SMB so Windows clients can map Linux-hosted network drives with explicit auth and permission boundaries | concept | 2026-04-15
 
 ---

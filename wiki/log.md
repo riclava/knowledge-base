@@ -183,3 +183,26 @@ Key additions:
 - Added a CentOS 7 Samba source summary covering the minimal path from package install to Windows network-drive mapping.
 - Established `Samba` as a product page and `SMB file sharing` as a reusable concept for cross-platform directory sharing.
 - Added canonical terminology for Samba、`SMB/CIFS`、`smb.conf`、`smbpasswd` 和 `SELinux`, and explicitly flagged blanket firewall/SELinux shutdown as a documentation risk rather than a default best practice.
+
+## [2026-04-15] ingest | CentOS7升级内核
+
+Pages created:
+- `wiki/sources/centos7-kernel-upgrade-via-elrepo.md`
+- `wiki/concepts/kernel-upgrade-and-boot-management.md`
+
+Pages updated:
+- `wiki/sources/centos7-offline-docker-install-troubleshooting.md`
+- `wiki/products/centos.md`
+- `wiki/products/linux.md`
+- `wiki/products/docker.md`
+- `wiki/concepts/container-network-namespace-support.md`
+- `wiki/concepts/linux-command-line-operations.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a CentOS 7 source summary for upgrading kernels through ELRepo, including `kernel-lt` discovery, GRUB default selection, reboot validation, and optional cleanup steps.
+- Established `kernel upgrade and boot management` as a reusable concept linking package installation, boot-entry activation, rollback posture, and post-reboot verification.
+- Added canonical terminology for `ELRepo`、`GRUB2`、`kernel-lt / kernel-ml`, and clarified across Docker/CentOS pages that host-kernel remediation may follow either a newer stock CentOS 7 kernel path or an ELRepo alternative-kernel path.

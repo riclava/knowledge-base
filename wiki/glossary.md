@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux]
 ---
 
 # Glossary
@@ -77,9 +77,14 @@ Each entry follows this format:
 - See also: [[2025-technical-line-summary]]
 
 **CentOS** *(canonical form)*
-: 基于 RPM/YUM 生态的企业级 Linux 发行版家族；在当前知识库中，主要出现在遗留版本维护和仓库恢复场景。
+: 基于 RPM/YUM 生态的企业级 Linux 发行版家族；在当前知识库中，既出现在遗留版本维护和仓库恢复场景，也出现在通过内核升级修补宿主机兼容性的运维场景。
 - Preferred: `CentOS`
 - See also: [[centos]], [[linux]]
+
+**ELRepo** *(canonical form)*
+: 面向 Enterprise Linux 的第三方软件仓库，在当前来源中用于为 CentOS 7 提供 `kernel-lt`、`kernel-ml` 等替代内核分支。
+- Preferred: `ELRepo`
+- See also: [[centos]], [[centos7-kernel-upgrade-via-elrepo]], [[kernel-upgrade-and-boot-management]]
 
 **Samba** *(canonical form)*
 : Linux/Unix 平台上实现 SMB/CIFS 文件共享的服务套件；在当前来源中，它用于把 CentOS 7 上的 `/data` 暴露给 Windows 客户端。
@@ -105,6 +110,11 @@ Each entry follows this format:
 : 一种常见的容器运行时与镜像工具链；在当前来源中，它出现在 CentOS 7 离线安装后仍发生 bridge 网络异常的排障场景。
 - Preferred: `Docker`
 - See also: [[docker]], [[centos]], [[container-network-namespace-support]]
+
+**GRUB2** *(canonical form)*
+: CentOS 7 等 Linux 系统中常见的启动加载器；在当前来源中，它决定已安装的多个内核中哪个会作为默认启动项，并通过 `grub2-set-default`、`/etc/default/grub` 与 `grub2-mkconfig` 管理。
+- Preferred: `GRUB2` or `GRUB` when version distinction is not important
+- See also: [[kernel-upgrade-and-boot-management]], [[centos7-kernel-upgrade-via-elrepo]], [[centos]]
 
 **离线安装（offline installation）** *(canonical form)*
 : 指目标机器无法直接联网安装时，先在其他可联网环境下载 RPM 包或依赖，再转移到目标机器完成安装的做法。
@@ -135,6 +145,11 @@ Each entry follows this format:
 : `YUM` 的镜像选择插件，用于从可用镜像中挑选更快的源；当发行版镜像已退役时，可能需要临时关闭。
 - Preferred: `fastestmirror`
 - See also: [[centos6-archive-repository-workaround]], [[legacy-repository-repointing]]
+
+**kernel-lt / kernel-ml** *(canonical form)*
+: ELRepo 提供的两类常见内核包分支；`kernel-lt` 指长期维护分支，`kernel-ml` 指较新的主线稳定分支。
+- Preferred: `kernel-lt` / `kernel-ml`
+- See also: [[centos7-kernel-upgrade-via-elrepo]], [[kernel-upgrade-and-boot-management]], [[centos]]
 
 **network namespace** *(canonical form)*
 : Linux 内核用来隔离网络接口、路由、地址和相关网络视图的机制；在当前来源中，它是理解 Docker bridge 网络和 `veth` 关联关系的关键术语。

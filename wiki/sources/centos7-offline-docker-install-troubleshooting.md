@@ -3,11 +3,11 @@ title: CentOS7离线安装docker问题排查
 type: source
 created: 2026-04-15
 updated: 2026-04-15
-sources: [CentOS7离线安装docker问题排查.md]
-tags: [centos, linux, docker, offline-installation, container-networking, kernel, troubleshooting, source]
+sources: [CentOS7离线安装docker问题排查.md, CentOS7升级内核.md]
+tags: [centos, linux, docker, offline-installation, container-networking, kernel, elrepo, upgrade, troubleshooting, source]
 ---
 
-这是一份 CentOS 7 上离线安装 Docker 后容器网络异常的排障记录，最终把根因定位为宿主机内核过旧，而不是 Docker 安装步骤本身。
+这是一份 CentOS 7 上离线安装 Docker 后容器网络异常的排障记录，最终把根因定位为宿主机内核过旧，而不是 Docker 安装步骤本身；当前知识库中的 ELRepo 内核升级流程可作为它的补充阅读。
 
 ## Source Metadata
 
@@ -73,10 +73,13 @@ tags: [centos, linux, docker, offline-installation, container-networking, kernel
 - 如果整理成正式文档，应把它写成“Docker 容器网络排障案例”而不是“离线安装 Docker 教程”。
 - 应明确区分“安装路径问题”“Docker 守护进程问题”“宿主机内核/网络命名空间兼容性问题”三类故障面。
 - 应把 `uname -a`、最小 `docker run -p` 测试、`ip a` 对比、`ip netns list-id` 检查列成标准验证步骤。
-- 如果补充教程版本，最好增加离线包清单、内核升级步骤、升级前后验证和回滚说明。
+- `[[centos7-kernel-upgrade-via-elrepo]]` 现在提供了一条明确的 ELRepo `kernel-lt` 升级路径，但这份排障记录实际解决问题时使用的是较新的 CentOS 7 官方维护内核；正式文档应把两条路径区分清楚。
+- 如果补充教程版本，最好增加离线包清单、升级路径选择原则、升级前后验证和回滚说明。
 
 ## Related Pages
 
+- [[centos7-kernel-upgrade-via-elrepo]]
+- [[kernel-upgrade-and-boot-management]]
 - [[docker]]
 - [[centos]]
 - [[linux]]
