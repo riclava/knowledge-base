@@ -3,11 +3,11 @@ title: CentOS
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md]
-tags: [product, centos, linux, rpm, yum, repository, elrepo, grub, legacy-system, docker, kernel, networking, samba, smb, file-sharing]
+sources: [CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md]
+tags: [product, centos, linux, rpm, yum, repository, elrepo, grub, legacy-system, docker, kernel, networking, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build]
 ---
 
-CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知识库里，它既以“版本生命周期影响仓库可用性”的运维对象出现，也以“需要通过内核基线和 GRUB 启动项管理来满足 Docker 等运行时兼容性”的宿主机环境出现，还以“通过 Samba 向 Windows 暴露共享目录”的服务承载环境出现。
+CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知识库里，它既以“版本生命周期影响仓库可用性”的运维对象出现，也以“需要通过内核基线和 GRUB 启动项管理来满足 Docker 等运行时兼容性”的宿主机环境出现，还以“通过 Samba 向 Windows 暴露共享目录”和“在遗留版本上手工替换 OpenSSL/OpenSSH 安全栈”的服务承载环境出现。
 
 ## Product Snapshot
 
@@ -62,10 +62,17 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 - 来源把关闭 `firewalld`、`iptables` 和 `SELinux` 作为准备步骤，说明许多现场笔记会把安全控制先移走，以便快速验证服务链路。
 - 但对正式文档来说，这应被记录为高风险简化，而不是默认最佳实践；防火墙放行和 SELinux 策略同样属于 CentOS 服务配置的一部分。
 
+### Legacy Hosts May Drift Toward Source-Built Security Stack Maintenance
+
+- 新来源说明，CentOS 7 这类遗留系统上的维护问题不只包括 repo、内核和共享服务，还包括系统自带 OpenSSL/OpenSSH 版本不足时的源码替换升级。
+- 这类操作会引入依赖顺序、动态库加载路径、RPM 文件归属和远程登录连续性等新的风险面。
+- 因此在 CentOS 文档里，“是否绕开发行版包管理器”本身就应被写成一个明确决策点，而不是隐含前提。
+
 ### Trust and Version Matching Stay Important
 
 - 即使是紧急恢复仓库访问，`gpgcheck` 和 `gpgkey` 依然是必须解释的字段。
 - 当文档引入 ELRepo 时，还需要额外说明 GPG key、镜像来源、仓库范围以及 GRUB `menuentry` 与实际安装内核版本的对应关系。
+- 当文档改为使用上游源码替换 OpenSSL/OpenSSH 时，还需要补上 tarball 来源、版本固定、校验方式以及与发行版原生 RPM 的边界。
 
 ## Why It Matters
 
@@ -79,6 +86,7 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 - 当文档涉及 Docker、内核升级或容器网络时，应补上宿主机内核版本和最小验证步骤，不要只写软件包安装过程。
 - 应明确区分“升级到 CentOS 官方维护的较新内核”和“引入 ELRepo 等替代内核分支”这两类路线。
 - 当文档涉及 Samba 或其他网络服务时，应把共享路径、账号准备、客户端访问路径以及防火墙 / SELinux 处理拆开写清楚。
+- 当文档涉及 OpenSSL/OpenSSH 源码替换时，应写明确切版本、自定义安装前缀、服务切换窗口、备用登录路径和回滚步骤，不要只给命令串。
 - 应区分“恢复旧版本继续运行”和“建议升级到受支持版本”这两类完全不同的文档目的。
 - 应给出修改前备份、修改后验证和失败时回滚的方法。
 - 如果示例引用 vault/archive 或第三方镜像，应标明该镜像来源、适用版本和时效性风险。
@@ -89,6 +97,7 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 - 没有讨论 EPEL、SSL/TLS 兼容性、Secure Boot、SELinux 或更系统的网络限制环境。
 - Docker 相关内容现在补上了一个旧内核案例和一条 ELRepo 升级 runbook，但仍没有完整的容器运行时安装、升级和维护体系。
 - Samba 相关内容目前只覆盖了一个最小共享案例，还没有形成防火墙端口、SELinux 上下文、域集成或多用户权限设计的体系化文档。
+- OpenSSL/OpenSSH 相关内容现在补上了一条源码升级 runbook，但仍没有更稳妥的 RPM 路线、回滚规范或 SSH 加固基线。
 - 没有涉及 CentOS 7/8、Stream、RHEL 或 Rocky/AlmaLinux 等相邻发行版差异。
 
 ## Related Pages
@@ -100,10 +109,14 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 - [[docker]]
 - [[samba]]
 - [[smb-file-sharing]]
+- [[openssl]]
+- [[openssh]]
+- [[source-built-package-replacement]]
 - [[container-network-namespace-support]]
 - [[legacy-repository-repointing]]
 - [[linux]]
 - [[linux-command-line-operations]]
+- [[centos7-openssl-and-openssh-upgrade-from-source]]
 - [[bash]]
 - [[shell-scripting]]
 - [[glossary]]

@@ -30,6 +30,7 @@ Each entry follows this format:
 - [[bash-syntax-and-scripting-reference]] — Practical Bash reference covering syntax, scripting structure, I/O, and defensive shell patterns | source | 2026-04-15
 - [[centos6-archive-repository-workaround]] — Emergency recovery note for restoring CentOS 6 `yum` access by switching from dead mirrors to archive/vault repositories | source | 2026-04-15
 - [[centos7-kernel-upgrade-via-elrepo]] — Step-by-step CentOS 7 runbook for installing an ELRepo long-term kernel, selecting the GRUB boot entry, and validating the rebooted host | source | 2026-04-15
+- [[centos7-openssl-and-openssh-upgrade-from-source]] — CentOS 7 runbook for rebuilding OpenSSL and OpenSSH from source, cutting over `sshd`, and managing the remote-access risks of manual replacement | source | 2026-04-15
 - [[centos7-offline-docker-install-troubleshooting]] — CentOS 7 troubleshooting case showing that an old kernel broke Docker bridge networking despite successful offline installation | source | 2026-04-15
 - [[centos7-samba-share-setup]] — Quick CentOS 7 note for exporting a Linux directory through Samba and mapping it as a Windows network drive, with security-hardening caveats | source | 2026-04-15
 - [[linux-common-commands-reference]] — Linux command cheat sheet covering file, text, process, network, permissions, cron, and logs | source | 2026-04-15
@@ -54,6 +55,8 @@ Each entry follows this format:
 - [[centos]] — RPM/YUM-based enterprise Linux distribution family with repository lifecycle, alternate kernel upgrade paths, and version-specific host-compatibility behavior | product | 2026-04-15
 - [[docker]] — Container runtime/tooling page focused on host-kernel-dependent networking behavior, validation, and kernel-remediation paths | product | 2026-04-15
 - [[linux]] — Linux operating system and command-line operating surface for files, processes, networking, logging, package-source maintenance, and kernel/boot management | product | 2026-04-15
+- [[openssh]] — SSH client/server suite page focused on source-built service replacement, authentication policy, and remote-access continuity risks on legacy Linux hosts | product | 2026-04-15
+- [[openssl]] — TLS/crypto library page focused on source installation, linker-path integration, and its role as a dependency for higher-level services | product | 2026-04-15
 - [[samba]] — SMB/CIFS file-sharing server used to expose Linux directories to Windows clients with share-level auth and path masks | product | 2026-04-15
 - [[moshi]] — Speech-native LLM focused on full-duplex, low-latency voice interaction | product | 2026-04-14
 - [[mimi]] — Neural Audio Codec and tokenizer used to turn speech into low-rate discrete tokens | product | 2026-04-14
@@ -85,6 +88,7 @@ Each entry follows this format:
 - [[legacy-repository-repointing]] — Practice of redirecting package managers from retired mirrors to static archive/vault repositories for legacy systems | concept | 2026-04-15
 - [[modal-editing]] — Editing model where key behavior changes by mode and commands compose across motions and text objects | concept | 2026-04-15
 - [[shell-scripting]] — Automation practice that composes shell builtins, commands, and Unix I/O primitives into reusable workflows | concept | 2026-04-15
+- [[source-built-package-replacement]] — Practice of compiling upstream software outside the package manager, then manually wiring it into system paths, services, and rollback strategy | concept | 2026-04-15
 - [[linux-command-line-operations]] — Practice of inspecting and administering Linux systems through composable command-line tools, including package-source repair, kernel activation, and service validation | concept | 2026-04-15
 - [[smb-file-sharing]] — Practice of exposing directories over SMB so Windows clients can map Linux-hosted network drives with explicit auth and permission boundaries | concept | 2026-04-15
 

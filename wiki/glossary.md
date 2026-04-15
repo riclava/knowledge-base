@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build]
 ---
 
 # Glossary
@@ -81,6 +81,11 @@ Each entry follows this format:
 - Preferred: `CentOS`
 - See also: [[centos]], [[linux]]
 
+**源码编译安装（source build）** *(canonical form)*
+: 指直接从上游源码包编译并安装软件，而不是只通过发行版包管理器获取二进制包；在当前来源中，它用于在 CentOS 7 上手工升级 OpenSSL 和 OpenSSH，并带来服务切换和回滚复杂度。
+- Preferred: `源码编译安装` or `source build` / Avoid: 把它和常规 `yum` / `apt` 升级混为一谈
+- See also: [[source-built-package-replacement]], [[centos]], [[linux]]
+
 **ELRepo** *(canonical form)*
 : 面向 Enterprise Linux 的第三方软件仓库，在当前来源中用于为 CentOS 7 提供 `kernel-lt`、`kernel-ml` 等替代内核分支。
 - Preferred: `ELRepo`
@@ -110,6 +115,16 @@ Each entry follows this format:
 : 一种常见的容器运行时与镜像工具链；在当前来源中，它出现在 CentOS 7 离线安装后仍发生 bridge 网络异常的排障场景。
 - Preferred: `Docker`
 - See also: [[docker]], [[centos]], [[container-network-namespace-support]]
+
+**OpenSSL** *(canonical form)*
+: 常见的 TLS/加密库与命令行工具；在当前来源中，它被源码安装到 `/usr/local/openssl`，并作为 OpenSSH 重编译时的依赖提供者。
+- Preferred: `OpenSSL`
+- See also: [[openssl]], [[openssh]], [[source-built-package-replacement]]
+
+**OpenSSH** *(canonical form)*
+: 常见的 SSH 客户端与服务端套件；在当前来源中，它通过 portable 源码重编译，并与自定义 OpenSSL 路径一起完成 `sshd` 服务切换。
+- Preferred: `OpenSSH`
+- See also: [[openssh]], [[openssl]], [[source-built-package-replacement]]
 
 **GRUB2** *(canonical form)*
 : CentOS 7 等 Linux 系统中常见的启动加载器；在当前来源中，它决定已安装的多个内核中哪个会作为默认启动项，并通过 `grub2-set-default`、`/etc/default/grub` 与 `grub2-mkconfig` 管理。
@@ -170,6 +185,21 @@ Each entry follows this format:
 : Linux 上常见的包过滤与 NAT 规则管理工具；在当前来源中，它被作为排除法步骤清空，但并不是最终根因。
 - Preferred: `iptables`
 - See also: [[linux-command-line-operations]], [[docker]]
+
+**ldconfig** *(canonical form)*
+: Linux 上用于刷新动态链接器缓存的命令；在当前来源中，它用于让系统识别新加入的 OpenSSL 共享库路径。
+- Preferred: `ldconfig`
+- See also: [[openssl]], [[source-built-package-replacement]], [[linux]]
+
+**sshd_config** *(canonical form)*
+: OpenSSH 服务端的主配置文件，通常指 `/etc/ssh/sshd_config`，用于控制 root 登录、密码认证、监听端口等服务行为。
+- Preferred: `sshd_config` or `/etc/ssh/sshd_config`
+- See also: [[openssh]], [[centos7-openssl-and-openssh-upgrade-from-source]]
+
+**rpm -e --nodeps** *(canonical form)*
+: 在 RPM 系统上强制卸载包且跳过依赖检查的做法；在当前来源中，它被用于移除旧 OpenSSH 包，但属于高风险维护动作，不应当作常规卸载手段。
+- Preferred: `rpm -e --nodeps` / Avoid: 把它写成安全默认操作
+- See also: [[source-built-package-replacement]], [[openssh]], [[centos]]
 
 **speech-native LLM** *(canonical form)*
 : 指直接对语音 token 进行建模、推理与生成的大模型，内部可保留文本流，但不再依赖 `ASR -> LLM -> TTS` 串行级联作为主路径。

@@ -206,3 +206,25 @@ Key additions:
 - Added a CentOS 7 source summary for upgrading kernels through ELRepo, including `kernel-lt` discovery, GRUB default selection, reboot validation, and optional cleanup steps.
 - Established `kernel upgrade and boot management` as a reusable concept linking package installation, boot-entry activation, rollback posture, and post-reboot verification.
 - Added canonical terminology for `ELRepo`、`GRUB2`、`kernel-lt / kernel-ml`, and clarified across Docker/CentOS pages that host-kernel remediation may follow either a newer stock CentOS 7 kernel path or an ELRepo alternative-kernel path.
+
+## [2026-04-15] ingest | CentOS7升级OpenSSL和OpenSSH
+
+Pages created:
+- `wiki/sources/centos7-openssl-and-openssh-upgrade-from-source.md`
+- `wiki/products/openssl.md`
+- `wiki/products/openssh.md`
+- `wiki/concepts/source-built-package-replacement.md`
+
+Pages updated:
+- `wiki/products/centos.md`
+- `wiki/products/linux.md`
+- `wiki/concepts/linux-command-line-operations.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a CentOS 7 source summary for upgrading OpenSSL and OpenSSH from upstream source, including dependency ordering, linker-path changes, service cutover, and remote-access continuity risks.
+- Established `OpenSSL` and `OpenSSH` as product pages plus `source-built package replacement` as a reusable Linux operations concept for source-compiled software taking over system paths and services.
+- Added canonical terminology for `源码编译安装`、`OpenSSL`、`OpenSSH`、`ldconfig`、`sshd_config` 和 `rpm -e --nodeps`, and expanded the Linux/CentOS synthesis to cover high-risk SSH/TLS stack upgrades on legacy hosts.

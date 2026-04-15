@@ -3,11 +3,11 @@ title: Linux
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md]
-tags: [product, linux, operating-system, command-line, operations, developer-tooling, centos, yum, repository, docker, containers, kernel, grub, networking, samba, smb, file-sharing]
+sources: [commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md]
+tags: [product, linux, operating-system, command-line, operations, developer-tooling, centos, yum, repository, docker, containers, kernel, grub, networking, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build]
 ---
 
-Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平台，适合文件管理、系统巡检、服务排障、包源维护、容器宿主机诊断、内核/启动项管理、跨系统文件共享和脚本自动化。
+Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平台，适合文件管理、系统巡检、服务排障、包源维护、容器宿主机诊断、内核/启动项管理、跨系统文件共享、远程访问栈维护和脚本自动化。
 
 ## Product Snapshot
 
@@ -71,6 +71,12 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 - 在遗留 CentOS 场景下，修复步骤包括关闭 `fastestmirror`、备份 repo 文件、把 `mirrorlist` 改为指向 archive/vault 的固定 `baseurl`。
 - 当需要更换内核供应链时，还可能涉及 ELRepo 这类第三方仓库和镜像替换。
 
+### Source-Built Upgrades Change Package-Manager Assumptions
+
+- 新来源进一步说明，Linux 运维并不总能停留在发行版包管理范围内；当 OpenSSL/OpenSSH 版本不满足需求时，操作者可能直接从上游源码构建并手工接管系统路径。
+- 这类操作把 `wget`、`tar`、`./configure`、`make install`、`ldconfig` 和服务重启连成一条链，也把“包管理器负责回滚”的默认假设打破了。
+- 对远程访问服务而言，这种切换还会让“能否重新连上机器”成为升级文档中的第一等问题。
+
 ### Scheduling and Logs
 
 - `crontab` 负责把命令转成周期性任务，`tail -f`、`journalctl`、`logrotate` 则负责追踪和维护运行历史。
@@ -96,11 +102,12 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 - 当文档涉及 Samba 这类跨系统共享服务时，应把目录权限、账号准备、服务状态、客户端路径和安全策略处理分层写清楚。
 - 当文档涉及 Docker 或容器桥接网络时，应同时写出最小验证命令与宿主机内核检查项。
 - 当文档涉及内核升级时，应明确区分安装、默认启动项切换、配置重建、重启和回滚能力。
+- 当文档涉及 OpenSSL/OpenSSH 这类远程访问或加密组件的源码升级时，应补上版本固定、校验、动态库路径、服务切换验证和登录回滚计划。
 - 对任何修改系统状态的示例，都应标出权限要求、影响范围和验证方法。
 
 ## Known Gaps from This Source
 
-- 仍没有形成通用的包管理器文档体系；虽然已补上 CentOS 遗留仓库恢复、一个 Docker 网络兼容性案例、一个 Samba 最小共享案例和一个 ELRepo 内核升级 runbook，但 `systemctl`、SSH、挂载管理、ACL、SELinux/AppArmor 和系统化容器运维仍未覆盖。
+- 仍没有形成通用的包管理器文档体系；虽然已补上 CentOS 遗留仓库恢复、一个 Docker 网络兼容性案例、一个 Samba 最小共享案例、一个 ELRepo 内核升级 runbook 和一个 OpenSSL/OpenSSH 源码升级案例，但 SSH 加固、挂载管理、ACL、SELinux/AppArmor 和系统化容器运维仍未覆盖。
 - 没有系统讨论不同发行版之间的包管理、服务管理差异和云环境常见限制。
 - 没有涉及更高层的基础设施编排，如 Ansible、Terraform 或 CI/CD。
 
@@ -115,9 +122,13 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 - [[docker]]
 - [[samba]]
 - [[smb-file-sharing]]
+- [[openssl]]
+- [[openssh]]
+- [[source-built-package-replacement]]
 - [[container-network-namespace-support]]
 - [[legacy-repository-repointing]]
 - [[linux-common-commands-reference]]
+- [[centos7-openssl-and-openssh-upgrade-from-source]]
 - [[linux-command-line-operations]]
 - [[bash]]
 - [[shell-scripting]]

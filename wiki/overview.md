@@ -3,8 +3,8 @@ title: Overview
 type: overview
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, yum, repository, elrepo, grub, docker, containers, kernel, networking, samba, smb, file-sharing, windows]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, yum, repository, elrepo, grub, docker, containers, kernel, networking, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build]
 ---
 
 # Knowledge Base Overview
@@ -15,11 +15,11 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-to
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, and Samba-based cross-platform file sharing from CentOS to Windows.
+This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, Samba-based cross-platform file sharing from CentOS to Windows, and high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts.
 
-**Source count:** 9
-**Wiki pages:** 36
-**Last ingest:** 2026-04-15 — [[centos7-kernel-upgrade-via-elrepo]]
+**Source count:** 10
+**Wiki pages:** 40
+**Last ingest:** 2026-04-15 — [[centos7-openssl-and-openssh-upgrade-from-source]]
 **Last lint:** —
 
 ---
@@ -36,6 +36,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 遗留 Linux 发行版在镜像退役后的仓库恢复与 archive/vault 运维补救
 - CentOS 7 上 Docker 离线安装后的容器网络排障与宿主机内核兼容性判断
 - CentOS 7 上通过 ELRepo 升级内核、切换 GRUB 默认启动项并验证重启结果的操作流程
+- CentOS 7 上通过源码编译升级 OpenSSL 和 OpenSSH，并在线切换 `sshd` 服务的高风险维护流程
 - CentOS 7 上通过 Samba 向 Windows 暴露共享目录的最小配置与权限链路
 
 ---
@@ -55,6 +56,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - Linux 发行版运维不只包括执行命令，还包括处理版本生命周期、软件源可达性、第三方仓库信任和内核启动路径这类容易被忽视的基础前提。
 - 在容器场景里，“Docker 安装成功”与“容器网络真正可用”是两回事；宿主机内核对 network namespace 的支持程度会直接改变排障方向。
 - 在内核升级场景里，“新内核包已经安装”和“系统已从该内核成功启动”同样不是一回事，GRUB 默认项和重启验证是不可跳过的步骤。
+- 在遗留 Linux 主机上，源码编译 OpenSSL/OpenSSH 不只是“装新版本”，还会牵动动态库路径、RPM 边界、认证策略和远程登录回滚能力。
 - 在跨系统共享场景里，“Windows 能看到网络路径”与“Linux 目录、Samba 认证和主机安全策略都配置正确”同样不是一回事。
 
 ---
@@ -71,6 +73,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 是否还会补充 tmux、git、远程开发或 CI 脚本资料，形成更完整的终端工作流体系？
 - 是否还会补充 `yum`/`dnf`/`apt` 的通用包管理、缓存刷新、第三方仓库与版本迁移文档？
 - 当前 Docker/内核兼容性经验会不会继续沉淀为“官方维护内核 vs ELRepo 替代内核”的选择指南或兼容矩阵？
+- 当前 OpenSSL/OpenSSH 源码升级经验会不会继续沉淀为“何时必须源码替换、何时应坚持发行版包更新”的判断准则？
 - 当前 Samba 相关经验是否只限于单目录映射场景，还是还会补充防火墙、SELinux、ACL 或域集成实践？
 
 ---
@@ -84,7 +87,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 缺少 speech-native LLM 的系统架构图、组件职责说明和延迟预算模板。
 - 缺少 Neural Audio Codec 的选型矩阵、评估指标和任务分类方法。
 - 虽然已补上 Bash、常用命令和基础 shell scripting，但仍缺少 POSIX shell / Bash 兼容性边界与脚本测试规范。
-- Linux 运维侧目前虽已补上 CentOS 6 仓库恢复、一个 CentOS 7 Docker 网络兼容性案例、一个 ELRepo 内核升级 runbook 和一个 Samba 最小共享案例，但仍缺少 `yum`/`dnf`/`apt` 的通用包管理、SSH、tmux、git、远程开发、系统化 Docker 运维、内核升级回滚规范、SMB/Samba 最小权限加固和 CI 自动化等配套文档。
+- Linux 运维侧目前虽已补上 CentOS 6 仓库恢复、一个 CentOS 7 Docker 网络兼容性案例、一个 ELRepo 内核升级 runbook、一个 Samba 最小共享案例和一个 OpenSSL/OpenSSH 源码升级案例，但仍缺少 `yum`/`dnf`/`apt` 的通用包管理、SSH 加固基线、tmux、git、远程开发、系统化 Docker 运维、内核升级回滚规范、SMB/Samba 最小权限加固和 CI 自动化等配套文档。
 
 ---
 
@@ -110,12 +113,16 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - [[linux-common-commands-reference]] — Linux commands source summary and operations reference
 - [[centos7-offline-docker-install-troubleshooting]] — CentOS 7 Docker troubleshooting source summary
 - [[centos7-kernel-upgrade-via-elrepo]] — CentOS 7 kernel upgrade source summary
+- [[centos7-openssl-and-openssh-upgrade-from-source]] — CentOS 7 OpenSSL/OpenSSH source upgrade summary
 - [[centos7-samba-share-setup]] — CentOS 7 Samba share setup source summary
 - [[centos6-archive-repository-workaround]] — CentOS 6 archive mirror recovery source summary
 - [[centos]] — CentOS distribution page
 - [[docker]] — Docker runtime/tooling page
 - [[linux]] — Linux platform/tool page
+- [[openssl]] — TLS/crypto library page
+- [[openssh]] — SSH client/server suite page
 - [[linux-command-line-operations]] — operations concept behind Linux command usage
+- [[source-built-package-replacement]] — concept page for source-compiled software taking over system paths and services
 - [[container-network-namespace-support]] — host-kernel support concept behind Docker bridge networking
 - [[kernel-upgrade-and-boot-management]] — concept page for installing kernels and managing default boot entries
 - [[legacy-repository-repointing]] — archive/vault repo recovery concept for legacy systems
