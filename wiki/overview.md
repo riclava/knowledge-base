@@ -2,9 +2,9 @@
 title: Overview
 type: overview
 created: 2026-04-07
-updated: 2026-04-14
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm]
+updated: 2026-04-15
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, vim]
 ---
 
 # Knowledge Base Overview
@@ -15,11 +15,11 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm]
 
 ## Current State
 
-This wiki currently covers both AI-era engineering management and speech-native AI architecture, combining strategic planning material with technical analyses of real-time voice systems.
+This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references.
 
-**Source count:** 2
-**Wiki pages:** 16
-**Last ingest:** 2026-04-14 — [[moshi-neural-audio-codec-architecture-analysis]]
+**Source count:** 3
+**Wiki pages:** 19
+**Last ingest:** 2026-04-15 — [[vim-usage-and-configuration-reference]]
 **Last lint:** —
 
 ---
@@ -31,6 +31,7 @@ This wiki currently covers both AI-era engineering management and speech-native 
 - 平台底座、稳定性和治理能力建设
 - 技术管理者关注的组织、流程和指标体系
 - 语音原生 LLM、Neural Audio Codec 与实时语音交互架构
+- Linux / 终端环境中的开发者工具与文本编辑工作流
 
 ---
 
@@ -43,6 +44,7 @@ This wiki currently covers both AI-era engineering management and speech-native 
 - 当前最大的治理短板是项目运营规范化尚未制度化。
 - 在语音交互方向，关键基础设施正从传统 ASR/TTS 模块转向可供 LLM 直接消费的音频 tokenizer。
 - 自然语音对话的竞争点不只是模型推理能力，还包括全双工交互、延迟预算和 codec 设计。
+- 在终端工作流中，Vim 的价值不只是“能编辑文件”，而是通过模态编辑、组合命令和轻量配置把高频文本修改提炼成可复用操作语言。
 
 ---
 
@@ -54,6 +56,8 @@ This wiki currently covers both AI-era engineering management and speech-native 
 - 鸿蒙移动端适配和信创 Linux 落地是否已有后续补充材料？
 - Moshi 的训练数据、评估指标、部署成本和开源状态是什么？
 - Mimi 与 SNAC 在真实语音对话任务中的取舍边界是什么？
+- 当前团队的编辑器基线是 Vim、Neovim，还是多编辑器并存？
+- 是否还会补充 shell、tmux、git 或其他 Linux 通用工具资料，形成完整终端工作流体系？
 
 ---
 
@@ -65,6 +69,7 @@ This wiki currently covers both AI-era engineering management and speech-native 
 - 缺少对 1-2 人小团队模式的流程细化和案例材料。
 - 缺少 speech-native LLM 的系统架构图、组件职责说明和延迟预算模板。
 - 缺少 Neural Audio Codec 的选型矩阵、评估指标和任务分类方法。
+- 缺少围绕 shell、tmux、git 和远程开发的配套开发者工具文档，暂未形成完整 Linux 工作流知识链。
 
 ---
 
@@ -84,3 +89,6 @@ This wiki currently covers both AI-era engineering management and speech-native 
 - [[speech-native-llm]] — speech-first model architecture
 - [[neural-audio-codec]] — codec/tokenizer infrastructure
 - [[full-duplex-speech-interaction]] — real-time duplex interaction model
+- [[vim-usage-and-configuration-reference]] — Vim source summary and command reference
+- [[vim]] — modal editor tool page
+- [[modal-editing]] — editing model behind Vim command composition

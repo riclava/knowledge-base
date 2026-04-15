@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4a43010e0fafbf04",
+        "id": "4b75437200500973",
         "type": "tabs",
         "children": [
           {
-            "id": "8eef3d68277bbfba",
+            "id": "989735cc936723c3",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -150,20 +150,20 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "未命名.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "未命名 的大纲"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -176,10 +176,24 @@
       "bases:新建数据库": false
     }
   },
-  "active": "8eef3d68277bbfba",
+  "active": "abf014ed3c238408",
   "lastOpenFiles": [
-    "wiki/concepts/neural-audio-codec.md",
+    "raw/OS/Linux/Ubuntu/未命名.md",
+    "wiki/concepts/modal-editing.md",
+    "wiki/products/vim.md",
+    "wiki/sources/vim-usage-and-configuration-reference.md",
+    "未命名.base",
+    "raw/OS/Linux/Common/vim.md",
+    "raw/OS/Linux/Ubuntu",
+    "raw/OS/Linux/Common",
+    "raw/OS/Linux",
+    "raw/OS",
+    "raw/Templates/kiro/iOS-app-debugging-steering.md",
+    "raw/Templates/kiro",
+    "raw/Templates",
     "raw/AI/speech-llm/Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md",
+    "wiki/concepts/neural-audio-codec.md",
+    "wiki/concepts/full-lifecycle-delivery-capability.md",
     "wiki/concepts/full-duplex-speech-interaction.md",
     "wiki/concepts/speech-native-llm.md",
     "wiki/products/mimi.md",
@@ -190,20 +204,13 @@
     "raw/AI",
     "wiki/concepts/platform-foundation.md",
     "wiki/concepts/observability-and-reliability.md",
-    "wiki/concepts/full-lifecycle-delivery-capability.md",
     "wiki/concepts/ai-enabled-software-delivery.md",
     "raw/Career/2025/2025年技术线总结.md",
     "wiki/personas/technical-line-leader.md",
     "wiki/sources/2025-technical-line-summary.md",
-    "wiki/personas",
     "wiki/analyses/2026-tech-roadmap.md",
-    "wiki/analyses",
     "wiki/concepts/llmops.md",
     "wiki/concepts/ai-era-software-development.md",
-    "wiki/concepts",
-    "wiki/sources/2025-tech-summary.md",
-    "wiki/sources",
-    "raw/Career/2025",
-    "raw/Career"
+    "wiki/sources/2025-tech-summary.md"
   ]
 }

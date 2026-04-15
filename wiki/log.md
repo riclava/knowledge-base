@@ -65,3 +65,21 @@ Key additions:
 - Added a source summary for Moshi, Mimi, and the Neural Audio Codec landscape.
 - Established core concepts for speech-native LLMs, neural audio codecs, and full-duplex speech interaction.
 - Added product pages for Moshi and Mimi, plus canonical terminology for speech-native LLM、全双工对话、Neural Audio Codec、语音 LLM tokenizer、RVQ 等表述。
+
+## [2026-04-15] ingest | Vim 常用配置与操作参考
+
+Pages created:
+- `wiki/sources/vim-usage-and-configuration-reference.md`
+- `wiki/products/vim.md`
+- `wiki/concepts/modal-editing.md`
+
+Pages updated:
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added the first Linux/developer-tooling source summary, centered on Vim configuration, editing commands, batch text operations, and plugin management.
+- Established `Vim` as a product/tool page and `模态编辑` as a reusable editing-model concept page.
+- Added canonical terminology for Vim、vimrc、模态编辑、文本对象、buffer 和 vim-plug, and expanded the overview to include terminal workflow knowledge.

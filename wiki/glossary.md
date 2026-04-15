@@ -2,9 +2,9 @@
 title: Glossary
 type: glossary
 created: 2026-04-07
-updated: 2026-04-14
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm]
+updated: 2026-04-15
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, vim]
 ---
 
 # Glossary
@@ -151,6 +151,36 @@ Each entry follows this format:
 - Preferred: `Lyra` / `Satin`
 - See also: [[neural-audio-codec]]
 
+**Vim** *(canonical form)*
+: 一个以模态编辑和组合式命令为核心的文本编辑器，常用于 Linux/终端环境中的代码、脚本和配置文件修改。
+- Preferred: `Vim`
+- See also: [[vim]], [[modal-editing]], [[vim-usage-and-configuration-reference]]
+
+**vimrc** *(canonical form)*
+: 用户的 Vim 主配置文件，通常指 `~/.vimrc`，用于设置界面、搜索、缩进、映射和插件加载行为。
+- Preferred: `vimrc` or `~/.vimrc` / Avoid: 只写“配置文件”而不指明 Vim 语境
+- See also: [[vim]], [[vim-usage-and-configuration-reference]]
+
+**模态编辑（modal editing）** *(canonical form)*
+: 一种根据当前模式切换按键语义的编辑模型。普通模式偏向导航和命令执行，插入模式偏向文本输入，可视模式偏向选择。
+- Preferred: `模态编辑` or `modal editing`
+- See also: [[modal-editing]], [[vim]]
+
+**文本对象（text object）** *(canonical form)*
+: 指可被操作符直接作用的一类结构化文本范围，例如引号内内容、括号内内容或连同包围符在内的整体区域。
+- Preferred: `文本对象` or `text object`
+- See also: [[modal-editing]], [[vim]]
+
+**buffer** *(canonical form)*
+: Vim 中已打开文件或文本内容的内存表示，可以脱离当前窗口独立存在，并在多个 buffer 之间切换。
+- Preferred: `buffer`
+- See also: [[vim]], [[vim-usage-and-configuration-reference]]
+
+**vim-plug** *(canonical form)*
+: 一个轻量级 Vim 插件管理器，用于声明、安装、更新和清理插件。
+- Preferred: `vim-plug`
+- See also: [[vim]], [[vim-usage-and-configuration-reference]]
+
 ---
 
 ## Style Conventions
@@ -162,6 +192,7 @@ Each entry follows this format:
 | Canonical AI terms | Use `AI辅助开发` for engineering-process collaboration and `AI融合` for product/function embedding. | “通过 AI辅助开发提效，并在项目中推进 AI融合。” |
 | Platform terminology | Use `底座` or `平台底座` for shared strategic infrastructure, not generic “公共能力”. | “新系统优先复用平台底座能力。” |
 | Delivery scope | Use `完整交付能力` when describing end-to-end ownership across the full lifecycle. | “小团队模式依赖完整交付能力。” |
+| Editor terminology | Use `Vim` for the editor, `vimrc` for its config file, and `模态编辑` for the editing model. | “先解释模态编辑，再介绍 `~/.vimrc` 常用配置。” |
 
 ---
 
@@ -185,6 +216,7 @@ Terms that differ between audiences, teams, or locales:
 |---|---|---|
 | 信创 Linux | 行业/政企项目语境 | 与国产化软硬件适配和落地相关。 |
 | 鸿蒙移动端适配 | 终端生态语境 | 指对鸿蒙端的产品或应用适配工作。 |
+| Vim / vim | 开发者工具语境 | 文中提及产品名称时优先写 `Vim`；命令名或文件路径中可写小写 `vim`。 |
 
 ---
 
@@ -204,3 +236,6 @@ Terms that differ between audiences, teams, or locales:
 - [[speech-native-llm]] — core speech-first architecture concept
 - [[neural-audio-codec]] — codec infrastructure concept
 - [[full-duplex-speech-interaction]] — real-time duplex interaction concept
+- [[vim-usage-and-configuration-reference]] — Vim source summary and command reference
+- [[vim]] — Vim product/tool page
+- [[modal-editing]] — modal editing concept

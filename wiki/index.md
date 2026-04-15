@@ -17,8 +17,8 @@ Each entry follows this format:
 
 | Page | Summary | Updated |
 |---|---|---|
-| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-14 |
-| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-14 |
+| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-15 |
+| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-15 |
 
 ---
 
@@ -28,6 +28,7 @@ Each entry follows this format:
 
 - [[2025-technical-line-summary]] — Annual review of 2025 technical-line execution and 2026 AI/platform strategy | source | 2026-04-14
 - [[moshi-neural-audio-codec-architecture-analysis]] — Architecture analysis of Moshi, Mimi, and Neural Audio Codec as speech LLM infrastructure | source | 2026-04-14
+- [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
 
 ---
 
@@ -45,6 +46,7 @@ Each entry follows this format:
 
 - [[moshi]] — Speech-native LLM focused on full-duplex, low-latency voice interaction | product | 2026-04-14
 - [[mimi]] — Neural Audio Codec and tokenizer used to turn speech into low-rate discrete tokens | product | 2026-04-14
+- [[vim]] — Modal terminal editor focused on composable text editing and lightweight workflow customization | product | 2026-04-15
 
 ---
 
@@ -67,6 +69,7 @@ Each entry follows this format:
 - [[speech-native-llm]] — Architecture pattern that models and generates speech directly instead of centering text | concept | 2026-04-14
 - [[neural-audio-codec]] — Audio tokenizer infrastructure layer that discretizes speech for LLM use | concept | 2026-04-14
 - [[full-duplex-speech-interaction]] — Real-time interaction model that supports simultaneous listening, speaking, and interruption | concept | 2026-04-14
+- [[modal-editing]] — Editing model where key behavior changes by mode and commands compose across motions and text objects | concept | 2026-04-15
 
 ---
 
