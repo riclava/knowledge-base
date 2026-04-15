@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath]
 ---
 
 # Glossary
@@ -200,6 +200,31 @@ Each entry follows this format:
 : Ubuntu/Debian 上的 PAM 开发包，提供编译需要 PAM 支持的软件（如 OpenSSH）所需的头文件和库。
 - Preferred: `libpam0g-dev`
 - See also: [[ubuntu]], [[openssh]], [[ubuntu2204-openssh-upgrade-from-source]]
+
+**systemd-resolved** *(canonical form)*
+: systemd 提供的 DNS 解析服务，在 Ubuntu 18.04+ 上默认启用，提供本地 DNS 缓存、DNSSEC 验证和 DNS stub listener（127.0.0.53:53）。
+- Preferred: `systemd-resolved`
+- See also: [[systemd-resolved-dns-management]], [[ubuntu]], [[network-configuration]]
+
+**DNSStubListener** *(canonical form)*
+: `systemd-resolved` 配置选项，控制是否在 127.0.0.53:53 上启用本地 DNS stub listener；设为 `no` 可释放 53 端口供其他 DNS 服务使用。
+- Preferred: `DNSStubListener`
+- See also: [[systemd-resolved-dns-management]], [[ubuntu-common-issues-and-optimization]]
+
+**multipath** *(canonical form)*
+: Linux 上用于管理多路径存储设备的工具和服务；在 VMware 虚拟机中，需要将虚拟磁盘加入黑名单以避免无意义的错误日志。
+- Preferred: `multipath` or `multipath-tools`
+- See also: [[ubuntu-common-issues-and-optimization]], [[linux]]
+
+**swap** *(canonical form)*
+: Linux 上用于内存不足时将内存页交换到磁盘的机制；在 Kubernetes 节点或内存敏感场景中通常需要禁用。
+- Preferred: `swap`
+- See also: [[ubuntu-common-issues-and-optimization]], [[linux]]
+
+**_netdev** *(canonical form)*
+: `/etc/fstab` 挂载选项，指示系统在网络可用后再尝试挂载该文件系统；对 NFS 等网络文件系统至关重要。
+- Preferred: `_netdev`
+- See also: [[ubuntu-common-issues-and-optimization]], [[linux]]
 
 **GRUB2** *(canonical form)*
 : CentOS 7 等 Linux 系统中常见的启动加载器；在当前来源中，它决定已安装的多个内核中哪个会作为默认启动项，并通过 `grub2-set-default`、`/etc/default/grub` 与 `grub2-mkconfig` 管理。
@@ -587,4 +612,6 @@ Terms that differ between audiences, teams, or locales:
 - [[ubuntu]] — Ubuntu distribution page
 - [[netplan-configuration-guide]] — Netplan configuration source summary
 - [[ubuntu2204-openssh-upgrade-from-source]] — Ubuntu 22.04 OpenSSH source upgrade runbook
+- [[ubuntu-common-issues-and-optimization]] — Ubuntu troubleshooting and optimization source summary
+- [[systemd-resolved-dns-management]] — DNS resolver management concept
 - [[network-configuration]] — declarative network configuration concept

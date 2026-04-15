@@ -332,3 +332,23 @@ Key additions:
 - Expanded source-built package replacement concept to contrast CentOS 7 (separate prefix, RPM removal) vs Ubuntu 22.04 (direct overwrite, no package removal) approaches.
 - Flagged `PermitRootLogin yes` and `PasswordAuthentication yes` as temporary convenience settings for recovery access, not production baseline.
 - Added canonical terminology for `--without-hardening`, `TCP Wrappers` (deprecated), and `libpam0g-dev`.
+
+## [2026-04-15] ingest | Ubuntu 常见问题与优化
+
+Pages created:
+- `wiki/sources/ubuntu-common-issues-and-optimization.md`
+- `wiki/concepts/systemd-resolved-dns-management.md`
+
+Pages updated:
+- `wiki/products/ubuntu.md` — added system optimization, swap management, NFS mount, DNS troubleshooting, VMware multipath sections
+- `wiki/glossary.md` — added `systemd-resolved`, `DNSStubListener`, `multipath`, `swap`, `_netdev` terms
+- `wiki/index.md` — added new source and concept entries
+- `wiki/overview.md` — updated source count, added Ubuntu optimization themes
+- `wiki/log.md`
+
+Key additions:
+- Added an Ubuntu source summary covering system optimization areas (sysctl, fstab, swap, NFS), APT package management (download-only, mirror switching, maintenance), and common troubleshooting scenarios (DNS port 53 conflict with systemd-resolved, VMware multipath errors).
+- Established `systemd-resolved DNS management` as a reusable concept for understanding and troubleshooting the default DNS resolver service on modern Ubuntu.
+- Expanded Ubuntu product page to cover system optimization, swap management, NFS auto-mount, DNS port conflicts, and VMware compatibility.
+- Added canonical terminology for `systemd-resolved`、`DNSStubListener`、`multipath`、`swap` 和 `_netdev`, and noted that legacy Ubuntu 16.04 WiFi configuration via wpa_supplicant is deprecated in favor of Netplan.
+- Flagged that disabling swap should be done with awareness of OOM risks, and that multipath blacklisting is specific to VMware VMs rather than physical servers.

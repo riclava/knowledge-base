@@ -4,8 +4,8 @@ title: Overview
 type: overview
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, linux, command-line, operations, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization]
 
 ---
 
@@ -18,11 +18,11 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-to
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, and Ubuntu 22.04 OpenSSH source upgrade workflows.
+This wiki currently covers AI-era engineering management, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, Ubuntu 22.04 OpenSSH source upgrade workflows, and Ubuntu system optimization and troubleshooting including DNS port conflicts and VMware compatibility.
 
-**Source count:** 15
-**Wiki pages:** 50
-**Last ingest:** 2026-04-15 — [[ubuntu2204-openssh-upgrade-from-source]]
+**Source count:** 16
+**Wiki pages:** 52
+**Last ingest:** 2026-04-15 — [[ubuntu-common-issues-and-optimization]]
 **Last lint:** —
 
 
@@ -47,6 +47,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - CentOS 7 从裸机到可用基线的标准化初始化流程，覆盖 minimal 安装、账户、网络、SSH 端口、镜像源、时间同步、安全策略和基础工具
 - 基于 Docker 快速构建隔离开发环境的容器化模式，包括容器保活、镜像源配置和基础工具安装
 - Ubuntu Netplan 声明式网络配置，覆盖 YAML 语法、DHCP/静态 IP、VLAN、Bond、Bridge 和安全测试工作流
+- Ubuntu 系统优化与常见问题排查，覆盖 swap 管理、NFS 挂载、APT 包管理、systemd-resolved DNS 端口冲突和 VMware multipath 错误
 
 
 ---
@@ -74,6 +75,8 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - 关闭 SELinux/firewalld 是快速验证或隔离测试环境的简化手段，不应成为生产默认；正式文档应优先解释如何配置而非关闭。
 - 在开发环境场景里，容器化不只是"把应用装进容器"，而是通过隔离、可复现和快速重建来降低环境配置的心智负担。
 - 在网络配置场景里，声明式工具（如 Netplan）把"描述期望状态"和"让系统收敛到该状态"分开，使配置可版本化、可测试、可回滚。
+- 在 Ubuntu 系统服务场景里，`systemd-resolved` 的 DNS stub listener 是常见的端口冲突来源；理解其架构有助于在部署本地 DNS 服务时快速定位问题。
+- 在虚拟化场景里，VMware 虚拟磁盘不需要 multipath 支持，将其加入黑名单可以消除无意义的错误日志。
 
 ---
 
@@ -109,6 +112,7 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - Linux 运维侧目前虽已补上 CentOS 6 仓库恢复、一个 CentOS 7 Docker 网络兼容性案例、一个 ELRepo 内核升级 runbook、一个 `nofile`/TCP backlog 调优备忘、一个 Samba 最小共享案例、一个 OpenSSL/OpenSSH 源码升级案例、一个 CentOS 7 初始化流程和一个 Docker 容器化开发环境配方，但仍缺少 `yum`/`dnf`/`apt` 的通用包管理、SSH 加固基线、tmux、git、远程开发、系统化 Docker 运维、内核升级回滚规范、SMB/Samba 最小权限加固、基于 workload 的容量调优模板和 CI 自动化等配套文档。
 - 容器化开发环境场景还没有覆盖数据卷挂载、端口映射、Dockerfile 构建、Docker Compose 编排或 IDE 远程开发集成（如 VS Code Remote Containers）。
 - Ubuntu 网络配置目前只覆盖 Netplan，还没有涉及 `ufw` 防火墙、AppArmor、云环境网络（如 AWS VPC）或 IPv6-only 部署场景。
+- Ubuntu 系统优化目前只覆盖基础调优和常见问题，还没有涉及性能基准测试、内核参数深度调优或生产环境加固最佳实践。
 
 
 ---
@@ -154,7 +158,9 @@ This wiki currently covers AI-era engineering management, speech-native AI archi
 - [[containerized-development-environment]] — concept page for isolated, reproducible development environments using containers
 - [[ubuntu]] — Ubuntu distribution page
 - [[netplan-configuration-guide]] — Ubuntu Netplan configuration source summary
+- [[ubuntu-common-issues-and-optimization]] — Ubuntu troubleshooting and optimization source summary
 - [[network-configuration]] — declarative network configuration concept
+- [[systemd-resolved-dns-management]] — DNS resolver management concept
 - [[kernel-upgrade-and-boot-management]] — concept page for installing kernels and managing default boot entries
 - [[legacy-repository-repointing]] — archive/vault repo recovery concept for legacy systems
 - [[os-initialization-workflow]] — concept page for structured OS initialization from bare metal to usable baseline

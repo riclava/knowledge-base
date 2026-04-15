@@ -3,8 +3,8 @@ title: Linux
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, netplan配置指南.md]
-tags: [product, linux, operating-system, command-line, operations, developer-tooling, centos, ubuntu, yum, repository, docker, containers, kernel, grub, networking, netplan, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld]
+sources: [commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, netplan配置指南.md, Ubuntu常见问题与优化.md]
+tags: [product, linux, operating-system, command-line, operations, developer-tooling, centos, ubuntu, yum, repository, docker, containers, kernel, grub, networking, netplan, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, systemd-resolved, dns, swap, nfs, multipath]
 ---
 
 Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平台，适合文件管理、系统巡检、服务排障、包源维护、资源限制和内核参数调优、容器宿主机诊断、内核/启动项管理、跨系统文件共享、远程访问栈维护、新装机初始化和脚本自动化。
@@ -129,6 +129,8 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 ## Related Pages
 
 - [[ubuntu]]
+- [[ubuntu-common-issues-and-optimization]]
+- [[systemd-resolved-dns-management]]
 - [[centos]]
 - [[network-configuration]]
 - [[netplan-configuration-guide]]
@@ -138,7 +140,6 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 - [[centos7-system-parameter-tuning]]
 - [[kernel-upgrade-and-boot-management]]
 - [[os-initialization-workflow]]
-- [[centos]]
 - [[centos6-archive-repository-workaround]]
 - [[file-descriptor-and-tcp-backlog-tuning]]
 - [[centos7-samba-share-setup]]

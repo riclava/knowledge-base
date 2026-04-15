@@ -3,8 +3,8 @@ title: Ubuntu
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [netplan配置指南.md, 基于docker构建ubuntu20.04开发环境.md, Ubuntu22.04升级OpenSSH版本到最新.md]
-tags: [linux, ubuntu, debian, apt, netplan, systemd-networkd, networkmanager, openssh, source-build]
+sources: [netplan配置指南.md, 基于docker构建ubuntu20.04开发环境.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md]
+tags: [linux, ubuntu, debian, apt, netplan, systemd-networkd, networkmanager, openssh, source-build, systemd-resolved, dns, swap, nfs, optimization]
 ---
 
 # Ubuntu
@@ -73,6 +73,29 @@ apt search <keyword>          # Search packages
 apt show <package>            # Show package details
 ```
 
+### Download Without Installing
+
+Useful for preparing offline installation packages:
+
+```bash
+# Download package and dependencies
+sudo apt-get install --download-only --reinstall -y <package-name>
+
+# Copy downloaded packages
+cp /var/cache/apt/archives/*.deb ~/my-packages/
+```
+
+### Maintenance Commands
+
+```bash
+# Full upgrade (including kernel)
+sudo apt dist-upgrade -y
+
+# Cleanup unused packages
+sudo apt autoremove -y
+sudo apt autoclean
+```
+
 ---
 
 ## Containerized Development
@@ -109,6 +132,78 @@ See [[ubuntu2204-openssh-upgrade-from-source]] for detailed runbook.
 
 ---
 
+## System Optimization
+
+### Swap Management
+
+Disable swap for Kubernetes nodes or memory-sensitive workloads:
+
+```bash
+# Temporary disable
+swapoff -a
+
+# Permanent disable (comment out swap in fstab)
+sudo sed -i '/swap/s/^/#/' /etc/fstab
+```
+
+### NFS Auto-Mount
+
+Configure persistent NFS mounts in `/etc/fstab`:
+
+```
+192.168.1.100:/data    /mnt/data   nfs   defaults,_netdev   0   0
+```
+
+Key option: `_netdev` ensures network is available before mounting.
+
+### Optimization Areas
+
+| Area | Config File | Purpose |
+|------|-------------|---------|
+| Kernel parameters | `/etc/sysctl.conf` | Network buffers, file handles |
+| Filesystem | `/etc/fstab` | Mount options, swap control |
+| Network | `/etc/netplan/*.yaml` | TCP/IP tuning |
+
+See [[ubuntu-common-issues-and-optimization]] for detailed optimization guidance.
+
+---
+
+## Common Troubleshooting
+
+### DNS Port 53 Conflict
+
+Ubuntu 18.04+ runs `systemd-resolved` which binds to port 53, conflicting with local DNS services:
+
+```bash
+# Disable DNS stub listener
+sudo sed -i 's/#DNSStubListener=yes/DNSStubListener=no/' /etc/systemd/resolved.conf
+sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
+sudo systemctl restart systemd-resolved.service
+```
+
+See [[systemd-resolved-dns-management]] for detailed explanation.
+
+### VMware Multipath Errors
+
+Suppress spurious multipath errors in VMware VMs:
+
+```bash
+cat <<EOF | sudo tee /etc/multipath.conf
+defaults {
+    user_friendly_names yes
+}
+blacklist {
+    device {
+        vendor "VMware"
+        product "Virtual disk"
+    }
+}
+EOF
+sudo /etc/init.d/multipath-tools restart
+```
+
+---
+
 ## Version History (LTS)
 
 | Version | Codename | Release | End of Standard Support |
@@ -136,7 +231,9 @@ See [[ubuntu2204-openssh-upgrade-from-source]] for detailed runbook.
 
 - [[linux]] — Linux platform page
 - [[netplan-configuration-guide]] — Netplan configuration source summary
+- [[ubuntu-common-issues-and-optimization]] — Ubuntu troubleshooting and optimization source summary
 - [[network-configuration]] — declarative network configuration concept
+- [[systemd-resolved-dns-management]] — DNS resolver management concept
 - [[ubuntu2004-docker-dev-environment-setup]] — Docker-based Ubuntu dev environment
 - [[ubuntu2204-openssh-upgrade-from-source]] — OpenSSH source upgrade runbook
 - [[containerized-development-environment]] — containerized development concept
