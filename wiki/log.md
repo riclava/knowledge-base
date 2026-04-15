@@ -83,3 +83,21 @@ Key additions:
 - Added the first Linux/developer-tooling source summary, centered on Vim configuration, editing commands, batch text operations, and plugin management.
 - Established `Vim` as a product/tool page and `模态编辑` as a reusable editing-model concept page.
 - Added canonical terminology for Vim、vimrc、模态编辑、文本对象、buffer 和 vim-plug, and expanded the overview to include terminal workflow knowledge.
+
+## [2026-04-15] ingest | Bash 语法与脚本技巧
+
+Pages created:
+- `wiki/sources/bash-syntax-and-scripting-reference.md`
+- `wiki/products/bash.md`
+- `wiki/concepts/shell-scripting.md`
+
+Pages updated:
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a Bash source summary covering variables, parameter expansion, arrays, control flow, option parsing, I/O, error handling, and common scripting tricks.
+- Established `Bash` as a product/tool page and `shell scripting` as a reusable automation concept page.
+- Added canonical terminology for Bash、shell scripting、参数展开、Here Document、getopts 和 `set -euo pipefail`, and expanded the overview from editor-centric Linux tooling toward broader terminal automation knowledge.

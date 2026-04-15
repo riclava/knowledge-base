@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, vim]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, vim, bash, shell]
 ---
 
 # Glossary
@@ -181,6 +181,36 @@ Each entry follows this format:
 - Preferred: `vim-plug`
 - See also: [[vim]], [[vim-usage-and-configuration-reference]]
 
+**Bash** *(canonical form)*
+: 一种常见于 Linux/Unix 环境的 shell 与脚本语言，既可交互执行命令，也可编排自动化脚本。
+- Preferred: `Bash` / Avoid: 在需要区分语言或解释器时只泛写 `shell`
+- See also: [[bash]], [[bash-syntax-and-scripting-reference]], [[shell-scripting]]
+
+**shell scripting** *(canonical form)*
+: 指使用 shell 内建能力、外部命令、管道和重定向编写自动化脚本的实践；在当前来源中主要指 Bash 脚本。
+- Preferred: `shell scripting` or `Shell 脚本` / Avoid: 把所有 shell script 都默认视为可移植的 POSIX `sh`
+- See also: [[shell-scripting]], [[bash]]
+
+**参数展开（parameter expansion）** *(canonical form)*
+: Bash 内置的变量展开与字符串处理机制，如默认值、截取、替换和前后缀删除，是减少外部文本处理命令的重要手段。
+- Preferred: `参数展开` or `parameter expansion`
+- See also: [[bash]], [[bash-syntax-and-scripting-reference]]
+
+**Here Document** *(canonical form)*
+: 用 `<<EOF` 形式向命令或文件提供多行输入的 shell 语法，可控制变量是否展开，并支持 `<<-EOF` 这种更易排版的缩进写法。
+- Preferred: `Here Document` or `heredoc`
+- See also: [[bash]], [[shell-scripting]]
+
+**getopts** *(canonical form)*
+: Bash 内建的短选项解析机制，适合为脚本建立规范命令行入口，并配合 `OPTARG`、`OPTIND` 处理参数消费。
+- Preferred: `getopts`
+- See also: [[bash]], [[shell-scripting]], [[bash-syntax-and-scripting-reference]]
+
+**set -euo pipefail** *(canonical form)*
+: Bash 中常见的防御性脚本组合，用于在命令失败、未定义变量或管道中间步骤失败时尽早暴露问题。
+- Preferred: `set -euo pipefail`
+- See also: [[bash]], [[shell-scripting]]
+
 ---
 
 ## Style Conventions
@@ -193,6 +223,7 @@ Each entry follows this format:
 | Platform terminology | Use `底座` or `平台底座` for shared strategic infrastructure, not generic “公共能力”. | “新系统优先复用平台底座能力。” |
 | Delivery scope | Use `完整交付能力` when describing end-to-end ownership across the full lifecycle. | “小团队模式依赖完整交付能力。” |
 | Editor terminology | Use `Vim` for the editor, `vimrc` for its config file, and `模态编辑` for the editing model. | “先解释模态编辑，再介绍 `~/.vimrc` 常用配置。” |
+| Shell terminology | Use `Bash` when the content depends on Bash-specific syntax; use `shell scripting` for the broader automation practice. | “这段脚本使用了 Bash 关联数组，属于 Bash 专用写法。” |
 
 ---
 
@@ -205,6 +236,7 @@ Terms that have been replaced, renamed, or should not be used:
 | 只说“监控” | `可观测性` | 当前语境明确包含日志、指标和 Trace，范围大于传统监控。 |
 | 把 AI能力 统称为“工具” | `AI辅助开发` or `AI融合` | 需要区分工程过程提效与业务功能落地。 |
 | 把底座写成“公共部分” | `底座` or `平台底座` | “底座”更准确表达复用、治理和战略支撑含义。 |
+| 把 Bash 专有写法统称为“shell 通用语法” | `Bash` | `[[ ]]`、关联数组、丰富参数展开等能力并非所有 shell 都支持。 |
 
 ---
 
@@ -217,6 +249,7 @@ Terms that differ between audiences, teams, or locales:
 | 信创 Linux | 行业/政企项目语境 | 与国产化软硬件适配和落地相关。 |
 | 鸿蒙移动端适配 | 终端生态语境 | 指对鸿蒙端的产品或应用适配工作。 |
 | Vim / vim | 开发者工具语境 | 文中提及产品名称时优先写 `Vim`；命令名或文件路径中可写小写 `vim`。 |
+| Bash / shell | 开发者工具语境 | 讲具体语法、关联数组、`getopts`、`[[ ]]` 时优先写 `Bash`；讲更宽泛的自动化实践时再写 `shell scripting`。 |
 
 ---
 
@@ -236,6 +269,9 @@ Terms that differ between audiences, teams, or locales:
 - [[speech-native-llm]] — core speech-first architecture concept
 - [[neural-audio-codec]] — codec infrastructure concept
 - [[full-duplex-speech-interaction]] — real-time duplex interaction concept
+- [[bash-syntax-and-scripting-reference]] — Bash source summary and scripting reference
+- [[bash]] — Bash product/tool page
+- [[shell-scripting]] — shell automation concept
 - [[vim-usage-and-configuration-reference]] — Vim source summary and command reference
 - [[vim]] — Vim product/tool page
 - [[modal-editing]] — modal editing concept
