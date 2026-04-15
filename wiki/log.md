@@ -228,3 +228,24 @@ Key additions:
 - Added a CentOS 7 source summary for upgrading OpenSSL and OpenSSH from upstream source, including dependency ordering, linker-path changes, service cutover, and remote-access continuity risks.
 - Established `OpenSSL` and `OpenSSH` as product pages plus `source-built package replacement` as a reusable Linux operations concept for source-compiled software taking over system paths and services.
 - Added canonical terminology for `源码编译安装`、`OpenSSL`、`OpenSSH`、`ldconfig`、`sshd_config` 和 `rpm -e --nodeps`, and expanded the Linux/CentOS synthesis to cover high-risk SSH/TLS stack upgrades on legacy hosts.
+
+## [2026-04-15] ingest | CentOS7 系统参数调优
+
+Pages created:
+- `wiki/sources/centos7-system-parameter-tuning.md`
+- `wiki/concepts/file-descriptor-and-tcp-backlog-tuning.md`
+
+Pages updated:
+- `wiki/products/centos.md`
+- `wiki/products/linux.md`
+- `wiki/concepts/linux-command-line-operations.md`
+- `wiki/sources/centos7-samba-share-setup.md`
+- `wiki/glossary.md`
+- `wiki/index.md`
+- `wiki/overview.md`
+- `wiki/log.md`
+
+Key additions:
+- Added a CentOS 7 source summary for tuning `nofile`, `fs.file-max`, `systemd` service limits, and TCP backlog-related kernel parameters.
+- Established `file descriptor and TCP backlog tuning` as a reusable Linux operations concept that separates session-level, kernel-level, and service-level resource ceilings.
+- Added canonical terminology for `limits.conf`、`nofile`、`sysctl`、`fs.file-max`、`LimitNOFILE` 和 `somaxconn / tcp_max_syn_backlog`, and clarified in the Samba notes that `limits.conf` is a generic capacity-tuning surface rather than Samba-specific configuration.

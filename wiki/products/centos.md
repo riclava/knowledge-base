@@ -3,11 +3,11 @@ title: CentOS
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md]
-tags: [product, centos, linux, rpm, yum, repository, elrepo, grub, legacy-system, docker, kernel, networking, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build]
+sources: [CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md]
+tags: [product, centos, linux, rpm, yum, repository, elrepo, grub, legacy-system, docker, kernel, networking, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp]
 ---
 
-CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知识库里，它既以“版本生命周期影响仓库可用性”的运维对象出现，也以“需要通过内核基线和 GRUB 启动项管理来满足 Docker 等运行时兼容性”的宿主机环境出现，还以“通过 Samba 向 Windows 暴露共享目录”和“在遗留版本上手工替换 OpenSSL/OpenSSH 安全栈”的服务承载环境出现。
+CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知识库里，它既以“版本生命周期影响仓库可用性”的运维对象出现，也以“需要通过内核基线和 GRUB 启动项管理来满足 Docker 等运行时兼容性”的宿主机环境出现，还以“通过 `/etc/security/limits.conf`、`/etc/sysctl.conf` 和 `systemd` unit 调整资源上限”的系统参数调优环境、“通过 Samba 向 Windows 暴露共享目录”的服务环境，以及“在遗留版本上手工替换 OpenSSL/OpenSSH 安全栈”的维护环境出现。
 
 ## Product Snapshot
 
@@ -15,10 +15,10 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 |---|---|
 | 产品类型 | Linux 发行版 |
 | 包管理栈 | `rpm` + `yum`（当前来源语境） |
-| 关键配置位置 | `/etc/yum.repos.d/*.repo`、`/etc/yum/pluginconf.d/`、`/etc/default/grub`、`/boot/grub2/grub.cfg`、`/etc/samba/smb.conf` |
+| 关键配置位置 | `/etc/yum.repos.d/*.repo`、`/etc/yum/pluginconf.d/`、`/etc/default/grub`、`/boot/grub2/grub.cfg`、`/etc/security/limits.conf`、`/etc/sysctl.conf`、`/etc/samba/smb.conf` |
 | 典型仓库字段 | `mirrorlist`、`baseurl`、`gpgcheck`、`gpgkey`、`enabled` |
 | 生命周期特征 | 老版本在镜像退役后可能需要 archive/vault；CentOS 7 也可能在运行时兼容性压力下引入 ELRepo 等替代内核仓库 |
-| 典型使用场景 | 服务器运维、遗留系统维护、容器宿主机兼容性修复、企业内部基础环境、跨系统文件共享 |
+| 典型使用场景 | 服务器运维、遗留系统维护、容器宿主机兼容性修复、企业内部基础环境、资源限制调优、跨系统文件共享 |
 
 ## Core Capability Surface in This Source
 
@@ -50,6 +50,12 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 
 - 关闭 `fastestmirror`、重写 `CentOS-Base.repo`、替换 ELRepo 镜像、修改 `/etc/default/grub` 都通过 shell 完成，说明 CentOS 的很多维护工作天然适合命令行和脚本化处理。
 - 这也让 [[bash]] 和 [[shell-scripting]] 在 CentOS 语境里成为非常直接的操作入口。
+
+### Resource Ceilings Are Layered Configuration, Not a Single Switch
+
+- 新来源说明，CentOS 7 上“把文件句柄数调大”至少分成登录会话的 `nofile`、内核全局 `fs.file-max` 和 `systemd` 服务级 `LimitNOFILE` 三个层面。
+- `net.core.somaxconn` 和 `net.ipv4.tcp_max_syn_backlog` 则进一步表明，CentOS 文档中的“高并发参数”并不只属于应用配置，还会落到 `/etc/sysctl.conf` 这样的内核调优入口。
+- 这让 CentOS 运维文档需要写清“哪个配置影响谁”“何时重启或重载”“如何看 live process 是否真正拿到新限制”。
 
 ### CentOS Often Acts as a Lightweight Service Host
 
@@ -85,6 +91,7 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 - 应写明 CentOS 主版本，因为 repo 路径、签名 key 和第三方仓库兼容性都可能随版本变化。
 - 当文档涉及 Docker、内核升级或容器网络时，应补上宿主机内核版本和最小验证步骤，不要只写软件包安装过程。
 - 应明确区分“升级到 CentOS 官方维护的较新内核”和“引入 ELRepo 等替代内核分支”这两类路线。
+- 当文档涉及 `nofile`、`fs.file-max`、`LimitNOFILE` 或 TCP backlog 参数时，应按登录会话、内核和服务进程三层拆开写，并明确验证命令。
 - 当文档涉及 Samba 或其他网络服务时，应把共享路径、账号准备、客户端访问路径以及防火墙 / SELinux 处理拆开写清楚。
 - 当文档涉及 OpenSSL/OpenSSH 源码替换时，应写明确切版本、自定义安装前缀、服务切换窗口、备用登录路径和回滚步骤，不要只给命令串。
 - 应区分“恢复旧版本继续运行”和“建议升级到受支持版本”这两类完全不同的文档目的。
@@ -96,6 +103,7 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 - 没有覆盖 `yum clean all`、缓存重建、包查询验证或日志排查。
 - 没有讨论 EPEL、SSL/TLS 兼容性、Secure Boot、SELinux 或更系统的网络限制环境。
 - Docker 相关内容现在补上了一个旧内核案例和一条 ELRepo 升级 runbook，但仍没有完整的容器运行时安装、升级和维护体系。
+- 系统参数调优内容目前只覆盖 `nofile`、`fs.file-max` 和两个 TCP backlog 参数，还没有形成 workload 驱动的容量基线、压测或回滚规范。
 - Samba 相关内容目前只覆盖了一个最小共享案例，还没有形成防火墙端口、SELinux 上下文、域集成或多用户权限设计的体系化文档。
 - OpenSSL/OpenSSH 相关内容现在补上了一条源码升级 runbook，但仍没有更稳妥的 RPM 路线、回滚规范或 SSH 加固基线。
 - 没有涉及 CentOS 7/8、Stream、RHEL 或 Rocky/AlmaLinux 等相邻发行版差异。
@@ -104,7 +112,9 @@ CentOS 是一类基于 RPM/YUM 生态的企业级 Linux 发行版；在当前知
 
 - [[centos7-offline-docker-install-troubleshooting]]
 - [[centos7-kernel-upgrade-via-elrepo]]
+- [[centos7-system-parameter-tuning]]
 - [[centos6-archive-repository-workaround]]
+- [[file-descriptor-and-tcp-backlog-tuning]]
 - [[kernel-upgrade-and-boot-management]]
 - [[docker]]
 - [[samba]]

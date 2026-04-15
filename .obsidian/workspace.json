@@ -180,6 +180,8 @@
   },
   "active": "abf014ed3c238408",
   "lastOpenFiles": [
+    "wiki/concepts/file-descriptor-and-tcp-backlog-tuning.md",
+    "wiki/sources/centos7-system-parameter-tuning.md",
     "wiki/concepts/source-built-package-replacement.md",
     "wiki/products/openssh.md",
     "wiki/products/openssl.md",
@@ -204,8 +206,6 @@
     "raw/OS/Linux/CentOS/CentOS7系统参数调优.md",
     "raw/OS/Linux/CentOS/CentOS7升级OpenSSL和OpenSSH.md",
     "raw/OS/Linux/CentOS/CentOS7升级内核.md",
-    "raw/OS/Linux/CentOS/CentOS7配置Samba共享.md",
-    "raw/OS/Linux/CentOS/CentOS7离线安装docker问题排查.md",
     "raw/OS/Linux/CentOS",
     "未命名.base",
     "raw/OS/Linux/Ubuntu",

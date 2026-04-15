@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, linux, command-line, vim, bash, shell, centos, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp]
 ---
 
 # Glossary
@@ -357,9 +357,39 @@ Each entry follows this format:
 - See also: [[linux-command-line-operations]], [[bash]], [[shell-scripting]]
 
 **systemd** *(canonical form)*
-: Linux 上常见的初始化与服务管理体系；在当前来源中，`journalctl` 作为其日志查询入口出现。
+: Linux 上常见的初始化与服务管理体系；在当前来源中，它既作为 `journalctl` 的日志体系出现，也作为通过 `LimitNOFILE` 覆盖服务资源限制的配置层出现。
 - Preferred: `systemd`
-- See also: [[linux]], [[linux-common-commands-reference]]
+- See also: [[linux]], [[linux-common-commands-reference]], [[file-descriptor-and-tcp-backlog-tuning]]
+
+**limits.conf** *(canonical form)*
+: Linux 上常见的登录会话资源限制配置文件，通常指 `/etc/security/limits.conf`；在当前来源中，它用于设置用户级 `soft/hard nofile` 上限。
+- Preferred: `limits.conf` or `/etc/security/limits.conf`
+- See also: [[file-descriptor-and-tcp-backlog-tuning]], [[centos7-system-parameter-tuning]], [[linux]]
+
+**nofile** *(canonical form)*
+: Linux 资源限制中的一个项目名，表示可打开文件描述符数量的上限；常以 `soft`/`hard` 形式出现在 `limits.conf` 或进程限制信息里。
+- Preferred: `nofile`
+- See also: [[file-descriptor-and-tcp-backlog-tuning]], [[centos7-system-parameter-tuning]], [[linux]]
+
+**sysctl / sysctl.conf** *(canonical form)*
+: Linux 内核运行时参数接口及其常见持久化配置文件；在当前来源中，它用于设置 `fs.file-max`、`net.core.somaxconn` 和 `net.ipv4.tcp_max_syn_backlog`。
+- Preferred: `sysctl` / `/etc/sysctl.conf`
+- See also: [[file-descriptor-and-tcp-backlog-tuning]], [[centos7-system-parameter-tuning]], [[linux]]
+
+**fs.file-max** *(canonical form)*
+: Linux 内核允许系统级文件句柄总量的 tunable；它控制的是全局文件表上限，而不是单个进程的 `nofile`。
+- Preferred: `fs.file-max`
+- See also: [[file-descriptor-and-tcp-backlog-tuning]], [[centos7-system-parameter-tuning]], [[linux]]
+
+**LimitNOFILE** *(canonical form)*
+: `systemd` unit 的服务级资源限制项，用来为由 `systemd` 启动的进程设置 `nofile` 上限；它与登录用户的 `ulimit -n` 不是同一层。
+- Preferred: `LimitNOFILE`
+- See also: [[file-descriptor-and-tcp-backlog-tuning]], [[centos7-system-parameter-tuning]], [[linux]]
+
+**somaxconn / tcp_max_syn_backlog** *(canonical form)*
+: Linux 内核中与 TCP 监听和握手排队相关的两个常见参数；它们影响 backlog 上限，但不等同于“系统总连接数”。
+- Preferred: `somaxconn` / `tcp_max_syn_backlog`
+- See also: [[file-descriptor-and-tcp-backlog-tuning]], [[centos7-system-parameter-tuning]], [[linux]]
 
 **journalctl** *(canonical form)*
 : `systemd` 日志查询工具，可按服务、时间范围或实时流查看系统日志。
@@ -399,6 +429,7 @@ Each entry follows this format:
 | Delivery scope | Use `完整交付能力` when describing end-to-end ownership across the full lifecycle. | “小团队模式依赖完整交付能力。” |
 | Editor terminology | Use `Vim` for the editor, `vimrc` for its config file, and `模态编辑` for the editing model. | “先解释模态编辑，再介绍 `~/.vimrc` 常用配置。” |
 | Shell terminology | Use `Bash` when the content depends on Bash-specific syntax; use `shell scripting` for the broader automation practice. | “这段脚本使用了 Bash 关联数组，属于 Bash 专用写法。” |
+| Capacity tuning terminology | Name the exact layer such as `nofile`, `fs.file-max`, or `LimitNOFILE` instead of saying only “把句柄数调大了”. | “先调 `fs.file-max`，再确认服务 unit 的 `LimitNOFILE` 是否同步。” |
 | Linux operations terminology | When behavior depends on a specific subsystem, use the exact command or service name such as `journalctl`, `crontab`, or `firewalld`, not a vague “Linux 命令”. | “查看 `systemd` 日志时使用 `journalctl`。” |
 
 ---

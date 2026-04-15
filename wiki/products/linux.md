@@ -3,11 +3,11 @@ title: Linux
 type: product
 created: 2026-04-15
 updated: 2026-04-15
-sources: [commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md]
-tags: [product, linux, operating-system, command-line, operations, developer-tooling, centos, yum, repository, docker, containers, kernel, grub, networking, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build]
+sources: [commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md]
+tags: [product, linux, operating-system, command-line, operations, developer-tooling, centos, yum, repository, docker, containers, kernel, grub, networking, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp]
 ---
 
-Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平台，适合文件管理、系统巡检、服务排障、包源维护、容器宿主机诊断、内核/启动项管理、跨系统文件共享、远程访问栈维护和脚本自动化。
+Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平台，适合文件管理、系统巡检、服务排障、包源维护、资源限制和内核参数调优、容器宿主机诊断、内核/启动项管理、跨系统文件共享、远程访问栈维护和脚本自动化。
 
 ## Product Snapshot
 
@@ -15,10 +15,10 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 |---|---|
 | 产品类型 | 操作系统 / 命令行运行平台 |
 | 典型入口 | 本地终端、SSH 会话、Shell 脚本 |
-| 核心资源对象 | 文件系统、进程、网络、用户、权限、日志、内核、启动项、定时任务 |
-| 常见工具簇 | `cp/rsync/find`、`grep/sed/awk`、`df/du/dd`、`ps/top/ss/ip`、`yum/rpm`、`grub2-*`、`crontab`、`journalctl` |
+| 核心资源对象 | 文件系统、进程、网络、用户、权限、日志、内核、启动项、定时任务、资源限制 |
+| 常见工具簇 | `cp/rsync/find`、`grep/sed/awk`、`df/du/dd`、`ps/top/ss/ip`、`ulimit`、`sysctl`、`yum/rpm`、`grub2-*`、`crontab`、`journalctl` |
 | 典型输出方式 | 纯文本、表格、日志流、退出状态 |
-| 典型使用场景 | 服务器管理、开发环境维护、问题排查、自动化执行 |
+| 典型使用场景 | 服务器管理、开发环境维护、问题排查、容量调优、自动化执行 |
 
 ## Core Capability Surface in This Source
 
@@ -65,6 +65,12 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 - 这让 Linux 文档需要区分“系统里装了哪些内核包”“当前跑的是哪个内核”“下次重启会进哪个内核”这三个层面。
 - 当升级是为了解决 Docker 或驱动兼容性问题时，重启后的针对性验证和 `uname -r` 同样重要。
 
+### Resource Limits Cross Shell, Kernel, and Service Manager
+
+- 新来源补上了 Linux 运维里另一类很常见但容易写混的主题：文件句柄与连接 backlog 并不只是一份配置文件的事情。
+- `ulimit -n`、`/etc/security/limits.conf`、`fs.file-max`、`LimitNOFILE` 和 `/proc/<PID>/limits` 一起说明，Linux 文档必须区分当前 shell、内核全局状态和 `systemd` 服务继承值。
+- `net.core.somaxconn` 与 `net.ipv4.tcp_max_syn_backlog` 进一步说明，网络承载上限也常以内核 tunable 的形式出现，而不是只写在应用自己的配置里。
+
 ### Distribution Lifecycle and Package Sources
 
 - 当前来源补充了 Linux 运维中容易被忽略的一面：系统能否安装或查询软件包，不只取决于包管理器命令，还取决于发行版镜像和仓库是否仍然可达。
@@ -99,6 +105,7 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 - 应明确区分通用 Linux 能力与子系统特定接口，例如 `journalctl` 对应 `systemd`，`firewall-cmd` 对应 `firewalld`。
 - 应优先说明现代命令与旧命令的关系，例如 `ss` 相对 `netstat`、`ip` 相对 `ifconfig/route`。
 - 当文档涉及 `yum`、repo 文件、archive/vault 镜像或 ELRepo 时，应明确发行版与版本边界，不要把特定发行版配置泛写成通用 Linux 事实。
+- 当文档涉及 `nofile`、`fs.file-max`、`sysctl` 或 `LimitNOFILE` 时，应明确区分用户会话限制、内核全局参数和 `systemd` 服务级限制。
 - 当文档涉及 Samba 这类跨系统共享服务时，应把目录权限、账号准备、服务状态、客户端路径和安全策略处理分层写清楚。
 - 当文档涉及 Docker 或容器桥接网络时，应同时写出最小验证命令与宿主机内核检查项。
 - 当文档涉及内核升级时，应明确区分安装、默认启动项切换、配置重建、重启和回滚能力。
@@ -108,6 +115,7 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 ## Known Gaps from This Source
 
 - 仍没有形成通用的包管理器文档体系；虽然已补上 CentOS 遗留仓库恢复、一个 Docker 网络兼容性案例、一个 Samba 最小共享案例、一个 ELRepo 内核升级 runbook 和一个 OpenSSL/OpenSSH 源码升级案例，但 SSH 加固、挂载管理、ACL、SELinux/AppArmor 和系统化容器运维仍未覆盖。
+- 虽然新补上了 `nofile` 与 TCP backlog 的基础调优笔记，但仍缺少基于具体服务负载的容量模型、压测方法和报警阈值。
 - 没有系统讨论不同发行版之间的包管理、服务管理差异和云环境常见限制。
 - 没有涉及更高层的基础设施编排，如 Ansible、Terraform 或 CI/CD。
 
@@ -115,9 +123,11 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 
 - [[centos7-offline-docker-install-troubleshooting]]
 - [[centos7-kernel-upgrade-via-elrepo]]
+- [[centos7-system-parameter-tuning]]
 - [[kernel-upgrade-and-boot-management]]
 - [[centos]]
 - [[centos6-archive-repository-workaround]]
+- [[file-descriptor-and-tcp-backlog-tuning]]
 - [[centos7-samba-share-setup]]
 - [[docker]]
 - [[samba]]

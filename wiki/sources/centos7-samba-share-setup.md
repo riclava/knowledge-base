@@ -3,7 +3,7 @@ title: CentOS7配置Samba共享
 type: source
 created: 2026-04-15
 updated: 2026-04-15
-sources: [CentOS7配置Samba共享.md]
+sources: [CentOS7配置Samba共享.md, CentOS7系统参数调优.md]
 tags: [centos, linux, samba, smb, windows, file-sharing, service-configuration, source]
 ---
 
@@ -59,7 +59,7 @@ tags: [centos, linux, samba, smb, windows, file-sharing, service-configuration, 
 
 - 来源把关闭 `firewalld`、`iptables` 和 `SELinux` 写成准备步骤，这更像现场快速打通方法，不应直接视为正式环境最佳实践。
 - 来源没有提供 `testparm`、`systemctl status smb`、`ss -lntp`、`smbclient -L` 或 Windows 认证失败时的排障步骤，因此它更像“最小配置备忘”而不是完整教程。
-- 修改 `limits.conf` 的 `nofile` 上限缺少上下文说明；对于单一轻量共享场景，这一步是否必要无法从当前来源中验证。
+- 后续来源 `[[centos7-system-parameter-tuning]]` 说明 `limits.conf`、`fs.file-max` 和 `LimitNOFILE` 属于通用容量调优层，而不是 Samba 专属配置；但这份 Samba 笔记仍没有解释当前共享场景为什么需要这一步。
 - 示例直接执行 `useradd ricl`，没有说明目标用户是否已存在，也没有覆盖密码策略、组权限或多用户场景。
 - 只展示了手工映射网络驱动器，没有说明持久映射、凭据缓存、主机名解析或跨网段访问条件。
 
@@ -77,5 +77,7 @@ tags: [centos, linux, samba, smb, windows, file-sharing, service-configuration, 
 - [[centos]]
 - [[linux]]
 - [[linux-command-line-operations]]
+- [[centos7-system-parameter-tuning]]
+- [[file-descriptor-and-tcp-backlog-tuning]]
 - [[glossary]]
 - [[overview]]
