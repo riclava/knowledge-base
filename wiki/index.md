@@ -37,6 +37,7 @@ Each entry follows this format:
 - [[centos7-system-parameter-tuning]] — CentOS 7 tuning note covering `nofile`, `fs.file-max`, `systemd` `LimitNOFILE`, and TCP listen backlog parameters | source | 2026-04-15
 - [[centos7-os-initialization-workflow]] — CentOS 7 initialization runbook covering minimal install, account/network config, SSH port, mirrors, NTP, security policy simplification, and base tools | source | 2026-04-15
 - [[linux-common-commands-reference]] — Linux command cheat sheet covering file, text, process, network, permissions, cron, and logs | source | 2026-04-15
+- [[macos-usb-installer-creation]] — Compact macOS runbook for creating a bootable USB installer, booting from external media, and handling downgrade-time startup-security changes | source | 2026-04-16
 - [[moshi-neural-audio-codec-architecture-analysis]] — Architecture analysis of Moshi, Mimi, and Neural Audio Codec as speech LLM infrastructure | source | 2026-04-14
 - [[ubuntu2004-docker-dev-environment-setup]] — Minimal recipe for creating an Ubuntu 20.04 development environment using Docker with container keep-alive and APT mirror configuration | source | 2026-04-15
 - [[ubuntu2204-openssh-upgrade-from-source]] — Ubuntu 22.04 runbook for upgrading OpenSSH from upstream portable source with in-place binary replacement | source | 2026-04-15
@@ -65,6 +66,7 @@ Each entry follows this format:
 - [[centos]] — RPM/YUM-based enterprise Linux distribution family with repository lifecycle, alternate kernel upgrade paths, and version-specific host-compatibility behavior | product | 2026-04-15
 - [[docker]] — Container runtime/tooling page covering host-kernel-dependent networking behavior, validation, kernel-remediation paths, and containerized development environment patterns | product | 2026-04-15
 - [[linux]] — Linux operating system and engineering mental model spanning command-line operations, permissions, observability, and system design principles | product | 2026-04-16
+- [[macos]] — Apple desktop operating system page currently focused on bootable installer creation, Recovery-mode startup controls, and downgrade/reinstallation preparation | product | 2026-04-16
 - [[openssh]] — SSH client/server suite page focused on source-built service replacement across CentOS 7 and Ubuntu 22.04, covering authentication policy and remote-access continuity risks | product | 2026-04-15
 - [[openssl]] — TLS/crypto library page focused on source installation, linker-path integration, and its role as a dependency for higher-level services | product | 2026-04-15
 - [[samba]] — SMB/CIFS file-sharing server used to expose Linux directories to Windows clients with share-level auth and path masks | product | 2026-04-15
@@ -91,6 +93,7 @@ Each entry follows this format:
 
 - [[full-lifecycle-delivery-capability]] — End-to-end software delivery capability grounded in problem framing, layered quality gates, release, and operations | concept | 2026-04-16
 - [[ai-enabled-software-delivery]] — AI as an integrated delivery capability that still depends on human abstraction, modeling, validation, and workflow guardrails | concept | 2026-04-15
+- [[bootable-os-installer-media]] — Practice of writing a full OS installer to external media so installation, reinstall, downgrade, and recovery can happen outside the running system | concept | 2026-04-16
 - [[model-context-protocol]] — Protocol layer that lets AI systems call external tools and data sources as part of execution workflows | concept | 2026-04-15
 - [[project-steering-context]] — Persistent project context that teaches AI the stack, rules, and domain constraints of a repository | concept | 2026-04-15
 - [[devops-delivery-pipeline]] — Delivery-loop concept connecting local development, layered test gates, deployment, and runtime feedback | concept | 2026-04-16
@@ -113,6 +116,7 @@ Each entry follows this format:
 - [[legacy-repository-repointing]] — Practice of redirecting package managers from retired mirrors to static archive/vault repositories for legacy systems | concept | 2026-04-15
 - [[modal-editing]] — Editing model where key behavior changes by mode and commands compose across motions and text objects | concept | 2026-04-15
 - [[shell-scripting]] — Automation practice that composes shell builtins, commands, and Unix I/O primitives into reusable, idempotence-aware workflows | concept | 2026-04-16
+- [[startup-security-and-external-boot-policy]] — Control surface that decides whether a device may boot from external installer media and which recovery-time security changes are required | concept | 2026-04-16
 - [[source-built-package-replacement]] — Practice of compiling upstream software outside the package manager, then manually wiring it into system paths, services, and rollback strategy, covering both CentOS 7 and Ubuntu 22.04 patterns | concept | 2026-04-15
 - [[linux-command-line-operations]] — Practice of inspecting and administering Linux systems through composable command-line tools, including resource observability and service validation | concept | 2026-04-16
 - [[smb-file-sharing]] — Practice of exposing directories over SMB so Windows clients can map Linux-hosted network drives with explicit auth and permission boundaries | concept | 2026-04-15

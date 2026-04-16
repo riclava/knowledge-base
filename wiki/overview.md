@@ -4,8 +4,8 @@ title: Overview
 type: overview
 created: 2026-04-07
 updated: 2026-04-16
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, Ubuntu切换指定版本内核.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, Ubuntu切换指定版本内核.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot]
 
 ---
 
@@ -18,11 +18,11 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-to
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, engineering-thinking frameworks for abstraction/modeling/validation, AI-assisted full-stack onboarding patterns, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, Unix-style design philosophy, host-level observability through USE and `/proc`-backed metrics, layered software-testing architecture, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, Ubuntu 22.04 OpenSSH source upgrade workflows, Ubuntu system optimization and troubleshooting including DNS port conflicts and VMware compatibility, Ubuntu kernel version switching via APT and GRUB configuration, plus AI-era onboarding material for MCP, project Steering context, DevOps pipeline basics, and starter full-stack stack composition.
+This wiki currently covers AI-era engineering management, engineering-thinking frameworks for abstraction/modeling/validation, AI-assisted full-stack onboarding patterns, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, Unix-style design philosophy, host-level observability through USE and `/proc`-backed metrics, layered software-testing architecture, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, Ubuntu 22.04 OpenSSH source upgrade workflows, Ubuntu system optimization and troubleshooting including DNS port conflicts and VMware compatibility, Ubuntu kernel version switching via APT and GRUB configuration, an initial macOS runbook for bootable USB installer creation and external-boot downgrade preparation, plus AI-era onboarding material for MCP, project Steering context, DevOps pipeline basics, and starter full-stack stack composition.
 
-**Source count:** 20
-**Wiki pages:** 68
-**Last ingest:** 2026-04-16 — [[linux-foundations-and-testing-special-topic]]
+**Source count:** 21
+**Wiki pages:** 72
+**Last ingest:** 2026-04-16 — [[macos-usb-installer-creation]]
 **Last lint:** —
 
 
@@ -53,6 +53,7 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - Ubuntu Netplan 声明式网络配置，覆盖 YAML 语法、DHCP/静态 IP、VLAN、Bond、Bridge 和安全测试工作流
 - Ubuntu 系统优化与常见问题排查，覆盖 swap 管理、NFS 挂载、APT 包管理、systemd-resolved DNS 端口冲突和 VMware multipath 错误
 - Ubuntu 内核版本切换，覆盖 APT 内核包安装、GRUB 默认启动项配置和重启验证
+- macOS 安装 U 盘制作与外部启动安装流程，覆盖 `createinstallmedia`、Recovery 模式、启动安全性设置和基础故障恢复
 - 软件测试架构，覆盖测试金字塔、属性测试、Contract Test、回归闭环、CI 时间分层和环境分工
 
 
@@ -85,6 +86,7 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - 在网络配置场景里，声明式工具（如 Netplan）把"描述期望状态"和"让系统收敛到该状态"分开，使配置可版本化、可测试、可回滚。
 - 在 Ubuntu 系统服务场景里，`systemd-resolved` 的 DNS stub listener 是常见的端口冲突来源；理解其架构有助于在部署本地 DNS 服务时快速定位问题。
 - 在虚拟化场景里，VMware 虚拟磁盘不需要 multipath 支持，将其加入黑名单可以消除无意义的错误日志。
+- 在桌面系统重装场景里，“安装介质已经制作完成”和“设备被允许从外部介质启动”不是一回事；恢复模式中的启动安全策略同样属于安装文档的一部分。
 - 研发的核心不是直接写代码，而是先完成问题抽象、模型建立、系统边界划分，再进入实现。
 - “降低不确定性”是工程师的重要职责，因此验证、极端 case 和权衡属于设计阶段，而不是实现后的附属动作。
 - AI 协同不会削弱这些基本功，反而要求团队更明确地表达问题、状态、数据流和验收边界。
@@ -118,6 +120,7 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - 是否会把 Steering 文件模板、MCP 接入约束和 AI 协作规则沉淀为跨项目标准？
 - 是否会进一步沉淀团队级的测试金字塔比例、属性测试适用范围、Contract Test 规范和回归数据管理方式？
 - 是否会补充 Prometheus / Grafana / node_exporter 的独立专题页与标准化监控指标清单？
+- 是否会继续补充 macOS 安装与恢复文档，覆盖 Apple silicon / Intel 差异、APFS / Disk Utility 和 Time Machine 相关流程？
 
 
 ---
@@ -135,6 +138,7 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - 容器化开发环境场景还没有覆盖数据卷挂载、端口映射、Dockerfile 构建、Docker Compose 编排或 IDE 远程开发集成（如 VS Code Remote Containers）。
 - Ubuntu 网络配置目前只覆盖 Netplan，还没有涉及 `ufw` 防火墙、AppArmor、云环境网络（如 AWS VPC）或 IPv6-only 部署场景。
 - Ubuntu 系统优化目前只覆盖基础调优和常见问题，还没有涉及性能基准测试、内核参数深度调优或生产环境加固最佳实践。
+- macOS 侧目前只覆盖安装 U 盘制作，还缺少 Apple silicon / Intel 启动差异、APFS / Disk Utility、Time Machine、系统恢复和数据迁移等专题。
 - 缺少把研发思维落到更多真实业务案例上的练习库、评审模板和分层设计示例。
 - 刚补上 AI 时代的全栈入门全景，但仍缺少 Git/PR、Docker Compose、多容器本地开发、PostgreSQL/Redis、Go/Gin/GORM/wire、React/TypeScript/Tailwind/shadcn、Nginx 部署、`wrk` 和 Playwright 的独立专题页。
 - 虽然已补上测试架构总览，但仍缺少团队级测试规范、缺陷分级到回归用例的沉淀模板，以及 Contract Test / 属性测试的落地案例库。
@@ -206,6 +210,10 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - [[kernel-upgrade-and-boot-management]] — concept page for installing kernels and managing default boot entries
 - [[legacy-repository-repointing]] — archive/vault repo recovery concept for legacy systems
 - [[os-initialization-workflow]] — concept page for structured OS initialization from bare metal to usable baseline
+- [[macos-usb-installer-creation]] — macOS bootable USB installer source summary
+- [[macos]] — macOS desktop operating system page
+- [[bootable-os-installer-media]] — concept page for creating external installation media from full installers
+- [[startup-security-and-external-boot-policy]] — concept page for recovery-time authorization of external boot paths
 - [[samba]] — Samba product/tool page
 - [[smb-file-sharing]] — concept page for SMB-based cross-platform directory sharing
 - [[vim-usage-and-configuration-reference]] — Vim source summary and command reference

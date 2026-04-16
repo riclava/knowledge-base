@@ -451,3 +451,24 @@ Key additions:
 - Expanded Linux-related pages to cover file descriptors, least privilege, signals, resource bottlenecks, and the mapping from `/proc` / `/sys` to monitoring systems.
 - Expanded delivery and observability synthesis pages to show how fast feedback, layered testing, regression accumulation, and host-level metrics together form the practical quality loop.
 - Added canonical terminology for `Unix 哲学`、`管道思维`、`文件描述符`、`最小权限原则`、`幂等性`、`优雅停机`、`USE 方法`、`测试金字塔`、`属性测试`、`Contract Test`、`回归测试` and `固定用例（Golden Cases）`.
+
+## [2026-04-16] ingest | macOS 安装 U 盘制作
+
+Pages created:
+- `wiki/sources/macos-usb-installer-creation.md`
+- `wiki/products/macos.md`
+- `wiki/concepts/bootable-os-installer-media.md`
+- `wiki/concepts/startup-security-and-external-boot-policy.md`
+
+Pages updated:
+- `wiki/glossary.md` — added macOS installation, Recovery, startup security, and firmware-reset terminology
+- `wiki/index.md` — added new source, product, and concept entries
+- `wiki/overview.md` — updated source/page counts and added macOS recovery/install coverage
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for a compact macOS runbook covering installer download, USB formatting, `createinstallmedia`, external boot selection, and downgrade preparation from macOS 14 to 13.
+- Added a `macOS` product page focused on bootable installer creation, Recovery-mode startup controls, and current coverage boundaries.
+- Established `Bootable OS installer media` and `Startup security and external boot policy` as reusable concepts instead of leaving them embedded in one Mac-specific note.
+- Added canonical terminology for `macOS`、`可启动安装介质`、`createinstallmedia`、`Recovery 模式`、`启动安全性实用工具`、`NVRAM` and `SMC`.
+- Flagged that the source separates installer-media creation from external-boot authorization, but does not yet distinguish Apple silicon vs Intel startup flows or document backup / restore steps.

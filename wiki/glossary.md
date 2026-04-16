@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-16
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc]
 ---
 
 # Glossary
@@ -691,6 +691,41 @@ Each entry follows this format:
 - Preferred: `固定用例` or `Golden Cases`
 - See also: [[software-testing-architecture]]
 
+**macOS** *(canonical form)*
+: Apple 的桌面操作系统名称；在当前来源中，它通过安装 U 盘制作、Recovery 和降级场景进入知识库。
+- Preferred: `macOS` / Avoid: `MacOS`
+- See also: [[macos]], [[macos-usb-installer-creation]]
+
+**可启动安装介质（bootable installer media）** *(canonical form)*
+: 指写入完整安装器、可被设备直接识别为安装启动入口的外部介质；在当前来源中具体表现为 macOS 安装 U 盘。
+- Preferred: `可启动安装介质` or `bootable installer media` / Avoid: 只说“把系统拷进 U 盘”
+- See also: [[bootable-os-installer-media]], [[macos-usb-installer-creation]]
+
+**createinstallmedia** *(canonical form)*
+: macOS 安装器包内用于创建可启动安装介质的命令行工具；路径依赖具体的 `Install macOS <version>.app` 名称。
+- Preferred: `createinstallmedia`
+- See also: [[macos]], [[macos-usb-installer-creation]], [[bootable-os-installer-media]]
+
+**Recovery 模式** *(canonical form)*
+: macOS 的恢复环境，用于修复、重装前准备和启动安全相关设置调整；在当前来源中，它是降级前修改外部启动策略的入口。
+- Preferred: `Recovery 模式` or `Recovery`
+- See also: [[startup-security-and-external-boot-policy]], [[macos]]
+
+**启动安全性实用工具（Startup Security Utility）** *(canonical form)*
+: Recovery 环境中的安全控制工具，用于调整启动相关安全级别和外部启动许可；在当前来源中，它是 macOS 14 降级到 13 的关键前置步骤。
+- Preferred: `启动安全性实用工具` or `Startup Security Utility`
+- See also: [[startup-security-and-external-boot-policy]], [[macos-usb-installer-creation]]
+
+**NVRAM** *(canonical form)*
+: Mac 启动相关参数的非易失性存储；在当前来源中，它被作为启动异常时的恢复辅助手段之一。
+- Preferred: `NVRAM`
+- See also: [[macos]], [[startup-security-and-external-boot-policy]]
+
+**SMC** *(canonical form)*
+: Mac 平台上与电源、热管理等底层行为相关的控制器复位操作；在当前来源中，它与 `NVRAM` reset 一起被列为启动异常时的排障入口。
+- Preferred: `SMC`
+- See also: [[macos]], [[macos-usb-installer-creation]]
+
 ---
 
 ## Style Conventions
@@ -709,6 +744,7 @@ Each entry follows this format:
 | Shell terminology | Use `Bash` when the content depends on Bash-specific syntax; use `shell scripting` for the broader automation practice. | “这段脚本使用了 Bash 关联数组，属于 Bash 专用写法。” |
 | Capacity tuning terminology | Name the exact layer such as `nofile`, `fs.file-max`, or `LimitNOFILE` instead of saying only “把句柄数调大了”. | “先调 `fs.file-max`，再确认服务 unit 的 `LimitNOFILE` 是否同步。” |
 | Linux operations terminology | When behavior depends on a specific subsystem, use the exact command or service name such as `journalctl`, `crontab`, or `firewalld`, not a vague “Linux 命令”. | “查看 `systemd` 日志时使用 `journalctl`。” |
+| Apple platform terminology | Use `macOS` for the OS name, `Recovery 模式` for the maintenance environment, and `createinstallmedia` for the installer-media tool. | “先进入 Recovery 模式调整外部启动策略，再运行 `createinstallmedia` 制作安装介质。” |
 | Testing terminology | Use `属性测试` when describing invariant-driven generated-input testing, and use `回归测试` for suites built from historical bugs. | “把这个历史缺陷沉淀为回归测试，再补一条属性测试覆盖通用规律。” |
 
 ---
@@ -727,6 +763,7 @@ Terms that have been replaced, renamed, or should not be used:
 | 把底座写成“公共部分” | `底座` or `平台底座` | “底座”更准确表达复用、治理和战略支撑含义。 |
 | 把 Bash 专有写法统称为“shell 通用语法” | `Bash` | `[[ ]]`、关联数组、丰富参数展开等能力并非所有 shell 都支持。 |
 | 把 `journalctl`、`firewall-cmd` 等接口写成所有 Linux 环境通用命令 | 写明 `systemd`、`firewalld` 或具体发行版前提 | 避免把子系统特定行为误写成普适事实。 |
+| `MacOS` | `macOS` | Apple 桌面操作系统名称在当前知识库里统一使用官方大小写。 |
 | 把所有自动化测试都叫“单元测试” | 按 `属性测试`、`集成测试`、`E2E`、`回归测试` 等更准确名称区分 | 避免掩盖测试层级、成本和职责差异。 |
 
 ---
@@ -741,6 +778,7 @@ Terms that differ between audiences, teams, or locales:
 | 鸿蒙移动端适配 | 终端生态语境 | 指对鸿蒙端的产品或应用适配工作。 |
 | Vim / vim | 开发者工具语境 | 文中提及产品名称时优先写 `Vim`；命令名或文件路径中可写小写 `vim`。 |
 | Bash / shell | 开发者工具语境 | 讲具体语法、关联数组、`getopts`、`[[ ]]` 时优先写 `Bash`；讲更宽泛的自动化实践时再写 `shell scripting`。 |
+| `Option` / `Alt` | Mac 启动语境 | 文档可写作 `Option (Alt)`，兼顾不同键盘标识。 |
 | `ip` / `ss` vs `ifconfig` / `netstat` | Linux 网络运维语境 | 文档优先使用更现代的 `ip`、`ss`，但可注明在旧系统中仍会遇到后者。 |
 
 ---
@@ -766,6 +804,10 @@ Terms that differ between audiences, teams, or locales:
 - [[engineering-mindset]] — foundational engineering-thinking concept
 - [[state-and-data-flow-modeling]] — system modeling concept centered on state and flow
 - [[validation-driven-design]] — design-time validation and uncertainty reduction concept
+- [[macos-usb-installer-creation]] — macOS installation USB source summary
+- [[macos]] — macOS product page
+- [[bootable-os-installer-media]] — concept page for external installation media creation
+- [[startup-security-and-external-boot-policy]] — concept page for recovery-time external boot authorization
 - [[platform-foundation]] — shared platform and governance concept
 - [[observability-and-reliability]] — observability and reliability concept
 - [[unix-philosophy-and-pipeline-thinking]] — Unix-style design model centered on composition and stable interfaces
