@@ -17,8 +17,8 @@ Each entry follows this format:
 
 | Page | Summary | Updated |
 |---|---|---|
-| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-15 |
-| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-15 |
+| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-16 |
+| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-16 |
 
 ---
 
@@ -44,6 +44,7 @@ Each entry follows this format:
 - [[ubuntu-common-issues-and-optimization]] — Ubuntu troubleshooting and optimization reference covering system tuning, APT management, DNS port conflicts, and VMware multipath errors | source | 2026-04-15
 - [[ubuntu-kernel-version-switching]] — Ubuntu runbook for installing a specific kernel version via APT, switching the GRUB default boot entry, and validating the rebooted host | source | 2026-04-15
 - [[engineering-thinking-framework]] — Engineering-thinking presentation framing software R&D as abstraction, modeling, system decomposition, and validation rather than mere coding | source | 2026-04-15
+- [[linux-foundations-and-testing-special-topic]] — Training deck that teaches Linux as an engineering mental model and pairs it with layered software-testing architecture | source | 2026-04-16
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
 
 ---
@@ -63,7 +64,7 @@ Each entry follows this format:
 - [[bash]] — Common Linux shell and scripting runtime for command execution, automation, and task orchestration | product | 2026-04-15
 - [[centos]] — RPM/YUM-based enterprise Linux distribution family with repository lifecycle, alternate kernel upgrade paths, and version-specific host-compatibility behavior | product | 2026-04-15
 - [[docker]] — Container runtime/tooling page covering host-kernel-dependent networking behavior, validation, kernel-remediation paths, and containerized development environment patterns | product | 2026-04-15
-- [[linux]] — Linux operating system and command-line operating surface for files, processes, networking, logging, package-source maintenance, and kernel/boot management | product | 2026-04-15
+- [[linux]] — Linux operating system and engineering mental model spanning command-line operations, permissions, observability, and system design principles | product | 2026-04-16
 - [[openssh]] — SSH client/server suite page focused on source-built service replacement across CentOS 7 and Ubuntu 22.04, covering authentication policy and remote-access continuity risks | product | 2026-04-15
 - [[openssl]] — TLS/crypto library page focused on source installation, linker-path integration, and its role as a dependency for higher-level services | product | 2026-04-15
 - [[samba]] — SMB/CIFS file-sharing server used to expose Linux directories to Windows clients with share-level auth and path masks | product | 2026-04-15
@@ -88,28 +89,32 @@ Each entry follows this format:
 
 *One entry per core domain concept.*
 
-- [[full-lifecycle-delivery-capability]] — End-to-end software delivery capability grounded in problem framing, design, implementation, release, and operations | concept | 2026-04-15
+- [[full-lifecycle-delivery-capability]] — End-to-end software delivery capability grounded in problem framing, layered quality gates, release, and operations | concept | 2026-04-16
 - [[ai-enabled-software-delivery]] — AI as an integrated delivery capability that still depends on human abstraction, modeling, validation, and workflow guardrails | concept | 2026-04-15
 - [[model-context-protocol]] — Protocol layer that lets AI systems call external tools and data sources as part of execution workflows | concept | 2026-04-15
 - [[project-steering-context]] — Persistent project context that teaches AI the stack, rules, and domain constraints of a repository | concept | 2026-04-15
-- [[devops-delivery-pipeline]] — Delivery-loop concept connecting local development, CI/CD, deployment, and runtime feedback | concept | 2026-04-15
+- [[devops-delivery-pipeline]] — Delivery-loop concept connecting local development, layered test gates, deployment, and runtime feedback | concept | 2026-04-16
+- [[software-testing-architecture]] — Layered testing model combining unit/property tests, integration tests, E2E, regression data, and CI staging | concept | 2026-04-16
+- [[property-based-testing]] — Testing style that validates invariants over generated input spaces instead of only checking hand-picked examples | concept | 2026-04-16
 - [[engineering-mindset]] — Foundational engineering-thinking concept for turning real-world problems into computable systems | concept | 2026-04-15
 - [[state-and-data-flow-modeling]] — System-modeling approach that describes behavior through state transitions, data movement, and boundaries | concept | 2026-04-15
 - [[validation-driven-design]] — Engineering method for reducing uncertainty before coding through simulation, diagrams, and edge-case analysis | concept | 2026-04-15
+- [[unix-philosophy-and-pipeline-thinking]] — Unix-style design model centered on small tools, text interfaces, unified abstractions, and pipeline composition | concept | 2026-04-16
 - [[container-network-namespace-support]] — Host-kernel support and remediation signals required for Docker bridge networking, veth linkage, and namespace inspection | concept | 2026-04-15
 - [[containerized-development-environment]] — Pattern for creating isolated, reproducible development environments using containers with keep-alive processes and scripted initialization | concept | 2026-04-15
 - [[file-descriptor-and-tcp-backlog-tuning]] — Layered Linux capacity-tuning concept separating `nofile`, kernel file-table limits, `systemd` unit limits, and TCP backlog parameters | concept | 2026-04-15
 - [[platform-foundation]] — Shared platform and governance base used to increase reuse and reduce siloed systems | concept | 2026-04-14
-- [[observability-and-reliability]] — Observability, incident handling, and reliability as non-negotiable engineering fundamentals across both planning and delivery pipelines | concept | 2026-04-15
+- [[observability-and-reliability]] — Observability, incident handling, and reliability as engineering fundamentals spanning Linux host signals, monitoring systems, and delivery feedback | concept | 2026-04-16
+- [[use-methodology]] — Resource-triage method that inspects utilization, saturation, and errors across CPU, memory, disk, and network | concept | 2026-04-16
 - [[speech-native-llm]] — Architecture pattern that models and generates speech directly instead of centering text | concept | 2026-04-14
 - [[neural-audio-codec]] — Audio tokenizer infrastructure layer that discretizes speech for LLM use | concept | 2026-04-14
 - [[full-duplex-speech-interaction]] — Real-time interaction model that supports simultaneous listening, speaking, and interruption | concept | 2026-04-14
 - [[kernel-upgrade-and-boot-management]] — Practice of upgrading or switching Linux kernel versions, choosing a boot target, and validating compatibility outcomes before cleanup, covering both CentOS 7 and Ubuntu patterns | concept | 2026-04-15
 - [[legacy-repository-repointing]] — Practice of redirecting package managers from retired mirrors to static archive/vault repositories for legacy systems | concept | 2026-04-15
 - [[modal-editing]] — Editing model where key behavior changes by mode and commands compose across motions and text objects | concept | 2026-04-15
-- [[shell-scripting]] — Automation practice that composes shell builtins, commands, and Unix I/O primitives into reusable workflows | concept | 2026-04-15
+- [[shell-scripting]] — Automation practice that composes shell builtins, commands, and Unix I/O primitives into reusable, idempotence-aware workflows | concept | 2026-04-16
 - [[source-built-package-replacement]] — Practice of compiling upstream software outside the package manager, then manually wiring it into system paths, services, and rollback strategy, covering both CentOS 7 and Ubuntu 22.04 patterns | concept | 2026-04-15
-- [[linux-command-line-operations]] — Practice of inspecting and administering Linux systems through composable command-line tools, including package-source repair, kernel activation, and service validation | concept | 2026-04-15
+- [[linux-command-line-operations]] — Practice of inspecting and administering Linux systems through composable command-line tools, including resource observability and service validation | concept | 2026-04-16
 - [[smb-file-sharing]] — Practice of exposing directories over SMB so Windows clients can map Linux-hosted network drives with explicit auth and permission boundaries | concept | 2026-04-15
 - [[os-initialization-workflow]] — Structured workflow for configuring a fresh Linux install from bare metal to usable baseline, covering install options, accounts, network, remote access, package sources, time sync, security policy, and base tools | concept | 2026-04-15
 - [[network-configuration]] — Practice of defining network interface settings, IP addressing, routing, and DNS through declarative configuration files, enabling reproducible network setup | concept | 2026-04-15

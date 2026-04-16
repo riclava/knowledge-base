@@ -3,9 +3,9 @@
 title: Overview
 type: overview
 created: 2026-04-07
-updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, Ubuntu切换指定版本内核.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, command-line, operations, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack]
+updated: 2026-04-16
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, Ubuntu切换指定版本内核.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack]
 
 ---
 
@@ -18,11 +18,11 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-to
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, engineering-thinking frameworks for abstraction/modeling/validation, AI-assisted full-stack onboarding patterns, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, Ubuntu 22.04 OpenSSH source upgrade workflows, Ubuntu system optimization and troubleshooting including DNS port conflicts and VMware compatibility, Ubuntu kernel version switching via APT and GRUB configuration, plus AI-era onboarding material for MCP, project Steering context, DevOps pipeline basics, and starter full-stack stack composition.
+This wiki currently covers AI-era engineering management, engineering-thinking frameworks for abstraction/modeling/validation, AI-assisted full-stack onboarding patterns, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, Unix-style design philosophy, host-level observability through USE and `/proc`-backed metrics, layered software-testing architecture, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, Ubuntu 22.04 OpenSSH source upgrade workflows, Ubuntu system optimization and troubleshooting including DNS port conflicts and VMware compatibility, Ubuntu kernel version switching via APT and GRUB configuration, plus AI-era onboarding material for MCP, project Steering context, DevOps pipeline basics, and starter full-stack stack composition.
 
-**Source count:** 19
-**Wiki pages:** 63
-**Last ingest:** 2026-04-15 — [[ai-full-stack-development-onboarding]]
+**Source count:** 20
+**Wiki pages:** 68
+**Last ingest:** 2026-04-16 — [[linux-foundations-and-testing-special-topic]]
 **Last lint:** —
 
 
@@ -39,6 +39,8 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - 语音原生 LLM、Neural Audio Codec 与实时语音交互架构
 - Linux / 终端环境中的开发者工具、文本编辑与 shell 自动化工作流
 - Linux 命令行中的文件、文本、进程、网络、权限、日志、定时任务与系统状态验证
+- Linux 设计哲学与管道思维，覆盖单一职责、文本接口、统一抽象、文件描述符和最小权限原则
+- Linux 主机资源观测方法，覆盖四大资源、USE 方法、`/proc` / `/sys` 与 `node_exporter -> Prometheus -> Grafana` 观测链
 - 遗留 Linux 发行版在镜像退役后的仓库恢复与 archive/vault 运维补救
 - CentOS 7 上 Docker 离线安装后的容器网络排障与宿主机内核兼容性判断
 - CentOS 7 上通过 ELRepo 升级内核、切换 GRUB 默认启动项并验证重启结果的操作流程
@@ -51,6 +53,7 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - Ubuntu Netplan 声明式网络配置，覆盖 YAML 语法、DHCP/静态 IP、VLAN、Bond、Bridge 和安全测试工作流
 - Ubuntu 系统优化与常见问题排查，覆盖 swap 管理、NFS 挂载、APT 包管理、systemd-resolved DNS 端口冲突和 VMware multipath 错误
 - Ubuntu 内核版本切换，覆盖 APT 内核包安装、GRUB 默认启动项配置和重启验证
+- 软件测试架构，覆盖测试金字塔、属性测试、Contract Test、回归闭环、CI 时间分层和环境分工
 
 
 ---
@@ -66,7 +69,9 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - 自然语音对话的竞争点不只是模型推理能力，还包括全双工交互、延迟预算和 codec 设计。
 - 在终端工作流中，Vim 的价值不只是“能编辑文件”，而是通过模态编辑、组合命令和轻量配置把高频文本修改提炼成可复用操作语言。
 - 在终端自动化方向，Bash 的价值不只是“命令拼接”，而是通过参数展开、选项处理、管道/重定向和错误控制，把重复操作沉淀为脚本化流程。
+- 在 Linux 基础培训语境里，命令行不应被当成“需要硬背的语法库”，而应被理解为一组能迁移到软件设计和系统思考中的原则。
 - 在 Linux 命令行运维方向，真正的能力表面来自围绕文件、文本、进程、网络、日志、软件源与启动配置的一组小工具，它们通过“观察 -> 过滤 -> 修改 -> 验证”形成操作闭环。
+- 在系统观测方向里，监控平台不是凭空产生洞察，而是把 Linux 宿主机通过 `/proc` / `/sys` 暴露的事实组织为指标、图表和告警；USE 方法提供了第一层排障顺序。
 - 在容量调优场景里，“把句柄数调大”不是一句话能说明白的动作；登录会话限制、内核全局文件表、`systemd` 服务继承值和 TCP backlog 参数必须按层拆开写和验证。
 - Linux 发行版运维不只包括执行命令，还包括处理版本生命周期、软件源可达性、第三方仓库信任和内核启动路径这类容易被忽视的基础前提。
 - 在容器场景里，“Docker 安装成功”与“容器网络真正可用”是两回事；宿主机内核对 network namespace 的支持程度会直接改变排障方向。
@@ -86,6 +91,8 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - AI 时代的全栈入门不应只停留在框架清单，而要把环境、Git/PR、CI/CD、部署、监控和测试看成一条连续链路。
 - `MCP` 和项目 Steering 上下文分别解决“AI 能操作什么”和“AI 知道什么”的问题，是 AI Agent 真正进入工程流程时的两个关键支点。
 - 把监控、日志和告警放进交付流程图，能帮助新人更早建立“上线后仍需持续验证”的心智模型。
+- 在质量体系里，测试数量本身不是目标；更重要的是按单元/属性、集成、E2E 和回归数据闭环分配职责与反馈成本。
+- “Bug -> 用例 -> 回归 -> CI -> 质量提升”是当前知识库里最清晰的测试演进闭环之一。
 
 ---
 
@@ -109,6 +116,8 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - 当前全栈入门来源中的技术栈示例，哪些属于教学用组合，哪些会沉淀为团队推荐基线？
 - 是否会补充 Git/PR 规范、分支模型、CI 质量门禁和发布回滚等更细的交付文档？
 - 是否会把 Steering 文件模板、MCP 接入约束和 AI 协作规则沉淀为跨项目标准？
+- 是否会进一步沉淀团队级的测试金字塔比例、属性测试适用范围、Contract Test 规范和回归数据管理方式？
+- 是否会补充 Prometheus / Grafana / node_exporter 的独立专题页与标准化监控指标清单？
 
 
 ---
@@ -128,6 +137,8 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - Ubuntu 系统优化目前只覆盖基础调优和常见问题，还没有涉及性能基准测试、内核参数深度调优或生产环境加固最佳实践。
 - 缺少把研发思维落到更多真实业务案例上的练习库、评审模板和分层设计示例。
 - 刚补上 AI 时代的全栈入门全景，但仍缺少 Git/PR、Docker Compose、多容器本地开发、PostgreSQL/Redis、Go/Gin/GORM/wire、React/TypeScript/Tailwind/shadcn、Nginx 部署、`wrk` 和 Playwright 的独立专题页。
+- 虽然已补上测试架构总览，但仍缺少团队级测试规范、缺陷分级到回归用例的沉淀模板，以及 Contract Test / 属性测试的落地案例库。
+- 虽然已补上 USE 方法与主机观测链路，但仍缺少 Prometheus、Grafana、node_exporter、ELK/Loki/Jaeger 等工具的独立专题页和指标命名规范。
 
 
 ---
@@ -148,11 +159,15 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - [[model-context-protocol]] — protocol layer for AI tool/data access
 - [[project-steering-context]] — persistent project context for AI collaboration
 - [[devops-delivery-pipeline]] — delivery-loop concept connecting development through runtime feedback
+- [[software-testing-architecture]] — layered testing model across fast and slow feedback loops
+- [[property-based-testing]] — invariant-driven testing method for covering input spaces
 - [[engineering-mindset]] — foundational engineering-thinking concept
 - [[state-and-data-flow-modeling]] — state/data-flow system-modeling concept
 - [[validation-driven-design]] — design-time validation concept
+- [[unix-philosophy-and-pipeline-thinking]] — Unix-style design principles behind Linux and composable tooling
 - [[platform-foundation]] — platform reuse and governance concept
 - [[observability-and-reliability]] — stability and operations concept
+- [[use-methodology]] — resource-first observability and troubleshooting frame
 - [[moshi]] — speech-native LLM product page
 - [[mimi]] — audio tokenizer product page
 - [[speech-native-llm]] — speech-first model architecture
@@ -161,6 +176,7 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - [[bash-syntax-and-scripting-reference]] — Bash source summary and scripting reference
 - [[bash]] — shell and scripting tool page
 - [[shell-scripting]] — automation concept behind command-line scripts
+- [[linux-foundations-and-testing-special-topic]] — Linux and testing training source summary
 - [[linux-common-commands-reference]] — Linux commands source summary and operations reference
 - [[centos7-offline-docker-install-troubleshooting]] — CentOS 7 Docker troubleshooting source summary
 - [[centos7-kernel-upgrade-via-elrepo]] — CentOS 7 kernel upgrade source summary

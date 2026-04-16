@@ -2,9 +2,9 @@
 title: Glossary
 type: glossary
 created: 2026-04-07
-updated: 2026-04-15
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, command-line, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack]
+updated: 2026-04-16
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack]
 ---
 
 # Glossary
@@ -631,6 +631,66 @@ Each entry follows this format:
 - Preferred: `验证思维`
 - See also: [[validation-driven-design]], [[engineering-thinking-framework]]
 
+**Unix 哲学** *(canonical form)*
+: 指围绕单一职责、文本接口、组合优于继承、统一抽象和小工具协作形成的一组系统设计原则。
+- Preferred: `Unix 哲学`
+- See also: [[unix-philosophy-and-pipeline-thinking]], [[linux]]
+
+**管道思维（pipeline thinking）** *(canonical form)*
+: 指把任务理解为若干输入、处理和输出阶段的串联方式，每个阶段只关注自己的输入输出契约。
+- Preferred: `管道思维` or `pipeline thinking`
+- See also: [[unix-philosophy-and-pipeline-thinking]], [[state-and-data-flow-modeling]]
+
+**文件描述符（file descriptor）** *(canonical form)*
+: 进程用来引用打开资源的整数句柄，标准输入、输出和错误分别对应 `0`、`1`、`2`；重定向本质上是在改变文件描述符指向的目标。
+- Preferred: `文件描述符` or `file descriptor`
+- See also: [[linux]], [[linux-command-line-operations]], [[file-descriptor-and-tcp-backlog-tuning]]
+
+**最小权限原则（Principle of Least Privilege）** *(canonical form)*
+: 指程序和用户只应拥有完成任务所需的最小权限，用于降低误操作范围、攻击面和审计复杂度。
+- Preferred: `最小权限原则`
+- See also: [[linux]], [[unix-philosophy-and-pipeline-thinking]]
+
+**幂等性（idempotence）** *(canonical form)*
+: 指同一操作执行一次和执行多次时，系统最终结果保持一致；在当前知识库里既用于脚本设计，也用于 API 和测试性质描述。
+- Preferred: `幂等性` or `idempotence`
+- See also: [[shell-scripting]], [[property-based-testing]], [[software-testing-architecture]]
+
+**优雅停机（graceful shutdown）** *(canonical form)*
+: 指进程在收到终止信号后先清理连接、状态和资源，再结束运行的退出方式，通常与 `SIGTERM` 相对应。
+- Preferred: `优雅停机`
+- See also: [[linux]], [[linux-command-line-operations]]
+
+**USE 方法** *(canonical form)*
+: 一种按资源类别检查 Utilization、Saturation、Errors 的系统排障框架，适合 CPU、内存、磁盘 I/O 和网络 I/O 的第一轮诊断。
+- Preferred: `USE 方法` or `USE methodology`
+- See also: [[use-methodology]], [[observability-and-reliability]]
+
+**测试金字塔（testing pyramid）** *(canonical form)*
+: 一种把测试分成“单元/属性测试最多、集成测试适中、E2E 最少”的分层质量模型，用于控制反馈成本和覆盖范围。
+- Preferred: `测试金字塔` or `testing pyramid`
+- See also: [[software-testing-architecture]]
+
+**属性测试（property-based testing）** *(canonical form)*
+: 通过自动生成输入来验证某个通用性质、不变量或规则是否始终成立的测试方法，用于补足手写样例的覆盖边界。
+- Preferred: `属性测试` or `property-based testing`
+- See also: [[property-based-testing]], [[software-testing-architecture]]
+
+**Contract Test** *(canonical form)*
+: 用于验证服务之间接口结构、字段约束和协议约定不被意外破坏的测试方式，重点是“协作契约”而不是完整用户流程。
+- Preferred: `Contract Test`
+- See also: [[software-testing-architecture]], [[devops-delivery-pipeline]]
+
+**回归测试（regression testing）** *(canonical form)*
+: 指把历史缺陷和关键风险转化为长期自动化测试，确保修复过的问题不会在后续修改中再次出现。
+- Preferred: `回归测试` or `regression testing`
+- See also: [[software-testing-architecture]], [[full-lifecycle-delivery-capability]]
+
+**固定用例（Golden Cases）** *(canonical form)*
+: 指一组稳定、确定性、可重复执行的基准测试数据，通常用于 CI 中提供快速且可比对的质量基线。
+- Preferred: `固定用例` or `Golden Cases`
+- See also: [[software-testing-architecture]]
+
 ---
 
 ## Style Conventions
@@ -649,6 +709,7 @@ Each entry follows this format:
 | Shell terminology | Use `Bash` when the content depends on Bash-specific syntax; use `shell scripting` for the broader automation practice. | “这段脚本使用了 Bash 关联数组，属于 Bash 专用写法。” |
 | Capacity tuning terminology | Name the exact layer such as `nofile`, `fs.file-max`, or `LimitNOFILE` instead of saying only “把句柄数调大了”. | “先调 `fs.file-max`，再确认服务 unit 的 `LimitNOFILE` 是否同步。” |
 | Linux operations terminology | When behavior depends on a specific subsystem, use the exact command or service name such as `journalctl`, `crontab`, or `firewalld`, not a vague “Linux 命令”. | “查看 `systemd` 日志时使用 `journalctl`。” |
+| Testing terminology | Use `属性测试` when describing invariant-driven generated-input testing, and use `回归测试` for suites built from historical bugs. | “把这个历史缺陷沉淀为回归测试，再补一条属性测试覆盖通用规律。” |
 
 ---
 
@@ -666,6 +727,7 @@ Terms that have been replaced, renamed, or should not be used:
 | 把底座写成“公共部分” | `底座` or `平台底座` | “底座”更准确表达复用、治理和战略支撑含义。 |
 | 把 Bash 专有写法统称为“shell 通用语法” | `Bash` | `[[ ]]`、关联数组、丰富参数展开等能力并非所有 shell 都支持。 |
 | 把 `journalctl`、`firewall-cmd` 等接口写成所有 Linux 环境通用命令 | 写明 `systemd`、`firewalld` 或具体发行版前提 | 避免把子系统特定行为误写成普适事实。 |
+| 把所有自动化测试都叫“单元测试” | 按 `属性测试`、`集成测试`、`E2E`、`回归测试` 等更准确名称区分 | 避免掩盖测试层级、成本和职责差异。 |
 
 ---
 
@@ -706,6 +768,10 @@ Terms that differ between audiences, teams, or locales:
 - [[validation-driven-design]] — design-time validation and uncertainty reduction concept
 - [[platform-foundation]] — shared platform and governance concept
 - [[observability-and-reliability]] — observability and reliability concept
+- [[unix-philosophy-and-pipeline-thinking]] — Unix-style design model centered on composition and stable interfaces
+- [[use-methodology]] — resource-first troubleshooting method for observability and performance
+- [[software-testing-architecture]] — layered testing model for quality feedback
+- [[property-based-testing]] — invariant-driven testing concept
 - [[moshi-neural-audio-codec-architecture-analysis]] — source summary for Moshi and codec architecture
 - [[moshi]] — speech-native LLM product page
 - [[mimi]] — audio tokenizer product page

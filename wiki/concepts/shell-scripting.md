@@ -2,16 +2,16 @@
 title: shell scripting
 type: concept
 created: 2026-04-15
-updated: 2026-04-15
-sources: [bash.md, commands.md]
-tags: [concept, shell, scripting, automation, linux, workflow]
+updated: 2026-04-16
+sources: [bash.md, commands.md, Linux基础与测试专题.md]
+tags: [concept, shell, scripting, automation, linux, workflow, idempotence]
 ---
 
-shell scripting 是把 shell 内建能力、外部命令、管道和重定向组合成可执行自动化流程的实践，用来把重复命令转化为可复用工具。
+shell scripting 是把 shell 内建能力、外部命令、管道和重定向组合成可执行自动化流程的实践，用来把重复命令转化为可复用、可审计且尽量可重复执行的工具。
 
 ## Definition
 
-在当前来源中，shell scripting 主要通过 Bash 展开，重点不是复杂算法，而是围绕文件、命令、参数和执行状态做编排。
+在当前来源中，shell scripting 主要通过 Bash 展开，重点不是复杂算法，而是围绕文件、命令、参数和执行状态做编排。新来源进一步把“幂等性”和“失败尽早暴露”明确成脚本设计原则，而不只是编码技巧。
 
 ## Core Building Blocks in This Source
 
@@ -22,6 +22,7 @@ shell scripting 是把 shell 内建能力、外部命令、管道和重定向组
 | 函数与选项解析 | 把脚本组织成可复用、可调用的命令接口 | `greet() {}`, `getopts`, 长选项 `case` |
 | 外部命令族 | 对文件、文本、进程、网络和日志执行真实操作 | `find`, `grep`, `sed`, `awk`, `tar`, `ps`, `ss`, `journalctl`, `crontab` |
 | 流式输入输出 | 把命令连接成多步处理链 | `>`, `2>&1`, `|`, Here Document, `read` |
+| 幂等性与重复执行安全 | 让脚本多次执行结果保持可控 | `grep -q ... || echo ... >> file` |
 | 错误处理与清理 | 在失败时停止、提示或回收资源 | `set -euo pipefail`, `trap ERR`, `trap EXIT` |
 | 运行时辅助 | 发现依赖、创建临时资源、并行任务 | `command -v`, `mktemp`, `xargs -P`, `wait` |
 
@@ -34,6 +35,12 @@ shell scripting 是把 shell 内建能力、外部命令、管道和重定向组
 3. 设置严格模式和清理逻辑。
 4. 用循环、条件、函数、管道和重定向完成主任务。
 5. 根据退出状态返回结果，并在结束时清理临时资源。
+
+## Idempotence and Fail-Fast as Quality Boundaries
+
+- 新来源强调，脚本不应只“能跑通一次”，还应尽量支持重复执行而不不断放大副作用。
+- `set -euo pipefail` 被明确视为默认基线，说明脚本要尽早暴露未定义变量、单条命令失败和管道中的隐藏错误。
+- 这使 shell scripting 在当前知识库里更接近“轻量工程自动化”，而不只是“命令备忘录”。
 
 ## The Shell Mostly Orchestrates Other Tools
 
@@ -58,6 +65,7 @@ shell scripting 是把 shell 内建能力、外部命令、管道和重定向组
 
 - 文档应明确脚本是 `Bash` 专用还是可移植到更宽泛的 shell。
 - 每个脚本示例都应标明输入、输出、依赖和副作用，否则读者很难安全复用。
+- 当脚本会被重复运行时，文档应显式说明其幂等策略，否则读者难以判断是否能安全重试。
 - 如果脚本调用 `journalctl`、`firewall-cmd`、`crontab` 等命令，应明确这些能力依赖的 Linux 子系统。
 - 当示例涉及并行执行、重定向或批量 Git 操作时，文档需要同步解释失败场景和清理策略。
 
@@ -72,8 +80,10 @@ shell scripting 是把 shell 内建能力、外部命令、管道和重定向组
 - [[bash]]
 - [[linux]]
 - [[linux-command-line-operations]]
+- [[linux-foundations-and-testing-special-topic]]
 - [[linux-common-commands-reference]]
 - [[bash-syntax-and-scripting-reference]]
+- [[unix-philosophy-and-pipeline-thinking]]
 - [[glossary]]
 - [[overview]]
 - [[vim]]

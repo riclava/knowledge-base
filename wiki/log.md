@@ -423,3 +423,31 @@ Key additions:
 - Added an `AI时代全栈研发入门者` persona to represent learners who need a golden path across environment setup, Git/PR, CI/CD, deployment, monitoring, and AI-assisted coding.
 - Expanded the AI, delivery, and observability synthesis pages to show that AI-era onboarding still depends on human review, explicit workflow guardrails, and runtime feedback loops.
 - Added canonical terminology for `AI IDE`、`CLI Agent`、`MCP`、`Steering 文件`、`DevOps`、`CI/CD 流水线`、`全栈研发`、`Docker Compose` and `Playwright`, and normalized the source typo `playwrite`.
+
+## [2026-04-16] ingest | Linux基础与测试专题
+
+Pages created:
+- `wiki/sources/linux-foundations-and-testing-special-topic.md`
+- `wiki/concepts/unix-philosophy-and-pipeline-thinking.md`
+- `wiki/concepts/use-methodology.md`
+- `wiki/concepts/software-testing-architecture.md`
+- `wiki/concepts/property-based-testing.md`
+
+Pages updated:
+- `wiki/products/linux.md` — added Unix-style design principles, permissions/signals, and resource observability positioning
+- `wiki/concepts/linux-command-line-operations.md` — expanded from command usage into mental models, standard streams, and observability mapping
+- `wiki/concepts/shell-scripting.md` — added idempotence and fail-fast scripting principles
+- `wiki/concepts/observability-and-reliability.md` — grounded observability in Linux host signals, USE, and the `node_exporter -> Prometheus -> Grafana` stack
+- `wiki/concepts/devops-delivery-pipeline.md` — added commit/nightly/release testing gates and environment alignment
+- `wiki/concepts/full-lifecycle-delivery-capability.md` — expanded delivery scope to include test architecture and runtime observability
+- `wiki/glossary.md` — added Unix/testing/observability terminology and style guidance
+- `wiki/index.md` — added new source and concept entries, refreshed updated summaries
+- `wiki/overview.md` — updated source/page counts and big-picture synthesis
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for a training deck that treats Linux as both an operating surface and a reusable engineering philosophy built around small tools, text interfaces, uniform abstractions, and pipeline composition.
+- Established `Unix 哲学与管道思维`、`USE 方法`、`软件测试架构` and `属性测试` as standalone reusable concept pages instead of leaving them embedded in a single presentation.
+- Expanded Linux-related pages to cover file descriptors, least privilege, signals, resource bottlenecks, and the mapping from `/proc` / `/sys` to monitoring systems.
+- Expanded delivery and observability synthesis pages to show how fast feedback, layered testing, regression accumulation, and host-level metrics together form the practical quality loop.
+- Added canonical terminology for `Unix 哲学`、`管道思维`、`文件描述符`、`最小权限原则`、`幂等性`、`优雅停机`、`USE 方法`、`测试金字塔`、`属性测试`、`Contract Test`、`回归测试` and `固定用例（Golden Cases）`.

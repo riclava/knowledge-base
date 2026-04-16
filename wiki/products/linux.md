@@ -2,12 +2,12 @@
 title: Linux
 type: product
 created: 2026-04-15
-updated: 2026-04-15
-sources: [commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, netplan配置指南.md, Ubuntu常见问题与优化.md]
-tags: [product, linux, operating-system, command-line, operations, developer-tooling, centos, ubuntu, yum, repository, docker, containers, kernel, grub, networking, netplan, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, systemd-resolved, dns, swap, nfs, multipath]
+updated: 2026-04-16
+sources: [commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, netplan配置指南.md, Ubuntu常见问题与优化.md, Linux基础与测试专题.md]
+tags: [product, linux, unix, operating-system, command-line, operations, developer-tooling, observability, monitoring, centos, ubuntu, yum, repository, docker, containers, kernel, grub, networking, netplan, samba, smb, file-sharing, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, systemd-resolved, dns, swap, nfs, multipath]
 ---
 
-Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平台，适合文件管理、系统巡检、服务排障、包源维护、资源限制和内核参数调优、容器宿主机诊断、内核/启动项管理、跨系统文件共享、远程访问栈维护、新装机初始化和脚本自动化。
+Linux 是一个以命令行、小工具组合、统一抽象和文本接口著称的 Unix-like 操作系统平台，既是实际运维对象，也是可迁移到软件设计、自动化和可观测性中的工程心智模型。
 
 ## Product Snapshot
 
@@ -21,6 +21,17 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 | 典型使用场景 | 服务器管理、开发环境维护、问题排查、容量调优、自动化执行、新装机初始化 |
 
 ## Core Capability Surface in This Source
+
+### Unix-Style Design Model
+
+- 新来源明确把 Linux 作为一组设计原则来讲，而不只是命令清单：单一职责、文本接口、组合优于继承、统一抽象和管道思维。
+- 这使 Linux 在当前知识库里不只是“要管理的系统”，也是理解模块拆分、数据流和接口边界的一套训练材料。
+- `一切皆文件` 和文件描述符模型进一步说明，Linux 倾向于用少数稳定接口覆盖更多资源对象。
+
+### Permissions, Isolation, and Graceful Control
+
+- 新来源补充了 Linux 的权限与进程心智模型：最小权限原则、`sudo` 的按需提权方式、进程与线程的隔离权衡、以及 `SIGTERM` / `SIGKILL` 的优雅退出差异。
+- 这类内容让 Linux 产品页不只停留在“怎么查进程、怎么杀进程”，而是能解释为什么资源隔离、权限边界和退出语义本身就是系统设计的一部分。
 
 ### File and Metadata Operations
 
@@ -36,6 +47,12 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 
 - `df`、`du`、`dd`、`ps`、`top`、`pstree`、`uname`、`free`、`uptime` 等命令构成了基础巡检与性能判断入口。
 - 来源强调的不是深度性能分析，而是先判断"磁盘、内存、CPU、进程树、开机状态到底处于什么情况"。
+
+### Resource Observability Is Part of the Product Surface
+
+- 新来源把 Linux 的运行时状态进一步组织为 CPU、内存、磁盘 I/O、网络 I/O 四大资源，并引入 USE 方法来检查 utilization、saturation 和 errors。
+- `/proc` 和 `/sys` 在这里不只是“特殊目录”，而是监控系统的事实来源；`node_exporter`、`Prometheus` 和 `Grafana` 只是把这些信号转换为更长期、可告警、可视化的形式。
+- 这使 Linux 产品页和 [[observability-and-reliability]] 之间形成了更直接的连接：监控能力首先建立在可检查的宿主机事实之上。
 
 ### Network and Service Edge
 
@@ -110,8 +127,10 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 
 - 应明确区分通用 Linux 能力与子系统特定接口，例如 `journalctl` 对应 `systemd`，`firewall-cmd` 对应 `firewalld`。
 - 应优先说明现代命令与旧命令的关系，例如 `ss` 相对 `netstat`、`ip` 相对 `ifconfig/route`。
+- 当内容本质上是在讲 Linux 设计哲学时，文档应先解释为什么这样设计，再给命令或接口例子。
 - 当文档涉及 `yum`、repo 文件、archive/vault 镜像或 ELRepo 时，应明确发行版与版本边界，不要把特定发行版配置泛写成通用 Linux 事实。
 - 当文档涉及 `nofile`、`fs.file-max`、`sysctl` 或 `LimitNOFILE` 时，应明确区分用户会话限制、内核全局参数和 `systemd` 服务级限制。
+- 当文档涉及 CPU、内存、磁盘或网络瓶颈时，适合把命令行观察和监控指标一起写，帮助读者建立“主机事实 -> 指标系统”的映射。
 - 当文档涉及 Samba 这类跨系统共享服务时，应把目录权限、账号准备、服务状态、客户端路径和安全策略处理分层写清楚。
 - 当文档涉及 Docker 或容器桥接网络时，应同时写出最小验证命令与宿主机内核检查项。
 - 当文档涉及内核升级时，应明确区分安装、默认启动项切换、配置重建、重启和回滚能力。
@@ -140,6 +159,8 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 - [[centos7-system-parameter-tuning]]
 - [[kernel-upgrade-and-boot-management]]
 - [[os-initialization-workflow]]
+- [[unix-philosophy-and-pipeline-thinking]]
+- [[use-methodology]]
 - [[centos6-archive-repository-workaround]]
 - [[file-descriptor-and-tcp-backlog-tuning]]
 - [[centos7-samba-share-setup]]
@@ -152,6 +173,7 @@ Linux 是一个以命令行和小工具组合著称的 Unix-like 操作系统平
 - [[container-network-namespace-support]]
 - [[legacy-repository-repointing]]
 - [[linux-common-commands-reference]]
+- [[linux-foundations-and-testing-special-topic]]
 - [[centos7-openssl-and-openssh-upgrade-from-source]]
 - [[linux-command-line-operations]]
 - [[bash]]
