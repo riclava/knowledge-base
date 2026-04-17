@@ -2,9 +2,9 @@
 title: 可观测性与稳定性
 type: concept
 created: 2026-04-14
-updated: 2026-04-16
-sources: [2025年技术线总结.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md]
-tags: [concept, observability, reliability, operations, devops, monitoring, linux, metrics, tracing]
+updated: 2026-04-17
+sources: [2025年技术线总结.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, 分布式核心原理.md]
+tags: [concept, observability, reliability, operations, devops, monitoring, linux, metrics, tracing, distributed-systems]
 ---
 
 可观测性与稳定性是当前知识库里的工程基本盘之一，目标是让系统运行从“不稳定”走向“可预测”，并把运行期判断建立在可解释的主机信号、指标、日志和链路事实之上。
@@ -21,6 +21,7 @@ tags: [concept, observability, reliability, operations, devops, monitoring, linu
 - 通过平台能力和标准流程降低线上不确定性。
 - 在新的全栈入门来源里，可观测性还被画进部署后的反馈回路，和开发、测试、部署共同构成交付闭环。
 - 在新的 Linux 基础来源里，可观测性被进一步拆成四大资源、USE 方法以及 `/proc` -> `node_exporter` -> `Prometheus` -> `Grafana` 的观测链路。
+- 在新的分布式系统来源里，稳定性被进一步落实为超时、重试、幂等、限流、熔断、降级和故障转移这些面向异常路径的工程机制。
 
 ## Operational Stack
 
@@ -76,3 +77,5 @@ tags: [concept, observability, reliability, operations, devops, monitoring, linu
 - [[use-methodology]]
 - [[linux]]
 - [[linux-command-line-operations]]
+- [[distributed-systems-foundations]]
+- [[distributed-systems-resilience-patterns]]

@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-17
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience]
 ---
 
 # Glossary
@@ -651,10 +651,10 @@ Each entry follows this format:
 - Preferred: `最小权限原则`
 - See also: [[linux]], [[unix-philosophy-and-pipeline-thinking]]
 
-**幂等性（idempotence）** *(canonical form)*
-: 指同一操作执行一次和执行多次时，系统最终结果保持一致；在当前知识库里既用于脚本设计，也用于 API 和测试性质描述。
-- Preferred: `幂等性` or `idempotence`
-- See also: [[shell-scripting]], [[property-based-testing]], [[software-testing-architecture]]
+**幂等（idempotency / idempotence）** *(canonical form)*
+: 指同一操作执行一次和执行多次时，系统最终结果保持一致；在当前知识库里既用于脚本设计，也用于 API、重试安全和测试性质描述。
+- Preferred: `幂等`, `idempotency`, or `idempotence`
+- See also: [[shell-scripting]], [[property-based-testing]], [[software-testing-architecture]], [[distributed-systems-resilience-patterns]]
 
 **优雅停机（graceful shutdown）** *(canonical form)*
 : 指进程在收到终止信号后先清理连接、状态和资源，再结束运行的退出方式，通常与 `SIGTERM` 相对应。
@@ -868,6 +868,98 @@ Each entry follows this format:
 
 ---
 
+**分布式系统（distributed system）** *(canonical form)*
+: 指多个通过网络协作的节点共同提供一个逻辑整体服务的系统；在当前知识库里，它首先意味着接受网络不可靠、没有全局可信时钟和部分故障常态化，而不是简单地“机器更多了”。
+- Preferred: `分布式系统` or `distributed system`
+- See also: [[distributed-systems-foundations]], [[distributed-systems-core-principles]]
+
+**两将军问题（Two Generals Problem）** *(canonical form)*
+: 用来说明在不可靠通信条件下，双方无法通过有限次消息交换获得“对方一定知道我知道”的绝对确认，是理解“无法区分慢和死”的经典直觉模型。
+- Preferred: `两将军问题` or `Two Generals Problem`
+- See also: [[distributed-systems-foundations]], [[distributed-systems-core-principles]]
+
+**CAP 定理** *(canonical form)*
+: 指网络分区发生时，分布式系统必须在一致性（Consistency）和可用性（Availability）之间做选择，同时默认需要容忍分区（Partition Tolerance）。在当前知识库里，它用于描述故障态行为边界，而不是泛泛的产品宣传标签。
+- Preferred: `CAP 定理` or `CAP`
+- See also: [[distributed-systems-foundations]], [[consistency-models]]
+
+**FLP 不可能性** *(canonical form)*
+: 指在异步系统中，即使只允许一个进程崩溃，也不存在能够保证终止的确定性共识算法；工程上通常通过超时、部分同步假设或随机化来绕开这一理论边界。
+- Preferred: `FLP 不可能性` or `FLP`
+- See also: [[distributed-systems-foundations]], [[distributed-consensus]]
+
+**PACELC** *(canonical form)*
+: CAP 的扩展表述：如果发生分区（P），就在可用性（A）和一致性（C）之间取舍；否则（E），仍要在延迟（L）和一致性（C）之间取舍。它强调正常路径也有 trade-off。
+- Preferred: `PACELC`
+- See also: [[distributed-systems-foundations]], [[consistency-models]]
+
+**一致性模型（consistency model）** *(canonical form)*
+: 指系统对“读操作能看到什么样的写结果”所做的语义承诺，包括线性一致性、因果一致性和最终一致性等谱系；不要把它和 CAP 中的故障态选择或 ACID 中的 `Consistency` 混为一谈。
+- Preferred: `一致性模型` or `consistency model`
+- See also: [[consistency-models]], [[distributed-systems-core-principles]]
+
+**线性一致性（Linearizability）** *(canonical form)*
+: 最强的一类常见分布式一致性语义之一，要求写入一旦完成，所有后续读取都像发生在一个与真实时间兼容的单一全局顺序里。
+- Preferred: `线性一致性` or `Linearizability`
+- See also: [[consistency-models]]
+
+**最终一致性（Eventual Consistency）** *(canonical form)*
+: 指如果没有新的写入，系统中所有副本最终会收敛到相同值；它允许短暂不一致，但不等于“没有一致性”。
+- Preferred: `最终一致性` or `Eventual Consistency`
+- See also: [[consistency-models]], [[data-replication-and-partitioning]]
+
+**共识算法（consensus）** *(canonical form)*
+: 指让多个节点就某个值或日志顺序达成一致的协议族；在当前知识库里，Paxos 更偏理论基础，Raft 更偏工程可实现性。
+- Preferred: `共识算法` or `consensus`
+- See also: [[distributed-consensus]], [[distributed-systems-foundations]]
+
+**Raft** *(canonical form)*
+: 一种强调可理解性的 leader-based 共识算法，通过 Leader 选举、日志复制和安全性规则把复制状态机问题拆成更易工程实现的子问题。
+- Preferred: `Raft`
+- See also: [[distributed-consensus]]
+
+**Paxos** *(canonical form)*
+: 经典共识算法与理论基石，通过 proposer / acceptor / learner 等角色在多数派上选定提案；通常是理解后续共识协议的起点。
+- Preferred: `Paxos`
+- See also: [[distributed-consensus]]
+
+**Quorum（仲裁 / 多数派）** *(canonical form)*
+: 指在多副本系统里用一组达到阈值的节点交集来保证安全性的做法；常见写法是 `W + R > N`，或在共识里用多数派决定提交。
+- Preferred: `Quorum`, `仲裁`, or `多数派`
+- See also: [[distributed-consensus]], [[distributed-systems-resilience-patterns]]
+
+**复制（replication）** *(canonical form)*
+: 指在多个节点上保存同一份数据，以提升可用性、读取能力或容灾能力；它不同于离线备份，因为复制会直接影响在线读写路径和一致性行为。
+- Preferred: `复制` or `replication`
+- See also: [[data-replication-and-partitioning]]
+
+**分片（sharding / partitioning）** *(canonical form)*
+: 指把不同数据切分到多个节点上，以突破单机容量和吞吐限制；分片键选择会直接影响热点、查询成本和扩容难度。
+- Preferred: `分片`, `sharding`, or `partitioning`
+- See also: [[data-replication-and-partitioning]]
+
+**一致性哈希（consistent hashing）** *(canonical form)*
+: 一种让节点增减时只影响局部数据区间的分片方法，常与虚拟节点一起使用以减轻数据倾斜。
+- Preferred: `一致性哈希` or `consistent hashing`
+- See also: [[data-replication-and-partitioning]]
+
+**Lamport 时钟（Lamport Clock）** *(canonical form)*
+: 一类最基础的逻辑时钟，通过本地递增和消息传播维护“若 a 先于 b，则时钟值更小”的顺序关系，但不能完整识别并发。
+- Preferred: `Lamport 时钟` or `Lamport Clock`
+- See also: [[logical-time-and-causality]]
+
+**向量时钟（Vector Clock）** *(canonical form)*
+: 一类可以显式表示因果关系并检测并发事件的逻辑时钟模型，代价是元数据规模会随着参与节点数增长。
+- Preferred: `向量时钟` or `Vector Clock`
+- See also: [[logical-time-and-causality]], [[data-replication-and-partitioning]]
+
+**脑裂（split brain）** *(canonical form)*
+: 指网络分区或故障检测失误导致系统同时出现多个自认为有效的主节点或控制面实例的情况；在锁、主备和选主场景里风险很高。
+- Preferred: `脑裂` or `split brain`
+- See also: [[distributed-consensus]], [[distributed-systems-resilience-patterns]]
+
+---
+
 ## Style Conventions
 
 *(Writing rules and tone guidelines specific to this knowledge base's domain. Will populate as style guides and branded content are ingested.)*
@@ -887,6 +979,7 @@ Each entry follows this format:
 | Apple platform terminology | Use `macOS` for the OS name, `Recovery 模式` for the maintenance environment, and exact Apple command names such as `createinstallmedia`, `diskutil`, `launchctl`, `pmset`, and `defaults` when behavior depends on them. | “先用 `diskutil` 查看磁盘，再用 `defaults` 调整 Finder 行为。” |
 | macOS GUI terminology | When behavior depends on `系统设置` or app preferences, preserve the exact UI label and distinguish recommended configuration from platform default. | “启用 `轻点来点按`，并注明它是推荐设置，不是所有 Mac 的出厂默认值。” |
 | Windows terminology | When behavior depends on a Windows-specific surface, name the exact layer such as `Services`, `Task Scheduler`, `PowerShell`, `New-NetFirewallRule`, `Inno Setup`, `InitializeSetup()`, `WMI`, `MFC`, or `Win32`, explain `机器码` as a hardware-derived identifier rather than compiled machine code, and treat update disabling as a contextual workaround rather than a universal default. | “先在 `Services` 停用 `Windows Update`，再说明 `New-NetFirewallRule` 只是为调试临时开放入站端口。” |
+| Distributed-systems terminology | Distinguish `一致性模型`, `共识算法`, `复制/分片`, `Quorum`, and `幂等`; do not flatten them into a single vague phrase such as “分布式一致性”. | “评论系统选择最终一致性，元数据服务使用 Raft 共识，写接口通过幂等键配合多数派确认。” |
 | Testing terminology | Use `属性测试` when describing invariant-driven generated-input testing, and use `回归测试` for suites built from historical bugs. | “把这个历史缺陷沉淀为回归测试，再补一条属性测试覆盖通用规律。” |
 
 ---
@@ -910,6 +1003,8 @@ Terms that have been replaced, renamed, or should not be used:
 | 把个人或团队工作站偏好直接写成“macOS 默认” | 写成 `推荐设置`、`偏好配置` 或标明来源上下文 | 避免把用户自定义映射误写成平台默认事实。 |
 | 把当前 Windows 来源中的 `机器码` 直译为 `machine code` | `机器码`（设备标识）or `hardware-derived machine identifier` | 避免把硬件派生标识与编译后的机器指令混淆。 |
 | 把禁用 `Windows Update` 写成 Windows 通用最佳实践 | 写成 `特定场景下的更新抑制措施` 并注明版本/安全代价 | 避免把战术性 workaround 误写成默认管理基线。 |
+| 把 CAP 里的 `Consistency` 和 ACID 里的 `Consistency` 当成同一个概念 | 根据语境写 `一致性模型`、`CAP 一致性` 或 `事务一致性` | 避免把分布式读写语义和事务约束混成一类。 |
+| 把 `最终一致性` 写成“完全不保证正确” | 写明收敛条件和允许的不一致窗口 | 避免把延迟收敛误写成无语义。 |
 | 把所有自动化测试都叫“单元测试” | 按 `属性测试`、`集成测试`、`E2E`、`回归测试` 等更准确名称区分 | 避免掩盖测试层级、成本和职责差异。 |
 
 ---
@@ -965,6 +1060,12 @@ Terms that differ between audiences, teams, or locales:
 - [[startup-security-and-external-boot-policy]] — concept page for recovery-time external boot authorization
 - [[platform-foundation]] — shared platform and governance concept
 - [[observability-and-reliability]] — observability and reliability concept
+- [[distributed-systems-foundations]] — distributed-systems boundary concept
+- [[consistency-models]] — consistency spectrum and selection concept
+- [[distributed-consensus]] — consensus concept for multi-node agreement
+- [[data-replication-and-partitioning]] — data layout concept for replicas and shards
+- [[logical-time-and-causality]] — ordering concept beyond physical clocks
+- [[distributed-systems-resilience-patterns]] — resilience mechanisms for failure handling
 - [[unix-philosophy-and-pipeline-thinking]] — Unix-style design model centered on composition and stable interfaces
 - [[use-methodology]] — resource-first troubleshooting method for observability and performance
 - [[software-testing-architecture]] — layered testing model for quality feedback

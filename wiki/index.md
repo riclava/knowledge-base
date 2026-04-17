@@ -48,6 +48,7 @@ Each entry follows this format:
 - [[ubuntu-common-issues-and-optimization]] — Ubuntu troubleshooting and optimization reference covering system tuning, APT management, DNS port conflicts, and VMware multipath errors | source | 2026-04-15
 - [[ubuntu-kernel-version-switching]] — Ubuntu runbook for installing a specific kernel version via APT, switching the GRUB default boot entry, and validating the rebooted host | source | 2026-04-15
 - [[engineering-thinking-framework]] — Engineering-thinking presentation framing software R&D as abstraction, modeling, system decomposition, and validation rather than mere coding | source | 2026-04-15
+- [[distributed-systems-core-principles]] — Structured distributed-systems study note covering uncertainty intuition, CAP/FLP/PACELC, consistency, consensus, replication/sharding, logical clocks, and resilience patterns | source | 2026-04-17
 - [[linux-foundations-and-testing-special-topic]] — Training deck that teaches Linux as an engineering mental model and pairs it with layered software-testing architecture | source | 2026-04-16
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
 - [[windows-development-related]] — Compact Windows-native development note covering Inno Setup packaging, service bootstrap sequencing, and WMI-based machine fingerprint generation | source | 2026-04-17
@@ -106,15 +107,21 @@ Each entry follows this format:
 - [[devops-delivery-pipeline]] — Delivery-loop concept connecting local development, layered test gates, deployment, and runtime feedback | concept | 2026-04-16
 - [[software-testing-architecture]] — Layered testing model combining unit/property tests, integration tests, E2E, regression data, and CI staging | concept | 2026-04-16
 - [[property-based-testing]] — Testing style that validates invariants over generated input spaces instead of only checking hand-picked examples | concept | 2026-04-16
-- [[engineering-mindset]] — Foundational engineering-thinking concept for turning real-world problems into computable systems | concept | 2026-04-15
-- [[state-and-data-flow-modeling]] — System-modeling approach that describes behavior through state transitions, data movement, and boundaries | concept | 2026-04-15
+- [[engineering-mindset]] — Foundational engineering-thinking concept for turning real-world problems into computable systems, including distributed trade-off reasoning under uncertainty | concept | 2026-04-17
+- [[state-and-data-flow-modeling]] — System-modeling approach that describes behavior through state transitions, data movement, and boundaries, now linked to distributed ordering and replication concerns | concept | 2026-04-17
+- [[distributed-systems-foundations]] — Boundary concept for network uncertainty, failure models, CAP/FLP/PACELC, and why distributed design is fundamentally trade-off-driven | concept | 2026-04-17
+- [[consistency-models]] — Read-visibility spectrum from linearizability through causal and eventual consistency, chosen by business tolerance for stale or out-of-order views | concept | 2026-04-17
+- [[distributed-consensus]] — Multi-node agreement concept centered on Paxos/Raft, majority quorums, leader election, and replicated-log safety | concept | 2026-04-17
+- [[data-replication-and-partitioning]] — Data-layout concept covering replica strategies, sharding choices, consistent hashing, conflict resolution, and expansion/migration trade-offs | concept | 2026-04-17
+- [[logical-time-and-causality]] — Ordering concept that replaces unreliable physical clocks with happened-before reasoning, Lamport clocks, vector clocks, and HLC | concept | 2026-04-17
+- [[distributed-systems-resilience-patterns]] — Engineering mechanisms such as timeouts, retries, idempotency, quorum, caching, circuit breaking, degradation, and failover | concept | 2026-04-17
 - [[validation-driven-design]] — Engineering method for reducing uncertainty before coding through simulation, diagrams, and edge-case analysis | concept | 2026-04-15
 - [[unix-philosophy-and-pipeline-thinking]] — Unix-style design model centered on small tools, text interfaces, unified abstractions, and pipeline composition | concept | 2026-04-16
 - [[container-network-namespace-support]] — Host-kernel support and remediation signals required for Docker bridge networking, veth linkage, and namespace inspection | concept | 2026-04-15
 - [[containerized-development-environment]] — Pattern for creating isolated, reproducible development environments using containers with keep-alive processes and scripted initialization | concept | 2026-04-15
 - [[file-descriptor-and-tcp-backlog-tuning]] — Layered Linux capacity-tuning concept separating `nofile`, kernel file-table limits, `systemd` unit limits, and TCP backlog parameters | concept | 2026-04-15
 - [[platform-foundation]] — Shared platform and governance base used to increase reuse and reduce siloed systems | concept | 2026-04-14
-- [[observability-and-reliability]] — Observability, incident handling, and reliability as engineering fundamentals spanning Linux host signals, monitoring systems, and delivery feedback | concept | 2026-04-16
+- [[observability-and-reliability]] — Observability, incident handling, and reliability as engineering fundamentals spanning Linux host signals, distributed-failure handling, monitoring systems, and delivery feedback | concept | 2026-04-17
 - [[use-methodology]] — Resource-triage method that inspects utilization, saturation, and errors across CPU, memory, disk, and network | concept | 2026-04-16
 - [[speech-native-llm]] — Architecture pattern that models and generates speech directly instead of centering text | concept | 2026-04-14
 - [[neural-audio-codec]] — Audio tokenizer infrastructure layer that discretizes speech for LLM use | concept | 2026-04-14

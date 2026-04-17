@@ -2,9 +2,9 @@
 title: 研发思维
 type: concept
 created: 2026-04-15
-updated: 2026-04-15
-sources: [构建技术研发思维.md]
-tags: [concept, engineering-thinking, systems-thinking, abstraction, modeling, system-design]
+updated: 2026-04-17
+sources: [构建技术研发思维.md, 分布式核心原理.md]
+tags: [concept, engineering-thinking, systems-thinking, abstraction, modeling, system-design, distributed-systems]
 ---
 
 研发思维指把现实问题转化为可计算系统的能力，它强调抽象、建模、拆解、分层、权衡和验证，而不把“写代码”当成起点。
@@ -33,6 +33,7 @@ tags: [concept, engineering-thinking, systems-thinking, abstraction, modeling, s
 - 没有研发思维，代码容易直接映射表面需求，最终结构混乱、边界模糊。
 - 研发思维把“会写代码”提升成“会设计系统”，更适合支撑复杂业务和跨模块协作。
 - 在 AI 协同场景下，研发思维仍然是人的基本盘，因为问题定义、模型选择和验收边界不能完全外包给工具。
+- 新的分布式系统来源进一步说明：当网络不确定性、部分故障和一致性 trade-off 成为系统边界时，抽象、建模和权衡就不再是“高级技巧”，而是系统能否成立的基础条件。
 
 ## Documentation Implications
 
@@ -52,7 +53,9 @@ tags: [concept, engineering-thinking, systems-thinking, abstraction, modeling, s
 - [[engineering-thinking-framework]]
 - [[state-and-data-flow-modeling]]
 - [[validation-driven-design]]
+- [[distributed-systems-foundations]]
+- [[consistency-models]]
+- [[distributed-systems-resilience-patterns]]
 - [[growing-engineer]]
 - [[full-lifecycle-delivery-capability]]
 - [[ai-enabled-software-delivery]]
-

@@ -577,3 +577,30 @@ Key additions:
 - Expanded the `Windows` product page beyond packaging and hardware identification to include GUI/PowerShell administration surfaces such as `Services`, `Task Scheduler`, and `New-NetFirewallRule`.
 - Added canonical terminology for `Windows Update`、`Services`、`Task Scheduler`、`PowerShell` and `New-NetFirewallRule`.
 - Flagged that disabling automatic updates is a contextual workaround with security and compliance tradeoffs, not a universal Windows baseline.
+
+## [2026-04-17] ingest | 分布式系统核心原理
+
+Pages created:
+- `wiki/sources/distributed-systems-core-principles.md`
+- `wiki/concepts/distributed-systems-foundations.md`
+- `wiki/concepts/consistency-models.md`
+- `wiki/concepts/distributed-consensus.md`
+- `wiki/concepts/data-replication-and-partitioning.md`
+- `wiki/concepts/logical-time-and-causality.md`
+- `wiki/concepts/distributed-systems-resilience-patterns.md`
+
+Pages updated:
+- `wiki/concepts/engineering-mindset.md` — linked abstract engineering-thinking guidance to distributed uncertainty and trade-off-driven design
+- `wiki/concepts/state-and-data-flow-modeling.md` — extended the modeling lens to distributed ordering, replication, and replay concerns
+- `wiki/concepts/observability-and-reliability.md` — added distributed failure-handling mechanisms as first-class stability patterns
+- `wiki/glossary.md` — added distributed-systems terminology and style rules clarifying consistency, consensus, quorum, and idempotency language
+- `wiki/index.md` — added the new source and concept entries, refreshed related concept summaries and updated dates
+- `wiki/overview.md` — updated source/page counts and broadened the synthesis to include distributed-systems theory and engineering
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for a broad distributed-systems study note covering uncertainty intuition, system/failure models, CAP, FLP, PACELC, Byzantine tolerance, consistency models, consensus, replication/sharding, logical clocks, and resilience mechanisms.
+- Established `distributed systems foundations`, `consistency models`, `distributed consensus`, `data replication and partitioning`, `logical time and causality`, and `distributed systems resilience patterns` as reusable concept pages instead of leaving the material embedded in one long tutorial note.
+- Added canonical terminology for `分布式系统`、`CAP 定理`、`FLP 不可能性`、`PACELC`、`一致性模型`、`Raft`、`Paxos`、`Quorum`、`幂等`、`分片`、`一致性哈希`、`Lamport 时钟` and `向量时钟`.
+- Linked the new material back into existing engineering-thinking, state/data-flow, and reliability pages so distributed systems now sits inside the broader systems-thinking spine of the wiki instead of as an isolated topic.
+- Flagged that the source is an educational overview with some teaching-level simplifications, so product-specific CAP labels or transaction choices should still be validated against individual system docs before reuse in formal design writing.
