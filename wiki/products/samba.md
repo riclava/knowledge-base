@@ -2,7 +2,7 @@
 title: Samba
 type: product
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-04-17
 sources: [CentOS7配置Samba共享.md]
 tags: [product, samba, smb, centos, linux, windows, file-sharing, authentication, permissions]
 ---
@@ -40,7 +40,7 @@ Samba 是 Linux 上实现 SMB/CIFS 文件共享的服务套件；在当前知识
 
 ### Windows Interoperability Is the User-Facing Outcome
 
-- 用户最终不是记住 Linux 路径，而是在 Windows 中通过 `\\\\IP\\data` 映射网络驱动器。
+- 用户最终不是记住 Linux 路径，而是在 [[windows]] 中通过 `\\\\IP\\data` 映射网络驱动器。
 - 因此技术写作不能只停留在服务端命令，还要解释客户端如何连接、凭据如何对应以及失败时看哪里。
 
 ## Why It Matters
@@ -66,6 +66,7 @@ Samba 是 Linux 上实现 SMB/CIFS 文件共享的服务套件；在当前知识
 
 - [[centos7-samba-share-setup]]
 - [[smb-file-sharing]]
+- [[windows]]
 - [[centos]]
 - [[linux]]
 - [[linux-command-line-operations]]

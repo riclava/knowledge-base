@@ -534,3 +534,27 @@ Key additions:
 - Clarified that many day-to-day Mac experience settings live in GUI `系统设置` or app preferences and should not be flattened into command-only documentation.
 - Added canonical terminology for `系统设置（System Settings）`、`Spotlight`、`输入法`、`辅助点按（Secondary click）`、`轻点来点按（Tap to click）` and `网页预加载`.
 - Flagged that the source records preferred/user-configured shortcut behavior and a version-sensitive Chrome workaround, so the wiki should preserve them as contextual settings rather than universal macOS defaults.
+
+## [2026-04-17] ingest | Windows 开发相关
+
+Pages created:
+- `wiki/sources/windows-development-related.md`
+- `wiki/products/windows.md`
+- `wiki/products/inno-setup.md`
+- `wiki/concepts/windows-management-instrumentation.md`
+- `wiki/concepts/hardware-derived-machine-identifier.md`
+
+Pages updated:
+- `wiki/products/samba.md` — linked the Samba client-side outcome to the new `Windows` product page
+- `wiki/concepts/smb-file-sharing.md` — added a backlink from SMB client behavior to `Windows`
+- `wiki/glossary.md` — added Windows-native development terminology and a style rule clarifying `机器码`
+- `wiki/index.md` — added new source, product, and concept entries
+- `wiki/overview.md` — updated source/page counts and broadened the synthesis to include Windows-native packaging and hardware identification
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for a compact Windows-native development note covering Inno Setup installer scripting, install/uninstall service actions, and WMI-based machine identifier generation.
+- Added first-class `Windows` and `Inno Setup` product pages instead of leaving Windows knowledge scattered only inside one raw memo or Samba client references.
+- Established `Windows Management Instrumentation` and `Hardware-derived machine identifier` as reusable concepts rather than leaving them embedded in code snippets.
+- Added canonical terminology for `Windows`、`Inno Setup`、`WMI`、`MFC`、`Win32` and `机器码`, and normalized `机器码` to mean a hardware-derived device identifier rather than compiled machine code.
+- Clarified that the source records a minimal implementation path, but does not yet cover Windows packaging topics such as signing, UAC, MSI/WiX, registry operations, service management tooling, or crash diagnostics.

@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-17
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting]
 ---
 
 # Glossary
@@ -811,6 +811,36 @@ Each entry follows this format:
 - Preferred: `语言运行时版本管理` or `language runtime version management`
 - See also: [[language-runtime-version-management]], [[macos-development-environment-setup]]
 
+**Windows** *(canonical form)*
+: Microsoft 的桌面/服务器操作系统；在当前知识库里，它既是 SMB 网络驱动器映射的客户端环境，也是使用 `Inno Setup`、`WMI`、`MFC` 与 `Win32` 完成原生应用安装和设备标识生成的平台。
+- Preferred: `Windows`
+- See also: [[windows]], [[windows-development-related]]
+
+**Inno Setup** *(canonical form)*
+: Windows 安装包制作工具，使用 section-based 脚本和 Pascal 风格代码钩子来描述安装器行为；当前来源中它负责文件打包、安装前钩子、多语言安装器以及服务安装/卸载阶段动作。
+- Preferred: `Inno Setup`
+- See also: [[inno-setup]], [[windows-development-related]], [[windows]]
+
+**WMI（Windows Management Instrumentation）** *(canonical form)*
+: Windows 的系统与硬件信息查询接口；当前来源中它被用来读取 BIOS、CPU、主板和硬盘属性，为设备标识生成提供原始字段。
+- Preferred: `WMI` or `Windows Management Instrumentation`
+- See also: [[windows-management-instrumentation]], [[hardware-derived-machine-identifier]], [[windows]]
+
+**MFC** *(canonical form)*
+: Microsoft Foundation Class Library，Windows 原生 C++ 开发中的一个封装层；当前来源用它承载 COM / WMI 查询代码，而不是通过外部命令取数。
+- Preferred: `MFC`
+- See also: [[windows-development-related]], [[windows-management-instrumentation]], [[windows]]
+
+**Win32** *(canonical form)*
+: Windows 用户态 API 与传统原生开发语境的统称；在当前来源中，它与 `MFC` 区分开来，表现为通过 `CreateProcessW`、管道和 `ReadFile` 调起 `wmic` 并解析输出的实现路径。
+- Preferred: `Win32`
+- See also: [[windows-development-related]], [[windows]], [[windows-management-instrumentation]]
+
+**机器码（machine identifier）** *(canonical form)*
+: 在当前 Windows 来源中，`机器码` 指由多项硬件信息拼接并哈希得到的设备标识，而不是 CPU 指令层面的 machine code；文档中应优先把它解释为 hardware-derived machine identifier。
+- Preferred: `机器码` or `machine identifier` / Avoid: 直接翻成 `machine code`
+- See also: [[hardware-derived-machine-identifier]], [[windows-development-related]]
+
 ---
 
 ## Style Conventions
@@ -831,6 +861,7 @@ Each entry follows this format:
 | Linux operations terminology | When behavior depends on a specific subsystem, use the exact command or service name such as `journalctl`, `crontab`, or `firewalld`, not a vague “Linux 命令”. | “查看 `systemd` 日志时使用 `journalctl`。” |
 | Apple platform terminology | Use `macOS` for the OS name, `Recovery 模式` for the maintenance environment, and exact Apple command names such as `createinstallmedia`, `diskutil`, `launchctl`, `pmset`, and `defaults` when behavior depends on them. | “先用 `diskutil` 查看磁盘，再用 `defaults` 调整 Finder 行为。” |
 | macOS GUI terminology | When behavior depends on `系统设置` or app preferences, preserve the exact UI label and distinguish recommended configuration from platform default. | “启用 `轻点来点按`，并注明它是推荐设置，不是所有 Mac 的出厂默认值。” |
+| Windows terminology | When behavior depends on a Windows-specific surface, name the exact layer such as `Inno Setup`, `InitializeSetup()`, `WMI`, `MFC`, or `Win32`, and explain `机器码` as a hardware-derived identifier rather than compiled machine code. | “通过 `WMI` 采集硬件字段后生成机器码，而不是泛写成‘调用 Windows 接口’。” |
 | Testing terminology | Use `属性测试` when describing invariant-driven generated-input testing, and use `回归测试` for suites built from historical bugs. | “把这个历史缺陷沉淀为回归测试，再补一条属性测试覆盖通用规律。” |
 
 ---
@@ -852,6 +883,7 @@ Terms that have been replaced, renamed, or should not be used:
 | `MacOS` | `macOS` | Apple 桌面操作系统名称在当前知识库里统一使用官方大小写。 |
 | 把 `Homebrew` 写成 Apple 官方包管理器 | `Homebrew`（社区包管理器） | 避免误写支持边界和工具归属。 |
 | 把个人或团队工作站偏好直接写成“macOS 默认” | 写成 `推荐设置`、`偏好配置` 或标明来源上下文 | 避免把用户自定义映射误写成平台默认事实。 |
+| 把当前 Windows 来源中的 `机器码` 直译为 `machine code` | `机器码`（设备标识）or `hardware-derived machine identifier` | 避免把硬件派生标识与编译后的机器指令混淆。 |
 | 把所有自动化测试都叫“单元测试” | 按 `属性测试`、`集成测试`、`E2E`、`回归测试` 等更准确名称区分 | 避免掩盖测试层级、成本和职责差异。 |
 
 ---
@@ -898,6 +930,11 @@ Terms that differ between audiences, teams, or locales:
 - [[macos-system-settings]] — macOS workstation settings source summary
 - [[macos]] — macOS product page
 - [[macos-command-line-operations]] — reusable macOS operations concept
+- [[windows-development-related]] — Windows-native development source summary
+- [[windows]] — Windows product page
+- [[inno-setup]] — Windows installer tool page
+- [[windows-management-instrumentation]] — Windows hardware/system metadata query concept
+- [[hardware-derived-machine-identifier]] — concept page for hardware-based device identifiers
 - [[bootable-os-installer-media]] — concept page for external installation media creation
 - [[startup-security-and-external-boot-policy]] — concept page for recovery-time external boot authorization
 - [[platform-foundation]] — shared platform and governance concept

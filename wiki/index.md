@@ -50,6 +50,7 @@ Each entry follows this format:
 - [[engineering-thinking-framework]] — Engineering-thinking presentation framing software R&D as abstraction, modeling, system decomposition, and validation rather than mere coding | source | 2026-04-15
 - [[linux-foundations-and-testing-special-topic]] — Training deck that teaches Linux as an engineering mental model and pairs it with layered software-testing architecture | source | 2026-04-16
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
+- [[windows-development-related]] — Compact Windows-native development note covering Inno Setup packaging, service bootstrap sequencing, and WMI-based machine fingerprint generation | source | 2026-04-17
 
 ---
 
@@ -68,12 +69,14 @@ Each entry follows this format:
 - [[bash]] — Common Linux shell and scripting runtime for command execution, automation, and task orchestration | product | 2026-04-15
 - [[centos]] — RPM/YUM-based enterprise Linux distribution family with repository lifecycle, alternate kernel upgrade paths, and version-specific host-compatibility behavior | product | 2026-04-15
 - [[docker]] — Container runtime/tooling page covering host-kernel-dependent networking behavior, validation, kernel-remediation paths, and containerized development environment patterns | product | 2026-04-15
+- [[inno-setup]] — Windows installer authoring tool centered on section-based scripts, Pascal-style hooks, multilingual packaging, and service-oriented post-install actions | product | 2026-04-17
 - [[linux]] — Linux operating system and engineering mental model spanning command-line operations, permissions, observability, and system design principles | product | 2026-04-16
 - [[macos]] — Apple desktop operating system page covering installer/recovery workflows, interactive desktop preferences, command-line administration, and development environment setup across input, trackpad, disks, networking, services, power, and developer tooling | product | 2026-04-17
 - [[openssh]] — SSH client/server suite page focused on source-built service replacement across CentOS 7 and Ubuntu 22.04, covering authentication policy and remote-access continuity risks | product | 2026-04-15
 - [[openssl]] — TLS/crypto library page focused on source installation, linker-path integration, and its role as a dependency for higher-level services | product | 2026-04-15
 - [[samba]] — SMB/CIFS file-sharing server used to expose Linux directories to Windows clients with share-level auth and path masks | product | 2026-04-15
 - [[ubuntu]] — Debian-based Linux distribution with APT package management, Netplan network configuration, kernel version management, system optimization, and source-build upgrade paths | product | 2026-04-15
+- [[windows]] — Microsoft Windows operating system page focused on native installer packaging, WMI metadata access, service bootstrap flows, and SMB client context | product | 2026-04-17
 - [[moshi]] — Speech-native LLM focused on full-duplex, low-latency voice interaction | product | 2026-04-14
 - [[mimi]] — Neural Audio Codec and tokenizer used to turn speech into low-rate discrete tokens | product | 2026-04-14
 - [[vim]] — Modal terminal editor focused on composable text editing and lightweight workflow customization | product | 2026-04-15
@@ -115,6 +118,7 @@ Each entry follows this format:
 - [[speech-native-llm]] — Architecture pattern that models and generates speech directly instead of centering text | concept | 2026-04-14
 - [[neural-audio-codec]] — Audio tokenizer infrastructure layer that discretizes speech for LLM use | concept | 2026-04-14
 - [[full-duplex-speech-interaction]] — Real-time interaction model that supports simultaneous listening, speaking, and interruption | concept | 2026-04-14
+- [[hardware-derived-machine-identifier]] — Practice of collecting multiple hardware properties and hashing them into a derived device fingerprint, called `机器码` in the current Windows source | concept | 2026-04-17
 - [[kernel-upgrade-and-boot-management]] — Practice of upgrading or switching Linux kernel versions, choosing a boot target, and validating compatibility outcomes before cleanup, covering both CentOS 7 and Ubuntu patterns | concept | 2026-04-15
 - [[language-runtime-version-management]] — Practice of using dedicated version managers to install, switch between, and isolate multiple versions of a language runtime on a single development machine | concept | 2026-04-17
 - [[legacy-repository-repointing]] — Practice of redirecting package managers from retired mirrors to static archive/vault repositories for legacy systems | concept | 2026-04-15
@@ -128,6 +132,7 @@ Each entry follows this format:
 - [[os-initialization-workflow]] — Structured workflow for configuring a fresh Linux install from bare metal to usable baseline, covering install options, accounts, network, remote access, package sources, time sync, security policy, and base tools | concept | 2026-04-15
 - [[network-configuration]] — Practice of defining network interface settings, IP addressing, routing, and DNS through declarative configuration files, enabling reproducible network setup | concept | 2026-04-15
 - [[systemd-resolved-dns-management]] — Practice of configuring systemd-resolved DNS service, managing port 53 conflicts, and controlling DNS stub listener behavior on modern Ubuntu | concept | 2026-04-15
+- [[windows-management-instrumentation]] — Windows system metadata/query surface used in current sources to retrieve BIOS, CPU, motherboard, and disk properties through COM or `wmic` | concept | 2026-04-17
 
 ---
 
