@@ -3,8 +3,8 @@ title: macOS 常用命令
 type: source
 created: 2026-04-17
 updated: 2026-04-17
-sources: [macOS常用命令.md]
-tags: [source, macos, apple, command-line, operations, system-administration, cheat-sheet, networking, storage, processes, launchctl, power-management, developer-tooling, homebrew, xcode, defaults]
+sources: [macOS常用命令.md, macOS系统设置.md]
+tags: [source, macos, apple, command-line, operations, system-administration, cheat-sheet, networking, storage, processes, launchctl, power-management, developer-tooling, homebrew, xcode, defaults, system-settings]
 ---
 
 # macOS 常用命令
@@ -78,6 +78,7 @@ tags: [source, macos, apple, command-line, operations, system-administration, ch
 - 对 `launchctl`、`airport`、`socketfilterfw` 这类 Apple 专用或私有接口，应写明适用范围，不要泛化成通用 Unix 事实。
 - 对 `brew` 和 Xcode 工具链命令，应补充安装前提、权限要求和失败后的验证方式。
 - 对环境变量持久化示例，应写明当前 shell 语境，因为来源把 `~/.zshrc` 和 `~/.bash_profile` 并列提及，但没有区分默认场景。
+- 对输入法、触控板和浏览器内开关这类 GUI / app 层设置，应直接链接到 [[macos-system-settings]]，而不是强行塞进命令速查表。
 
 ## Known Gaps from This Source
 
@@ -91,6 +92,7 @@ tags: [source, macos, apple, command-line, operations, system-administration, ch
 
 - [[macos]]
 - [[macos-command-line-operations]]
+- [[macos-system-settings]]
 - [[macos-usb-installer-creation]]
 - [[glossary]]
 - [[shell-scripting]]

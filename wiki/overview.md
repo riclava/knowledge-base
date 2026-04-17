@@ -4,8 +4,8 @@ title: Overview
 type: overview
 created: 2026-04-07
 updated: 2026-04-17
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, Ubuntu切换指定版本内核.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, homebrew, launchctl, diskutil, pmset, defaults, xcode, ruby, rbenv, cocoapods, ios, version-management]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, Ubuntu切换指定版本内核.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, homebrew, launchctl, diskutil, pmset, defaults, xcode, ruby, rbenv, cocoapods, ios, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting]
 
 ---
 
@@ -18,11 +18,11 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-to
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, engineering-thinking frameworks for abstraction/modeling/validation, AI-assisted full-stack onboarding patterns, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, Unix-style design philosophy, host-level observability through USE and `/proc`-backed metrics, layered software-testing architecture, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, Ubuntu 22.04 OpenSSH source upgrade workflows, Ubuntu system optimization and troubleshooting including DNS port conflicts and VMware compatibility, Ubuntu kernel version switching via APT and GRUB configuration, macOS bootable USB installer creation and external-boot downgrade preparation, broader macOS command-line administration across `diskutil` / `launchctl` / `pmset` / Homebrew / Xcode CLI tools / `defaults`, macOS development environment setup covering Ruby version management with rbenv and CocoaPods installation, plus AI-era onboarding material for MCP, project Steering context, DevOps pipeline basics, and starter full-stack stack composition.
+This wiki currently covers AI-era engineering management, engineering-thinking frameworks for abstraction/modeling/validation, AI-assisted full-stack onboarding patterns, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, Unix-style design philosophy, host-level observability through USE and `/proc`-backed metrics, layered software-testing architecture, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, Ubuntu 22.04 OpenSSH source upgrade workflows, Ubuntu system optimization and troubleshooting including DNS port conflicts and VMware compatibility, Ubuntu kernel version switching via APT and GRUB configuration, macOS bootable USB installer creation and external-boot downgrade preparation, broader macOS command-line administration across `diskutil` / `launchctl` / `pmset` / Homebrew / Xcode CLI tools / `defaults`, lightweight macOS interactive system settings covering shortcut preferences, input-source defaults, trackpad behavior, and a Chrome preload workaround for typing lag, macOS development environment setup covering Ruby version management with rbenv and CocoaPods installation, plus AI-era onboarding material for MCP, project Steering context, DevOps pipeline basics, and starter full-stack stack composition.
 
-**Source count:** 23
-**Wiki pages:** 76
-**Last ingest:** 2026-04-17 — [[macos-development-environment-setup]]
+**Source count:** 24
+**Wiki pages:** 77
+**Last ingest:** 2026-04-17 — [[macos-system-settings]]
 **Last lint:** —
 
 
@@ -54,6 +54,7 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - Ubuntu 系统优化与常见问题排查，覆盖 swap 管理、NFS 挂载、APT 包管理、systemd-resolved DNS 端口冲突和 VMware multipath 错误
 - Ubuntu 内核版本切换，覆盖 APT 内核包安装、GRUB 默认启动项配置和重启验证
 - macOS 命令行日常运维与开发环境准备，覆盖 `sw_vers`、`system_profiler`、`diskutil`、`launchctl`、`pmset`、Homebrew、Xcode CLI 工具和 `defaults` 偏好修改
+- macOS 日常系统设置与浏览器体验优化，覆盖快捷键偏好、默认输入法、触控板行为和 Chrome 网页预加载相关的输入卡顿缓解
 - macOS 开发环境配置，覆盖 rbenv Ruby 版本管理和 CocoaPods 安装
 - macOS 安装 U 盘制作与外部启动安装流程，覆盖 `createinstallmedia`、Recovery 模式、启动安全性设置和基础故障恢复
 - 软件测试架构，覆盖测试金字塔、属性测试、Contract Test、回归闭环、CI 时间分层和环境分工
@@ -72,6 +73,7 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - 自然语音对话的竞争点不只是模型推理能力，还包括全双工交互、延迟预算和 codec 设计。
 - 在终端工作流中，Vim 的价值不只是“能编辑文件”，而是通过模态编辑、组合命令和轻量配置把高频文本修改提炼成可复用操作语言。
 - 在终端自动化方向，Bash 的价值不只是“命令拼接”，而是通过参数展开、选项处理、管道/重定向和错误控制，把重复操作沉淀为脚本化流程。
+- 在开发者工作站场景里，效率问题不只出现在终端和工具链，也出现在输入法、触控板和浏览器设置这类交互层细节上。
 - 在 Linux 基础培训语境里，命令行不应被当成“需要硬背的语法库”，而应被理解为一组能迁移到软件设计和系统思考中的原则。
 - 在 Linux 命令行运维方向，真正的能力表面来自围绕文件、文本、进程、网络、日志、软件源与启动配置的一组小工具，它们通过“观察 -> 过滤 -> 修改 -> 验证”形成操作闭环。
 - 在系统观测方向里，监控平台不是凭空产生洞察，而是把 Linux 宿主机通过 `/proc` / `/sys` 暴露的事实组织为指标、图表和告警；USE 方法提供了第一层排障顺序。
@@ -141,7 +143,8 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - 容器化开发环境场景还没有覆盖数据卷挂载、端口映射、Dockerfile 构建、Docker Compose 编排或 IDE 远程开发集成（如 VS Code Remote Containers）。
 - Ubuntu 网络配置目前只覆盖 Netplan，还没有涉及 `ufw` 防火墙、AppArmor、云环境网络（如 AWS VPC）或 IPv6-only 部署场景。
 - Ubuntu 系统优化目前只覆盖基础调优和常见问题，还没有涉及性能基准测试、内核参数深度调优或生产环境加固最佳实践。
-- macOS 侧现在已覆盖安装 U 盘制作和一份广义命令速查，但仍缺少 Apple silicon / Intel 启动差异、`launchctl` domain model、APFS / Disk Utility、Homebrew 深度用法、SIP/TCC、Time Machine、系统恢复和数据迁移等专题。
+- macOS 侧现在已覆盖安装 U 盘制作、广义命令速查、开发环境配置和一份轻量级系统设置备忘，但仍缺少 Apple silicon / Intel 启动差异、`launchctl` domain model、APFS / Disk Utility、Homebrew 深度用法、SIP/TCC、Time Machine、系统恢复和数据迁移等专题。
+- macOS 交互层目前只覆盖输入法、触控板和一个 Chrome 预加载相关案例，还没有形成窗口管理、Mission Control、辅助功能、快捷键治理和系统级浏览器排障的完整专题。
 - 缺少把研发思维落到更多真实业务案例上的练习库、评审模板和分层设计示例。
 - 刚补上 AI 时代的全栈入门全景，但仍缺少 Git/PR、Docker Compose、多容器本地开发、PostgreSQL/Redis、Go/Gin/GORM/wire、React/TypeScript/Tailwind/shadcn、Nginx 部署、`wrk` 和 Playwright 的独立专题页。
 - 虽然已补上测试架构总览，但仍缺少团队级测试规范、缺陷分级到回归用例的沉淀模板，以及 Contract Test / 属性测试的落地案例库。
@@ -214,6 +217,7 @@ This wiki currently covers AI-era engineering management, engineering-thinking f
 - [[legacy-repository-repointing]] — archive/vault repo recovery concept for legacy systems
 - [[os-initialization-workflow]] — concept page for structured OS initialization from bare metal to usable baseline
 - [[macos-common-commands-reference]] — macOS command cheat sheet source summary
+- [[macos-system-settings]] — macOS workstation settings source summary
 - [[macos-usb-installer-creation]] — macOS bootable USB installer source summary
 - [[macos]] — macOS desktop operating system page
 - [[macos-command-line-operations]] — reusable macOS operations concept

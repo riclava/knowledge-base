@@ -513,3 +513,24 @@ Key additions:
 - Expanded the macOS product page to cover development environment setup as a third operational lens alongside installer/recovery and daily command-line administration.
 - Added canonical terminology for `rbenv`、`CocoaPods`、`gem` 和 `语言运行时版本管理`, and documented the common version manager workflow pattern (install → init → shell integration → install version → set default).
 - Noted that the source uses `sudo gem install cocoapods` for system-wide installation, and that the shell integration assumes `zsh` as the default macOS shell.
+
+## [2026-04-17] ingest | macOS 系统设置
+
+Pages created:
+- `wiki/sources/macos-system-settings.md`
+
+Pages updated:
+- `wiki/products/macos.md` — added interactive desktop preferences and browser ergonomics as a first-class workstation layer
+- `wiki/concepts/macos-command-line-operations.md` — clarified the boundary between CLI control surfaces, GUI `系统设置`, and app-level preferences
+- `wiki/sources/macos-common-commands-reference.md` — linked command-line coverage to the new GUI/system-settings source instead of overextending CLI scope
+- `wiki/glossary.md` — added macOS system-settings, input, trackpad, Spotlight, and browser-preloading terminology plus a style rule for GUI labels vs defaults
+- `wiki/index.md` — added the new source entry and refreshed macOS summary lines
+- `wiki/overview.md` — updated source/page counts and broadened macOS synthesis to include everyday workstation settings
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for a compact macOS workstation-settings note covering shortcut preferences, English-first input configuration, trackpad behavior, and a Chrome preload workaround for version-specific typing lag.
+- Expanded the `macOS` product page beyond recovery, CLI administration, and development setup to include interactive desktop preferences and browser ergonomics.
+- Clarified that many day-to-day Mac experience settings live in GUI `系统设置` or app preferences and should not be flattened into command-only documentation.
+- Added canonical terminology for `系统设置（System Settings）`、`Spotlight`、`输入法`、`辅助点按（Secondary click）`、`轻点来点按（Tap to click）` and `网页预加载`.
+- Flagged that the source records preferred/user-configured shortcut behavior and a version-sensitive Chrome workaround, so the wiki should preserve them as contextual settings rather than universal macOS defaults.

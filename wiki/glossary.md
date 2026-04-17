@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-17
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting]
 ---
 
 # Glossary
@@ -692,9 +692,39 @@ Each entry follows this format:
 - See also: [[software-testing-architecture]]
 
 **macOS** *(canonical form)*
-: Apple 的桌面操作系统名称；在当前来源中，它既通过安装 U 盘制作、Recovery 和降级场景进入知识库，也通过本地命令行运维、开发工具链准备和桌面偏好自动化进入知识库。
+: Apple 的桌面操作系统名称；在当前来源中，它既通过安装 U 盘制作、Recovery 和降级场景进入知识库，也通过本地命令行运维、开发工具链准备和交互层系统设置进入知识库。
 - Preferred: `macOS` / Avoid: `MacOS`
-- See also: [[macos]], [[macos-usb-installer-creation]], [[macos-common-commands-reference]], [[macos-command-line-operations]]
+- See also: [[macos]], [[macos-usb-installer-creation]], [[macos-common-commands-reference]], [[macos-command-line-operations]], [[macos-system-settings]]
+
+**系统设置（System Settings）** *(canonical form)*
+: macOS 上集中管理键盘、输入法、触控板、网络、显示等偏好的图形化设置应用；在当前来源中，快捷键、默认输入法和触控板行为都属于这一层，而不是命令行默认就能完整表达的控制面。
+- Preferred: `系统设置` or `System Settings`
+- See also: [[macos]], [[macos-system-settings]], [[macos-command-line-operations]]
+
+**Spotlight** *(canonical form)*
+: macOS 的系统级搜索与启动入口；在当前来源中，它与输入法切换快捷键一起被记录为需要按个人工作流配置的高频交互入口。
+- Preferred: `Spotlight`
+- See also: [[macos-system-settings]], [[macos]]
+
+**输入法（input method / IME）** *(canonical form)*
+: 指 macOS 上的文本输入来源与候选词系统；在当前来源中，默认输入法被建议设置为英文，以减少终端、开发和检索场景中的误切换。
+- Preferred: `输入法` or `input method`
+- See also: [[macos-system-settings]], [[macos]]
+
+**辅助点按（Secondary click）** *(canonical form)*
+: macOS 触控板或鼠标的右键等效操作；在当前来源中，推荐将触控板的辅助点按设置为右下角点击。
+- Preferred: `辅助点按` or `Secondary click`
+- See also: [[macos-system-settings]], [[macos]]
+
+**轻点来点按（Tap to click）** *(canonical form)*
+: macOS 触控板设置项，允许通过轻触而非按下触控板完成点击；在当前来源中，它被视为日常工作站的人机工效优化项。
+- Preferred: `轻点来点按` or `Tap to click`
+- See also: [[macos-system-settings]], [[macos]]
+
+**网页预加载（page preloading）** *(canonical form)*
+: 浏览器为加快潜在后续导航而提前加载页面资源的机制；在当前来源中，关闭 Chrome 的网页预加载被用作缓解特定版本输入卡顿的应用级 workaround。
+- Preferred: `网页预加载` or `page preloading`
+- See also: [[macos-system-settings]]
 
 **可启动安装介质（bootable installer media）** *(canonical form)*
 : 指写入完整安装器、可被设备直接识别为安装启动入口的外部介质；在当前来源中具体表现为 macOS 安装 U 盘。
@@ -800,6 +830,7 @@ Each entry follows this format:
 | Capacity tuning terminology | Name the exact layer such as `nofile`, `fs.file-max`, or `LimitNOFILE` instead of saying only “把句柄数调大了”. | “先调 `fs.file-max`，再确认服务 unit 的 `LimitNOFILE` 是否同步。” |
 | Linux operations terminology | When behavior depends on a specific subsystem, use the exact command or service name such as `journalctl`, `crontab`, or `firewalld`, not a vague “Linux 命令”. | “查看 `systemd` 日志时使用 `journalctl`。” |
 | Apple platform terminology | Use `macOS` for the OS name, `Recovery 模式` for the maintenance environment, and exact Apple command names such as `createinstallmedia`, `diskutil`, `launchctl`, `pmset`, and `defaults` when behavior depends on them. | “先用 `diskutil` 查看磁盘，再用 `defaults` 调整 Finder 行为。” |
+| macOS GUI terminology | When behavior depends on `系统设置` or app preferences, preserve the exact UI label and distinguish recommended configuration from platform default. | “启用 `轻点来点按`，并注明它是推荐设置，不是所有 Mac 的出厂默认值。” |
 | Testing terminology | Use `属性测试` when describing invariant-driven generated-input testing, and use `回归测试` for suites built from historical bugs. | “把这个历史缺陷沉淀为回归测试，再补一条属性测试覆盖通用规律。” |
 
 ---
@@ -820,6 +851,7 @@ Terms that have been replaced, renamed, or should not be used:
 | 把 `journalctl`、`firewall-cmd` 等接口写成所有 Linux 环境通用命令 | 写明 `systemd`、`firewalld` 或具体发行版前提 | 避免把子系统特定行为误写成普适事实。 |
 | `MacOS` | `macOS` | Apple 桌面操作系统名称在当前知识库里统一使用官方大小写。 |
 | 把 `Homebrew` 写成 Apple 官方包管理器 | `Homebrew`（社区包管理器） | 避免误写支持边界和工具归属。 |
+| 把个人或团队工作站偏好直接写成“macOS 默认” | 写成 `推荐设置`、`偏好配置` 或标明来源上下文 | 避免把用户自定义映射误写成平台默认事实。 |
 | 把所有自动化测试都叫“单元测试” | 按 `属性测试`、`集成测试`、`E2E`、`回归测试` 等更准确名称区分 | 避免掩盖测试层级、成本和职责差异。 |
 
 ---
@@ -863,6 +895,7 @@ Terms that differ between audiences, teams, or locales:
 - [[validation-driven-design]] — design-time validation and uncertainty reduction concept
 - [[macos-usb-installer-creation]] — macOS installation USB source summary
 - [[macos-common-commands-reference]] — macOS command cheat sheet source summary
+- [[macos-system-settings]] — macOS workstation settings source summary
 - [[macos]] — macOS product page
 - [[macos-command-line-operations]] — reusable macOS operations concept
 - [[bootable-os-installer-media]] — concept page for external installation media creation
