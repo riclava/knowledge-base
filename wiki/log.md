@@ -472,3 +472,24 @@ Key additions:
 - Established `Bootable OS installer media` and `Startup security and external boot policy` as reusable concepts instead of leaving them embedded in one Mac-specific note.
 - Added canonical terminology for `macOS`、`可启动安装介质`、`createinstallmedia`、`Recovery 模式`、`启动安全性实用工具`、`NVRAM` and `SMC`.
 - Flagged that the source separates installer-media creation from external-boot authorization, but does not yet distinguish Apple silicon vs Intel startup flows or document backup / restore steps.
+
+## [2026-04-17] ingest | macOS 常用命令
+
+Pages created:
+- `wiki/sources/macos-common-commands-reference.md`
+- `wiki/concepts/macos-command-line-operations.md`
+
+Pages updated:
+- `wiki/products/macos.md` — expanded from installer/recovery coverage into broader command-line administration, developer tooling, and desktop automation
+- `wiki/sources/macos-usb-installer-creation.md` — added backlink to the broader macOS command-line operations concept
+- `wiki/glossary.md` — added Apple/macOS CLI terminology and style guidance for exact command naming
+- `wiki/index.md` — added the new source and concept, refreshed macOS product summary, and updated core-file dates
+- `wiki/overview.md` — updated source/page counts and broadened the macOS synthesis from installer-only coverage to daily operations coverage
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for a broad macOS command cheat sheet covering system inspection, disk and network diagnostics, process control, `launchctl`, power management, Homebrew, Xcode CLI tools, and desktop automation commands.
+- Established `macOS command-line operations` as a reusable concept instead of leaving Apple-specific interfaces like `diskutil`, `launchctl`, `pmset`, and `defaults` embedded in one cheat sheet.
+- Expanded the `macOS` product page to treat the platform as both a recovery/install surface and a day-to-day developer workstation / local administration surface.
+- Added canonical terminology for `Homebrew`、`launchctl`、`pmset`、`diskutil`、`system_profiler`、`defaults` and `Xcode Command Line Tools`.
+- Flagged that the source mixes read-only inspection with high-risk commands, and corrected the misleading implication that `rm -rf ~/.Trash/*` is a “safe” trash-emptying action.

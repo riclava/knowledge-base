@@ -2,9 +2,9 @@
 title: Glossary
 type: glossary
 created: 2026-04-07
-updated: 2026-04-16
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc]
+updated: 2026-04-17
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode]
 ---
 
 # Glossary
@@ -692,9 +692,9 @@ Each entry follows this format:
 - See also: [[software-testing-architecture]]
 
 **macOS** *(canonical form)*
-: Apple 的桌面操作系统名称；在当前来源中，它通过安装 U 盘制作、Recovery 和降级场景进入知识库。
+: Apple 的桌面操作系统名称；在当前来源中，它既通过安装 U 盘制作、Recovery 和降级场景进入知识库，也通过本地命令行运维、开发工具链准备和桌面偏好自动化进入知识库。
 - Preferred: `macOS` / Avoid: `MacOS`
-- See also: [[macos]], [[macos-usb-installer-creation]]
+- See also: [[macos]], [[macos-usb-installer-creation]], [[macos-common-commands-reference]], [[macos-command-line-operations]]
 
 **可启动安装介质（bootable installer media）** *(canonical form)*
 : 指写入完整安装器、可被设备直接识别为安装启动入口的外部介质；在当前来源中具体表现为 macOS 安装 U 盘。
@@ -726,6 +726,41 @@ Each entry follows this format:
 - Preferred: `SMC`
 - See also: [[macos]], [[macos-usb-installer-creation]]
 
+**Homebrew** *(canonical form)*
+: macOS 上最常见的社区包管理工具，用于通过命令行安装、升级、卸载和诊断开发者工具与本地软件包；它不是 Apple 官方内建包管理器。
+- Preferred: `Homebrew` or `brew`
+- See also: [[macos]], [[macos-common-commands-reference]], [[macos-command-line-operations]]
+
+**launchctl** *(canonical form)*
+: macOS 上用于与 `launchd` 交互的命令行接口，可用于列出、加载、卸载、启动和停止 LaunchAgents / LaunchDaemons；正式文档应补充 service domain 与版本语义。
+- Preferred: `launchctl`
+- See also: [[macos]], [[macos-common-commands-reference]], [[macos-command-line-operations]]
+
+**pmset** *(canonical form)*
+: macOS 的电源管理命令行接口，用于查看和修改休眠、电源计划及电池相关状态；`caffeinate` 则更偏向临时抑制休眠。
+- Preferred: `pmset`
+- See also: [[macos]], [[macos-common-commands-reference]], [[macos-command-line-operations]]
+
+**diskutil** *(canonical form)*
+: macOS 的磁盘与卷管理命令行接口，用于列出介质、查看磁盘信息、弹出设备等；它补充了 `df` / `du` 这类只看文件系统占用的命令。
+- Preferred: `diskutil`
+- See also: [[macos]], [[macos-common-commands-reference]], [[macos-command-line-operations]]
+
+**system_profiler** *(canonical form)*
+: macOS 的系统信息采集命令，可按数据类型输出软件、硬件等详细清单，适合比 `sw_vers` 或单个 `sysctl` 查询更完整的盘点。
+- Preferred: `system_profiler`
+- See also: [[macos]], [[macos-common-commands-reference]], [[macos-command-line-operations]]
+
+**defaults** *(canonical form)*
+: macOS 用于读取和写入 user defaults / app preferences 的命令行接口，常用于修改 Finder、Dock、截图等行为；很多变更需要重启相关进程后才会体现。
+- Preferred: `defaults`
+- See also: [[macos]], [[macos-common-commands-reference]], [[macos-command-line-operations]]
+
+**Xcode Command Line Tools** *(canonical form)*
+: Apple 提供的命令行开发工具集合，通常通过 `xcode-select --install` 安装，为编译器、SDK 头文件和常见开发命令提供基础环境。
+- Preferred: `Xcode Command Line Tools` or `Xcode CLI tools`
+- See also: [[macos]], [[macos-common-commands-reference]], [[macos-command-line-operations]]
+
 ---
 
 ## Style Conventions
@@ -744,7 +779,7 @@ Each entry follows this format:
 | Shell terminology | Use `Bash` when the content depends on Bash-specific syntax; use `shell scripting` for the broader automation practice. | “这段脚本使用了 Bash 关联数组，属于 Bash 专用写法。” |
 | Capacity tuning terminology | Name the exact layer such as `nofile`, `fs.file-max`, or `LimitNOFILE` instead of saying only “把句柄数调大了”. | “先调 `fs.file-max`，再确认服务 unit 的 `LimitNOFILE` 是否同步。” |
 | Linux operations terminology | When behavior depends on a specific subsystem, use the exact command or service name such as `journalctl`, `crontab`, or `firewalld`, not a vague “Linux 命令”. | “查看 `systemd` 日志时使用 `journalctl`。” |
-| Apple platform terminology | Use `macOS` for the OS name, `Recovery 模式` for the maintenance environment, and `createinstallmedia` for the installer-media tool. | “先进入 Recovery 模式调整外部启动策略，再运行 `createinstallmedia` 制作安装介质。” |
+| Apple platform terminology | Use `macOS` for the OS name, `Recovery 模式` for the maintenance environment, and exact Apple command names such as `createinstallmedia`, `diskutil`, `launchctl`, `pmset`, and `defaults` when behavior depends on them. | “先用 `diskutil` 查看磁盘，再用 `defaults` 调整 Finder 行为。” |
 | Testing terminology | Use `属性测试` when describing invariant-driven generated-input testing, and use `回归测试` for suites built from historical bugs. | “把这个历史缺陷沉淀为回归测试，再补一条属性测试覆盖通用规律。” |
 
 ---
@@ -764,6 +799,7 @@ Terms that have been replaced, renamed, or should not be used:
 | 把 Bash 专有写法统称为“shell 通用语法” | `Bash` | `[[ ]]`、关联数组、丰富参数展开等能力并非所有 shell 都支持。 |
 | 把 `journalctl`、`firewall-cmd` 等接口写成所有 Linux 环境通用命令 | 写明 `systemd`、`firewalld` 或具体发行版前提 | 避免把子系统特定行为误写成普适事实。 |
 | `MacOS` | `macOS` | Apple 桌面操作系统名称在当前知识库里统一使用官方大小写。 |
+| 把 `Homebrew` 写成 Apple 官方包管理器 | `Homebrew`（社区包管理器） | 避免误写支持边界和工具归属。 |
 | 把所有自动化测试都叫“单元测试” | 按 `属性测试`、`集成测试`、`E2E`、`回归测试` 等更准确名称区分 | 避免掩盖测试层级、成本和职责差异。 |
 
 ---
@@ -780,6 +816,7 @@ Terms that differ between audiences, teams, or locales:
 | Bash / shell | 开发者工具语境 | 讲具体语法、关联数组、`getopts`、`[[ ]]` 时优先写 `Bash`；讲更宽泛的自动化实践时再写 `shell scripting`。 |
 | `Option` / `Alt` | Mac 启动语境 | 文档可写作 `Option (Alt)`，兼顾不同键盘标识。 |
 | `ip` / `ss` vs `ifconfig` / `netstat` | Linux 网络运维语境 | 文档优先使用更现代的 `ip`、`ss`，但可注明在旧系统中仍会遇到后者。 |
+| `ifconfig` / `netstat` / `route` | macOS / BSD 桌面运维语境 | 当前 macOS 来源大量使用这些接口；不要把 Linux 文档里的 `ip` / `ss` 示例直接移植成“通用 Unix”表述。 |
 
 ---
 
@@ -805,7 +842,9 @@ Terms that differ between audiences, teams, or locales:
 - [[state-and-data-flow-modeling]] — system modeling concept centered on state and flow
 - [[validation-driven-design]] — design-time validation and uncertainty reduction concept
 - [[macos-usb-installer-creation]] — macOS installation USB source summary
+- [[macos-common-commands-reference]] — macOS command cheat sheet source summary
 - [[macos]] — macOS product page
+- [[macos-command-line-operations]] — reusable macOS operations concept
 - [[bootable-os-installer-media]] — concept page for external installation media creation
 - [[startup-security-and-external-boot-policy]] — concept page for recovery-time external boot authorization
 - [[platform-foundation]] — shared platform and governance concept

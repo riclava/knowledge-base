@@ -2,7 +2,7 @@
 title: macOS USB installer creation
 type: source
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-04-17
 sources: [macOS安装U盘制作.md]
 tags: [source, macos, apple, usb-installer, bootable-media, createinstallmedia, recovery, startup-security, downgrade, troubleshooting]
 ---
@@ -101,6 +101,7 @@ For downgrading from macOS 14 to 13, the source adds a recovery-side authorizati
 ## Relationship to Existing Wiki Pages
 
 - [[macos]] — product page that collects the current macOS operational surface in this wiki
+- [[macos-command-line-operations]] — broader macOS CLI/admin concept page; `createinstallmedia` is one Apple-specific operation surface within it
 - [[bootable-os-installer-media]] — generalized pattern extracted from this runbook
 - [[startup-security-and-external-boot-policy]] — concept page for external boot gating and recovery-side authorization
 - [[glossary]] — canonical terminology for `macOS`, `createinstallmedia`, `Recovery`, `NVRAM`, and `SMC`
@@ -108,6 +109,7 @@ For downgrading from macOS 14 to 13, the source adds a recovery-side authorizati
 ## Related Pages
 
 - [[macos]]
+- [[macos-command-line-operations]]
 - [[bootable-os-installer-media]]
 - [[startup-security-and-external-boot-policy]]
 - [[glossary]]

@@ -17,8 +17,8 @@ Each entry follows this format:
 
 | Page | Summary | Updated |
 |---|---|---|
-| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-16 |
-| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-16 |
+| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-17 |
+| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-17 |
 
 ---
 
@@ -37,6 +37,7 @@ Each entry follows this format:
 - [[centos7-system-parameter-tuning]] — CentOS 7 tuning note covering `nofile`, `fs.file-max`, `systemd` `LimitNOFILE`, and TCP listen backlog parameters | source | 2026-04-15
 - [[centos7-os-initialization-workflow]] — CentOS 7 initialization runbook covering minimal install, account/network config, SSH port, mirrors, NTP, security policy simplification, and base tools | source | 2026-04-15
 - [[linux-common-commands-reference]] — Linux command cheat sheet covering file, text, process, network, permissions, cron, and logs | source | 2026-04-15
+- [[macos-common-commands-reference]] — macOS command cheat sheet covering system info, storage, network diagnostics, processes, services, power, developer tooling, and desktop automation | source | 2026-04-17
 - [[macos-usb-installer-creation]] — Compact macOS runbook for creating a bootable USB installer, booting from external media, and handling downgrade-time startup-security changes | source | 2026-04-16
 - [[moshi-neural-audio-codec-architecture-analysis]] — Architecture analysis of Moshi, Mimi, and Neural Audio Codec as speech LLM infrastructure | source | 2026-04-14
 - [[ubuntu2004-docker-dev-environment-setup]] — Minimal recipe for creating an Ubuntu 20.04 development environment using Docker with container keep-alive and APT mirror configuration | source | 2026-04-15
@@ -66,7 +67,7 @@ Each entry follows this format:
 - [[centos]] — RPM/YUM-based enterprise Linux distribution family with repository lifecycle, alternate kernel upgrade paths, and version-specific host-compatibility behavior | product | 2026-04-15
 - [[docker]] — Container runtime/tooling page covering host-kernel-dependent networking behavior, validation, kernel-remediation paths, and containerized development environment patterns | product | 2026-04-15
 - [[linux]] — Linux operating system and engineering mental model spanning command-line operations, permissions, observability, and system design principles | product | 2026-04-16
-- [[macos]] — Apple desktop operating system page currently focused on bootable installer creation, Recovery-mode startup controls, and downgrade/reinstallation preparation | product | 2026-04-16
+- [[macos]] — Apple desktop operating system page covering both installer/recovery workflows and day-to-day command-line administration across disks, networking, services, power, developer tooling, and UI preferences | product | 2026-04-17
 - [[openssh]] — SSH client/server suite page focused on source-built service replacement across CentOS 7 and Ubuntu 22.04, covering authentication policy and remote-access continuity risks | product | 2026-04-15
 - [[openssl]] — TLS/crypto library page focused on source installation, linker-path integration, and its role as a dependency for higher-level services | product | 2026-04-15
 - [[samba]] — SMB/CIFS file-sharing server used to expose Linux directories to Windows clients with share-level auth and path masks | product | 2026-04-15
@@ -119,6 +120,7 @@ Each entry follows this format:
 - [[startup-security-and-external-boot-policy]] — Control surface that decides whether a device may boot from external installer media and which recovery-time security changes are required | concept | 2026-04-16
 - [[source-built-package-replacement]] — Practice of compiling upstream software outside the package manager, then manually wiring it into system paths, services, and rollback strategy, covering both CentOS 7 and Ubuntu 22.04 patterns | concept | 2026-04-15
 - [[linux-command-line-operations]] — Practice of inspecting and administering Linux systems through composable command-line tools, including resource observability and service validation | concept | 2026-04-16
+- [[macos-command-line-operations]] — Practice of administering macOS through BSD/Unix commands plus Apple-specific interfaces for system info, disks, networking, services, power, developer tooling, and desktop preferences | concept | 2026-04-17
 - [[smb-file-sharing]] — Practice of exposing directories over SMB so Windows clients can map Linux-hosted network drives with explicit auth and permission boundaries | concept | 2026-04-15
 - [[os-initialization-workflow]] — Structured workflow for configuring a fresh Linux install from bare metal to usable baseline, covering install options, accounts, network, remote access, package sources, time sync, security policy, and base tools | concept | 2026-04-15
 - [[network-configuration]] — Practice of defining network interface settings, IP addressing, routing, and DNS through declarative configuration files, enabling reproducible network setup | concept | 2026-04-15
