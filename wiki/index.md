@@ -38,6 +38,7 @@ Each entry follows this format:
 - [[centos7-os-initialization-workflow]] — CentOS 7 initialization runbook covering minimal install, account/network config, SSH port, mirrors, NTP, security policy simplification, and base tools | source | 2026-04-15
 - [[linux-common-commands-reference]] — Linux command cheat sheet covering file, text, process, network, permissions, cron, and logs | source | 2026-04-15
 - [[macos-common-commands-reference]] — macOS command cheat sheet covering system info, storage, network diagnostics, processes, services, power, developer tooling, and desktop automation | source | 2026-04-17
+- [[macos-development-environment-setup]] — Compact macOS development environment setup note covering Ruby version management with rbenv and CocoaPods installation | source | 2026-04-17
 - [[macos-usb-installer-creation]] — Compact macOS runbook for creating a bootable USB installer, booting from external media, and handling downgrade-time startup-security changes | source | 2026-04-16
 - [[moshi-neural-audio-codec-architecture-analysis]] — Architecture analysis of Moshi, Mimi, and Neural Audio Codec as speech LLM infrastructure | source | 2026-04-14
 - [[ubuntu2004-docker-dev-environment-setup]] — Minimal recipe for creating an Ubuntu 20.04 development environment using Docker with container keep-alive and APT mirror configuration | source | 2026-04-15
@@ -67,7 +68,7 @@ Each entry follows this format:
 - [[centos]] — RPM/YUM-based enterprise Linux distribution family with repository lifecycle, alternate kernel upgrade paths, and version-specific host-compatibility behavior | product | 2026-04-15
 - [[docker]] — Container runtime/tooling page covering host-kernel-dependent networking behavior, validation, kernel-remediation paths, and containerized development environment patterns | product | 2026-04-15
 - [[linux]] — Linux operating system and engineering mental model spanning command-line operations, permissions, observability, and system design principles | product | 2026-04-16
-- [[macos]] — Apple desktop operating system page covering both installer/recovery workflows and day-to-day command-line administration across disks, networking, services, power, developer tooling, and UI preferences | product | 2026-04-17
+- [[macos]] — Apple desktop operating system page covering installer/recovery workflows, day-to-day command-line administration, and development environment setup across disks, networking, services, power, developer tooling, and UI preferences | product | 2026-04-17
 - [[openssh]] — SSH client/server suite page focused on source-built service replacement across CentOS 7 and Ubuntu 22.04, covering authentication policy and remote-access continuity risks | product | 2026-04-15
 - [[openssl]] — TLS/crypto library page focused on source installation, linker-path integration, and its role as a dependency for higher-level services | product | 2026-04-15
 - [[samba]] — SMB/CIFS file-sharing server used to expose Linux directories to Windows clients with share-level auth and path masks | product | 2026-04-15
@@ -114,6 +115,7 @@ Each entry follows this format:
 - [[neural-audio-codec]] — Audio tokenizer infrastructure layer that discretizes speech for LLM use | concept | 2026-04-14
 - [[full-duplex-speech-interaction]] — Real-time interaction model that supports simultaneous listening, speaking, and interruption | concept | 2026-04-14
 - [[kernel-upgrade-and-boot-management]] — Practice of upgrading or switching Linux kernel versions, choosing a boot target, and validating compatibility outcomes before cleanup, covering both CentOS 7 and Ubuntu patterns | concept | 2026-04-15
+- [[language-runtime-version-management]] — Practice of using dedicated version managers to install, switch between, and isolate multiple versions of a language runtime on a single development machine | concept | 2026-04-17
 - [[legacy-repository-repointing]] — Practice of redirecting package managers from retired mirrors to static archive/vault repositories for legacy systems | concept | 2026-04-15
 - [[modal-editing]] — Editing model where key behavior changes by mode and commands compose across motions and text objects | concept | 2026-04-15
 - [[shell-scripting]] — Automation practice that composes shell builtins, commands, and Unix I/O primitives into reusable, idempotence-aware workflows | concept | 2026-04-16

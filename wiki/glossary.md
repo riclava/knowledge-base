@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-17
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management]
 ---
 
 # Glossary
@@ -760,6 +760,26 @@ Each entry follows this format:
 : Apple 提供的命令行开发工具集合，通常通过 `xcode-select --install` 安装，为编译器、SDK 头文件和常见开发命令提供基础环境。
 - Preferred: `Xcode Command Line Tools` or `Xcode CLI tools`
 - See also: [[macos]], [[macos-common-commands-reference]], [[macos-command-line-operations]]
+
+**rbenv** *(canonical form)*
+: macOS/Linux 上常见的 Ruby 版本管理工具，通过 shim 机制拦截 `ruby` 命令并路由到用户指定的版本；在当前来源中，它是 macOS 开发环境配置的推荐 Ruby 版本管理方案。
+- Preferred: `rbenv`
+- See also: [[macos]], [[macos-development-environment-setup]], [[language-runtime-version-management]]
+
+**CocoaPods** *(canonical form)*
+: iOS/macOS 项目的传统依赖管理工具，通过 `Podfile` 声明第三方库依赖并管理其下载、编译和集成；在当前来源中，它作为 Ruby gem 安装在 rbenv 管理的 Ruby 环境之上。
+- Preferred: `CocoaPods` / Avoid: `cocoapods`（小写）when referring to the tool name
+- See also: [[macos]], [[macos-development-environment-setup]]
+
+**gem** *(canonical form)*
+: Ruby 的包管理命令和包格式名称；`gem install` 用于安装 Ruby 库或工具，`Gemfile` + `Bundler` 用于项目级依赖管理。
+- Preferred: `gem`
+- See also: [[macos-development-environment-setup]], [[language-runtime-version-management]]
+
+**语言运行时版本管理（language runtime version management）** *(canonical form)*
+: 指使用专用版本管理工具在单台开发机上安装、切换和隔离多个语言运行时版本的实践；常见工具包括 rbenv（Ruby）、nvm（Node.js）、pyenv（Python）。
+- Preferred: `语言运行时版本管理` or `language runtime version management`
+- See also: [[language-runtime-version-management]], [[macos-development-environment-setup]]
 
 ---
 

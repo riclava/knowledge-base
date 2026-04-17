@@ -3,8 +3,8 @@ title: macOS
 type: product
 created: 2026-04-16
 updated: 2026-04-17
-sources: [macOS安装U盘制作.md, macOS常用命令.md]
-tags: [macos, apple, desktop-os, unix, bsd, command-line, system-administration, networking, diskutil, launchctl, pmset, homebrew, xcode, defaults, recovery, createinstallmedia, bootable-media, startup-security, downgrade, troubleshooting]
+sources: [macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md]
+tags: [macos, apple, desktop-os, unix, bsd, command-line, system-administration, networking, diskutil, launchctl, pmset, homebrew, xcode, defaults, recovery, createinstallmedia, bootable-media, startup-security, downgrade, troubleshooting, development-environment, ruby, rbenv, cocoapods, ios]
 ---
 
 # macOS
@@ -15,10 +15,11 @@ Apple desktop operating system page covering both installer/recovery workflows a
 
 ## Overview
 
-In the current knowledge base, macOS is now represented through two complementary operational lenses:
+In the current knowledge base, macOS is now represented through three complementary operational lenses:
 
 - reinstall / downgrade preparation through installer media, Recovery, and startup-security changes
 - day-to-day local administration through a mix of BSD/Unix commands and Apple-specific control surfaces
+- development environment setup through language version managers and platform-specific toolchains
 
 This makes macOS in this wiki not just a GUI desktop system, but also a developer workstation and locally administered Unix-like platform.
 
@@ -59,6 +60,42 @@ This makes macOS in this wiki not just a GUI desktop system, but also a develope
 - `brew` is the main package-management surface in the current source for installing and updating local developer tools.
 - `xcode-select` and `xcodebuild -license accept` represent the Apple toolchain side of developer machine setup.
 - The source also treats shell environment configuration (`env`, `export`, `source ~/.zshrc`) as part of maintaining a usable macOS development workstation.
+
+## Development Environment Setup
+
+The knowledge base now includes a focused development environment setup source covering Ruby and iOS toolchain preparation.
+
+### Ruby Environment with rbenv
+
+The standard pattern for Ruby version management on macOS:
+
+1. Install rbenv via Homebrew: `brew install rbenv`
+2. Initialize: `rbenv init`
+3. Add shell integration to `~/.zshrc`: `eval "$(rbenv init -)"`
+4. Install a Ruby version: `rbenv install 3.1.0`
+5. Set global default: `rbenv global 3.1.0`
+
+This follows the general [[language-runtime-version-management]] pattern used across multiple language ecosystems.
+
+### CocoaPods for iOS Development
+
+After Ruby is configured via rbenv:
+
+```bash
+sudo gem install cocoapods
+```
+
+CocoaPods is the traditional dependency manager for iOS/macOS projects, managing third-party libraries through a `Podfile`. Swift Package Manager is the modern Apple-native alternative, but CocoaPods remains widely used in existing projects.
+
+### Development Environment Dependency Chain
+
+The current sources imply a layered dependency chain for iOS development:
+
+```
+Homebrew → rbenv → Ruby → gem → CocoaPods
+```
+
+Each layer depends on the previous one being correctly configured.
 
 ## Installer and Recovery Surface
 
@@ -111,12 +148,18 @@ Current macOS coverage is broader than before, but the wiki still does **not yet
 - SIP, TCC, Full Disk Access, privacy prompts, and code-signing constraints
 - Homebrew formula / cask / tap behavior and version-pinning strategy
 - Time Machine restore flows, Migration Assistant, and post-install migration concerns
+- Other language runtime setups (Node.js with nvm, Python with pyenv, Go)
+- CocoaPods usage (Podfile, pod commands) beyond installation
+- Swift Package Manager as an alternative to CocoaPods
+- Xcode project configuration and build settings
 
 ## Related Pages
 
 - [[macos-common-commands-reference]]
 - [[macos-command-line-operations]]
 - [[macos-usb-installer-creation]]
+- [[macos-development-environment-setup]]
+- [[language-runtime-version-management]]
 - [[bootable-os-installer-media]]
 - [[startup-security-and-external-boot-policy]]
 - [[glossary]]

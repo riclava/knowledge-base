@@ -493,3 +493,23 @@ Key additions:
 - Expanded the `macOS` product page to treat the platform as both a recovery/install surface and a day-to-day developer workstation / local administration surface.
 - Added canonical terminology for `Homebrew`、`launchctl`、`pmset`、`diskutil`、`system_profiler`、`defaults` and `Xcode Command Line Tools`.
 - Flagged that the source mixes read-only inspection with high-risk commands, and corrected the misleading implication that `rm -rf ~/.Trash/*` is a “safe” trash-emptying action.
+
+## [2026-04-17] ingest | macOS 开发环境配置
+
+Pages created:
+- `wiki/sources/macos-development-environment-setup.md`
+- `wiki/concepts/language-runtime-version-management.md`
+
+Pages updated:
+- `wiki/products/macos.md` — added Development Environment Setup section covering rbenv and CocoaPods
+- `wiki/glossary.md` — added `rbenv`, `CocoaPods`, `gem`, `语言运行时版本管理` terms
+- `wiki/index.md` — added new source and concept entries, updated macOS product summary
+- `wiki/overview.md` — updated source count, added macOS development environment coverage and related pages
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for a compact macOS development environment setup note covering Ruby version management with rbenv and CocoaPods installation for iOS/macOS development.
+- Established `language runtime version management` as a reusable concept for the pattern of using version managers (rbenv, nvm, pyenv) to isolate language runtimes on development machines.
+- Expanded the macOS product page to cover development environment setup as a third operational lens alongside installer/recovery and daily command-line administration.
+- Added canonical terminology for `rbenv`、`CocoaPods`、`gem` 和 `语言运行时版本管理`, and documented the common version manager workflow pattern (install → init → shell integration → install version → set default).
+- Noted that the source uses `sudo gem install cocoapods` for system-wide installation, and that the shell integration assumes `zsh` as the default macOS shell.
