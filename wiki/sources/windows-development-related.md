@@ -78,13 +78,14 @@ Compact Windows-native development note covering Inno Setup packaging, service b
 - 当文档使用“机器码”一词时，应明确写明它指设备标识 / hardware-derived identifier，而不是编译后的 machine code。
 - 对 WMI 类文档，应保留精确类名和属性名，例如 `Win32_BaseBoard.SerialNumber`，不要泛写成“读取主板信息”。
 - 若同一目标既有 COM 方案又有命令行方案，应分别写清依赖、失败点和适用上下文。
+- 原生开发说明应与 [[windows-system-settings]] 这类 OS 管理说明分开组织，避免把安装器/WMI 路径和 `Windows Update` / 防火墙 / 计划任务操作混成同一层。
 
 ## Related Pages
 
 - [[windows]]
+- [[windows-system-settings]]
 - [[inno-setup]]
 - [[windows-management-instrumentation]]
 - [[hardware-derived-machine-identifier]]
 - [[glossary]]
 - [[overview]]
-

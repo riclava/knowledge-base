@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 created: 2026-04-07
 updated: 2026-04-17
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting]
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting]
 ---
 
 # Glossary
@@ -812,9 +812,34 @@ Each entry follows this format:
 - See also: [[language-runtime-version-management]], [[macos-development-environment-setup]]
 
 **Windows** *(canonical form)*
-: Microsoft 的桌面/服务器操作系统；在当前知识库里，它既是 SMB 网络驱动器映射的客户端环境，也是使用 `Inno Setup`、`WMI`、`MFC` 与 `Win32` 完成原生应用安装和设备标识生成的平台。
+: Microsoft 的桌面/服务器操作系统；在当前知识库里，它既是 SMB 网络驱动器映射的客户端环境，也是使用 `Inno Setup`、`WMI`、`MFC` 与 `Win32` 完成原生应用安装和设备标识生成的平台，同时还覆盖 `Windows Update`、`Services`、`Task Scheduler` 与 PowerShell 防火墙规则这类工作站管理控制面。
 - Preferred: `Windows`
-- See also: [[windows]], [[windows-development-related]]
+- See also: [[windows]], [[windows-development-related]], [[windows-system-settings]]
+
+**Windows Update** *(canonical form)*
+: Windows 内置的系统更新服务与相关任务集合；当前来源通过禁用服务、修改恢复动作、停用计划任务和清理升级助手目录来抑制 `Win10` 自动更新。
+- Preferred: `Windows Update`
+- See also: [[windows-system-settings]], [[windows]]
+
+**服务（Services）** *(canonical form)*
+: Windows 用于查看和管理后台服务启动类型、运行状态和失败恢复动作的控制面；当前来源通过它禁用 `Windows Update` 并把失败恢复改成 `无操作`。
+- Preferred: `Services` or `服务`
+- See also: [[windows-system-settings]], [[windows]]
+
+**任务计划程序（Task Scheduler）** *(canonical form)*
+: Windows 的计划任务管理控制面；当前来源用它停用 `Microsoft\\Windows\\Windows Update` 路径下的更新相关任务，说明系统行为不只由长期运行的服务决定。
+- Preferred: `Task Scheduler` or `任务计划程序`
+- See also: [[windows-system-settings]], [[windows]]
+
+**PowerShell** *(canonical form)*
+: Windows 上常用的命令行与自动化环境；当前来源通过 PowerShell 的 `New-NetFirewallRule` cmdlet 创建入站防火墙规则，为调试端口开放访问。
+- Preferred: `PowerShell`
+- See also: [[windows-system-settings]], [[windows]]
+
+**New-NetFirewallRule** *(canonical form)*
+: PowerShell 用于创建 Windows 防火墙规则的 cmdlet；当前来源用它放行入站 TCP `12345`，作为调试场景下的最小端口开放示例。
+- Preferred: `New-NetFirewallRule`
+- See also: [[windows-system-settings]], [[windows]]
 
 **Inno Setup** *(canonical form)*
 : Windows 安装包制作工具，使用 section-based 脚本和 Pascal 风格代码钩子来描述安装器行为；当前来源中它负责文件打包、安装前钩子、多语言安装器以及服务安装/卸载阶段动作。
@@ -861,7 +886,7 @@ Each entry follows this format:
 | Linux operations terminology | When behavior depends on a specific subsystem, use the exact command or service name such as `journalctl`, `crontab`, or `firewalld`, not a vague “Linux 命令”. | “查看 `systemd` 日志时使用 `journalctl`。” |
 | Apple platform terminology | Use `macOS` for the OS name, `Recovery 模式` for the maintenance environment, and exact Apple command names such as `createinstallmedia`, `diskutil`, `launchctl`, `pmset`, and `defaults` when behavior depends on them. | “先用 `diskutil` 查看磁盘，再用 `defaults` 调整 Finder 行为。” |
 | macOS GUI terminology | When behavior depends on `系统设置` or app preferences, preserve the exact UI label and distinguish recommended configuration from platform default. | “启用 `轻点来点按`，并注明它是推荐设置，不是所有 Mac 的出厂默认值。” |
-| Windows terminology | When behavior depends on a Windows-specific surface, name the exact layer such as `Inno Setup`, `InitializeSetup()`, `WMI`, `MFC`, or `Win32`, and explain `机器码` as a hardware-derived identifier rather than compiled machine code. | “通过 `WMI` 采集硬件字段后生成机器码，而不是泛写成‘调用 Windows 接口’。” |
+| Windows terminology | When behavior depends on a Windows-specific surface, name the exact layer such as `Services`, `Task Scheduler`, `PowerShell`, `New-NetFirewallRule`, `Inno Setup`, `InitializeSetup()`, `WMI`, `MFC`, or `Win32`, explain `机器码` as a hardware-derived identifier rather than compiled machine code, and treat update disabling as a contextual workaround rather than a universal default. | “先在 `Services` 停用 `Windows Update`，再说明 `New-NetFirewallRule` 只是为调试临时开放入站端口。” |
 | Testing terminology | Use `属性测试` when describing invariant-driven generated-input testing, and use `回归测试` for suites built from historical bugs. | “把这个历史缺陷沉淀为回归测试，再补一条属性测试覆盖通用规律。” |
 
 ---
@@ -884,6 +909,7 @@ Terms that have been replaced, renamed, or should not be used:
 | 把 `Homebrew` 写成 Apple 官方包管理器 | `Homebrew`（社区包管理器） | 避免误写支持边界和工具归属。 |
 | 把个人或团队工作站偏好直接写成“macOS 默认” | 写成 `推荐设置`、`偏好配置` 或标明来源上下文 | 避免把用户自定义映射误写成平台默认事实。 |
 | 把当前 Windows 来源中的 `机器码` 直译为 `machine code` | `机器码`（设备标识）or `hardware-derived machine identifier` | 避免把硬件派生标识与编译后的机器指令混淆。 |
+| 把禁用 `Windows Update` 写成 Windows 通用最佳实践 | 写成 `特定场景下的更新抑制措施` 并注明版本/安全代价 | 避免把战术性 workaround 误写成默认管理基线。 |
 | 把所有自动化测试都叫“单元测试” | 按 `属性测试`、`集成测试`、`E2E`、`回归测试` 等更准确名称区分 | 避免掩盖测试层级、成本和职责差异。 |
 
 ---

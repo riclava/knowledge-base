@@ -558,3 +558,22 @@ Key additions:
 - Established `Windows Management Instrumentation` and `Hardware-derived machine identifier` as reusable concepts rather than leaving them embedded in code snippets.
 - Added canonical terminology for `Windows`、`Inno Setup`、`WMI`、`MFC`、`Win32` and `机器码`, and normalized `机器码` to mean a hardware-derived device identifier rather than compiled machine code.
 - Clarified that the source records a minimal implementation path, but does not yet cover Windows packaging topics such as signing, UAC, MSI/WiX, registry operations, service management tooling, or crash diagnostics.
+
+## [2026-04-17] ingest | Windows 系统设置
+
+Pages created:
+- `wiki/sources/windows-system-settings.md`
+
+Pages updated:
+- `wiki/products/windows.md` — expanded from native development and SMB-client context into workstation administration covering Windows Update suppression and PowerShell firewall rules
+- `wiki/sources/windows-development-related.md` — clarified the boundary between native-development workflows and OS-level Windows administration notes
+- `wiki/glossary.md` — added Windows Update / Services / Task Scheduler / PowerShell terminology and a style rule for contextualizing update suppression
+- `wiki/index.md` — added the new source entry and refreshed the Windows product summary
+- `wiki/overview.md` — updated source/page counts and broadened the synthesis to include Windows workstation administration
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for a compact Windows workstation-administration note covering Win10 automatic-update suppression through services, scheduled tasks, and upgrade-assistant cleanup, plus a PowerShell firewall rule for opening a debug port.
+- Expanded the `Windows` product page beyond packaging and hardware identification to include GUI/PowerShell administration surfaces such as `Services`, `Task Scheduler`, and `New-NetFirewallRule`.
+- Added canonical terminology for `Windows Update`、`Services`、`Task Scheduler`、`PowerShell` and `New-NetFirewallRule`.
+- Flagged that disabling automatic updates is a contextual workaround with security and compliance tradeoffs, not a universal Windows baseline.

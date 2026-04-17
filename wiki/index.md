@@ -51,6 +51,7 @@ Each entry follows this format:
 - [[linux-foundations-and-testing-special-topic]] — Training deck that teaches Linux as an engineering mental model and pairs it with layered software-testing architecture | source | 2026-04-16
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
 - [[windows-development-related]] — Compact Windows-native development note covering Inno Setup packaging, service bootstrap sequencing, and WMI-based machine fingerprint generation | source | 2026-04-17
+- [[windows-system-settings]] — Compact Windows workstation-administration note covering Windows 10 auto-update suppression and PowerShell firewall rules for debug ports | source | 2026-04-17
 
 ---
 
@@ -76,7 +77,7 @@ Each entry follows this format:
 - [[openssl]] — TLS/crypto library page focused on source installation, linker-path integration, and its role as a dependency for higher-level services | product | 2026-04-15
 - [[samba]] — SMB/CIFS file-sharing server used to expose Linux directories to Windows clients with share-level auth and path masks | product | 2026-04-15
 - [[ubuntu]] — Debian-based Linux distribution with APT package management, Netplan network configuration, kernel version management, system optimization, and source-build upgrade paths | product | 2026-04-15
-- [[windows]] — Microsoft Windows operating system page focused on native installer packaging, WMI metadata access, service bootstrap flows, and SMB client context | product | 2026-04-17
+- [[windows]] — Microsoft Windows operating system page covering native packaging, workstation administration, update/firewall control surfaces, WMI metadata access, and SMB client behavior | product | 2026-04-17
 - [[moshi]] — Speech-native LLM focused on full-duplex, low-latency voice interaction | product | 2026-04-14
 - [[mimi]] — Neural Audio Codec and tokenizer used to turn speech into low-rate discrete tokens | product | 2026-04-14
 - [[vim]] — Modal terminal editor focused on composable text editing and lightweight workflow customization | product | 2026-04-15
