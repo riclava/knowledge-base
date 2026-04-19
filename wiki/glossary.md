@@ -2,9 +2,9 @@
 title: Glossary
 type: glossary
 created: 2026-04-07
-updated: 2026-04-17
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience]
+updated: 2026-04-19
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, business-development, evangelism, team-culture]
 ---
 
 # Glossary
@@ -81,6 +81,11 @@ Each entry follows this format:
 - Preferred: `DevOps`
 - See also: [[devops-delivery-pipeline]], [[full-lifecycle-delivery-capability]]
 
+**CTO（Chief Technology Officer / 首席技术官）** *(canonical form)*
+: 指对公司长期技术战略、对内外技术沟通和关键跨部门协同负责的最高技术领导角色；在当前知识库里，它不等同于日常研发管理者。
+- Preferred: `CTO` or `首席技术官` / Avoid: 在强调外部技术叙事、客户沟通或长期技术方向时把它直接写成 `研发经理` 或 `技术线负责人`
+- See also: [[cto]], [[technical-line-leader]], [[technology-strategy-and-business-alignment]]
+
 **CI/CD 流水线** *(canonical form)*
 : 指从代码提交后的自动检查、构建、发布到部署的连续流程，用于把质量门禁和交付动作标准化。
 - Preferred: `CI/CD 流水线` or `CI/CD pipeline`
@@ -90,6 +95,31 @@ Each entry follows this format:
 : 在当前知识库中，优先指能够把需求、前后端实现、部署、测试和运行反馈串成一条最小交付闭环，而不只是“同时会写前端和后端代码”。
 - Preferred: `全栈研发` / Avoid: 把它缩减为“会两门语言”
 - See also: [[full-lifecycle-delivery-capability]], [[ai-era-full-stack-beginner]]
+
+**技术战略** *(canonical form)*
+: 指面向公司长期竞争和业务目标所制定的技术方向选择、能力投入和判断原则，不应缩减为单一项目的架构方案。
+- Preferred: `技术战略` / Avoid: 把它等同于单个系统的 `技术方案`
+- See also: [[technology-strategy-and-business-alignment]], [[cto]]
+
+**技术路线图** *(canonical form)*
+: 指把长期技术战略拆解成阶段性能力建设、优先级和关键决策节点的表达方式，用来连接高层方向与组织执行。
+- Preferred: `技术路线图` or `roadmap`
+- See also: [[technology-strategy-and-business-alignment]], [[cto]]
+
+**技术布道** *(canonical form)*
+: 指面向员工、客户、伙伴、分析师或市场解释技术愿景、技术价值和商业意义的沟通活动；在当前来源中，它属于 CTO 的核心职责之一，而不是附带公关动作。
+- Preferred: `技术布道`
+- See also: [[cto]], [[cto-responsibilities]], [[technology-strategy-and-business-alignment]]
+
+**业务开发（Business Development, BD）** *(canonical form)*
+: 指围绕战略伙伴、生态合作、潜在投资/合作对象和长期商业机会展开的关系经营与判断活动，不等同于直接面向成交的销售动作。
+- Preferred: `业务开发` or `BD`
+- See also: [[cto]], [[cto-responsibilities]], [[technology-strategy-and-business-alignment]]
+
+**研发氛围** *(canonical form)*
+: 指研发团队的协作感、创新意愿、信任程度和组织健康度；在当前来源里，它被视为 CTO 业绩评估的一部分，而不是难以讨论的软性话题。
+- Preferred: `研发氛围` / Avoid: 只笼统写成 `团队状态`
+- See also: [[cto]], [[technical-line-leader]]
 
 **烟囱式系统** *(canonical form)*
 : 指重复建设、彼此割裂、复用性差的系统形态，是平台化建设试图减少的反模式。

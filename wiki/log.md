@@ -604,3 +604,24 @@ Key additions:
 - Added canonical terminology for `分布式系统`、`CAP 定理`、`FLP 不可能性`、`PACELC`、`一致性模型`、`Raft`、`Paxos`、`Quorum`、`幂等`、`分片`、`一致性哈希`、`Lamport 时钟` and `向量时钟`.
 - Linked the new material back into existing engineering-thinking, state/data-flow, and reliability pages so distributed systems now sits inside the broader systems-thinking spine of the wiki instead of as an isolated topic.
 - Flagged that the source is an educational overview with some teaching-level simplifications, so product-specific CAP labels or transaction choices should still be validated against individual system docs before reuse in formal design writing.
+
+## [2026-04-19] ingest | CTO工作职责
+
+Pages created:
+- `wiki/sources/cto-responsibilities.md`
+- `wiki/personas/cto.md`
+- `wiki/concepts/technology-strategy-and-business-alignment.md`
+
+Pages updated:
+- `wiki/personas/technical-line-leader.md` — clarified its boundary with `CTO` as a more internally focused delivery/platform leadership role
+- `wiki/glossary.md` — added `CTO`、`技术战略`、`技术路线图`、`技术布道`、`业务开发（BD）` and `研发氛围` terminology
+- `wiki/index.md` — added the new source, persona, and concept entries and refreshed core-file dates
+- `wiki/overview.md` — updated source/page counts and broadened the management synthesis from technical-line leadership into executive technical leadership
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for a role-definition note describing CTO mission, evaluation signals, internal/external time allocation, and department-by-department service responsibilities.
+- Created a first-class `CTO` persona instead of folding executive technical leadership into the more internally focused `technical-line-leader` page.
+- Established `technology strategy and business alignment` as a reusable concept for connecting long-term technology choices, roadmap, customer/market narrative, and cross-functional support.
+- Clarified in the glossary that `CTO` should not be casually conflated with `技术线负责人`, and that terms like `技术布道` and `业务开发` are part of technical leadership rather than generic marketing vocabulary.
+- Flagged that the source is role guidance rather than a company-specific org chart, so time allocation and responsibility splits should be reused as framing patterns, not rigid ratios.

@@ -2,12 +2,12 @@
 title: 技术线负责人
 type: persona
 created: 2026-04-14
-updated: 2026-04-15
-sources: [2025年技术线总结.md, 构建技术研发思维.md]
+updated: 2026-04-19
+sources: [2025年技术线总结.md, 构建技术研发思维.md, CTO工作职责.md]
 tags: [persona, engineering-management, leadership, delivery]
 ---
 
-这是从《2025年技术线总结》中抽象出的核心受众画像，代表对平台化、稳定性、AI融合和组织能力同时负责的技术管理者。
+这是从《2025年技术线总结》《构建技术研发思维》和《CTO工作职责》中抽象出的核心受众画像，代表更偏内部交付、平台治理和组织建设的技术管理者。
 
 ## Persona Snapshot
 
@@ -37,6 +37,12 @@ tags: [persona, engineering-management, leadership, delivery]
 - 对 AI 的关注点偏向落地价值、基础设施和组织能力，而不仅是模型能力本身。
 - 需要能在业务目标、工程质量和资源约束之间做平衡。
 
+## Boundary With CTO
+
+- 当前知识库里的 `技术线负责人` 更偏内部交付、平台复用、稳定性治理和团队执行能力建设。
+- 新增的 `[[cto]]` 页面补充了更偏长期技术战略、客户/市场/合作伙伴沟通和高层顾问角色的职责面。
+- 在小型组织里，两类职责可能由同一人兼任，但文档写作时不应把“内部交付管理”和“外部技术领导”混成一个概念。
+
 ## Preferred Documentation
 
 - 年度规划与复盘模板，便于跟踪目标、指标和未完成项。
@@ -50,6 +56,8 @@ tags: [persona, engineering-management, leadership, delivery]
 - [[2025-technical-line-summary]]
 - [[engineering-mindset]]
 - [[growing-engineer]]
+- [[cto]]
+- [[technology-strategy-and-business-alignment]]
 - [[full-lifecycle-delivery-capability]]
 - [[ai-enabled-software-delivery]]
 - [[platform-foundation]]

@@ -17,8 +17,8 @@ Each entry follows this format:
 
 | Page | Summary | Updated |
 |---|---|---|
-| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-17 |
-| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-17 |
+| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-19 |
+| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-19 |
 
 ---
 
@@ -27,6 +27,7 @@ Each entry follows this format:
 *One entry per raw document ingested. Add entries here after each ingest.*
 
 - [[2025-technical-line-summary]] — Annual review of 2025 technical-line execution and 2026 AI/platform strategy | source | 2026-04-14
+- [[cto-responsibilities]] — Role note defining CTO mission, evaluation signals, time allocation, and cross-functional responsibilities | source | 2026-04-19
 - [[ai-full-stack-development-onboarding]] — AI-era onboarding deck covering environment setup, AI collaboration, MCP/Steering, DevOps flow, and a starter full-stack stack | source | 2026-04-15
 - [[bash-syntax-and-scripting-reference]] — Practical Bash reference covering syntax, scripting structure, I/O, and defensive shell patterns | source | 2026-04-15
 - [[centos6-archive-repository-workaround]] — Emergency recovery note for restoring CentOS 6 `yum` access by switching from dead mirrors to archive/vault repositories | source | 2026-04-15
@@ -90,7 +91,8 @@ Each entry follows this format:
 *One entry per user persona or audience segment.*
 
 - [[ai-era-full-stack-beginner]] — Beginner persona learning AI-assisted environment setup, Git/CI/CD flow, and minimum end-to-end full-stack delivery | persona | 2026-04-15
-- [[technical-line-leader]] — Technical management persona responsible for delivery, platform reuse, stability, AI integration, and team engineering-growth enablement | persona | 2026-04-15
+- [[cto]] — Executive technical leader responsible for long-term technology strategy, external technical narrative, and cross-functional alignment | persona | 2026-04-19
+- [[technical-line-leader]] — Technical management persona focused on internal delivery, platform reuse, stability, AI integration, and team engineering-growth enablement | persona | 2026-04-19
 - [[growing-engineer]] — Engineer persona moving from feature implementation toward abstraction, system modeling, and validation-led design | persona | 2026-04-15
 
 ---
@@ -100,6 +102,7 @@ Each entry follows this format:
 *One entry per core domain concept.*
 
 - [[full-lifecycle-delivery-capability]] — End-to-end software delivery capability grounded in problem framing, layered quality gates, release, and operations | concept | 2026-04-16
+- [[technology-strategy-and-business-alignment]] — Executive alignment practice that keeps technology strategy, roadmap, and outward technical narrative tied to business goals | concept | 2026-04-19
 - [[ai-enabled-software-delivery]] — AI as an integrated delivery capability that still depends on human abstraction, modeling, validation, and workflow guardrails | concept | 2026-04-15
 - [[bootable-os-installer-media]] — Practice of writing a full OS installer to external media so installation, reinstall, downgrade, and recovery can happen outside the running system | concept | 2026-04-16
 - [[model-context-protocol]] — Protocol layer that lets AI systems call external tools and data sources as part of execution workflows | concept | 2026-04-15
