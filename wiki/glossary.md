@@ -2,9 +2,9 @@
 title: Glossary
 type: glossary
 created: 2026-04-07
-updated: 2026-04-19
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, business-development, evangelism, team-culture]
+updated: 2026-04-26
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners]
 ---
 
 # Glossary
@@ -988,6 +988,51 @@ Each entry follows this format:
 - Preferred: `脑裂` or `split brain`
 - See also: [[distributed-consensus]], [[distributed-systems-resilience-patterns]]
 
+**英语语法（English grammar）** *(canonical form)*
+: 指英语中词类、句子成分、结构关系和意义选择共同构成的表达系统；当前来源强调它是一套学习和写作检查框架，而不是术语背诵清单。
+- Preferred: `英语语法` or `English grammar`
+- See also: [[grammar]], [[english-grammar-learning-framework]]
+
+**句子骨架（sentence skeleton）** *(canonical form)*
+: 指由主语、限定谓语以及必要宾语/表语/补语构成的句子主干，用于在处理长句前先确认“谁做什么 / 谁是什么 / 谁对谁做了什么”。
+- Preferred: `句子骨架` or `sentence skeleton`
+- See also: [[english-sentence-structure]], [[english-grammar-learning-framework]]
+
+**限定动词（finite verb）** *(canonical form)*
+: 指随时态、人称或数发生变化、能够支撑句子谓语的动词形式；判断英语句子是否成立时应先找限定动词。
+- Preferred: `限定动词` or `finite verb`
+- See also: [[english-sentence-structure]], [[english-verb-system]]
+
+**时态与体（tense and aspect）** *(canonical form)*
+: 指英语动词系统中时间参照和动作呈现方式的组合；当前来源强调将来意义常由多种结构表达，而不应简单理解为只有一个“将来时”形式。
+- Preferred: `时态与体` or `tense and aspect`
+- See also: [[english-verb-system]]
+
+**从句系统（clause system）** *(canonical form)*
+: 指名词性从句、定语从句和状语从句等有主谓结构的嵌入单位如何在大句中充当成分或表达逻辑关系。
+- Preferred: `从句系统` or `clause system`
+- See also: [[english-clause-system]], [[english-sentence-structure]]
+
+**非谓语动词（non-finite verb）** *(canonical form)*
+: 指不作为句子限定谓语的动词形式，包括不定式、动名词、现在分词和过去分词；它们可承担名词、形容词或状语等功能。
+- Preferred: `非谓语动词` or `non-finite verb`
+- See also: [[english-verb-system]]
+
+**逗号拼接（comma splice）** *(canonical form)*
+: 指只用逗号连接两个完整独立分句的英文标点错误；应改为句号、分号、并列连词或从句结构。
+- Preferred: `逗号拼接` or `comma splice`
+- See also: [[english-writing-clarity-and-style]], [[english-sentence-structure]]
+
+**流水句（run-on sentence）** *(canonical form)*
+: 指两个或多个完整句子缺少合适连接或标点边界而连在一起的错误；中文学习者容易受中文句群习惯影响而产生这类问题。
+- Preferred: `流水句` or `run-on sentence`
+- See also: [[english-usage-error-patterns-for-chinese-learners]], [[english-writing-clarity-and-style]]
+
+**平行结构（parallelism）** *(canonical form)*
+: 指并列成分在语法形式上保持一致，例如并列动名词、并列不定式或并列从句；它是英文清晰写作的重要检查项。
+- Preferred: `平行结构` or `parallelism`
+- See also: [[english-writing-clarity-and-style]], [[english-sentence-structure]]
+
 ---
 
 ## Style Conventions
@@ -1011,6 +1056,8 @@ Each entry follows this format:
 | Windows terminology | When behavior depends on a Windows-specific surface, name the exact layer such as `Services`, `Task Scheduler`, `PowerShell`, `New-NetFirewallRule`, `Inno Setup`, `InitializeSetup()`, `WMI`, `MFC`, or `Win32`, explain `机器码` as a hardware-derived identifier rather than compiled machine code, and treat update disabling as a contextual workaround rather than a universal default. | “先在 `Services` 停用 `Windows Update`，再说明 `New-NetFirewallRule` 只是为调试临时开放入站端口。” |
 | Distributed-systems terminology | Distinguish `一致性模型`, `共识算法`, `复制/分片`, `Quorum`, and `幂等`; do not flatten them into a single vague phrase such as “分布式一致性”. | “评论系统选择最终一致性，元数据服务使用 Raft 共识，写接口通过幂等键配合多数派确认。” |
 | Testing terminology | Use `属性测试` when describing invariant-driven generated-input testing, and use `回归测试` for suites built from historical bugs. | “把这个历史缺陷沉淀为回归测试，再补一条属性测试覆盖通用规律。” |
+| English grammar terminology | Use exact grammar terms such as `限定动词`, `时态与体`, `从句系统`, `非谓语动词`, `逗号拼接`, and `平行结构`; explain the expression problem each term solves rather than listing terms alone. | “先找限定动词和主语核心，再判断从句在大句中充当什么成分。” |
+| English writing clarity | Treat formal English as accurate, clear, and controlled; avoid using passive voice, nominalization, or long sentences just to sound formal. | “The team implemented the solution.” is clearer than “The implementation of the solution was conducted by the team.” |
 
 ---
 
@@ -1036,6 +1083,10 @@ Terms that have been replaced, renamed, or should not be used:
 | 把 CAP 里的 `Consistency` 和 ACID 里的 `Consistency` 当成同一个概念 | 根据语境写 `一致性模型`、`CAP 一致性` 或 `事务一致性` | 避免把分布式读写语义和事务约束混成一类。 |
 | 把 `最终一致性` 写成“完全不保证正确” | 写明收敛条件和允许的不一致窗口 | 避免把延迟收敛误写成无语义。 |
 | 把所有自动化测试都叫“单元测试” | 按 `属性测试`、`集成测试`、`E2E`、`回归测试` 等更准确名称区分 | 避免掩盖测试层级、成本和职责差异。 |
+| `although ... but` | `Although ...` or `..., but ...` | 英语中转折关系通常不重复使用从属连词和并列连词。 |
+| `because ... so` | `Because ...` or `..., so ...` | 英语中因果连接通常保留一个主要连接结构。 |
+| 用逗号直接连接两个完整句 | 句号、分号、并列连词或从句 | 避免形成 `comma splice`。 |
+| 把正式英语写成被动语态和名词化堆叠 | 清楚的主动句和必要的名词化 | 正式不等于复杂；清晰度优先。 |
 
 ---
 
@@ -1052,6 +1103,8 @@ Terms that differ between audiences, teams, or locales:
 | `Option` / `Alt` | Mac 启动语境 | 文档可写作 `Option (Alt)`，兼顾不同键盘标识。 |
 | `ip` / `ss` vs `ifconfig` / `netstat` | Linux 网络运维语境 | 文档优先使用更现代的 `ip`、`ss`，但可注明在旧系统中仍会遇到后者。 |
 | `ifconfig` / `netstat` / `route` | macOS / BSD 桌面运维语境 | 当前 macOS 来源大量使用这些接口；不要把 Linux 文档里的 `ip` / `ss` 示例直接移植成“通用 Unix”表述。 |
+| `singular they` | 现代英语 / 性别未知语境 | 可用于性别未知或不需说明性别的单数先行词，但具体风格指南可能有额外要求。 |
+| 美式 / 英式引号标点 | 英语写作风格语境 | 美式英语通常把逗号和句号放入引号内；英式英语更常按逻辑位置处理，同一文档应保持一致。 |
 
 ---
 
@@ -1059,6 +1112,14 @@ Terms that differ between audiences, teams, or locales:
 
 - [[overview]] — big-picture synthesis
 - [[index]] — master catalog
+- [[grammar]] — English grammar source summary
+- [[english-grammar-learning-framework]] — layered grammar learning model
+- [[english-sentence-structure]] — sentence skeleton and constituent concept
+- [[english-verb-system]] — verb tense, aspect, voice, mood, and modality concept
+- [[english-clause-system]] — clause nesting and relation concept
+- [[english-usage-error-patterns-for-chinese-learners]] — common error-pattern concept
+- [[english-writing-clarity-and-style]] — English writing style rule
+- [[chinese-english-grammar-learner]] — learner persona
 - [[2025-technical-line-summary]] — first ingested source summary
 - [[engineering-thinking-framework]] — engineering-thinking source summary
 - [[linux]] — Linux platform/tool page

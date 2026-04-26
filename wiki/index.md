@@ -17,8 +17,8 @@ Each entry follows this format:
 
 | Page | Summary | Updated |
 |---|---|---|
-| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-19 |
-| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-19 |
+| [[overview]] | High-level synthesis of the entire knowledge base | 2026-04-26 |
+| [[glossary]] | Living terminology, definitions, and style conventions | 2026-04-26 |
 
 ---
 
@@ -49,6 +49,7 @@ Each entry follows this format:
 - [[ubuntu-common-issues-and-optimization]] — Ubuntu troubleshooting and optimization reference covering system tuning, APT management, DNS port conflicts, and VMware multipath errors | source | 2026-04-15
 - [[ubuntu-kernel-version-switching]] — Ubuntu runbook for installing a specific kernel version via APT, switching the GRUB default boot entry, and validating the rebooted host | source | 2026-04-15
 - [[engineering-thinking-framework]] — Engineering-thinking presentation framing software R&D as abstraction, modeling, system decomposition, and validation rather than mere coding | source | 2026-04-15
+- [[grammar]] — English grammar learning map for Chinese learners covering sentence structure, word classes, verb systems, clauses, writing conventions, common errors, and practice workflows | source | 2026-04-26
 - [[distributed-systems-core-principles]] — Structured distributed-systems study note covering uncertainty intuition, CAP/FLP/PACELC, consistency, consensus, replication/sharding, logical clocks, and resilience patterns | source | 2026-04-17
 - [[linux-foundations-and-testing-special-topic]] — Training deck that teaches Linux as an engineering mental model and pairs it with layered software-testing architecture | source | 2026-04-16
 - [[vim-usage-and-configuration-reference]] — Practical Vim reference covering vimrc defaults, editing commands, and plugin setup | source | 2026-04-15
@@ -94,6 +95,7 @@ Each entry follows this format:
 - [[cto]] — Executive technical leader responsible for long-term technology strategy, external technical narrative, and cross-functional alignment | persona | 2026-04-19
 - [[technical-line-leader]] — Technical management persona focused on internal delivery, platform reuse, stability, AI integration, and team engineering-growth enablement | persona | 2026-04-19
 - [[growing-engineer]] — Engineer persona moving from feature implementation toward abstraction, system modeling, and validation-led design | persona | 2026-04-15
+- [[chinese-english-grammar-learner]] — Chinese-speaking English learner persona focused on sentence skeletons, verb systems, clause boundaries, and writing self-checks | persona | 2026-04-26
 
 ---
 
@@ -130,6 +132,11 @@ Each entry follows this format:
 - [[neural-audio-codec]] — Audio tokenizer infrastructure layer that discretizes speech for LLM use | concept | 2026-04-14
 - [[full-duplex-speech-interaction]] — Real-time interaction model that supports simultaneous listening, speaking, and interruption | concept | 2026-04-14
 - [[hardware-derived-machine-identifier]] — Practice of collecting multiple hardware properties and hashing them into a derived device fingerprint, called `机器码` in the current Windows source | concept | 2026-04-17
+- [[english-grammar-learning-framework]] — Layered English grammar learning model organized around word classes, sentence functions, structural relations, and meaning choices | concept | 2026-04-26
+- [[english-sentence-structure]] — Sentence-structure concept centered on finite predicates, five basic sentence patterns, constituents, phrases, clauses, and punctuation boundaries | concept | 2026-04-26
+- [[english-verb-system]] — Verb-system concept covering finite and non-finite verbs, tense/aspect, voice, mood, modality, and verb-pattern choices | concept | 2026-04-26
+- [[english-clause-system]] — Clause-system concept covering noun clauses, relative clauses, adverbial clauses, relation words, and clause-boundary diagnostics | concept | 2026-04-26
+- [[english-usage-error-patterns-for-chinese-learners]] — Reusable error-pattern page for Chinese learners covering articles, countability, tense transfer, conjunction duplication, prepositions, clause order, and sentence boundaries | concept | 2026-04-26
 - [[kernel-upgrade-and-boot-management]] — Practice of upgrading or switching Linux kernel versions, choosing a boot target, and validating compatibility outcomes before cleanup, covering both CentOS 7 and Ubuntu patterns | concept | 2026-04-15
 - [[language-runtime-version-management]] — Practice of using dedicated version managers to install, switch between, and isolate multiple versions of a language runtime on a single development machine | concept | 2026-04-17
 - [[legacy-repository-repointing]] — Practice of redirecting package managers from retired mirrors to static archive/vault repositories for legacy systems | concept | 2026-04-15
@@ -151,7 +158,7 @@ Each entry follows this format:
 
 *One entry per writing convention or style guideline.*
 
-*(Empty — will populate as sources are ingested.)*
+- [[english-writing-clarity-and-style]] — English writing style rule that treats grammar accuracy, punctuation boundaries, information flow, and formal clarity as one self-check chain | style | 2026-04-26
 
 ---
 

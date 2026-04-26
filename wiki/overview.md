@@ -3,9 +3,9 @@
 title: Overview
 type: overview
 created: 2026-04-07
-updated: 2026-04-19
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, Ubuntu切换指定版本内核.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, homebrew, launchctl, diskutil, pmset, defaults, xcode, ruby, rbenv, cocoapods, ios, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consistency, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, stakeholder-management, business-development, evangelism, team-culture]
+updated: 2026-04-26
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, Ubuntu切换指定版本内核.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, homebrew, launchctl, diskutil, pmset, defaults, xcode, ruby, rbenv, cocoapods, ios, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consistency, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, stakeholder-management, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners]
 
 ---
 
@@ -18,11 +18,13 @@ tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-to
 
 ## Current State
 
-This wiki currently covers AI-era engineering management, executive technical leadership through CTO role definition and technology-strategy/business-alignment, engineering-thinking frameworks for abstraction/modeling/validation, distributed-systems theory and engineering from CAP/FLP/PACELC through consistency, consensus, replication/sharding, logical clocks, and resilience patterns, AI-assisted full-stack onboarding patterns, speech-native AI architecture, and practical Linux/developer-tooling knowledge, combining strategic planning material with hands-on workflow references for editing, shell automation, command-line system operations, Unix-style design philosophy, host-level observability through USE and `/proc`-backed metrics, layered software-testing architecture, legacy package-source recovery on Linux distributions, Docker-on-CentOS troubleshooting tied to host-kernel compatibility, CentOS 7 kernel upgrade workflows through ELRepo and GRUB, CentOS 7 resource-limit and TCP backlog tuning, Samba-based cross-platform file sharing from CentOS to Windows, high-risk source-built OpenSSL/OpenSSH maintenance on legacy CentOS hosts, CentOS 7 OS initialization workflows from bare metal to usable baseline, Docker-based containerized development environment patterns, Ubuntu Netplan-based declarative network configuration, Ubuntu 22.04 OpenSSH source upgrade workflows, Ubuntu system optimization and troubleshooting including DNS port conflicts and VMware compatibility, Ubuntu kernel version switching via APT and GRUB configuration, macOS bootable USB installer creation and external-boot downgrade preparation, broader macOS command-line administration across `diskutil` / `launchctl` / `pmset` / Homebrew / Xcode CLI tools / `defaults`, lightweight macOS interactive system settings covering shortcut preferences, input-source defaults, trackpad behavior, and a Chrome preload workaround for typing lag, macOS development environment setup covering Ruby version management with rbenv and CocoaPods installation, Windows-native development notes covering Inno Setup packaging, service bootstrap sequencing, and WMI-based hardware fingerprint generation across MFC and Win32 paths, Windows workstation-administration notes covering Windows 10 auto-update suppression through services and scheduled tasks plus PowerShell-based firewall port opening for debugging, plus AI-era onboarding material for MCP, project Steering context, DevOps pipeline basics, and starter full-stack stack composition.
+This wiki currently covers AI-era engineering management, executive technical leadership through CTO role definition and technology-strategy/business-alignment, engineering-thinking frameworks for abstraction/modeling/validation, distributed-systems theory and engineering, AI-assisted full-stack onboarding patterns, speech-native AI architecture, and practical Linux/developer-tooling knowledge.
 
-**Source count:** 28
-**Wiki pages:** 93
-**Last ingest:** 2026-04-19 — [[cto-responsibilities]]
+It also now includes a language-learning and writing-clarity strand for English grammar, focused on sentence skeletons, word classes, verb systems, clause systems, punctuation boundaries, common Chinese learner error patterns, and practical writing self-checks.
+
+**Source count:** 29
+**Wiki pages:** 101
+**Last ingest:** 2026-04-26 — [[grammar]]
 **Last lint:** —
 
 
@@ -38,6 +40,7 @@ This wiki currently covers AI-era engineering management, executive technical le
 - 平台底座、稳定性和治理能力建设
 - 技术管理者关注的组织、流程和指标体系
 - CTO 角色职责定义，覆盖长期技术战略、技术布道、研发文化建设，以及对 CEO、产品研发、销售、业务开发和市场团队的服务边界
+- 英语语法学习框架，覆盖句子骨架、词类、动词系统、从句系统、特殊句式、篇章衔接、写作风格和中文学习者高频错误
 - 语音原生 LLM、Neural Audio Codec 与实时语音交互架构
 - Linux / 终端环境中的开发者工具、文本编辑与 shell 自动化工作流
 - Linux 命令行中的文件、文本、进程、网络、权限、日志、定时任务与系统状态验证
@@ -111,6 +114,9 @@ This wiki currently covers AI-era engineering management, executive technical le
 - 把监控、日志和告警放进交付流程图，能帮助新人更早建立“上线后仍需持续验证”的心智模型。
 - 在质量体系里，测试数量本身不是目标；更重要的是按单元/属性、集成、E2E 和回归数据闭环分配职责与反馈成本。
 - “Bug -> 用例 -> 回归 -> CI -> 质量提升”是当前知识库里最清晰的测试演进闭环之一。
+- 英语语法学习的第一步不是背术语，而是先找限定谓语、主语核心和句子骨架，再处理修饰成分与从句嵌套。
+- 对中文学习者来说，冠词、名词数、三单、时态与体、介词搭配、宾语从句语序和句子边界是最值得优先沉淀成清单的错误模式。
+- 正式英语不等于更长、更被动或更名词化；清楚的主动句、稳定的信息流和正确的标点边界通常更专业。
 
 ---
 
@@ -138,6 +144,8 @@ This wiki currently covers AI-era engineering management, executive technical le
 - 是否会进一步沉淀团队级的测试金字塔比例、属性测试适用范围、Contract Test 规范和回归数据管理方式？
 - 是否会补充 Prometheus / Grafana / node_exporter 的独立专题页与标准化监控指标清单？
 - 是否会继续补充 macOS 专题，覆盖 Apple silicon / Intel 差异、`launchctl` domain model、Homebrew formula/cask、APFS / Disk Utility 和 Time Machine 相关流程？
+- 英语语法学习材料是否会继续扩展为技术英文写作、学术写作、考试语法或 CEFR 分级学习路径？
+- 当前中文学习者错误模式是否会沉淀为可执行的英文写作批改清单或练习题库？
 
 
 ---
@@ -165,6 +173,8 @@ This wiki currently covers AI-era engineering management, executive technical le
 - 刚补上 AI 时代的全栈入门全景，但仍缺少 Git/PR、Docker Compose、多容器本地开发、PostgreSQL/Redis、Go/Gin/GORM/wire、React/TypeScript/Tailwind/shadcn、Nginx 部署、`wrk` 和 Playwright 的独立专题页。
 - 虽然已补上测试架构总览，但仍缺少团队级测试规范、缺陷分级到回归用例的沉淀模板，以及 Contract Test / 属性测试的落地案例库。
 - 虽然已补上 USE 方法与主机观测链路，但仍缺少 Prometheus、Grafana、node_exporter、ELK/Loki/Jaeger 等工具的独立专题页和指标命名规范。
+- 虽然已补上英语语法全景图，但仍缺少面向具体体裁的英文写作指南，例如技术文档、邮件、README、API 文档、学术论文或考试作文。
+- 英语语法目前是总览型框架，还没有覆盖 CEFR / IELTS / TOEFL 等学习等级、专项练习题库、语料示例或自动化改错规则。
 
 
 ---
@@ -173,6 +183,14 @@ This wiki currently covers AI-era engineering management, executive technical le
 
 - [[index]] — full catalog of all wiki pages
 - [[glossary]] — terminology and style conventions
+- [[grammar]] — English grammar source summary
+- [[english-grammar-learning-framework]] — layered English grammar learning model
+- [[english-sentence-structure]] — finite predicate, sentence skeleton, and constituent concept
+- [[english-verb-system]] — tense/aspect, voice, mood, modality, and non-finite verb concept
+- [[english-clause-system]] — noun, relative, and adverbial clause concept
+- [[english-usage-error-patterns-for-chinese-learners]] — common Chinese learner error-pattern concept
+- [[english-writing-clarity-and-style]] — English writing clarity style rule
+- [[chinese-english-grammar-learner]] — English grammar learner persona
 - [[2025-technical-line-summary]] — current primary source summary
 - [[cto-responsibilities]] — CTO role-definition source summary
 - [[engineering-thinking-framework]] — engineering-thinking source summary

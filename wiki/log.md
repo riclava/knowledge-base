@@ -625,3 +625,28 @@ Key additions:
 - Established `technology strategy and business alignment` as a reusable concept for connecting long-term technology choices, roadmap, customer/market narrative, and cross-functional support.
 - Clarified in the glossary that `CTO` should not be casually conflated with `技术线负责人`, and that terms like `技术布道` and `业务开发` are part of technical leadership rather than generic marketing vocabulary.
 - Flagged that the source is role guidance rather than a company-specific org chart, so time allocation and responsibility splits should be reused as framing patterns, not rigid ratios.
+
+## [2026-04-26] ingest | 英语语法知识全景图
+
+Pages created:
+- `wiki/sources/grammar.md`
+- `wiki/concepts/english-grammar-learning-framework.md`
+- `wiki/concepts/english-sentence-structure.md`
+- `wiki/concepts/english-verb-system.md`
+- `wiki/concepts/english-clause-system.md`
+- `wiki/concepts/english-usage-error-patterns-for-chinese-learners.md`
+- `wiki/personas/chinese-english-grammar-learner.md`
+- `wiki/style/english-writing-clarity-and-style.md`
+
+Pages updated:
+- `wiki/glossary.md` — added English grammar terminology and style conventions for sentence skeletons, finite verbs, tense/aspect, clause systems, comma splices, run-on sentences, and formal clarity
+- `wiki/index.md` — added the new source, concept, persona, and style entries and refreshed core-file dates
+- `wiki/overview.md` — updated source/page counts and broadened the synthesis to include English grammar learning and writing clarity
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for a broad Chinese-language English grammar map covering learning principles, sentence structure, word classes, verb systems, clauses, special structures, punctuation, discourse organization, common learner errors, and practice methods.
+- Established reusable concept pages for the overall grammar learning framework, sentence structure, verb system, clause system, and common Chinese learner error patterns.
+- Added a `中文母语英语语法学习者` persona to capture learner goals, pain points, expertise level, and preferred documentation format.
+- Created the first `wiki/style/` page, `English writing clarity and style`, connecting grammar accuracy, punctuation boundaries, information flow, and formal style into one writing checklist.
+- Flagged that the source is a learning overview rather than a complete grammar authority, so future specialized writing guidance should still distinguish technical writing, academic writing, exam preparation, and style-guide-specific conventions.
