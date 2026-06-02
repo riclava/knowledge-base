@@ -2,9 +2,9 @@
 title: Glossary
 type: glossary
 created: 2026-04-07
-updated: 2026-04-26
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners]
+updated: 2026-06-02
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md, A1. 逻辑推理/README.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, core-competency]
 ---
 
 # Glossary
@@ -1035,6 +1035,43 @@ Each entry follows this format:
 
 ---
 
+**逻辑推理（logical reasoning）** *(canonical form)*
+: 指从已知前提出发、按可靠规则推导出可被检验结论的能力；在当前知识库里它属于 Career 思维层核心能力，强调让结论可复现、可反驳、可追责，而不是停留在"我觉得"。
+- Preferred: `逻辑推理` or `logical reasoning` / Avoid: 把它窄化成"辩论技巧"
+- See also: [[logical-reasoning]], [[engineering-mindset]]
+
+**演绎 / 归纳 / 溯因（deduction / induction / abduction）** *(canonical form)*
+: 三种基本推理形式；演绎从一般到个别且前提为真则结论必然为真，归纳从个别到一般且具概率性，溯因从结果反推最可能原因、给出最佳解释而非唯一答案。故障定位主要依赖溯因。
+- Preferred: `演绎` / `归纳` / `溯因` or `deduction` / `induction` / `abduction` / Avoid: 把故障根因推断笼统说成"逻辑分析"而不指明是溯因
+- See also: [[logical-reasoning]], [[observability-and-reliability]]
+
+**有效性 vs 可靠性（validity vs soundness）** *(canonical form)*
+: 推理"有效（valid）"指形式正确、前提为真则结论必为真；"可靠（sound）"还要求所有前提本身为真。形式有效不等于结论可信，区分二者是论证质量评估的基础。
+- Preferred: `有效性` / `可靠性` or `validity` / `soundness` / Avoid: 把"推理没错"直接当成"结论正确"
+- See also: [[logical-reasoning]]
+
+**充分条件 vs 必要条件（sufficient vs necessary condition）** *(canonical form)*
+: 在 `A→B` 中，A 是 B 的充分条件，B 是 A 的必要条件；混淆二者是工程论证中最常见的错误之一。逆否等价 `A→B ≡ ¬B→¬A` 是反证法和排除法的逻辑基础。
+- Preferred: `充分条件` / `必要条件` or `sufficient` / `necessary condition`
+- See also: [[logical-reasoning]]
+
+**肯定后件 / 否定前件（affirming the consequent / denying the antecedent）** *(canonical form)*
+: 两类常见的形式谬误；由 `A→B` 和 B 推出 A（肯定后件）、由 `A→B` 和 ¬A 推出 ¬B（否定前件）都是无效推理。"改了它就好了 ⇒ 就是它的锅"是典型的肯定后件。
+- Preferred: `肯定后件` / `否定前件` or `affirming the consequent` / `denying the antecedent`
+- See also: [[logical-reasoning]]
+
+**相关不等于因果（correlation is not causation）** *(canonical form)*
+: 指两件事同时出现不代表存在因果关系，可能是巧合、第三因素或因果方向相反；上线与故障时间接近不等于上线导致故障。
+- Preferred: `相关不等于因果` or `correlation ≠ causation`
+- See also: [[logical-reasoning]], [[observability-and-reliability]]
+
+**可证伪命题（falsifiable claim）** *(canonical form)*
+: 指能被数据或证据明确推翻的判断；把"我觉得慢"改写成"P99 在 QPS>500 时超过 300ms"这类带指标和阈值的命题，才具备评审和讨论价值。
+- Preferred: `可证伪命题` or `falsifiable claim` / Avoid: 在评审/复盘里用无法被证据推翻的模糊判断
+- See also: [[logical-reasoning]], [[validation-driven-design]]
+
+---
+
 ## Style Conventions
 
 *(Writing rules and tone guidelines specific to this knowledge base's domain. Will populate as style guides and branded content are ingested.)*
@@ -1058,6 +1095,7 @@ Each entry follows this format:
 | Testing terminology | Use `属性测试` when describing invariant-driven generated-input testing, and use `回归测试` for suites built from historical bugs. | “把这个历史缺陷沉淀为回归测试，再补一条属性测试覆盖通用规律。” |
 | English grammar terminology | Use exact grammar terms such as `限定动词`, `时态与体`, `从句系统`, `非谓语动词`, `逗号拼接`, and `平行结构`; explain the expression problem each term solves rather than listing terms alone. | “先找限定动词和主语核心，再判断从句在大句中充当什么成分。” |
 | English writing clarity | Treat formal English as accurate, clear, and controlled; avoid using passive voice, nominalization, or long sentences just to sound formal. | “The team implemented the solution.” is clearer than “The implementation of the solution was conducted by the team.” |
+| Logical-reasoning terminology | Distinguish `演绎` / `归纳` / `溯因`, separate `有效性` from `可靠性`, and prefer `可证伪命题` over vague judgments in reviews and post-mortems. | “这是溯因得到的最佳解释，不是唯一原因；把它写成可证伪命题再验证。” |
 
 ---
 
@@ -1087,6 +1125,8 @@ Terms that have been replaced, renamed, or should not be used:
 | `because ... so` | `Because ...` or `..., so ...` | 英语中因果连接通常保留一个主要连接结构。 |
 | 用逗号直接连接两个完整句 | 句号、分号、并列连词或从句 | 避免形成 `comma splice`。 |
 | 把正式英语写成被动语态和名词化堆叠 | 清楚的主动句和必要的名词化 | 正式不等于复杂；清晰度优先。 |
+| 把"改了它就好了"当成根因证明 | 用溯因 + 排除法，并能解释"为什么是它" | 避免肯定后件谬误把巧合当因果。 |
+| 在评审/复盘里用无法被证据推翻的模糊判断 | 改写成带指标和阈值的 `可证伪命题` | 不可证伪的判断无法收敛讨论。 |
 
 ---
 
@@ -1120,6 +1160,8 @@ Terms that differ between audiences, teams, or locales:
 - [[english-usage-error-patterns-for-chinese-learners]] — common error-pattern concept
 - [[english-writing-clarity-and-style]] — English writing style rule
 - [[chinese-english-grammar-learner]] — learner persona
+- [[logical-reasoning]] — logical reasoning core-competency concept
+- [[logical-reasoning-note]] — logical reasoning source summary
 - [[2025-technical-line-summary]] — first ingested source summary
 - [[engineering-thinking-framework]] — engineering-thinking source summary
 - [[linux]] — Linux platform/tool page

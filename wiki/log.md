@@ -650,3 +650,24 @@ Key additions:
 - Added a `中文母语英语语法学习者` persona to capture learner goals, pain points, expertise level, and preferred documentation format.
 - Created the first `wiki/style/` page, `English writing clarity and style`, connecting grammar accuracy, punctuation boundaries, information flow, and formal style into one writing checklist.
 - Flagged that the source is a learning overview rather than a complete grammar authority, so future specialized writing guidance should still distinguish technical writing, academic writing, exam preparation, and style-guide-specific conventions.
+
+## [2026-06-02] ingest | A1. 逻辑推理
+
+Pages created:
+- `wiki/sources/logical-reasoning-note.md`
+- `wiki/concepts/logical-reasoning.md`
+
+Pages updated:
+- `wiki/concepts/engineering-mindset.md` — added backlink to `logical-reasoning` and refreshed date
+- `wiki/concepts/validation-driven-design.md` — added backlink to `logical-reasoning` (falsifiable-claim link) and refreshed date
+- `wiki/personas/growing-engineer.md` — added backlink to `logical-reasoning` and refreshed date
+- `wiki/glossary.md` — added logical-reasoning terminology, a style-convention row, and avoid-list rows
+- `wiki/index.md` — added the new source and concept entries and refreshed core-file dates
+- `wiki/overview.md` — updated source/page counts and opened a Career 思维层核心能力 strand
+- `wiki/log.md`
+
+Key additions:
+- Added a source summary for the first Career「思维层（核心能力）」note, A1 逻辑推理, covering deduction/induction/abduction, sufficient-vs-necessary conditions, validity-vs-soundness, common fallacies, and engineering practice/trade-offs.
+- Established `逻辑推理 (logical reasoning)` as a reusable core-competency concept distinct from but linked to `engineering-mindset` and `validation-driven-design`: research-thinking abstracts the problem, logical reasoning keeps the premise→conclusion step defensible, and falsifiable claims tie it to validation thinking.
+- Added canonical terminology for `逻辑推理`、`演绎/归纳/溯因`、`有效性 vs 可靠性`、`充分条件 vs 必要条件`、`肯定后件/否定前件`、`相关不等于因果` and `可证伪命题`.
+- Flagged this as a personal learning note (self-authored, not a textbook authority) and that the broader A2–A8 thinking-skill tree is expected to follow, which would let the wiki form a full cognitive-core-competency concept network.

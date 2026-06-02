@@ -2,7 +2,7 @@
 title: 成长型工程师
 type: persona
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-06-02
 sources: [构建技术研发思维.md]
 tags: [persona, engineering, learning, growth, system-design, ai-era]
 ---
@@ -47,6 +47,7 @@ tags: [persona, engineering, learning, growth, system-design, ai-era]
 - [[ai-era-full-stack-beginner]]
 - [[engineering-thinking-framework]]
 - [[engineering-mindset]]
+- [[logical-reasoning]]
 - [[state-and-data-flow-modeling]]
 - [[validation-driven-design]]
 - [[full-lifecycle-delivery-capability]]

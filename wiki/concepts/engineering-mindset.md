@@ -2,7 +2,7 @@
 title: 研发思维
 type: concept
 created: 2026-04-15
-updated: 2026-04-17
+updated: 2026-06-02
 sources: [构建技术研发思维.md, 分布式核心原理.md]
 tags: [concept, engineering-thinking, systems-thinking, abstraction, modeling, system-design, distributed-systems]
 ---
@@ -53,6 +53,7 @@ tags: [concept, engineering-thinking, systems-thinking, abstraction, modeling, s
 - [[engineering-thinking-framework]]
 - [[state-and-data-flow-modeling]]
 - [[validation-driven-design]]
+- [[logical-reasoning]]
 - [[distributed-systems-foundations]]
 - [[consistency-models]]
 - [[distributed-systems-resilience-patterns]]

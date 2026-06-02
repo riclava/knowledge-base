@@ -2,7 +2,7 @@
 title: 验证驱动设计
 type: concept
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-06-02
 sources: [构建技术研发思维.md]
 tags: [concept, validation, design, iteration, risk-reduction, engineering-thinking]
 ---
@@ -46,5 +46,6 @@ tags: [concept, validation, design, iteration, risk-reduction, engineering-think
 - [[engineering-thinking-framework]]
 - [[engineering-mindset]]
 - [[state-and-data-flow-modeling]]
+- [[logical-reasoning]]
 - [[ai-enabled-software-delivery]]
 
