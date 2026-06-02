@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代运转模式 (小团队版)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .table-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen py-10 px-4">
+
+<div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-10">
+        <h1 class="text-4xl font-extrabold text-slate-800 tracking-tight">迭代运转模式</h1>
+        <p class="text-lg text-indigo-500 mt-2 font-semibold">⚡️ 小团队极捷协作视图 (1周/迭代)</p>
+    </div>
+
+    <!-- Calendar Table -->
+    <div class="bg-white rounded-2xl table-shadow overflow-hidden border border-slate-200">
+        <table class="w-full text-center border-collapse table-fixed">
+            <thead>
+                <tr class="bg-slate-100 text-slate-600 text-lg">
+                    <th class="w-16 py-5 font-semibold border-b border-r border-slate-200">时间</th>
+                    <th class="py-5 font-semibold border-b border-r border-slate-200 w-1/5 text-indigo-700 bg-indigo-50/50">周一</th>
+                    <th class="py-5 font-semibold border-b border-r border-slate-200 w-1/5 text-indigo-700 bg-indigo-50/50">周二</th>
+                    <th class="py-5 font-semibold border-b border-r border-slate-200 w-1/5 text-indigo-700 bg-indigo-50/50">周三</th>
+                    <th class="py-5 font-semibold border-b border-r border-slate-200 w-1/5 text-indigo-700 bg-indigo-50/50">周四</th>
+                    <th class="py-5 font-semibold border-b border-slate-200 w-1/5 text-indigo-700 bg-indigo-50/50">周五</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row: Daily Morning Meeting -->
+                <tr>
+                    <td rowspan="2" class="border-b border-r border-slate-200 bg-slate-50">
+                        <div class="flex flex-col items-center justify-center space-y-4 text-slate-600 font-bold text-xl h-full py-8">
+                            <span>上</span>
+                            <span>午</span>
+                        </div>
+                    </td>
+                    <td class="border-b border-r border-slate-200 py-3 bg-amber-50" colspan="5">
+                        <div class="flex items-center justify-around w-full px-4 text-amber-700 font-semibold tracking-widest text-lg">
+                            <span>☀️ 站立晨会 (10min)</span>
+                            <span>☀️ 站立晨会 (10min)</span>
+                            <span>☀️ 站立晨会 (10min)</span>
+                            <span>☀️ 站立晨会 (10min)</span>
+                            <span>☀️ 站立晨会 (10min)</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Row: Morning Tasks -->
+                <tr>
+                    <!-- Mon -->
+                    <td class="border-b border-r border-slate-200 p-4 h-44 align-top">
+                        <div class="h-full w-full rounded-xl bg-emerald-50 border border-emerald-100 p-3 flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-md">
+                            <h3 class="font-bold text-emerald-800 text-lg mb-2">迭代启动</h3>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-100 text-emerald-700 mb-3">⏱ 15min</span>
+                            <div class="w-full flex justify-center pt-2 border-t border-emerald-200/60">
+                                <span class="text-sm text-emerald-600 font-bold">Owner: PM</span>
+                            </div>
+                        </div>
+                    </td>
+                    <!-- Tue -->
+                    <td class="border-b border-r border-slate-200 p-4 bg-slate-50/30 flex items-center justify-center">
+                        <span class="text-slate-300 font-medium text-sm">专心Coding</span>
+                    </td>
+                    <!-- Wed -->
+                    <td class="border-b border-r border-slate-200 p-4 h-44 align-top">
+                        <div class="h-full w-full rounded-xl bg-blue-50 border border-blue-100 p-3 flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-md">
+                            <h3 class="font-bold text-blue-800 text-lg mb-2">需求评审</h3>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-100 text-blue-700 mb-3">⏱ 60min</span>
+                            <div class="w-full flex justify-center pt-2 border-t border-blue-200/60">
+                                <span class="text-sm text-blue-600 font-bold">Owner: PD</span>
+                            </div>
+                        </div>
+                    </td>
+                    <!-- Thu -->
+                    <td class="border-b border-r border-slate-200 p-4 h-44 align-top">
+                        <div class="h-full w-full rounded-xl bg-cyan-50 border border-cyan-100 p-3 flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-md">
+                            <h3 class="font-bold text-cyan-800 text-lg mb-2">技术方案讨论</h3>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-cyan-100 text-cyan-700 mb-3">⏱ 60min</span>
+                            <div class="w-full flex justify-center gap-2 pt-2 border-t border-cyan-200/60">
+                                <span class="text-sm text-cyan-600 font-bold">BE</span>
+                                <span class="text-cyan-300">|</span>
+                                <span class="text-sm text-cyan-600 font-bold">FE</span>
+                            </div>
+                        </div>
+                    </td>
+                    <!-- Fri -->
+                    <td class="border-b border-slate-200 p-4 h-44 align-top">
+                        <div class="h-full w-full rounded-xl bg-rose-50 border border-rose-100 p-3 flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-md">
+                            <h3 class="font-bold text-rose-800 text-lg mb-2">走查与验收</h3>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-rose-100 text-rose-700 mb-3">⏱ 60min</span>
+                            <div class="w-full flex justify-center pt-2 border-t border-rose-200/60">
+                                <span class="text-sm text-rose-600 font-bold">Owner: PD</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Row: Afternoon Tasks -->
+                <tr>
+                    <td class="border-r border-slate-200 bg-slate-50">
+                        <div class="flex flex-col items-center justify-center space-y-4 text-slate-600 font-bold text-xl h-full py-8">
+                            <span>下</span>
+                            <span>午</span>
+                        </div>
+                    </td>
+                    <!-- Mon -->
+                    <td class="border-r border-slate-200 p-4 h-44 align-top">
+                        <div class="h-full w-full rounded-xl bg-indigo-50 border border-indigo-100 p-3 flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-md">
+                            <h3 class="font-bold text-indigo-800 text-lg mb-3">项目周报</h3>
+                            <div class="w-full flex justify-center pt-3 border-t border-indigo-200/60">
+                                <span class="text-sm text-indigo-600 font-bold">Owner: PM</span>
+                            </div>
+                        </div>
+                    </td>
+                    <!-- Tue -->
+                    <td class="border-r border-slate-200 p-4 h-44 align-top">
+                        <div class="h-full w-full rounded-xl bg-orange-50 border border-orange-100 p-3 flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-md">
+                            <h3 class="font-bold text-orange-800 text-[17px] text-center leading-snug mb-3">上线 /<br>内部灰度发布</h3>
+                            <div class="w-full flex justify-center pt-3 border-t border-orange-200/60">
+                                <span class="text-sm text-orange-600 font-bold">Owner: OP</span>
+                            </div>
+                        </div>
+                    </td>
+                    <!-- Wed -->
+                    <td class="border-r border-slate-200 p-4 bg-slate-50/30 flex items-center justify-center">
+                        <span class="text-slate-300 font-medium text-sm">专心Coding</span>
+                    </td>
+                    <!-- Thu -->
+                    <td class="border-r border-slate-200 p-4 h-44 align-top">
+                        <div class="h-full w-full rounded-xl bg-purple-50 border border-purple-100 p-3 flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-md">
+                            <h3 class="font-bold text-purple-800 text-[17px] text-center leading-snug mb-3">规划下一<br>迭代需求</h3>
+                            <div class="w-full flex flex-col items-center justify-center pt-2 border-t border-purple-200/60 space-y-1">
+                                <span class="text-xs text-purple-600 font-bold">Owner: PD</span>
+                            </div>
+                        </div>
+                    </td>
+                    <!-- Fri -->
+                    <td class="p-4 h-44 align-top">
+                        <div class="h-full w-full rounded-xl bg-emerald-50 border border-emerald-100 p-3 flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-md">
+                            <div class="flex flex-col items-center justify-center mb-2 space-y-1 text-center">
+                                <span class="font-bold text-emerald-800 text-[16px]">Showcase展示</span>
+                                <span class="font-bold text-emerald-800 text-[16px]">迭代回顾 (复盘)</span>
+                            </div>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-emerald-100 text-emerald-700 mb-2">⏱ 60min</span>
+                            <div class="w-full flex justify-center gap-2 pt-1.5 border-t border-emerald-200/60">
+                                <span class="text-sm text-emerald-600 font-bold">PM</span>
+                                <span class="text-emerald-300">|</span>
+                                <span class="text-sm text-emerald-600 font-bold">PD</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bottom Info Section -->
+    <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Rules / Guidelines (Left) -->
+        <div class="lg:col-span-4 bg-white rounded-2xl p-6 table-shadow border border-slate-200 flex flex-col justify-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-2 h-full bg-indigo-400"></div>
+            <div class="pl-4">
+                <p class="text-lg text-slate-700 font-medium mb-3 flex items-center">
+                    统一迭代长度：<span class="text-indigo-600 font-black text-2xl ml-2">一周</span>
+                </p>
+                <div class="flex items-start text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-100 text-sm">
+                    <svg class="w-4 h-4 text-indigo-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>小团队倡导敏捷，各项活动由 <strong class="text-slate-800 mx-1">Owner</strong> 发起并控制时间。</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legend (Right) -->
+        <div class="lg:col-span-8 bg-white rounded-2xl p-6 table-shadow border border-slate-200 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-2 h-full bg-amber-400"></div>
+            <div class="pl-4">
+                <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-100 pb-2">小团队角色划分 (全栈作战)</h4>
+                <div class="flex flex-wrap gap-4 text-sm">
+                    <div class="flex items-center space-x-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
+                        <span class="w-8 text-center py-0.5 rounded bg-white shadow-sm font-bold text-slate-700 border border-slate-200">PM</span>
+                        <span class="text-slate-600 font-medium">项目经理 (把控进度)</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
+                        <span class="w-8 text-center py-0.5 rounded bg-white shadow-sm font-bold text-slate-700 border border-slate-200">PD</span>
+                        <span class="text-slate-600 font-medium">产品经理 (需求/验收)</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
+                        <span class="w-8 text-center py-0.5 rounded bg-white shadow-sm font-bold text-slate-700 border border-slate-200">FE</span>
+                        <span class="text-slate-600 font-medium">前端开发</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
+                        <span class="w-8 text-center py-0.5 rounded bg-white shadow-sm font-bold text-slate-700 border border-slate-200">BE</span>
+                        <span class="text-slate-600 font-medium">后端开发</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
+                        <span class="w-8 text-center py-0.5 rounded bg-white shadow-sm font-bold text-slate-700 border border-slate-200">OP</span>
+                        <span class="text-slate-600 font-medium">技术运维 (部署/基建)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
