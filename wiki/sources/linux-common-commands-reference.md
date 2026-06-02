@@ -18,15 +18,15 @@ tags: [linux, command-line, operations, system-administration, cheat-sheet, sour
 
 ## What the Source Covers
 
-| 模块 | 覆盖内容 | 价值 |
-|---|---|---|
-| 文件操作 | `cp -p/-rp`、`rsync -a/-avxP/-avzP`、inode 删除、`find` 多条件查找 | 处理复制、同步、异常文件名清理和批量定位问题文件 |
-| 文本处理 | `grep`、`sed`、`awk`、`sort`、`uniq`、`wc`、`cut`、`paste`、`diff` | 把命令输出转化为可筛选、可替换、可统计的信息流 |
-| 磁盘与存储 | `df`、`du`、`dd`、direct I/O 测试 | 观察空间占用并做基础读写性能验证 |
-| 进程管理 | `ps`、`top`、`htop`、`pstree`、僵尸进程处理、`nohup`、`jobs`、`fg/bg` | 观察运行态、定位资源占用和管理前后台任务 |
-| 网络相关 | `ss`、`ip route`、`ip addr`、`dig`、`ping`、`nc`、`mtr`、`firewall-cmd` | 处理端口、路由、DNS、连通性与防火墙配置 |
-| 系统与权限 | `uname`、`lscpu`、`free`、`useradd/usermod/userdel`、`chmod/chown` | 巡检系统环境并控制用户、组和权限边界 |
-| 压缩、定时任务与日志 | `tar`、`zip/unzip`、`crontab`、`tail -f`、`journalctl`、`logrotate` | 处理归档、周期性任务和问题追踪日志 |
+| 模块         | 覆盖内容                                                             | 价值                       |
+| ---------- | ---------------------------------------------------------------- | ------------------------ |
+| 文件操作       | `cp -p/-rp`、`rsync -a/-avxP/-avzP`、inode 删除、`find` 多条件查找         | 处理复制、同步、异常文件名清理和批量定位问题文件 |
+| 文本处理       | `grep`、`sed`、`awk`、`sort`、`uniq`、`wc`、`cut`、`paste`、`diff`       | 把命令输出转化为可筛选、可替换、可统计的信息流  |
+| 磁盘与存储      | `df`、`du`、`dd`、direct I/O 测试                                     | 观察空间占用并做基础读写性能验证         |
+| 进程管理       | `ps`、`top`、`htop`、`pstree`、僵尸进程处理、`nohup`、`jobs`、`fg/bg`         | 观察运行态、定位资源占用和管理前后台任务     |
+| 网络相关       | `ss`、`ip route`、`ip addr`、`dig`、`ping`、`nc`、`mtr`、`firewall-cmd` | 处理端口、路由、DNS、连通性与防火墙配置    |
+| 系统与权限      | `uname`、`lscpu`、`free`、`useradd/usermod/userdel`、`chmod/chown`   | 巡检系统环境并控制用户、组和权限边界       |
+| 压缩、定时任务与日志 | `tar`、`zip/unzip`、`crontab`、`tail -f`、`journalctl`、`logrotate`   | 处理归档、周期性任务和问题追踪日志        |
 
 ## Core Mental Model Implied by the Source
 
