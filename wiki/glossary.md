@@ -2,9 +2,9 @@
 title: Glossary
 type: glossary
 created: 2026-04-07
-updated: 2026-06-02
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md, A1. 逻辑推理/README.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, core-competency]
+updated: 2026-06-03
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md, A1. 逻辑推理/README.md, A2. 抽象建模/README.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, core-competency, domain-modeling, interface-design]
 ---
 
 # Glossary
@@ -629,12 +629,42 @@ Each entry follows this format:
 **抽象（abstraction）** *(canonical form)*
 : 指去掉偶然细节、保留稳定结构的思维动作，是从现实问题进入系统设计的第一步。
 - Preferred: `抽象` or `abstraction` / Avoid: 把“概括描述”直接等同于抽象
-- See also: [[engineering-mindset]], [[engineering-thinking-framework]]
+- See also: [[abstraction-and-modeling]], [[engineering-mindset]], [[engineering-thinking-framework]]
 
 **建模（modeling）** *(canonical form)*
 : 指把对象、关系、状态、事件和数据流显式表达出来，使问题能够被分析、设计和验证。
 - Preferred: `建模` or `modeling`
-- See also: [[engineering-mindset]], [[state-and-data-flow-modeling]]
+- See also: [[abstraction-and-modeling]], [[engineering-mindset]], [[state-and-data-flow-modeling]]
+
+**抽象建模（abstraction & modeling）** *(canonical form)*
+: 指"抽象"（提取共性、隐藏无关细节）与"建模"（把概念组织成可推演结构）这一对动作组成的核心能力；在当前知识库中是 Career 思维层（核心能力）A2 技能，强调让复杂系统可理解、可沟通、可推演，而不是追求模型"像不像现实"。
+- Preferred: `抽象建模` or `abstraction & modeling` / Avoid: 把它窄化为"画 UML / ER 图"
+- See also: [[abstraction-and-modeling]], [[engineering-mindset]], [[state-and-data-flow-modeling]]
+
+**抽象层次（concept / logical / physical model）** *(canonical form)*
+: 指模型从抽象到具体的分层——概念模型（业务视角）、逻辑模型（不绑定技术的结构）、物理模型（落到具体存储/技术）；每层只回答自己该回答的问题，混层会让认知反复跳跃。
+- Preferred: `概念模型 / 逻辑模型 / 物理模型`
+- See also: [[abstraction-and-modeling]]
+
+**深模块 / 浅模块（deep / shallow module）** *(canonical form)*
+: 出自 John Ousterhout《A Philosophy of Software Design》。深模块接口简单、背后封装大量复杂度，是好抽象的判据；浅模块接口几乎与实现一样复杂，抽象没带来收益。
+- Preferred: `深模块` / `浅模块`
+- See also: [[abstraction-and-modeling]]
+
+**抽象泄漏（leaky abstraction）** *(canonical form)*
+: 指底层实现细节透过接口渗到上层，迫使调用方了解实现才能用对。Joel Spolsky 的"抽象泄漏定律"指出所有非平凡抽象都会在某种程度上泄漏，目标是把泄漏降到最小而非幻想零泄漏。
+- Preferred: `抽象泄漏` or `leaky abstraction`
+- See also: [[abstraction-and-modeling]]
+
+**错误的抽象（the wrong abstraction）** *(canonical form)*
+: Sandi Metz 的论断——强行复用一个不合适的抽象，会让每个使用方打补丁适配它，最终比直接重复代码更难维护；对应经验法则 `AHA（Avoid Hasty Abstractions）/ Rule of Three`：容忍前两次重复、边界看清后再抽象。
+- Preferred: `错误的抽象` / `AHA` / `Rule of Three` / Avoid: 把"消除一切重复"当成无条件目标
+- See also: [[abstraction-and-modeling]]
+
+**过度抽象（over-abstraction）** *(canonical form)*
+: 指为想象中、可能永不到来的需求引入额外间接层和配置项，违反 YAGNI，让所有人为不存在的灵活性付出理解与调试成本；"可扩展性"常被用作过度抽象的遮羞布。
+- Preferred: `过度抽象` or `over-abstraction` / Avoid: 用"可扩展性"为过早抽象背书
+- See also: [[abstraction-and-modeling]]
 
 **分治思维（decomposition）** *(canonical form)*
 : 指把复杂问题拆成若干可独立理解和处理的子问题，再组合成整体方案。

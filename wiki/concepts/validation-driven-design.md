@@ -46,6 +46,7 @@ tags: [concept, validation, design, iteration, risk-reduction, engineering-think
 - [[engineering-thinking-framework]]
 - [[engineering-mindset]]
 - [[state-and-data-flow-modeling]]
+- [[abstraction-and-modeling]]
 - [[logical-reasoning]]
 - [[ai-enabled-software-delivery]]
 

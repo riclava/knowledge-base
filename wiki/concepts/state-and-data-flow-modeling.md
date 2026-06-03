@@ -45,6 +45,7 @@ tags: [concept, modeling, state-machine, data-flow, system-design, engineering-t
 - 状态模型帮助团队识别乱序、重复写入、离线补偿和并发覆盖等问题。
 - 数据流模型帮助团队看见系统依赖、延迟路径和持久化位置。
 - 两者结合后，设计讨论会从“怎么写接口”升级为“系统如何运作”。
+- 状态与数据流本身是 [[abstraction-and-modeling]] 的一种具体模型形态：先抽象出实体、状态和边界，再用状态机/数据流图把它们组织成可推演的结构。
 - 在分布式系统里，这套建模还要继续覆盖日志复制、消息乱序、因果顺序、重试重放和副本收敛，因此会自然连接到逻辑时钟、共识和复制/分片等专题。
 
 ## Documentation Implications
@@ -64,6 +65,7 @@ tags: [concept, modeling, state-machine, data-flow, system-design, engineering-t
 
 - [[engineering-thinking-framework]]
 - [[engineering-mindset]]
+- [[abstraction-and-modeling]]
 - [[validation-driven-design]]
 - [[distributed-consensus]]
 - [[data-replication-and-partitioning]]

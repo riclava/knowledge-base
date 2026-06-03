@@ -671,3 +671,28 @@ Key additions:
 - Established `逻辑推理 (logical reasoning)` as a reusable core-competency concept distinct from but linked to `engineering-mindset` and `validation-driven-design`: research-thinking abstracts the problem, logical reasoning keeps the premise→conclusion step defensible, and falsifiable claims tie it to validation thinking.
 - Added canonical terminology for `逻辑推理`、`演绎/归纳/溯因`、`有效性 vs 可靠性`、`充分条件 vs 必要条件`、`肯定后件/否定前件`、`相关不等于因果` and `可证伪命题`.
 - Flagged this as a personal learning note (self-authored, not a textbook authority) and that the broader A2–A8 thinking-skill tree is expected to follow, which would let the wiki form a full cognitive-core-competency concept network.
+
+## [2026-06-03] ingest | A2. 抽象建模
+
+Pages created:
+- `wiki/sources/abstraction-and-modeling-note.md`
+- `wiki/concepts/abstraction-and-modeling.md`
+
+Pages updated:
+- `wiki/concepts/engineering-mindset.md` — linked 抽象/建模 two-step to the new A2 concept, added source + tag
+- `wiki/concepts/state-and-data-flow-modeling.md` — framed state/data-flow as a concrete instance of abstraction & modeling
+- `wiki/concepts/logical-reasoning.md` — added sibling cross-reference within the Career 思维层 strand, bumped date
+- `wiki/concepts/validation-driven-design.md` — added abstraction-and-modeling backlink
+- `wiki/personas/growing-engineer.md` — added abstraction-and-modeling backlink, bumped date
+- `wiki/glossary.md` — refined 抽象/建模 See also; added 抽象建模、抽象层次、深模块/浅模块、抽象泄漏、错误的抽象 (AHA/Rule of Three)、过度抽象 terms
+- `wiki/index.md` — added new source and concept entries, bumped glossary date
+- `wiki/overview.md` — source count 30→31, pages 103→105, last ingest, extended 思维层 narrative, added key theme, updated A-module open question and related pages
+- `wiki/log.md`
+
+Key additions:
+- Added an A2 source summary defining 抽象建模 as the paired actions of abstraction (hide irrelevant detail, keep essence) and modeling (organize concepts into a reasoning-ready structure), grounded in interface/domain/data/architecture/protocol design.
+- Established `abstraction-and-modeling` as a Career「思维层（核心能力）」concept alongside `logical-reasoning`, covering 泛化/封装/关注点分离/信息隐藏、概念→逻辑→物理抽象层次、稳定依赖原则、深模块判据 (Ousterhout)，and "all models are wrong, but some are useful" (Box).
+- Captured the pitfall set: over-abstraction (YAGNI), leaky abstraction (Spolsky's law), insufficient abstraction, wrong boundaries, the wrong abstraction vs duplication (Sandi Metz, AHA / Rule of Three), mixed abstraction levels, and mistaking the model for reality.
+- Documented trade-offs: reuse-vs-indirection-cost, flexible-vs-simple, abstraction timing, and stable-vs-evolvable.
+- Added canonical terminology for `抽象建模`、`概念/逻辑/物理模型`、`深模块/浅模块`、`抽象泄漏`、`错误的抽象`/`AHA`/`Rule of Three` 和 `过度抽象`.
+- Noted the source's reference to a future H 模块 (DDD / Clean Architecture / 架构设计) as a potential follow-up source.

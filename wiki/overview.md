@@ -3,9 +3,9 @@
 title: Overview
 type: overview
 created: 2026-04-07
-updated: 2026-06-02
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md, A1. 逻辑推理/README.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, homebrew, launchctl, diskutil, pmset, defaults, xcode, ruby, rbenv, cocoapods, ios, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consistency, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, stakeholder-management, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, core-competency, root-cause-analysis]
+updated: 2026-06-03
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md, A1. 逻辑推理/README.md, A2. 抽象建模/README.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, homebrew, launchctl, diskutil, pmset, defaults, xcode, ruby, rbenv, cocoapods, ios, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consistency, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, stakeholder-management, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, core-competency, root-cause-analysis, domain-modeling, interface-design]
 
 ---
 
@@ -22,11 +22,11 @@ This wiki currently covers AI-era engineering management, executive technical le
 
 It also now includes a language-learning and writing-clarity strand for English grammar, focused on sentence skeletons, word classes, verb systems, clause systems, punctuation boundaries, common Chinese learner error patterns, and practical writing self-checks.
 
-It is also beginning a Career "思维层（核心能力）" (cognitive core-competency) strand, starting with logical reasoning as a checkable-conclusion skill spanning deduction/induction/abduction, fallacy avoidance, and engineering practice such as root-cause analysis and falsifiable claims.
+It is also beginning a Career "思维层（核心能力）" (cognitive core-competency) strand, starting with logical reasoning as a checkable-conclusion skill spanning deduction/induction/abduction, fallacy avoidance, and engineering practice such as root-cause analysis and falsifiable claims, and now extended with abstraction & modeling as the skill of hiding irrelevant detail and organizing concepts into reasoning-ready models.
 
-**Source count:** 30
-**Wiki pages:** 103
-**Last ingest:** 2026-06-02 — [[logical-reasoning-note]]
+**Source count:** 31
+**Wiki pages:** 105
+**Last ingest:** 2026-06-03 — [[abstraction-and-modeling-note]]
 **Last lint:** —
 
 
@@ -36,7 +36,7 @@ It is also beginning a Career "思维层（核心能力）" (cognitive core-comp
 
 - 技术线年度复盘与规划材料
 - 面向工程师成长的研发思维训练框架，覆盖抽象、建模、分层、验证和系统设计题拆解
-- 思维层核心能力建设，从逻辑推理起步，覆盖演绎/归纳/溯因、充分必要条件、常见谬误识别，以及故障定位、技术评审和可证伪命题等工程落地
+- 思维层核心能力建设，从逻辑推理起步，覆盖演绎/归纳/溯因、充分必要条件、常见谬误识别，以及故障定位、技术评审和可证伪命题等工程落地；并扩展到抽象建模，覆盖泛化/封装/关注点分离、概念→逻辑→物理抽象层次、深模块判据，以及过度抽象、抽象泄漏和错误抽象等易错点
 - 分布式系统基础与工程实践，覆盖网络不确定性、CAP/FLP/PACELC、一致性模型、共识、复制/分片、逻辑时钟以及超时/重试/幂等/限流/熔断/降级/故障转移
 - AI 时代的软件交付方式变化
 - AI 时代全栈研发入门材料，覆盖本地环境、AI IDE / CLI Agent、MCP、Steering 与最小 DevOps 闭环
@@ -111,6 +111,7 @@ It is also beginning a Career "思维层（核心能力）" (cognitive core-comp
 - 在当前中文工程语境里，“机器码”可能指硬件派生设备标识而不是 machine code；文档必须显式澄清这个词的含义。
 - 研发的核心不是直接写代码，而是先完成问题抽象、模型建立、系统边界划分，再进入实现。
 - 逻辑推理的价值不在于"显得聪明"，而在于让结论可复现、可反驳、可追责；故障定位靠溯因加排除法，评审靠拆"前提→推理→结论"，沟通靠把直觉变成可证伪命题。
+- 抽象建模的价值不在于"画得好看"，而在于让复杂系统可理解、可沟通、可推演；好抽象是隐藏复杂度的深模块，坏抽象只是增加一层看不懂的间接，而"错误的抽象比重复更糟"。
 - 工程中的错误更多来自错误前提（脏数据、过时假设）而非推理形式，因此校验前提常常比打磨推理更重要。
 - “降低不确定性”是工程师的重要职责，因此验证、极端 case 和权衡属于设计阶段，而不是实现后的附属动作。
 - AI 协同不会削弱这些基本功，反而要求团队更明确地表达问题、状态、数据流和验收边界。
@@ -143,7 +144,7 @@ It is also beginning a Career "思维层（核心能力）" (cognitive core-comp
 - 当前 Windows 经验是否会继续扩展到注册表、PowerShell 自动化、组策略/WSUS、服务控制管理器、代码签名或 MSI / WiX 打包？
 - 当前 CentOS 7 初始化流程是否会继续沉淀为可复用的检查清单模板或自动化脚本？
 - 是否会补充更多以数据库、缓存、队列或微服务为例的系统设计训练材料，形成更系统的研发思维案例库？
-- Career「思维层（核心能力）」的其余技能（A2 抽象建模、A3 系统思维、A4 问题拆解、A5 第一性原理、A6 成本收益分析、A7 风险分析、A8 技术决策能力）是否会陆续 ingest，并与逻辑推理一起沉淀为团队级评审/复盘 checklist？
+- Career「思维层（核心能力）」的其余技能（A3 系统思维、A4 问题拆解、A5 第一性原理、A6 成本收益分析、A7 风险分析、A8 技术决策能力）是否会陆续 ingest，并与逻辑推理、抽象建模一起沉淀为团队级评审/复盘 checklist？
 - 当前全栈入门来源中的技术栈示例，哪些属于教学用组合，哪些会沉淀为团队推荐基线？
 - 是否会补充 Git/PR 规范、分支模型、CI 质量门禁和发布回滚等更细的交付文档？
 - 是否会把 Steering 文件模板、MCP 接入约束和 AI 协作规则沉淀为跨项目标准？
@@ -217,6 +218,8 @@ It is also beginning a Career "思维层（核心能力）" (cognitive core-comp
 - [[engineering-mindset]] — foundational engineering-thinking concept
 - [[logical-reasoning]] — logical-reasoning core-competency concept
 - [[logical-reasoning-note]] — logical-reasoning source summary
+- [[abstraction-and-modeling]] — abstraction & modeling core-competency concept
+- [[abstraction-and-modeling-note]] — abstraction & modeling source summary
 - [[state-and-data-flow-modeling]] — state/data-flow system-modeling concept
 - [[distributed-systems-foundations]] — distributed-systems boundary concept
 - [[consistency-models]] — consistency spectrum and selection concept
