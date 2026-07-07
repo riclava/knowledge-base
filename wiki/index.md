@@ -17,8 +17,8 @@ Each entry follows this format:
 
 | Page | Summary | Updated |
 |---|---|---|
-| [[overview]] | High-level synthesis of the entire knowledge base | 2026-06-02 |
-| [[glossary]] | Living terminology, definitions, and style conventions | 2026-06-03 |
+| [[overview]] | High-level synthesis of the entire knowledge base | 2026-07-07 |
+| [[glossary]] | Living terminology, definitions, and style conventions | 2026-07-07 |
 
 ---
 
@@ -27,8 +27,8 @@ Each entry follows this format:
 *One entry per raw document ingested. Add entries here after each ingest.*
 
 - [[2025-technical-line-summary]] — Annual review of 2025 technical-line execution and 2026 AI/platform strategy | source | 2026-04-14
-- [[logical-reasoning-note]] — A1 thinking-skills study note defining logical reasoning (deduction/induction/abduction), supporting structures, common fallacies, and engineering practice/trade-offs | source | 2026-06-02
-- [[abstraction-and-modeling-note]] — A2 thinking-skills study note defining abstraction & modeling (generalization/encapsulation/SoC, abstraction layers, deep modules) with over-abstraction, leaky-abstraction, and wrong-abstraction pitfalls and trade-offs | source | 2026-06-03
+- [[logical-reasoning-note]] — A1 thinking-skills study note defining logical reasoning (deduction/induction/abduction), supporting structures, common fallacies, and engineering practice/trade-offs | source | 2026-07-07
+- [[abstraction-and-modeling-note]] — A2 thinking-skills study note defining abstraction & modeling (generalization/encapsulation/SoC, abstraction layers, deep modules) with over-abstraction, leaky-abstraction, and wrong-abstraction pitfalls and trade-offs | source | 2026-07-07
 - [[cto-responsibilities]] — Role note defining CTO mission, evaluation signals, time allocation, and cross-functional responsibilities | source | 2026-04-19
 - [[ai-full-stack-development-onboarding]] — AI-era onboarding deck covering environment setup, AI collaboration, MCP/Steering, DevOps flow, and a starter full-stack stack | source | 2026-04-15
 - [[bash-syntax-and-scripting-reference]] — Practical Bash reference covering syntax, scripting structure, I/O, and defensive shell patterns | source | 2026-04-15
@@ -115,8 +115,8 @@ Each entry follows this format:
 - [[software-testing-architecture]] — Layered testing model combining unit/property tests, integration tests, E2E, regression data, and CI staging | concept | 2026-04-16
 - [[property-based-testing]] — Testing style that validates invariants over generated input spaces instead of only checking hand-picked examples | concept | 2026-04-16
 - [[engineering-mindset]] — Foundational engineering-thinking concept for turning real-world problems into computable systems, including distributed trade-off reasoning under uncertainty | concept | 2026-04-17
-- [[logical-reasoning]] — Core-competency concept on deriving checkable conclusions via deduction/induction/abduction, with fallacy patterns and engineering practice (root-cause, review, falsifiable claims) | concept | 2026-06-02
-- [[abstraction-and-modeling]] — Core-competency concept on hiding irrelevant detail and organizing concepts into reasoning-ready models, covering generalization/encapsulation/SoC, abstraction layers, deep modules, and over/leaky/wrong-abstraction pitfalls | concept | 2026-06-03
+- [[logical-reasoning]] — Core-competency concept on deriving checkable conclusions via deduction/induction/abduction, with fallacy patterns and engineering practice (root-cause, review, falsifiable claims) | concept | 2026-07-07
+- [[abstraction-and-modeling]] — Core-competency concept on hiding irrelevant detail and organizing concepts into reasoning-ready models, covering generalization/encapsulation/SoC, abstraction layers, deep modules, and over/leaky/wrong-abstraction pitfalls | concept | 2026-07-07
 - [[state-and-data-flow-modeling]] — System-modeling approach that describes behavior through state transitions, data movement, and boundaries, now linked to distributed ordering and replication concerns | concept | 2026-04-17
 - [[distributed-systems-foundations]] — Boundary concept for network uncertainty, failure models, CAP/FLP/PACELC, and why distributed design is fundamentally trade-off-driven | concept | 2026-04-17
 - [[consistency-models]] — Read-visibility spectrum from linearizability through causal and eventual consistency, chosen by business tolerance for stale or out-of-order views | concept | 2026-04-17

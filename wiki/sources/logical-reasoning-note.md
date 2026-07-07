@@ -2,17 +2,17 @@
 title: 逻辑推理（A1 思维层学习笔记）
 type: source
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-07-07
 sources: [A1. 逻辑推理/README.md]
-tags: [source, career, thinking-skills, core-competency, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, engineering-thinking]
+tags: [source, ability, thinking-skills, core-competency, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, engineering-thinking]
 ---
 
-这是个人知识库 Career「思维层（核心能力）」技能树中 A1「逻辑推理」的学习笔记，把逻辑推理定义为从前提按可靠规则推出可被检验结论的能力，并落到故障定位、技术评审、需求分析和沟通对齐等工程场景。
+这是个人知识库 Ability「思维层（核心能力）」技能树中 A1「逻辑推理」的学习笔记，把逻辑推理定义为从前提按可靠规则推出可被检验结论的能力，并落到故障定位、技术评审、需求分析和沟通对齐等工程场景。
 
 ## Source Metadata
 
-- Raw source: `raw/Career/A. 思维层（核心能力）/A1. 逻辑推理/README.md`
-- 所属技能树：Career / A. 思维层（核心能力）/ A1. 逻辑推理
+- Raw source: `raw/Ability/A. 思维层（核心能力）/A1. 逻辑推理/README.md`
+- 所属技能树：Ability / A. 思维层（核心能力）/ A1. 逻辑推理
 - 状态：✅ 已完成（来源自标）
 - 最近更新：2026-06-02
 - 文档性质：个人能力建设学习笔记 / 思维方法总结（非教科书权威）

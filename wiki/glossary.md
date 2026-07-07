@@ -2,7 +2,7 @@
 title: Glossary
 type: glossary
 created: 2026-04-07
-updated: 2026-06-03
+updated: 2026-07-07
 sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md, A1. 逻辑推理/README.md, A2. 抽象建模/README.md]
 tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, core-competency, domain-modeling, interface-design]
 ---
@@ -637,7 +637,7 @@ Each entry follows this format:
 - See also: [[abstraction-and-modeling]], [[engineering-mindset]], [[state-and-data-flow-modeling]]
 
 **抽象建模（abstraction & modeling）** *(canonical form)*
-: 指"抽象"（提取共性、隐藏无关细节）与"建模"（把概念组织成可推演结构）这一对动作组成的核心能力；在当前知识库中是 Career 思维层（核心能力）A2 技能，强调让复杂系统可理解、可沟通、可推演，而不是追求模型"像不像现实"。
+: 指"抽象"（提取共性、隐藏无关细节）与"建模"（把概念组织成可推演结构）这一对动作组成的核心能力；在当前知识库中是 Ability 思维层（核心能力）A2 技能，强调让复杂系统可理解、可沟通、可推演，而不是追求模型"像不像现实"。
 - Preferred: `抽象建模` or `abstraction & modeling` / Avoid: 把它窄化为"画 UML / ER 图"
 - See also: [[abstraction-and-modeling]], [[engineering-mindset]], [[state-and-data-flow-modeling]]
 
@@ -1066,7 +1066,7 @@ Each entry follows this format:
 ---
 
 **逻辑推理（logical reasoning）** *(canonical form)*
-: 指从已知前提出发、按可靠规则推导出可被检验结论的能力；在当前知识库里它属于 Career 思维层核心能力，强调让结论可复现、可反驳、可追责，而不是停留在"我觉得"。
+: 指从已知前提出发、按可靠规则推导出可被检验结论的能力；在当前知识库里它属于 Ability 思维层核心能力，强调让结论可复现、可反驳、可追责，而不是停留在"我觉得"。
 - Preferred: `逻辑推理` or `logical reasoning` / Avoid: 把它窄化成"辩论技巧"
 - See also: [[logical-reasoning]], [[engineering-mindset]]
 

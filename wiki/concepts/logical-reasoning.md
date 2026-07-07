@@ -2,7 +2,7 @@
 title: 逻辑推理
 type: concept
 created: 2026-06-02
-updated: 2026-06-03
+updated: 2026-07-07
 sources: [A1. 逻辑推理/README.md]
 tags: [concept, thinking-skills, core-competency, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, root-cause-analysis, engineering-thinking]
 ---
@@ -46,7 +46,7 @@ tags: [concept, thinking-skills, core-competency, logical-reasoning, critical-th
 
 - 逻辑推理把"会下判断"提升成"能交出可被检验的论证"，这正是工程评审、复盘和协作能够收敛的前提。
 - 它与 [[engineering-mindset]] 互补：研发思维负责把现实问题抽象成系统，逻辑推理负责保证从前提到结论这一步本身站得住脚。
-- 它与 [[abstraction-and-modeling]] 同属 Career「思维层（核心能力）」：抽象建模决定"用什么概念刻画问题"，逻辑推理决定"从这些前提怎样推出可检验的结论"。
+- 它与 [[abstraction-and-modeling]] 同属 Ability「思维层（核心能力）」：抽象建模决定"用什么概念刻画问题"，逻辑推理决定"从这些前提怎样推出可检验的结论"。
 - 与 [[validation-driven-design]] 同源——"把直觉转成可证伪命题"就是验证思维在论证层面的体现。
 
 ## Practice in Engineering

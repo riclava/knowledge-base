@@ -696,3 +696,21 @@ Key additions:
 - Documented trade-offs: reuse-vs-indirection-cost, flexible-vs-simple, abstraction timing, and stable-vs-evolvable.
 - Added canonical terminology for `抽象建模`、`概念/逻辑/物理模型`、`深模块/浅模块`、`抽象泄漏`、`错误的抽象`/`AHA`/`Rule of Three` 和 `过度抽象`.
 - Noted the source's reference to a future H 模块 (DDD / Clean Architecture / 架构设计) as a potential follow-up source.
+
+## [2026-07-07] maintenance | raw/Career → raw/Ability 目录迁移同步
+
+Trigger: 用户把 A–N 技能树目录（A. 思维层核心能力 … N. 商业与战略）从 `raw/Career/` 移动到 `raw/Ability/`。
+
+Pages updated:
+- `wiki/sources/logical-reasoning-note.md` — 修正 Raw source 路径与"所属技能树"到 `raw/Ability/...`，正文 strand 名 Career→Ability，tag career→ability，bumped date
+- `wiki/sources/abstraction-and-modeling-note.md` — 同上，A2 抽象建模路径与 strand 名同步
+- `wiki/concepts/logical-reasoning.md` — strand 标签 Career→Ability，bumped date
+- `wiki/concepts/abstraction-and-modeling.md` — strand 标签 Career→Ability，bumped date
+- `wiki/concepts/engineering-mindset.md` — "Career 思维层来源"→"Ability 思维层来源"，bumped date
+- `wiki/glossary.md` — 逻辑推理/抽象建模两条词条的 strand 归属 Career→Ability，bumped date
+- `wiki/overview.md` — 思维层 strand 描述与 open-question 中的 Career→Ability，bumped date
+- `wiki/index.md` — 刷新受影响 source/concept/core 页面的 updated 日期
+
+Key notes:
+- 仅 A–N 技能树目录发生迁移。`raw/Career/2025/2025年技术线总结.md` 与 `raw/Career/Common/CTO工作职责.md` 未移动，`2025-technical-line-summary.md` 与 `cto-responsibilities.md` 的 `raw/Career/` 路径仍然正确，未改动。
+- 历史 log 条目中出现的 "Career 思维层" 属于当时的真实记录，按 append-only 约定保留不改。

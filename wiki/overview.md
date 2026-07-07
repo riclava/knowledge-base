@@ -3,7 +3,7 @@
 title: Overview
 type: overview
 created: 2026-04-07
-updated: 2026-06-03
+updated: 2026-07-07
 sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md, A1. 逻辑推理/README.md, A2. 抽象建模/README.md]
 tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, homebrew, launchctl, diskutil, pmset, defaults, xcode, ruby, rbenv, cocoapods, ios, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consistency, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, stakeholder-management, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, core-competency, root-cause-analysis, domain-modeling, interface-design]
 
@@ -22,7 +22,7 @@ This wiki currently covers AI-era engineering management, executive technical le
 
 It also now includes a language-learning and writing-clarity strand for English grammar, focused on sentence skeletons, word classes, verb systems, clause systems, punctuation boundaries, common Chinese learner error patterns, and practical writing self-checks.
 
-It is also beginning a Career "思维层（核心能力）" (cognitive core-competency) strand, starting with logical reasoning as a checkable-conclusion skill spanning deduction/induction/abduction, fallacy avoidance, and engineering practice such as root-cause analysis and falsifiable claims, and now extended with abstraction & modeling as the skill of hiding irrelevant detail and organizing concepts into reasoning-ready models.
+It is also beginning an Ability "思维层（核心能力）" (cognitive core-competency) strand, starting with logical reasoning as a checkable-conclusion skill spanning deduction/induction/abduction, fallacy avoidance, and engineering practice such as root-cause analysis and falsifiable claims, and now extended with abstraction & modeling as the skill of hiding irrelevant detail and organizing concepts into reasoning-ready models.
 
 **Source count:** 31
 **Wiki pages:** 105
@@ -144,7 +144,7 @@ It is also beginning a Career "思维层（核心能力）" (cognitive core-comp
 - 当前 Windows 经验是否会继续扩展到注册表、PowerShell 自动化、组策略/WSUS、服务控制管理器、代码签名或 MSI / WiX 打包？
 - 当前 CentOS 7 初始化流程是否会继续沉淀为可复用的检查清单模板或自动化脚本？
 - 是否会补充更多以数据库、缓存、队列或微服务为例的系统设计训练材料，形成更系统的研发思维案例库？
-- Career「思维层（核心能力）」的其余技能（A3 系统思维、A4 问题拆解、A5 第一性原理、A6 成本收益分析、A7 风险分析、A8 技术决策能力）是否会陆续 ingest，并与逻辑推理、抽象建模一起沉淀为团队级评审/复盘 checklist？
+- Ability「思维层（核心能力）」的其余技能（A3 系统思维、A4 问题拆解、A5 第一性原理、A6 成本收益分析、A7 风险分析、A8 技术决策能力）是否会陆续 ingest，并与逻辑推理、抽象建模一起沉淀为团队级评审/复盘 checklist？
 - 当前全栈入门来源中的技术栈示例，哪些属于教学用组合，哪些会沉淀为团队推荐基线？
 - 是否会补充 Git/PR 规范、分支模型、CI 质量门禁和发布回滚等更细的交付文档？
 - 是否会把 Steering 文件模板、MCP 接入约束和 AI 协作规则沉淀为跨项目标准？

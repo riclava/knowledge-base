@@ -2,17 +2,17 @@
 title: 抽象建模（A2 思维层学习笔记）
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-07-07
 sources: [A2. 抽象建模/README.md]
-tags: [source, career, thinking-skills, core-competency, abstraction, modeling, domain-modeling, interface-design, system-design, engineering-thinking]
+tags: [source, ability, thinking-skills, core-competency, abstraction, modeling, domain-modeling, interface-design, system-design, engineering-thinking]
 ---
 
-这是个人知识库 Career「思维层（核心能力）」技能树中 A2「抽象建模」的学习笔记，把抽象建模定义为"有意识地忽略无关细节、只保留本质特征，再用一套简化表示去刻画真实问题"的能力，并落到接口设计、领域建模、数据建模、架构设计和协议设计等工程场景。
+这是个人知识库 Ability「思维层（核心能力）」技能树中 A2「抽象建模」的学习笔记，把抽象建模定义为"有意识地忽略无关细节、只保留本质特征，再用一套简化表示去刻画真实问题"的能力，并落到接口设计、领域建模、数据建模、架构设计和协议设计等工程场景。
 
 ## Source Metadata
 
-- Raw source: `raw/Career/A. 思维层（核心能力）/A2. 抽象建模/README.md`
-- 所属技能树：Career / A. 思维层（核心能力）/ A2. 抽象建模
+- Raw source: `raw/Ability/A. 思维层（核心能力）/A2. 抽象建模/README.md`
+- 所属技能树：Ability / A. 思维层（核心能力）/ A2. 抽象建模
 - 状态：✅ 已完成（来源自标）
 - 最近更新：2026-06-03
 - 文档性质：个人能力建设学习笔记 / 思维方法总结（非教科书权威）
