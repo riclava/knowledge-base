@@ -714,3 +714,15 @@ Pages updated:
 Key notes:
 - 仅 A–N 技能树目录发生迁移。`raw/Career/2025/2025年技术线总结.md` 与 `raw/Career/Common/CTO工作职责.md` 未移动，`2025-technical-line-summary.md` 与 `cto-responsibilities.md` 的 `raw/Career/` 路径仍然正确，未改动。
 - 历史 log 条目中出现的 "Career 思维层" 属于当时的真实记录，按 append-only 约定保留不改。
+
+## [2026-07-08] maintenance | sync raw/Ability/progress.md status markers
+
+Context: User moved/reorganized files and flagged that `raw/Ability/progress.md` was out of sync with the individual topic README status headers.
+
+Findings:
+- `A1. 逻辑推理/README.md` and `A2. 抽象建模/README.md` both carry `状态：✅ 已完成`, but progress.md still marked them 🔲 未开始.
+- All other topic READMEs have no ✅/🟡 status, consistent with progress.md's 🔲.
+- Directory structure verified against progress.md links — all folder/README paths still resolve; no broken links.
+
+Fix applied (one-off edit inside `raw/` at user's explicit request):
+- progress.md: A1 逻辑推理 and A2 抽象建模 changed 🔲 → ✅.
