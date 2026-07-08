@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>曾宏 · 简历</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #232b33;
+    --ink-soft: #3f4a55;
+    --muted: #737d88;
+    --line: #e7eaed;
+    --teal: #12414f;
+    --teal-2: #1c5a6b;
+    --gold: #c79a3f;
+    --hl: #b4531a;
+    --side-ink: #eaf1f3;
+    --side-soft: #a9c2c9;
+    --tag-bg: #eef2f3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box;
+      -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: var(--ink);
+    background: #dfe3e6;
+    line-height: 1.45;
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 16px auto;
+    background: #fff;
+    box-shadow: 0 8px 34px rgba(28, 37, 48, 0.14);
+    display: grid;
+    grid-template-columns: 68mm 1fr;
+  }
+
+  /* ===== Sidebar ===== */
+  .side {
+    background: linear-gradient(180deg, var(--teal) 0%, var(--teal-2) 100%);
+    color: var(--side-ink);
+    padding: 26px 20px 24px;
+  }
+  .side .name {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .side .apply {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    color: #fff;
+    padding: 3px 11px;
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 14px;
+  }
+  .rule { height: 1px; background: rgba(255,255,255,0.16); margin: 20px 0 16px; }
+
+  .side-h {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 11px;
+  }
+  .side-h i { color: var(--gold); font-size: 12px; width: 15px; text-align: center; }
+  .side-block { margin-bottom: 20px; }
+  .side-block:last-child { margin-bottom: 0; }
+
+  .info-item {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    font-size: 11px;
+    color: var(--side-ink);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .info-item:last-child { margin-bottom: 0; }
+  .info-item i { color: var(--side-soft); width: 14px; text-align: center; margin-top: 2px; }
+  .info-item .lab { color: var(--side-soft); }
+
+  .skill-line { margin-bottom: 11px; }
+  .skill-line:last-child { margin-bottom: 0; }
+  .skill-line .cap { font-size: 10.5px; color: var(--side-soft); margin-bottom: 5px; }
+  .stags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .stag {
+    font-size: 10.5px;
+    padding: 2px 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.16);
+    color: #fff;
+    border-radius: 4px;
+  }
+  .stag.on { background: var(--gold); border-color: var(--gold); color: #2a2100; font-weight: 700; }
+  .cert { font-size: 11.5px; color: #fff; font-weight: 600; }
+
+  .honor-i { display: flex; gap: 8px; align-items: baseline; font-size: 10.5px; margin-bottom: 8px; line-height: 1.45; }
+  .honor-i:last-child { margin-bottom: 0; }
+  .honor-i .yr { flex: none; color: var(--gold); font-weight: 700; width: 26px; }
+  .honor-i .d { color: var(--side-ink); }
+
+  /* ===== Main ===== */
+  .main { padding: 30px 30px 30px; font-size: 12px; display: flex; flex-direction: column; }
+  .m-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 20px;
+  }
+  .m-title i { font-size: 16px; }
+  .m-title::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--line), transparent);
+  }
+
+  .jobs { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+  .job { padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+  .job:last-child { padding-bottom: 0; border-bottom: none; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .job-head .co { font-size: 14.5px; font-weight: 700; color: var(--ink); }
+  .job-head .role { font-size: 11px; color: #fff; background: var(--teal-2); padding: 2px 10px; border-radius: 4px; font-weight: 600; }
+  .job-sub { font-size: 11px; color: var(--muted); margin: 4px 0 11px; display: inline-flex; align-items: center; gap: 6px; }
+
+  .job ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .job ul li { position: relative; padding-left: 15px; color: var(--ink-soft); line-height: 1.65; }
+  .job ul li::before {
+    content: "";
+    position: absolute; left: 2px; top: 8px;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--gold);
+  }
+  .pp {
+    display: inline-block; font-size: 9.5px; font-weight: 700;
+    color: var(--teal); background: var(--tag-bg);
+    padding: 0 6px; border-radius: 3px; margin-right: 5px; letter-spacing: 0.2px;
+  }
+  b.k { color: var(--hl); font-weight: 700; }
+  b.t { color: var(--teal); font-weight: 700; }
+  b.p { color: var(--ink); font-weight: 700; }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; width: auto; min-height: 297mm; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <!-- ===== Sidebar ===== -->
+  <aside class="side">
+    <div class="name">曾宏</div>
+    <span class="apply"><i class="fa-solid fa-code"></i> 应聘 · Go 后端开发</span>
+
+    <div class="rule"></div>
+
+    <div class="side-block">
+      <div class="side-h"><i class="fa-solid fa-address-card"></i> 联系方式</div>
+      <div class="info-item"><i class="fa-solid fa-phone"></i><span>18983862283</span></div>
+      <div class="info-item"><i class="fa-solid fa-envelope"></i><span>821173951@qq.com</span></div>
+      <div class="info-item"><i class="fa-solid fa-venus-mars"></i><span>男 · 1992-09-02</span></div>
+      <div class="info-item"><i class="fa-solid fa-location-dot"></i><span>籍贯 重庆</span></div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-h"><i class="fa-solid fa-graduation-cap"></i> 教育背景</div>
+      <div class="info-item"><i class="fa-solid fa-school"></i><span>重庆邮电大学</span></div>
+      <div class="info-item"><i class="fa-solid fa-book"></i><span>计算机科学与技术</span></div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-h"><i class="fa-solid fa-layer-group"></i> 专业技能</div>
+      <div class="skill-line">
+        <div class="cap">技术证书</div>
+        <div class="cert">系统架构师（高级）</div>
+      </div>
+      <div class="skill-line">
+        <div class="cap">英文水平</div>
+        <div class="stags"><span class="stag">CET4</span><span class="stag">CET6</span></div>
+      </div>
+      <div class="skill-line">
+        <div class="cap">熟练语言</div>
+        <div class="stags">
+          <span class="stag on">Golang</span><span class="stag">Java</span>
+          <span class="stag">C/C++</span><span class="stag">Bash</span>
+        </div>
+      </div>
+      <div class="skill-line">
+        <div class="cap">技术能力</div>
+        <div class="stags">
+          <span class="stag">系统架构</span><span class="stag">解决方案</span>
+          <span class="stag">底层研发</span><span class="stag">分布式</span><span class="stag">全栈落地</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-h"><i class="fa-solid fa-award"></i> 荣誉奖项</div>
+      <div class="honor-i"><span class="yr">2013</span><span class="d">ACM 成都邀请赛铜奖、重庆市第四届 ACM 程序设计竞赛一等奖</span></div>
+      <div class="honor-i"><span class="yr">2013</span><span class="d">美赛数学建模三等奖、国赛重庆市二等奖、校数学建模一等奖</span></div>
+      <div class="honor-i"><span class="yr">2012</span><span class="d">重庆市第三届 ACM 程序设计竞赛二等奖、校 ACM 竞赛第一名</span></div>
+    </div>
+  </aside>
+
+  <!-- ===== Main ===== -->
+  <main class="main">
+    <div class="m-title"><i class="fa-solid fa-briefcase"></i> 工作经历</div>
+
+    <div class="jobs">
+    <div class="job">
+      <div class="job-head">
+        <span class="co">重庆邮莱特科技有限公司</span>
+        <span class="role">技术负责人</span>
+      </div>
+      <div class="job-sub"><i class="fa-regular fa-calendar"></i> 2016-07 至 2026</div>
+      <ul>
+        <li>负责公司技术方向制定、团队管理、招聘、人员培养、方案评审等</li>
+        <li>负责研发基础设施建设（虚拟化、CI/CD、容器云），主导 <b class="t">golang/java + vue/react</b> 两套全栈脚手架研发</li>
+        <li><span class="pp">2016-10~2019-11</span><b class="p">Triangle PaaS</b>（省级电信核心项目）：以 <b class="t">Kubernetes</b> 为底座，包装 MySQL（单机/集群）、Redis（集群）、NGINX+LVS、OSS（参考腾讯云 COS 架构 golang 自研）等组件，接入系统 <b class="k">300 余套</b></li>
+        <li><span class="pp">2018-12~2023-08</span><b class="p">全省 VPN 能力建设</b>：基于 <b class="t">OpenVPN</b> 封装，集群化部署运维；终端覆盖 Windows/MacOS/信创，SDK 覆盖 <b class="k">Win/Linux/Mac/Android/iOS/HarmonyOS</b></li>
+        <li><span class="pp">2019-05~2022-08</span><b class="p">省级电信统一客户端</b>：支撑办公 / 营业厅用户，集成 VPN、远程协助、终端一键修复等核心能力</li>
+        <li><span class="pp">2020-05~2022-10</span><b class="p">某市广电智能运维平台</b>：基于 <b class="t">Kubernetes</b>，含 CMDB、<b class="t">Prometheus+Grafana</b> 监控告警、<b class="t">fluentd</b> 日志采集，自研 DNS、F5 等 exporter</li>
+        <li><span class="pp">2020-09~2022-09</span><b class="p">国网电力内外网穿透组件</b>：围绕数据库网闸开发内外网组件，实现基于数据库多通道队列的<b class="k">高性能全双工 HTTP 消息穿透</b>，<b class="t">Java</b> 技术栈</li>
+        <li><span class="pp">2021-05~2022-12</span><b class="p">省级电信浏览器</b>：基于 <b class="t">Chromium</b> 二次开发，集成 IE 实现双核浏览器并添加企业能力，日活 <b class="k">3w+</b></li>
+        <li><span class="pp">2022-07~2025-08</span><b class="p">市级电信零信任项目</b>：融合存量负载均衡、VPN、客户端等产品，PC 日活 <b class="k">1.5w+</b>、移动端日活 <b class="k">6000+</b></li>
+        <li><span class="pp">2024-08~2025-10</span><b class="p">头部车企 5G 专网数据上云</b>：车机数据 5G 上云能力建设，实现 <b class="k">1 分钟 3.5GB 级</b>数据上云，核心基于 <b class="t">SDN + Golang</b></li>
+        <li><span class="pp">2025-12~2026-05</span><b class="p">知了教学智能体</b>：面向编程课程，融合传统 OJ 与 <b class="t">AI Agent</b> 实现 AI 辅助编程教育，<b class="t">Golang + React</b> 技术栈</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="co">腾讯科技（深圳）有限公司</span>
+        <span class="role">平台开发</span>
+      </div>
+      <div class="job-sub"><i class="fa-regular fa-calendar"></i> 2015-07 至 2016-06</div>
+      <ul>
+        <li><span class="pp">2015-10~2016-05</span>内部 RPC 框架 <b class="t">TAF</b> Java 版开发与维护，优化编解码模块，推动开源准备</li>
+        <li><span class="pp">2015-09~2016-05</span><b class="p">腾讯灯塔</b>（beacon.qq.com）Java 后台：RESTful 改造重构、下载模块优化、漏洞修复</li>
+        <li><span class="pp">2015-10~2015-12</span><b class="p">Jagent 日志服务</b>改造：优化 SDK / API，提升性能、降低 GC，日志量每分钟 <b class="k">20w+ 条</b></li>
+        <li><span class="pp">2016-04~2016-06</span><b class="p">BDB Java SDK</b>：封装 C++ Key-Value 存储引擎接口，基于 TAF RPC 框架</li>
+        <li><span class="pp">2016-02~2016-06</span>消息中间件配置与路由服务开发</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="co">腾讯科技（深圳）有限公司</span>
+        <span class="role">实习生</span>
+      </div>
+      <div class="job-sub"><i class="fa-regular fa-calendar"></i> 2014-07 至 2014-09</div>
+      <ul>
+        <li>学习 Java 基础、多线程、NIO、RPC 机制，完成 RPC 框架开发、分布式缓存系统原型，顺利答辩并留用</li>
+      </ul>
+    </div>
+    </div><!-- /.jobs -->
+  </main>
+</div>
+</body>
+</html>
