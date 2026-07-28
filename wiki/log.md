@@ -726,3 +726,34 @@ Findings:
 
 Fix applied (one-off edit inside `raw/` at user's explicit request):
 - progress.md: A1 逻辑推理 and A2 抽象建模 changed 🔲 → ✅.
+
+## [2026-07-28] ingest | H. 软件架构设计 / 设计模式
+
+Pages created:
+- `wiki/sources/design-patterns-note.md`
+- `wiki/concepts/design-patterns.md`
+- `wiki/concepts/creational-patterns.md`
+- `wiki/concepts/structural-patterns.md`
+- `wiki/concepts/behavioral-patterns.md`
+
+Pages updated:
+- `wiki/concepts/abstraction-and-modeling.md` — 把设计模式定位为抽象建模在类/对象层面的成熟解法库，新增 source/tag 与 backlink
+- `wiki/sources/abstraction-and-modeling-note.md` — 原 open question「H 模块是否会补充」标记为已部分回答，链到本次来源
+- `wiki/concepts/engineering-mindset.md` — 为「系统 -> 代码」这一步补上设计模式作为已验证结构库，并保留"模式是手段不是目的"的限定
+- `wiki/concepts/state-and-data-flow-modeling.md` — 补上状态/观察者/责任链作为状态机与数据流在实现层的标准落法
+- `wiki/personas/growing-engineer.md` — Preferred Documentation 增加"带真实应用索引的模式材料"
+- `wiki/glossary.md` — 新增设计模式术语块、3 条 style convention、6 条 avoid-list 行与 Related Pages
+- `wiki/index.md` — 新增 1 个 source、4 个 concept 条目，刷新受影响页面日期
+- `wiki/overview.md` — source 31→32、pages 105→110、last ingest 更新，开出 H 软件架构设计 strand，新增 key themes / open questions / knowledge gaps / related pages
+- `wiki/log.md`
+
+Key additions:
+- Added the first Ability「H. 软件架构设计」source summary: GoF 全部 23 个模式，每个按「意图 → 要点 → 真实软件中的应用 → Go / Java / C++ 实现」四段式展开，来源自标 🟡 草稿。
+- Established `design-patterns` as the umbrella concept plus three family pages (`creational-patterns` 5 个、`structural-patterns` 7 个、`behavioral-patterns` 11 个)，而不是把 23 个模式压进一页。每个模式页保留意图、要点、真实框架应用与代价，代码实现留在 `raw/` 不搬进 wiki。
+- Recorded the source's unifying thesis：几乎所有模式都在做同一件事——把"会变的部分"和"不变的部分"分开；因此"说不出隔离了哪种变化"就是模式多余的信号。
+- Captured the two GoF meta-principles（组合优于继承、面向接口编程）和 7 组易混淆模式对（策略 vs 状态、装饰器 vs 代理、工厂方法 vs 抽象工厂、适配器 vs 外观、适配器 vs 桥接、模板方法 vs 策略、建造者 vs 工厂），统一表述为"结构相似但意图不同"。
+- Preserved the source's real-application index（Java IO 装饰器链、`Comparator` 策略、`java.lang.reflect.Proxy` 支撑 Spring AOP / MyBatis / Hibernate 懒加载、Netty `ChannelPipeline` 责任链、`Integer.valueOf` 享元缓存、Go `http.HandlerFunc` / `httputil.ReverseProxy` / `iter.Seq`），因为它是这份来源相对通用模式资料最有价值的部分。
+- Added canonical terminology for `设计模式`、`GoF`、`创建型/结构型/行为型模式`、`隔离变化`、`组合优于继承`、`面向接口编程`、`过度设计`、`内部状态/外部状态`、`双分派` 和 `函数式选项`。
+- Flagged several accuracy risks as glossary avoid-list rows: Spring 的 `singleton` 是"每容器一个"而非 GoF 的"每 JVM 一个"；`java.util.Observer` / `Observable` 自 Java 9 起已废弃；`Object.clone()` / `super.clone()` 是浅拷贝；类/对象级设计模式不应与微服务、CQRS、六边形架构等系统级模式平铺讨论。
+- Noted language/version prerequisites as a documentation rule（Go 1.23+ `iter.Seq`、C++11 起静态局部变量初始化线程安全），并把"示例省略 import / 错误处理 / 内存回收，不可直接当生产代码"写进 source metadata。
+- Linked the new material into the existing 思维层 spine so 设计模式 sits under abstraction & modeling and engineering mindset rather than as an isolated pattern catalog.

@@ -17,8 +17,8 @@ Each entry follows this format:
 
 | Page | Summary | Updated |
 |---|---|---|
-| [[overview]] | High-level synthesis of the entire knowledge base | 2026-07-07 |
-| [[glossary]] | Living terminology, definitions, and style conventions | 2026-07-07 |
+| [[overview]] | High-level synthesis of the entire knowledge base | 2026-07-28 |
+| [[glossary]] | Living terminology, definitions, and style conventions | 2026-07-28 |
 
 ---
 
@@ -28,7 +28,8 @@ Each entry follows this format:
 
 - [[2025-technical-line-summary]] — Annual review of 2025 technical-line execution and 2026 AI/platform strategy | source | 2026-04-14
 - [[logical-reasoning-note]] — A1 thinking-skills study note defining logical reasoning (deduction/induction/abduction), supporting structures, common fallacies, and engineering practice/trade-offs | source | 2026-07-07
-- [[abstraction-and-modeling-note]] — A2 thinking-skills study note defining abstraction & modeling (generalization/encapsulation/SoC, abstraction layers, deep modules) with over-abstraction, leaky-abstraction, and wrong-abstraction pitfalls and trade-offs | source | 2026-07-07
+- [[abstraction-and-modeling-note]] — A2 thinking-skills study note defining abstraction & modeling (generalization/encapsulation/SoC, abstraction layers, deep modules) with over-abstraction, leaky-abstraction, and wrong-abstraction pitfalls and trade-offs | source | 2026-07-28
+- [[design-patterns-note]] — H software-architecture study note covering all 23 GoF patterns with intent, key points, real framework usages, and Go/Java/C++ implementations | source | 2026-07-28
 - [[cto-responsibilities]] — Role note defining CTO mission, evaluation signals, time allocation, and cross-functional responsibilities | source | 2026-04-19
 - [[ai-full-stack-development-onboarding]] — AI-era onboarding deck covering environment setup, AI collaboration, MCP/Steering, DevOps flow, and a starter full-stack stack | source | 2026-04-15
 - [[bash-syntax-and-scripting-reference]] — Practical Bash reference covering syntax, scripting structure, I/O, and defensive shell patterns | source | 2026-04-15
@@ -96,7 +97,7 @@ Each entry follows this format:
 - [[ai-era-full-stack-beginner]] — Beginner persona learning AI-assisted environment setup, Git/CI/CD flow, and minimum end-to-end full-stack delivery | persona | 2026-04-15
 - [[cto]] — Executive technical leader responsible for long-term technology strategy, external technical narrative, and cross-functional alignment | persona | 2026-04-19
 - [[technical-line-leader]] — Technical management persona focused on internal delivery, platform reuse, stability, AI integration, and team engineering-growth enablement | persona | 2026-04-19
-- [[growing-engineer]] — Engineer persona moving from feature implementation toward abstraction, system modeling, and validation-led design | persona | 2026-04-15
+- [[growing-engineer]] — Engineer persona moving from feature implementation toward abstraction, system modeling, pattern-aware source reading, and validation-led design | persona | 2026-07-28
 - [[chinese-english-grammar-learner]] — Chinese-speaking English learner persona focused on sentence skeletons, verb systems, clause boundaries, and writing self-checks | persona | 2026-04-26
 
 ---
@@ -114,10 +115,14 @@ Each entry follows this format:
 - [[devops-delivery-pipeline]] — Delivery-loop concept connecting local development, layered test gates, deployment, and runtime feedback | concept | 2026-04-16
 - [[software-testing-architecture]] — Layered testing model combining unit/property tests, integration tests, E2E, regression data, and CI staging | concept | 2026-04-16
 - [[property-based-testing]] — Testing style that validates invariants over generated input spaces instead of only checking hand-picked examples | concept | 2026-04-16
-- [[engineering-mindset]] — Foundational engineering-thinking concept for turning real-world problems into computable systems, including distributed trade-off reasoning under uncertainty | concept | 2026-04-17
+- [[engineering-mindset]] — Foundational engineering-thinking concept for turning real-world problems into computable systems, including distributed trade-off reasoning under uncertainty and the pattern library behind the system-to-code step | concept | 2026-07-28
 - [[logical-reasoning]] — Core-competency concept on deriving checkable conclusions via deduction/induction/abduction, with fallacy patterns and engineering practice (root-cause, review, falsifiable claims) | concept | 2026-07-07
-- [[abstraction-and-modeling]] — Core-competency concept on hiding irrelevant detail and organizing concepts into reasoning-ready models, covering generalization/encapsulation/SoC, abstraction layers, deep modules, and over/leaky/wrong-abstraction pitfalls | concept | 2026-07-07
-- [[state-and-data-flow-modeling]] — System-modeling approach that describes behavior through state transitions, data movement, and boundaries, now linked to distributed ordering and replication concerns | concept | 2026-04-17
+- [[abstraction-and-modeling]] — Core-competency concept on hiding irrelevant detail and organizing concepts into reasoning-ready models, covering generalization/encapsulation/SoC, abstraction layers, deep modules, and over/leaky/wrong-abstraction pitfalls | concept | 2026-07-28
+- [[design-patterns]] — GoF design-pattern umbrella concept covering the three-category classification, the composition-over-inheritance and program-to-interface meta-principles, confusable pattern pairs, and the "isolate what changes" judgement rule | concept | 2026-07-28
+- [[creational-patterns]] — The 5 GoF creational patterns (Singleton, Factory Method, Abstract Factory, Builder, Prototype) with intent, key points, real framework usages, and trade-offs | concept | 2026-07-28
+- [[structural-patterns]] — The 7 GoF structural patterns (Adapter, Decorator, Proxy, Facade, Composite, Bridge, Flyweight) with intent, key points, real framework usages, and trade-offs | concept | 2026-07-28
+- [[behavioral-patterns]] — The 11 GoF behavioral patterns (Strategy, Observer, Template Method, Chain of Responsibility, State, Command, Iterator, Mediator, Memento, Visitor, Interpreter) with intent, key points, real framework usages, and trade-offs | concept | 2026-07-28
+- [[state-and-data-flow-modeling]] — System-modeling approach that describes behavior through state transitions, data movement, and boundaries, now linked to distributed ordering, replication, and behavioral-pattern implementations | concept | 2026-07-28
 - [[distributed-systems-foundations]] — Boundary concept for network uncertainty, failure models, CAP/FLP/PACELC, and why distributed design is fundamentally trade-off-driven | concept | 2026-04-17
 - [[consistency-models]] — Read-visibility spectrum from linearizability through causal and eventual consistency, chosen by business tolerance for stale or out-of-order views | concept | 2026-04-17
 - [[distributed-consensus]] — Multi-node agreement concept centered on Paxos/Raft, majority quorums, leader election, and replicated-log safety | concept | 2026-04-17

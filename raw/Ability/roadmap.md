@@ -156,6 +156,7 @@
 
 ## H. 软件架构设计
 
+- 设计模式
 - DDD
 - Clean Architecture
 - 六边形架构

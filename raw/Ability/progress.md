@@ -159,6 +159,7 @@
 
 ## H. 软件架构设计
 
+- 🟡 [设计模式](H.%20%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/README.md)
 - 🔲 [DDD](H.%20%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/DDD/README.md)
 - 🔲 [Clean Architecture](H.%20%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/Clean%20Architecture/README.md)
 - 🔲 [六边形架构](H.%20%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%9E%B6%E6%9E%84/README.md)
@@ -250,5 +251,5 @@
 
 ---
 
-合计主题：190
+合计主题：191
 

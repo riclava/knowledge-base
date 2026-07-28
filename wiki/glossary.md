@@ -2,9 +2,9 @@
 title: Glossary
 type: glossary
 created: 2026-04-07
-updated: 2026-07-07
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md, A1. 逻辑推理/README.md, A2. 抽象建模/README.md]
-tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, core-competency, domain-modeling, interface-design]
+updated: 2026-07-28
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md, A1. 逻辑推理/README.md, A2. 抽象建模/README.md, H. 软件架构设计/设计模式/README.md]
+tags: [terminology, style, glossary, ai, engineering-management, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, design-patterns, gof, software-architecture, oop, linux, unix, command-line, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, bootloader, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, selinux, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, epel, development-environment, apt-mirror, pam, systemd-resolved, dns, swap, nfs, multipath, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, nvram, smc, homebrew, launchctl, pmset, diskutil, defaults, xcode, ruby, rbenv, cocoapods, gem, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, core-competency, domain-modeling, interface-design]
 ---
 
 # Glossary
@@ -1102,6 +1102,58 @@ Each entry follows this format:
 
 ---
 
+**设计模式（design pattern）** *(canonical form)*
+: 指面向对象设计中反复出现问题的、经过验证的可复用解决方案模板；在当前知识库里它属于 Ability「H. 软件架构设计」模块，是**类/对象级**的结构经验总结，而不是可直接复制的代码，也不等同于微服务、CQRS 这类系统级架构模式。
+- Preferred: `设计模式` or `design pattern` / Avoid: 把它写成"可以照抄的代码模板"，或与系统级 `架构模式` 混为一谈
+- See also: [[design-patterns]], [[design-patterns-note]], [[abstraction-and-modeling]]
+
+**GoF（Gang of Four）** *(canonical form)*
+: 指 Gamma / Helm / Johnson / Vlissides 四人及其 1994 年著作《设计模式：可复用面向对象软件的基础》，该书归纳的 23 个模式是当前知识库讨论设计模式的默认基准集合。
+- Preferred: `GoF` or `Gang of Four`
+- See also: [[design-patterns]], [[design-patterns-note]]
+
+**创建型 / 结构型 / 行为型模式（creational / structural / behavioral patterns）** *(canonical form)*
+: GoF 按"意图"对 23 个模式的三分法——创建型（5 个）关注对象怎么被创建、结构型（7 个）关注类与对象怎么组合、行为型（11 个）关注对象之间怎么协作与分配职责；引用具体模式时应写明所属分类，避免只说"某个设计模式"。
+- Preferred: `创建型模式` / `结构型模式` / `行为型模式`
+- See also: [[creational-patterns]], [[structural-patterns]], [[behavioral-patterns]], [[design-patterns]]
+
+**隔离变化（isolating change）** *(canonical form)*
+: 指把"会变的部分"从"不变的部分"里分离出来、限制在一个可控边界内；在当前来源里，它是几乎所有设计模式的共同本质，也是判断"该不该引入某个模式"的第一顺位依据。
+- Preferred: `隔离变化` / Avoid: 用"解耦"一词笼统替代而不说明隔离的是哪一种变化
+- See also: [[design-patterns]], [[abstraction-and-modeling]]
+
+**组合优于继承（composition over inheritance）** *(canonical form)*
+: GoF 两大总原则之一；继承是编译期的强耦合，组合是运行期的灵活装配。装饰器、策略、桥接都是"用组合替代继承爆炸"的典范。
+- Preferred: `组合优于继承` or `composition over inheritance`
+- See also: [[design-patterns]], [[structural-patterns]], [[behavioral-patterns]]
+
+**面向接口编程（program to an interface）** *(canonical form)*
+: GoF 另一大总原则；依赖抽象而非具体实现，是绝大多数模式起作用的前提，与抽象建模里的"稳定的抽象 + 易变的实现"是同一条原则在不同层次上的表述。
+- Preferred: `面向接口编程` or `program to an interface, not an implementation`
+- See also: [[design-patterns]], [[abstraction-and-modeling]]
+
+**过度设计（over-engineering）** *(canonical form)*
+: 指在没有真实变化压力的情况下引入模式、间接层和配置项，让简单问题复杂化；在设计模式语境里，它是"为了用模式而用模式"的直接后果，与 `过度抽象` 同源。
+- Preferred: `过度设计` or `over-engineering` / Avoid: 用"为将来扩展做准备"为无依据的模式引入背书
+- See also: [[design-patterns]], [[abstraction-and-modeling]]
+
+**内部状态 / 外部状态（intrinsic / extrinsic state）** *(canonical form)*
+: 享元模式对对象状态的拆分——内部状态可共享且必须不可变，存在享元对象里；外部状态随上下文变化，由调用方在使用时传入。内部状态一旦可变，共享就会导致互相污染。
+- Preferred: `内部状态` / `外部状态` or `intrinsic` / `extrinsic state`
+- See also: [[structural-patterns]]
+
+**双分派（double dispatch）** *(canonical form)*
+: 访问者模式的实现机制——先由元素的 `accept` 分派到具体元素类型，再由访问者的 `visit` 分派到具体操作；它让"新增操作"不必修改元素类，代价是新增元素类型要改所有访问者。
+- Preferred: `双分派` or `double dispatch`
+- See also: [[behavioral-patterns]]
+
+**函数式选项（functional options）** *(canonical form)*
+: Go 生态里 Builder 思想的地道变体，通过 `NewServer(WithPort(8080), WithTLS(...))` 形式的可变选项函数解决可选参数过多的问题，而不建独立的 Builder 类型。
+- Preferred: `函数式选项` or `functional options`
+- See also: [[creational-patterns]]
+
+---
+
 ## Style Conventions
 
 *(Writing rules and tone guidelines specific to this knowledge base's domain. Will populate as style guides and branded content are ingested.)*
@@ -1126,6 +1178,9 @@ Each entry follows this format:
 | English grammar terminology | Use exact grammar terms such as `限定动词`, `时态与体`, `从句系统`, `非谓语动词`, `逗号拼接`, and `平行结构`; explain the expression problem each term solves rather than listing terms alone. | “先找限定动词和主语核心，再判断从句在大句中充当什么成分。” |
 | English writing clarity | Treat formal English as accurate, clear, and controlled; avoid using passive voice, nominalization, or long sentences just to sound formal. | “The team implemented the solution.” is clearer than “The implementation of the solution was conducted by the team.” |
 | Logical-reasoning terminology | Distinguish `演绎` / `归纳` / `溯因`, separate `有效性` from `可靠性`, and prefer `可证伪命题` over vague judgments in reviews and post-mortems. | “这是溯因得到的最佳解释，不是唯一原因；把它写成可证伪命题再验证。” |
+| Design-pattern naming | Use the canonical Chinese + English pairing on first mention (`责任链 Chain of Responsibility`), state which of `创建型` / `结构型` / `行为型` it belongs to, and keep one translation per pattern across pages. | “这里用的是行为型模式中的责任链 Chain of Responsibility。” |
+| Design-pattern rationale | Describe a pattern by 意图 + 隔离了哪一种变化 + 代价, not only by structure or role names; for confusable pairs state explicitly that structure is similar but intent differs. | “策略和状态结构几乎相同，区别是外部主动选择还是内部驱动流转。” |
+| Pattern code prerequisites | Annotate language/version prerequisites when an example depends on them, and mark deprecated or discouraged APIs instead of silently omitting them. | “`iter.Seq` 需要 Go 1.23+；`java.util.Observable` 自 Java 9 起已废弃。” |
 
 ---
 
@@ -1157,6 +1212,11 @@ Terms that have been replaced, renamed, or should not be used:
 | 把正式英语写成被动语态和名词化堆叠 | 清楚的主动句和必要的名词化 | 正式不等于复杂；清晰度优先。 |
 | 把"改了它就好了"当成根因证明 | 用溯因 + 排除法，并能解释"为什么是它" | 避免肯定后件谬误把巧合当因果。 |
 | 在评审/复盘里用无法被证据推翻的模糊判断 | 改写成带指标和阈值的 `可证伪命题` | 不可证伪的判断无法收敛讨论。 |
+| 把类/对象级 `设计模式` 和微服务、CQRS、六边形架构等系统级模式平铺在一起 | 按粒度分开写，或显式说明这是不同层次的模式 | 二者属于同一设计谱系的不同粒度，混写会让读者判断错适用范围。 |
+| 用"引入了 X 模式"作为设计说明的全部理由 | 补上隔离了哪一种变化、代价是什么 | 说不出隔离的变化点时，模式通常是过度设计。 |
+| 把 Spring 的 `singleton` 作用域说成 GoF 单例 | 写成"每容器一个实例" | Spring 的单例边界是容器，不是 JVM。 |
+| 继续用 `java.util.Observer` / `Observable` 作为观察者模式示例 | 用 `ApplicationListener`、`EventEmitter`、Rx 等现代实现 | 该 API 自 Java 9 起已废弃。 |
+| 把 `Object.clone()` / `super.clone()` 当成深拷贝 | 写明它是浅拷贝，可变字段需手动深拷贝 | 浅拷贝共享引用成员会造成跨实例的隐蔽污染。 |
 
 ---
 
@@ -1192,6 +1252,12 @@ Terms that differ between audiences, teams, or locales:
 - [[chinese-english-grammar-learner]] — learner persona
 - [[logical-reasoning]] — logical reasoning core-competency concept
 - [[logical-reasoning-note]] — logical reasoning source summary
+- [[design-patterns]] — GoF design-pattern umbrella concept
+- [[creational-patterns]] — creational pattern family
+- [[structural-patterns]] — structural pattern family
+- [[behavioral-patterns]] — behavioral pattern family
+- [[design-patterns-note]] — design-patterns source summary
+- [[abstraction-and-modeling]] — abstraction & modeling core-competency concept
 - [[2025-technical-line-summary]] — first ingested source summary
 - [[engineering-thinking-framework]] — engineering-thinking source summary
 - [[linux]] — Linux platform/tool page

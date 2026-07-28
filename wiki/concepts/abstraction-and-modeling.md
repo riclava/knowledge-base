@@ -2,9 +2,9 @@
 title: 抽象建模
 type: concept
 created: 2026-06-03
-updated: 2026-07-07
-sources: [A2. 抽象建模/README.md]
-tags: [concept, thinking-skills, core-competency, abstraction, modeling, domain-modeling, interface-design, system-design, engineering-thinking]
+updated: 2026-07-28
+sources: [A2. 抽象建模/README.md, H. 软件架构设计/设计模式/README.md]
+tags: [concept, thinking-skills, core-competency, abstraction, modeling, domain-modeling, interface-design, system-design, engineering-thinking, design-patterns]
 ---
 
 抽象建模是有意识地忽略与当前目标无关的细节、只保留本质特征，再用一套简化表示去刻画真实问题的能力；它由"抽象"（提取共性、隐藏细节）和"建模"（把概念组织成可推演的结构）两个动作组成。
@@ -53,6 +53,7 @@ tags: [concept, thinking-skills, core-competency, abstraction, modeling, domain-
 - 抽象建模把"会写代码"提升成"会组织系统"，是 [[engineering-mindset]] `现实问题 -> 抽象 -> 模型 -> 系统 -> 代码` 路径里最前面、也最决定结构走向的两步。
 - 它与 [[state-and-data-flow-modeling]] 直接衔接：状态与数据流是抽象建模在"系统行为"维度上的一种具体模型形态。
 - 它与 [[logical-reasoning]] 同属 Ability「思维层（核心能力）」——逻辑推理保证"从前提到结论"站得住脚，抽象建模保证"用什么前提、什么概念去刻画问题"本身够用且不失真。
+- [[design-patterns]] 是抽象建模在类/对象层面的成熟解法库：抽象建模负责"识别变化点、划边界"，设计模式提供"这类边界通常长什么样"的已验证结构，并共享同一条判据——隐藏的复杂度是否大于引入的间接成本。
 
 ## Practice in Engineering
 
@@ -83,5 +84,7 @@ tags: [concept, thinking-skills, core-competency, abstraction, modeling, domain-
 - [[state-and-data-flow-modeling]]
 - [[validation-driven-design]]
 - [[logical-reasoning]]
+- [[design-patterns]]
 - [[growing-engineer]]
 - [[abstraction-and-modeling-note]]
+- [[design-patterns-note]]

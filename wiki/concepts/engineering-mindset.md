@@ -2,9 +2,9 @@
 title: 研发思维
 type: concept
 created: 2026-04-15
-updated: 2026-07-07
-sources: [构建技术研发思维.md, 分布式核心原理.md, A2. 抽象建模/README.md]
-tags: [concept, engineering-thinking, systems-thinking, abstraction, modeling, system-design, distributed-systems, core-competency]
+updated: 2026-07-28
+sources: [构建技术研发思维.md, 分布式核心原理.md, A2. 抽象建模/README.md, H. 软件架构设计/设计模式/README.md]
+tags: [concept, engineering-thinking, systems-thinking, abstraction, modeling, system-design, distributed-systems, core-competency, design-patterns]
 ---
 
 研发思维指把现实问题转化为可计算系统的能力，它强调抽象、建模、拆解、分层、权衡和验证，而不把“写代码”当成起点。
@@ -35,6 +35,7 @@ tags: [concept, engineering-thinking, systems-thinking, abstraction, modeling, s
 - 在 AI 协同场景下，研发思维仍然是人的基本盘，因为问题定义、模型选择和验收边界不能完全外包给工具。
 - 新的分布式系统来源进一步说明：当网络不确定性、部分故障和一致性 trade-off 成为系统边界时，抽象、建模和权衡就不再是“高级技巧”，而是系统能否成立的基础条件。
 - 其中“抽象”和“建模”这两步已经被 Ability 思维层来源单独拆成 [[abstraction-and-modeling]] 深入展开，覆盖泛化/封装/关注点分离、抽象层次、深模块判据，以及过度抽象、抽象泄漏和错误边界等易错点。
+- 而“系统 -> 代码”这一步的已验证结构库是 [[design-patterns]]：模式提供把变化点隔离在可控边界里的成熟套路，同时提醒模式是手段不是目的——没有真实变化压力时引入模式只会增加间接层。
 
 ## Documentation Implications
 
@@ -54,6 +55,7 @@ tags: [concept, engineering-thinking, systems-thinking, abstraction, modeling, s
 - [[engineering-thinking-framework]]
 - [[state-and-data-flow-modeling]]
 - [[abstraction-and-modeling]]
+- [[design-patterns]]
 - [[validation-driven-design]]
 - [[logical-reasoning]]
 - [[distributed-systems-foundations]]

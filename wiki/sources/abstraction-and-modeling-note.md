@@ -2,7 +2,7 @@
 title: 抽象建模（A2 思维层学习笔记）
 type: source
 created: 2026-06-03
-updated: 2026-07-07
+updated: 2026-07-28
 sources: [A2. 抽象建模/README.md]
 tags: [source, ability, thinking-skills, core-competency, abstraction, modeling, domain-modeling, interface-design, system-design, engineering-thinking]
 ---
@@ -90,7 +90,7 @@ tags: [source, ability, thinking-skills, core-competency, abstraction, modeling,
 
 - 这套抽象建模方法是否会进一步沉淀为团队级的接口/领域建模评审 checklist 或"抽象价值评分"标准？
 - A 模块其余技能（A3 系统思维、A4 问题拆解、A5 第一性原理、A6 成本收益分析、A7 风险分析、A8 技术决策能力）是否会陆续 ingest，与 A1 逻辑推理、A2 抽象建模一起形成完整的"思维层核心能力"概念网络？
-- 来源提到的 H 模块（DDD / Clean Architecture / 架构设计）是否会作为后续来源补充，把抽象建模从思维方法落到具体架构模式？
+- ~~来源提到的 H 模块（DDD / Clean Architecture / 架构设计）是否会作为后续来源补充，把抽象建模从思维方法落到具体架构模式？~~ — 已部分回答：H 模块的「设计模式」条目已于 2026-07-28 ingest，见 [[design-patterns-note]]，把抽象建模落到类/对象级的已验证结构；DDD、Clean Architecture、六边形架构等系统级条目仍待补充。
 
 ## Related Pages
 
@@ -99,4 +99,6 @@ tags: [source, ability, thinking-skills, core-competency, abstraction, modeling,
 - [[state-and-data-flow-modeling]]
 - [[validation-driven-design]]
 - [[logical-reasoning]]
+- [[design-patterns]]
+- [[design-patterns-note]]
 - [[growing-engineer]]

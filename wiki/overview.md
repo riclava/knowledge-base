@@ -3,9 +3,9 @@
 title: Overview
 type: overview
 created: 2026-04-07
-updated: 2026-07-07
-sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md, A1. 逻辑推理/README.md, A2. 抽象建模/README.md]
-tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, homebrew, launchctl, diskutil, pmset, defaults, xcode, ruby, rbenv, cocoapods, ios, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consistency, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, stakeholder-management, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, core-competency, root-cause-analysis, domain-modeling, interface-design]
+updated: 2026-07-28
+sources: [2025年技术线总结.md, Moshi 与神经音频编码（Neural Audio Codec）技术架构解析.md, vim.md, bash.md, commands.md, CentOS6由于镜像废弃无法使用的解决办法.md, CentOS7离线安装docker问题排查.md, CentOS7配置Samba共享.md, CentOS7升级内核.md, CentOS7升级OpenSSL和OpenSSH.md, CentOS7系统参数调优.md, CentOS操作系统初始化流程.md, 基于docker构建ubuntu20.04开发环境.md, netplan配置指南.md, Ubuntu22.04升级OpenSSH版本到最新.md, Ubuntu常见问题与优化.md, 构建技术研发思维.md, 快速基于 AI 入门全栈研发.md, Linux基础与测试专题.md, macOS安装U盘制作.md, macOS常用命令.md, macOS开发环境配置.md, macOS系统设置.md, Windows开发相关.md, Windows系统设置.md, 分布式核心原理.md, CTO工作职责.md, grammar.md, A1. 逻辑推理/README.md, A2. 抽象建模/README.md, H. 软件架构设计/设计模式/README.md]
+tags: [overview, synthesis, engineering-management, ai, speech-llm, developer-tooling, engineering-thinking, systems-thinking, abstraction, modeling, validation, system-design, linux, unix, command-line, operations, observability, testing, quality, vim, bash, shell, centos, ubuntu, yum, repository, elrepo, grub, docker, containers, kernel, networking, netplan, yaml, vlan, bonding, bridging, samba, smb, file-sharing, windows, windows-update, task-scheduler, powershell, firewall, inno-setup, wmi, mfc, win32, installer, machine-identifier, openssl, openssh, ssh, tls, source-build, sysctl, systemd, tuning, file-descriptors, tcp, initialization, post-install, ntp, chrony, selinux, firewalld, epel, development-environment, pam, systemd-resolved, dns, swap, nfs, multipath, optimization, apt, boot-management, mcp, steering, devops, ci-cd, full-stack, macos, apple, recovery, createinstallmedia, bootable-media, startup-security, external-boot, homebrew, launchctl, diskutil, pmset, defaults, xcode, ruby, rbenv, cocoapods, ios, version-management, system-settings, input-method, trackpad, chrome, spotlight, browser-troubleshooting, distributed-systems, cap, flp, pacelc, consistency, consensus, replication, sharding, logical-clocks, resilience, cto, technical-strategy, roadmap, stakeholder-management, business-development, evangelism, team-culture, english, grammar, language-learning, syntax, writing, punctuation, chinese-learners, logical-reasoning, critical-thinking, deduction, induction, abduction, fallacies, core-competency, root-cause-analysis, domain-modeling, interface-design, software-architecture, design-patterns, gof, oop, creational-patterns, structural-patterns, behavioral-patterns]
 
 ---
 
@@ -24,9 +24,11 @@ It also now includes a language-learning and writing-clarity strand for English 
 
 It is also beginning an Ability "思维层（核心能力）" (cognitive core-competency) strand, starting with logical reasoning as a checkable-conclusion skill spanning deduction/induction/abduction, fallacy avoidance, and engineering practice such as root-cause analysis and falsifiable claims, and now extended with abstraction & modeling as the skill of hiding irrelevant detail and organizing concepts into reasoning-ready models.
 
-**Source count:** 31
-**Wiki pages:** 105
-**Last ingest:** 2026-06-03 — [[abstraction-and-modeling-note]]
+An Ability "H. 软件架构设计" (software architecture design) strand has now opened as well, starting at the class/object level with the full GoF design-pattern set — three-category classification, the composition-over-inheritance and program-to-interface meta-principles, confusable pattern pairs, real framework usages across JDK/Spring/Netty/Go stdlib, and the "isolate what changes" rule for deciding whether a pattern is warranted at all.
+
+**Source count:** 32
+**Wiki pages:** 110
+**Last ingest:** 2026-07-28 — [[design-patterns-note]]
 **Last lint:** —
 
 
@@ -37,6 +39,7 @@ It is also beginning an Ability "思维层（核心能力）" (cognitive core-co
 - 技术线年度复盘与规划材料
 - 面向工程师成长的研发思维训练框架，覆盖抽象、建模、分层、验证和系统设计题拆解
 - 思维层核心能力建设，从逻辑推理起步，覆盖演绎/归纳/溯因、充分必要条件、常见谬误识别，以及故障定位、技术评审和可证伪命题等工程落地；并扩展到抽象建模，覆盖泛化/封装/关注点分离、概念→逻辑→物理抽象层次、深模块判据，以及过度抽象、抽象泄漏和错误抽象等易错点
+- 软件架构设计（类/对象级），覆盖 GoF 全部 23 个设计模式的意图、要点、真实框架应用（JDK / Spring / Netty / Servlet / JDBC / Go 标准库）与代价，以及组合优于继承、面向接口编程两条总原则和易混淆模式对的判别方式
 - 分布式系统基础与工程实践，覆盖网络不确定性、CAP/FLP/PACELC、一致性模型、共识、复制/分片、逻辑时钟以及超时/重试/幂等/限流/熔断/降级/故障转移
 - AI 时代的软件交付方式变化
 - AI 时代全栈研发入门材料，覆盖本地环境、AI IDE / CLI Agent、MCP、Steering 与最小 DevOps 闭环
@@ -112,6 +115,11 @@ It is also beginning an Ability "思维层（核心能力）" (cognitive core-co
 - 研发的核心不是直接写代码，而是先完成问题抽象、模型建立、系统边界划分，再进入实现。
 - 逻辑推理的价值不在于"显得聪明"，而在于让结论可复现、可反驳、可追责；故障定位靠溯因加排除法，评审靠拆"前提→推理→结论"，沟通靠把直觉变成可证伪命题。
 - 抽象建模的价值不在于"画得好看"，而在于让复杂系统可理解、可沟通、可推演；好抽象是隐藏复杂度的深模块，坏抽象只是增加一层看不懂的间接，而"错误的抽象比重复更糟"。
+- 几乎所有设计模式的本质是同一件事：把"会变的部分"和"不变的部分"分开。说不出隔离了哪一种变化，模式就是多余的间接层——"为了用模式而用模式"和"过度抽象"是同一个坑。
+- 模式的沟通价值不亚于工程价值：模式名是团队通用词汇，但前提是同一模式在所有文档里用同一个译名，并写清所属分类。
+- 结构相似不等于意图相同：策略 vs 状态、装饰器 vs 代理、适配器 vs 桥接的区别都在意图和使用时机，不在类图，因此文档必须显式写出差异而不是只放结构图。
+- 模式会随语言演化——一等函数让策略、命令、观察者常常退化成一个闭包；真实框架里也少有教科书标准形态，认出意图比对照 UML 更重要。
+- 设计模式（类/对象级）和微服务、CQRS、Event Sourcing、六边形架构（系统级）属于同一设计谱系的不同粒度，混在一起讨论会让读者判断错适用范围。
 - 工程中的错误更多来自错误前提（脏数据、过时假设）而非推理形式，因此校验前提常常比打磨推理更重要。
 - “降低不确定性”是工程师的重要职责，因此验证、极端 case 和权衡属于设计阶段，而不是实现后的附属动作。
 - AI 协同不会削弱这些基本功，反而要求团队更明确地表达问题、状态、数据流和验收边界。
@@ -145,6 +153,9 @@ It is also beginning an Ability "思维层（核心能力）" (cognitive core-co
 - 当前 CentOS 7 初始化流程是否会继续沉淀为可复用的检查清单模板或自动化脚本？
 - 是否会补充更多以数据库、缓存、队列或微服务为例的系统设计训练材料，形成更系统的研发思维案例库？
 - Ability「思维层（核心能力）」的其余技能（A3 系统思维、A4 问题拆解、A5 第一性原理、A6 成本收益分析、A7 风险分析、A8 技术决策能力）是否会陆续 ingest，并与逻辑推理、抽象建模一起沉淀为团队级评审/复盘 checklist？
+- Ability「H. 软件架构设计」的其余条目（DDD、Clean Architecture、六边形架构、微服务、SOA、CQRS、Event Sourcing、Event Driven、高并发/高性能/高可用/高扩展/高安全）是否会陆续 ingest，与设计模式一起形成"类/对象级 → 系统级"的完整架构谱系？
+- 设计模式笔记里的"真实应用"索引是否会进一步沉淀为面向 JDK / Spring / Netty / Go 标准库的源码阅读清单？
+- 是否会补充"反模式"与"模式误用案例"（滥用单例、过度工厂化、把访问者用在不稳定结构上）作为设计模式的对照材料？
 - 当前全栈入门来源中的技术栈示例，哪些属于教学用组合，哪些会沉淀为团队推荐基线？
 - 是否会补充 Git/PR 规范、分支模型、CI 质量门禁和发布回滚等更细的交付文档？
 - 是否会把 Steering 文件模板、MCP 接入约束和 AI 协作规则沉淀为跨项目标准？
@@ -175,6 +186,7 @@ It is also beginning an Ability "思维层（核心能力）" (cognitive core-co
 - macOS 交互层目前只覆盖输入法、触控板和一个 Chrome 预加载相关案例，还没有形成窗口管理、Mission Control、辅助功能、快捷键治理和系统级浏览器排障的完整专题。
 - Windows 侧现在已覆盖 Inno Setup、WMI/机器码速记，以及基础的 Win10 更新抑制/防火墙放行操作，但仍缺少注册表、PowerShell 自动化、组策略/WSUS、服务控制管理器、代码签名、UAC、事件日志与崩溃诊断等专题。
 - 缺少把研发思维落到更多真实业务案例上的练习库、评审模板和分层设计示例。
+- 软件架构设计目前只覆盖类/对象级的 GoF 设计模式（且来源自标为草稿），仍缺少 DDD、Clean Architecture、六边形架构、微服务/SOA、CQRS、Event Sourcing、Event Driven 以及高并发/高性能/高可用/高扩展/高安全等系统级专题，也缺少反模式清单、模式选型 checklist 和真实项目重构案例。
 - 虽然已补上分布式系统总览，但仍缺少 etcd / Raft 实现细节、Kafka ISR / controller、Redis Cluster、Cassandra / Dynamo、Spanner / TrueTime 等具体系统专题。
 - 仍缺少分布式事务 / Outbox / Saga、CRDT、CDC / event sourcing、Jepsen 式故障验证和时钟同步 / HLC 深入材料。
 - 刚补上 AI 时代的全栈入门全景，但仍缺少 Git/PR、Docker Compose、多容器本地开发、PostgreSQL/Redis、Go/Gin/GORM/wire、React/TypeScript/Tailwind/shadcn、Nginx 部署、`wrk` 和 Playwright 的独立专题页。
@@ -220,6 +232,11 @@ It is also beginning an Ability "思维层（核心能力）" (cognitive core-co
 - [[logical-reasoning-note]] — logical-reasoning source summary
 - [[abstraction-and-modeling]] — abstraction & modeling core-competency concept
 - [[abstraction-and-modeling-note]] — abstraction & modeling source summary
+- [[design-patterns]] — GoF design-pattern umbrella concept
+- [[creational-patterns]] — creational pattern family (Singleton through Prototype)
+- [[structural-patterns]] — structural pattern family (Adapter through Flyweight)
+- [[behavioral-patterns]] — behavioral pattern family (Strategy through Interpreter)
+- [[design-patterns-note]] — design-patterns source summary
 - [[state-and-data-flow-modeling]] — state/data-flow system-modeling concept
 - [[distributed-systems-foundations]] — distributed-systems boundary concept
 - [[consistency-models]] — consistency spectrum and selection concept

@@ -2,9 +2,9 @@
 title: 成长型工程师
 type: persona
 created: 2026-04-15
-updated: 2026-06-03
+updated: 2026-07-28
 sources: [构建技术研发思维.md]
-tags: [persona, engineering, learning, growth, system-design, ai-era]
+tags: [persona, engineering, learning, growth, system-design, ai-era, design-patterns]
 ---
 
 这是从《构建技术研发思维》中抽象出的成长型工程师画像，代表正在从“会实现功能”走向“会抽象问题、设计系统、做工程判断”的研发角色。
@@ -41,6 +41,7 @@ tags: [persona, engineering, learning, growth, system-design, ai-era]
 - 明确区分问题定义、抽象、建模、系统设计和验证步骤的模板。
 - 状态表、数据流图、时序图和异常 case 清单。
 - 能帮助把 CS 基础知识和真实工程问题连接起来的术语表与概念页。
+- 带"真实应用"索引的模式材料（如 [[design-patterns]] 中 JDK / Spring / Netty / Go 标准库的模式实例），便于把定义与源码阅读挂上钩，而不是只背类图。
 
 ## Related Pages
 
@@ -49,6 +50,7 @@ tags: [persona, engineering, learning, growth, system-design, ai-era]
 - [[engineering-mindset]]
 - [[logical-reasoning]]
 - [[abstraction-and-modeling]]
+- [[design-patterns]]
 - [[state-and-data-flow-modeling]]
 - [[validation-driven-design]]
 - [[full-lifecycle-delivery-capability]]

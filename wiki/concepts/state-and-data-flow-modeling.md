@@ -2,9 +2,9 @@
 title: 状态与数据流建模
 type: concept
 created: 2026-04-15
-updated: 2026-04-17
-sources: [构建技术研发思维.md, 分布式核心原理.md]
-tags: [concept, modeling, state-machine, data-flow, system-design, engineering-thinking, distributed-systems]
+updated: 2026-07-28
+sources: [构建技术研发思维.md, 分布式核心原理.md, H. 软件架构设计/设计模式/README.md]
+tags: [concept, modeling, state-machine, data-flow, system-design, engineering-thinking, distributed-systems, design-patterns]
 ---
 
 状态与数据流建模是一种把系统理解为“状态变化 + 数据流动”的设计方法，用来描述对象如何变化、信息如何传播以及边界如何协作。
@@ -46,6 +46,7 @@ tags: [concept, modeling, state-machine, data-flow, system-design, engineering-t
 - 数据流模型帮助团队看见系统依赖、延迟路径和持久化位置。
 - 两者结合后，设计讨论会从“怎么写接口”升级为“系统如何运作”。
 - 状态与数据流本身是 [[abstraction-and-modeling]] 的一种具体模型形态：先抽象出实体、状态和边界，再用状态机/数据流图把它们组织成可推演的结构。
+- 落到实现层时，[[behavioral-patterns]] 提供了对应的标准结构：状态模式把状态相关行为封装成状态对象（替代散落的标志位判断），观察者模式承载状态变化的事件传播，责任链把数据流的处理阶段串成可插拔的链路。
 - 在分布式系统里，这套建模还要继续覆盖日志复制、消息乱序、因果顺序、重试重放和副本收敛，因此会自然连接到逻辑时钟、共识和复制/分片等专题。
 
 ## Documentation Implications
@@ -66,6 +67,8 @@ tags: [concept, modeling, state-machine, data-flow, system-design, engineering-t
 - [[engineering-thinking-framework]]
 - [[engineering-mindset]]
 - [[abstraction-and-modeling]]
+- [[behavioral-patterns]]
+- [[design-patterns]]
 - [[validation-driven-design]]
 - [[distributed-consensus]]
 - [[data-replication-and-partitioning]]
